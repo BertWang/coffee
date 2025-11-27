@@ -2,6 +2,8 @@
 document.addEventListener("DOMContentLoaded", function () {
     const modalEl = document.getElementById("welcomeVideoModal");
     const videoEl = document.getElementById("welcomeVideo");
+    const soundBtn = document.getElementById("videoSoundToggle");
+    
     if (!modalEl || !videoEl || !window.bootstrap) return;
 
     const modal = new bootstrap.Modal(modalEl, {
@@ -39,7 +41,25 @@ document.addEventListener("DOMContentLoaded", function () {
         videoEl.play().catch(() => {});
         }
     });
+    // 聲音控制按鈕：切換靜音 / 有聲
+    if (soundBtn) {
+        soundBtn.addEventListener("click", function () {
+        // 反轉 muted 狀態
+        videoEl.muted = !videoEl.muted;
 
+        // 若從靜音切到有聲，盡量確保影片正在播放
+        if (!videoEl.muted && videoEl.paused) {
+            videoEl.play().catch(() => {});
+        }
+
+        // 更新按鈕文字與 icon
+        if (videoEl.muted) {
+            soundBtn.innerHTML = '<i class="bi bi-volume-mute-fill me-1"></i> 開啟聲音';
+        } else {
+            soundBtn.innerHTML = '<i class="bi bi-volume-up-fill me-1"></i> 關閉聲音';
+        }
+        });
+    }
     modalEl.addEventListener('shown.bs.modal', () => {
     document.body.classList.add('welcome-backdrop-open');
     });

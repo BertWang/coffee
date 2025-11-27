@@ -518,6 +518,15 @@ p.lead {
   background-color: rgba(0, 0, 0, 0.11); /* 半透明黑，可調 0.3~0.5 */
 }
 
+.video-sound-btn {
+  font-size: 0.8rem;
+  border-color: rgba(255,255,255,0.4);
+}
+.video-sound-btn:hover {
+  background-color: #ffffff;
+  color: #000;
+}
+
 /* 小螢幕（手機）全螢幕顯示，並調整影片高度 */
 @media (max-width: 576px) {
   .welcome-video-modal .modal-dialog {
@@ -551,3 +560,4 @@ p.lead {
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
 }
+
