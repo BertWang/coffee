@@ -676,7 +676,19 @@
         <p class="small text-uppercase text-warning mb-1">Welcome to Suoyi Coffee</p>
         <h5 class="mb-1 fw-bold" id="welcomeVideoLabel">熱愛咖啡，所以相遇</h5>
         <p class="small text-white-50 mb-0">30 秒認識「所以咖啡」— 高雄起家的外帶精品咖啡品牌</p>
+                <p class="small text-center text-white-50 mt-2 mb-0">
+          小提醒：影片預設靜音播放，若想聽到聲音，請開啟播放器音量。
+        </p>
       </div>
+          <!-- 新增：聲音控制按鈕 -->
+        <div class="d-flex justify-content-center mt-1">
+          <button type="button"
+                  id="videoSoundToggle"
+                  class="btn btn-sm btn-outline-light rounded-pill px-3 px-md-4 video-sound-btn">
+            <i class="bi bi-volume-mute-fill me-1"></i>
+            開啟聲音
+          </button>
+        </div>
 
       <!-- 影片區 -->
       <div class="modal-body pt-2 pb-4 px-3 px-md-4">
@@ -693,18 +705,7 @@
             您的瀏覽器不支援內嵌影片播放。
           </video>
         </div>
-          <!-- 新增：聲音控制按鈕 -->
-        <div class="d-flex justify-content-center mt-3">
-          <button type="button"
-                  id="videoSoundToggle"
-                  class="btn btn-sm btn-outline-light rounded-pill px-3 px-md-4 video-sound-btn">
-            <i class="bi bi-volume-mute-fill me-1"></i>
-            開啟聲音
-          </button>
-        </div>
-        <p class="small text-center text-white-50 mt-2 mb-0">
-          小提醒：影片預設靜音播放，若想聽到聲音，請開啟播放器音量。
-        </p>
+
       </div>
     </div>
   </div>
