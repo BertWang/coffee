@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# 指向 sitemap（請確保網站已上線，且路徑正確）
+Sitemap: https://suoyicoffee.com/sitemap.xml

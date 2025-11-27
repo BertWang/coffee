@@ -1,0 +1,406 @@
+/* =========================================
+   1. 基礎設定 (Base)
+   ========================================= */
+body {
+  background-color: #F8F3ED; /* 奶茶白底 */
+  font-family: "Noto Sans TC", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+footer {
+  background: #FFFFFF;
+}
+
+/* =========================================
+   2. 品牌色工具類 (Brand Colors)
+   ========================================= */
+.text-brown { color: #5C4033 !important; }
+.bg-brown   { background-color: #5C4033 !important; }
+.btn-brown  { 
+  background-color: #5C4033; 
+  color: white; 
+  border: 1px solid #5C4033;
+}
+.btn-brown:hover {
+  background-color: #4E3629;
+  color: white;
+}
+
+.text-gold  { color: #D4A373 !important; }
+.bg-gold    { background-color: #D4A373 !important; }
+.btn-outline-brown {
+  color: #5C4033;
+  border-color: #5C4033;
+}
+.btn-outline-brown:hover {
+  background-color: #5C4033;
+  color: white;
+}
+
+/* =========================================
+   3. 元件樣式 (Components)
+   ========================================= */
+/* 導覽列品牌字 */
+.navbar-brand {
+  letter-spacing: 0.18em;
+  font-size: 1.1rem;
+}
+
+/* 關鍵字標籤 (圓角框) */
+.keyword-pill {
+  border-radius: 999px;
+  padding: 0.35rem 0.9rem;
+  border: 1px solid rgba(0,0,0,0.06);
+  background: rgba(255,255,255,0.75);
+  font-size: 0.8rem;
+}
+
+/* 區塊小標題 */
+.section-title {
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  color: #A58A6A;
+}
+
+/* 商品小卡片 (首頁用) */
+.product-card-min {
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  border-radius: 1rem;
+  border: none;
+}
+.product-card-min:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 35px rgba(0,0,0,0.12);
+}
+
+/* 柔和徽章 */
+.badge-soft {
+  background-color: rgba(230, 151, 104, 0.12);
+  color: #B15D27;
+}
+
+/* 品質堅持 Icon */
+.quality-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 999px;
+  background: #FFF8F0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #B0723E;
+  margin-bottom: 0.5rem;
+}
+
+/* 門市膠囊樣式 */
+.store-pill {
+  border-radius: 0.75rem;
+  background: rgba(255,255,255,0.85);
+  padding: 0.75rem 1rem;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+  font-size: 0.9rem;
+}
+
+/* =========================================
+   4. 特殊區塊 (Sections)
+   ========================================= */
+
+/* 深色區塊 (加盟預告用) */
+.dark-section {
+  background: #222222;
+  color: #F5F1E8;
+}
+.dark-section .section-title {
+  color: #E3C48C;
+}
+
+/* 優惠活動區塊 (週三限定) */
+.promo-section {
+  background-color: #5C4033; /* 品牌深咖 */
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+.promo-badge {
+  background-color: #D4A373;
+  color: #3e2723;
+  font-weight: bold;
+  padding: 0.25rem 0.75rem;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  display: inline-block;
+  margin-bottom: 1rem;
+}
+
+/* =========================================
+   5. Hero 首屏專用樣式 (新版)
+   ========================================= */
+.hero-section {
+  /* 90% 視窗高度，引導視覺向下 */
+  min-height: 90vh; 
+  padding-top: 100px;
+  padding-bottom: 60px;
+  /* 柔和晨光漸層背景 */
+  background: linear-gradient(135deg, #F8F3ED 0%, #FFFCF8 60%, #FFFFFF 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+/* 背景裝飾光暈 */
+.hero-bg-circle {
+  position: absolute;
+  top: -10%;
+  right: -5%;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(212, 163, 115, 0.1) 0%, rgba(255,255,255,0) 70%);
+  border-radius: 50%;
+  z-index: 0;
+}
+
+/* 圖片容器與懸浮動畫 */
+.hero-image-container {
+  position: relative;
+  z-index: 1;
+  animation: floatImage 6s ease-in-out infinite;
+}
+
+.hero-image-container img {
+  width: 100%;
+  max-width: 550px;
+  height: auto;
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(92, 64, 51, 0.15);
+  transform: rotate(-2deg);
+  transition: transform 0.3s ease;
+}
+
+.hero-image-container img:hover {
+  transform: rotate(0deg) scale(1.02);
+}
+
+/* 舊版 Hero 樣式 (保留以防萬一，或用於其他圓形圖) */
+.hero-image {
+  border-radius: 999px;
+  overflow: hidden;
+  box-shadow: 0 18px 40px rgba(0,0,0,0.18);
+}
+.hero-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* 定義懸浮動畫關鍵影格 */
+@keyframes floatImage {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-15px); }
+  100% { transform: translateY(0px); }
+}
+
+/* =========================================
+   6. 響應式調整 (Responsive)
+   ========================================= */
+@media (max-width: 768px) {
+  .hero-section {
+    min-height: auto;
+    padding-top: 120px;
+    padding-bottom: 80px;
+    text-align: center;
+  }
+  .hero-image-container {
+    margin-top: 40px;
+  }
+  .d-flex.gap-2 {
+    justify-content: center;
+  }
+}
+
+/* =========================================
+   關於我們 (雜誌敘事風格) - custom.css
+   ========================================= */
+
+/* 1. 頁首 Hero：極簡大氣 */
+
+
+/* 裝飾性副標題 (小字) */
+.section-subtitle {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  color: #D4A373; /* 品牌金 */
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+}
+
+/* 2. 故事區塊：雜誌排版 */
+.story-section {
+  padding: 80px 0;
+  position: relative;
+}
+
+/* 圖片容器：增加質感陰影與圓角 */
+.story-img-container {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(92, 64, 51, 0.1); /* 深咖啡色柔和陰影 */
+  transition: transform 0.4s ease;
+}
+
+.story-img-container:hover {
+  transform: translateY(-5px); /* 滑鼠移過微微浮起 */
+}
+
+.story-img-container img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+/* 3. 創辦人語錄區塊：深色沉浸感 */
+.founder-quote {
+  background-color: #5C4033; /* 品牌深咖 */
+  color: white;
+  padding: 100px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+/* 背景巨大的引號裝飾 */
+.quote-icon {
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 10rem;
+  color: rgba(255, 255, 255, 0.05); /* 極淡的浮水印效果 */
+  font-family: serif;
+  line-height: 1;
+  pointer-events: none;
+}
+
+/* 創辦人頭像邊框優化 */
+.founder-avatar {
+  width: 160px; 
+  height: 160px; 
+  margin: 0 auto; 
+  border-radius: 50%; 
+  overflow: hidden; 
+  border: 4px solid #D4A373;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+}
+
+/* 4. 通用文字優化 */
+.text-brown {
+  color: #5C4033 !important;
+}
+.text-gold {
+  color: #D4A373 !important;
+}
+p.lead {
+  font-weight: 400;
+  line-height: 1.8;
+}
+/* --- 關於我們 (敘事版) 專用樣式 --- */
+
+/* 1. 頁首 Hero：簡潔留白 */
+.about-hero {
+  /* 設定高度與背景圖 */
+  min-height: 60vh; /* 讓高度夠高，展現氣勢 */
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../img/about/hero-barista-back.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed; /* 視差滾動效果 */
+  color: white;
+}
+
+/* 2. 故事區塊：圖文交錯 */
+.story-section {
+  padding: 80px 0;
+}
+
+.section-subtitle {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: bold;
+  letter-spacing: 2px;
+  color: #D4A373; /* 品牌金 */
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+}
+
+/* 圖片容器：增加質感陰影與圓角 */
+.story-img-container {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(92, 64, 51, 0.15); /* 深咖色柔和陰影 */
+}
+
+.story-img-container img {
+  width: 100%;
+  height: auto;
+  transition: transform 0.5s ease;
+}
+
+.story-img-container:hover img {
+  transform: scale(1.03); /* 滑鼠移過微放大 */
+}
+
+/* 3. 創辦人語錄區塊：深色背景突顯 */
+.founder-quote {
+  background-color: #5C4033; /* 品牌深咖 */
+  color: white;
+  padding: 100px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+/* 背景巨大的引號裝飾 */
+.quote-icon {
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 15rem;
+  color: rgba(255, 255, 255, 0.05); /* 極淡的透明度 */
+  pointer-events: none;
+}
+
+/* 時間軸樣式 */
+.timeline-step {
+  position: relative;
+  padding-left: 2rem;
+  border-left: 3px solid #E0E0E0;
+  padding-bottom: 2.5rem;
+}
+.timeline-step::before {
+  content: "";
+  position: absolute;
+  left: -10px;
+  top: 0;
+  width: 17px;
+  height: 17px;
+  border-radius: 50%;
+  background: #D4A373; /* 品牌金 */
+  border: 3px solid white;
+  box-shadow: 0 0 0 1px #E0E0E0;
+}
+.timeline-step:last-child {
+  border-left: 3px solid transparent;
+}
+
+/* 圖片圓角與陰影 */
+.img-rounded-custom {
+  border-radius: 20px;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+  transition: transform 0.3s ease;
+}
+.img-rounded-custom:hover {
+  transform: translateY(-5px);
+}
+

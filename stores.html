@@ -1,0 +1,694 @@
+<!doctype html>
+<html lang="zh-Hant-TW">
+<head>
+  <meta charset="utf-8">
+  <!-- 原始 title: 門市據點 | 所以咖啡 SUOYI COFFEE -->
+  <title>所以咖啡 門市據點 — 找到離你最近的店（高雄／台南）</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- SEO 基本設定 -->
+  <!-- 原始 meta description: 尋找最近的所以咖啡門市：高雄與台南的據點資訊、營業時間、地圖與外送平台連結。立即查看門市位置與聯絡方式。 -->
+  <meta name="description" content="查看所有所以咖啡門市地址、營業時間與聯絡電話。快速找到最近的分店（高雄 / 台南）。">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://suoyicoffee.com/stores.html">
+  <link rel="icon" href="assets/img/logo/logo-brown-on-white.png" />
+  <!-- Open Graph / Social -->
+  <meta property="og:site_name" content="所以咖啡 SUOYI COFFEE">
+  <!-- 原始 og:title / og:description -->
+  <meta property="og:title" content="所以咖啡 門市據點 — 找到離你最近的店（高雄／台南）">
+  <meta property="og:description" content="查看所有所以咖啡門市地址、營業時間與聯絡電話。快速找到最近的分店（高雄 / 台南）。">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://suoyicoffee.com/stores.html">
+  <meta property="og:image" content="https://suoyicoffee.com/assets/img/stores/stores-signboard.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <!-- 原始 twitter:title / twitter:description -->
+  <meta name="twitter:title" content="所以咖啡 門市據點 — 找到離你最近的店（高雄／台南）">
+  <meta name="twitter:description" content="查看所有所以咖啡門市地址、營業時間與聯絡電話。快速找到最近的分店（高雄 / 台南）。">
+  <meta name="twitter:image" content="https://suoyicoffee.com/assets/img/stores/stores-signboard.jpg">
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <!-- 自訂 CSS -->
+  <link rel="stylesheet" href="assets/css/custom.css">
+
+  <!-- Preload LCP 圖片（門市縮圖） -->
+  <link rel="preload" as="image" href="assets/img/stores/stores-signboard.jpg">
+
+  <!-- 結構化資料（JSON-LD）: CafeOrCoffeeShop (門市/商家資料) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "CafeOrCoffeeShop",
+    "name": "所以咖啡 SUOYI COFFEE",
+    "url": "https://suoyicoffee.com/",
+    "logo": "https://suoyicoffee.com/assets/img/logo/logo.png",
+    "telephone": "0981-451-451",
+    "sameAs": [
+      "https://www.facebook.com/profile.php?id=100076341999740",
+      "https://www.instagram.com/suoyicoffee/"
+    ],
+    "hasPOS": true,
+    "branchOf": {
+      "@type": "Organization",
+      "name": "所以咖啡 SUOYI COFFEE",
+      "url": "https://suoyicoffee.com/"
+    },
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "大智路 40 號",
+      "addressLocality": "鳥松區",
+      "addressRegion": "高雄市",
+      "addressCountry": "TW"
+    },
+    "openingHours": "Mo-Su 07:00-17:00"
+  }
+  </script>
+  <style>
+    /* 門市據點專用樣式 */
+
+    .locations-hero {
+      padding: 120px 0 80px;
+      background: linear-gradient(135deg, #F8F3ED 0%, #FFFFFF 60%, #F2E5D7 100%);
+    }
+
+    .hero-tag {
+      display: inline-block;
+      font-size: 0.8rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: #D4A373;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+
+    .hero-stat-badge {
+      border-radius: 999px;
+      border: 1px solid rgba(0,0,0,0.06);
+      padding: 0.5rem 1rem;
+      background: #fff;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.04);
+    }
+
+    .map-card {
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 18px 40px rgba(0,0,0,0.08);
+      background: #fff;
+    }
+
+    .map-visual {
+      min-height: 220px;
+      background: transparent; /* 交給 SVG 處理背景 */
+      position: relative;
+    }
+
+    .map-visual svg {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .city-dot {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      border-radius: 999px;
+      background: #5C4033;
+      box-shadow: 0 0 0 6px rgba(92,64,51,0.18);
+    }
+    .city-dot span {
+      position: absolute;
+      top: 22px;
+      left: 50%;
+      transform: translateX(-50%);
+      white-space: nowrap;
+      font-size: 0.75rem;
+      color: #5C4033;
+    }
+    .city-dot.kaohsiung {
+      left: 38%;
+      top: 55%;
+    }
+    .city-dot.tainan {
+      left: 45%;
+      top: 65%;
+    }
+
+    .delivery-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.25rem;
+      border-radius: 999px;
+      padding: 0.15rem 0.7rem;
+      font-size: 0.75rem;
+      font-weight: 600;
+      border: 1px solid rgba(0,0,0,0.08);
+    }
+    .delivery-fp {
+      background: #FFE5F1;
+      color: #D70F64;
+      border-color: #F8B6D4;
+    }
+    .delivery-ue {
+      background: #E4F8EC;
+      color: #059669;
+      border-color: #B7E8C7;
+    }
+
+    .store-card {
+      border-radius: 14px;
+      border: 1px solid #F0E5DA;
+      background: #fff;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+      height: 100%;
+    }
+    .store-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+      border-color: #D4A373;
+    }
+
+    .store-badge-city {
+      font-size: 0.7rem;
+      border-radius: 999px;
+      padding: 0.1rem 0.6rem;
+      background: #F2E5D7;
+      color: #5C4033;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .store-highlight {
+      border-width: 2px;
+      border-color: #D4A373;
+      box-shadow: 0 16px 35px rgba(212,163,115,0.35);
+    }
+
+    .franchise-cta {
+      background: linear-gradient(120deg, #5C4033, #8D6E5A);
+      color: #fff;
+      border-radius: 20px;
+      overflow: hidden;
+    }
+
+    .franchise-cta h2,
+    .franchise-cta p {
+      color: #fff;
+    }
+
+    @media (max-width: 768px) {
+      .locations-hero {
+        padding: 90px 0 40px;
+      }
+    }
+  </style>
+</head>
+<body class="bg-light">
+
+<!-- 導覽列 -->
+<nav class="navbar navbar-expand-md bg-white shadow-sm fixed-top">
+  <div class="container">
+    <a class="navbar-brand fw-bold text-brown d-flex align-items-center" href="index.html">
+      <img src="assets/img/logo/logo-brown-on-white.png" alt="所以咖啡" width="32" height="32" class="me-2">
+      所以咖啡 SUOYI COFFEE
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMain">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navMain">
+      <ul class="navbar-nav ms-auto mb-2 mb-md-0 small">
+        <li class="nav-item"><a class="nav-link" href="index.html">首頁</a></li>
+        <li class="nav-item"><a class="nav-link" href="menu.html">嚴選菜單</a></li>
+        <li class="nav-item"><a class="nav-link active" href="stores.html">門市據點</a></li>
+        <li class="nav-item"><a class="nav-link" href="franchise.html">加盟專區</a></li>
+        <li class="nav-item"><a class="nav-link" href="about.html">關於所以</a></li>
+        <li class="nav-item"><a class="nav-link" href="contact.html">聯絡我們</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<main>
+  <!-- 1. Hero + 品牌規模感 -->
+  <section class="locations-hero" id="all-locations-map">
+    <div class="container">
+      <div class="row align-items-center gy-4">
+        <div class="col-lg-7">
+          <span class="hero-tag">LOCATIONS · 所有門市與地圖</span>
+          <h1 class="display-5 fw-bold text-brown mb-3">
+            從不鏽鋼餐車，<br>到高雄與台南的街角。
+          </h1>
+          <p class="text-muted mb-4" style="max-width: 640px;">
+            「所以咖啡」自 2021 年創立，以不鏽鋼餐車為基地，結合專業設備與高質感設計，打造便利又講究的外帶咖啡體驗。
+            以得來速為靈感，把咖啡帶到街角，讓趕路、下班或放空時，都能遇見一杯香醇回甘的咖啡。
+            雙孔義式機、恆壓溫系統、五道 RO 濾水，專業規格毫不妥協。<br>
+            快速便利卻保有質感，平價簡單仍維持專業。熱愛咖啡，所以相遇；平價奢華，所以咖啡。
+          </p>
+
+          <div class="d-flex flex-wrap gap-3">
+            <div class="hero-stat-badge d-flex align-items-center gap-2">
+              <span class="badge rounded-pill bg-brown text-white">5</span>
+              <span class="small text-muted">門市據點 · 持續拓點中</span>
+            </div>
+            <div class="hero-stat-badge d-flex align-items-center gap-2">
+              <i class="bi bi-geo-alt-fill text-brown"></i>
+              <span class="small text-muted">高雄 4 · 台南 1</span>
+            </div>
+            <div class="hero-stat-badge d-flex align-items-center gap-2">
+              <i class="bi bi-truck text-brown"></i>
+              <span class="small text-muted">同步上架 UberEats / Foodpanda</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 地圖總覽示意（SVG 插畫版 + 門市實景縮圖） -->
+        <div class="col-lg-5">
+          <div class="map-card">
+            <div class="map-visual p-3">
+              <!-- 南台灣品牌版圖：純 SVG 插畫風 -->
+              <svg viewBox="0 0 320 260" xmlns="https://www.w3.org/2000/svg" role="img" aria-labelledby="storesMapTitle storesMapDesc">
+                <title id="storesMapTitle">所以咖啡南台灣門市分佈</title>
+                <desc id="storesMapDesc">高雄四間門市與台南一間門市的示意版圖。</desc>
+
+                <!-- 背景圓角卡片 -->
+                <rect x="5" y="5" width="310" height="250" rx="26" fill="#FDF7F0"/>
+
+                <!-- 抽象台灣南部「島形」 -->
+                <path d="M190 40
+                        C 140 35, 100 50, 80 85
+                        C 60 120, 65 155, 80 190
+                        C 95 220, 130 235, 165 230
+                        C 205 225, 235 205, 250 175
+                        C 265 145, 265 115, 250 85
+                        C 235 55, 220 45, 190 40 Z"
+                      fill="#F3DDC6"/>
+
+                <!-- 高雄群點 -->
+                <g transform="translate(135,140)">
+                  <circle cx="0" cy="0" r="24" fill="#5C4033" opacity="0.12"/>
+                  <circle cx="-6" cy="-6" r="5" fill="#5C4033"/>
+                  <circle cx="7" cy="-4" r="5" fill="#5C4033"/>
+                  <circle cx="-4" cy="7" r="5" fill="#5C4033"/>
+                  <circle cx="8" cy="8" r="5" fill="#5C4033"/>
+                  <line x1="22" y1="-14" x2="72" y2="-40" stroke="#5C4033" stroke-width="1" stroke-linecap="round" />
+                  <rect x="72" y="-58" rx="10" ry="10" width="90" height="36" fill="#5C4033"/>
+                  <text x="82" y="-36" fill="#FFFFFF" font-size="11" font-weight="600">
+                    高雄 · 4 門市
+                  </text>
+                </g>
+
+                <!-- 台南單點 -->
+                <g transform="translate(160,190)">
+                  <circle cx="0" cy="0" r="9" fill="#D4A373"/>
+                  <circle cx="0" cy="0" r="4" fill="#5C4033"/>
+                  <line x1="10" y1="-4" x2="58" y2="-28" stroke="#5C4033" stroke-width="1" stroke-linecap="round" />
+                  <rect x="58" y="-44" rx="9" ry="9" width="82" height="30" fill="#FFFFFF" stroke="#D4A373" stroke-width="1"/>
+                  <text x="66" y="-25" fill="#5C4033" font-size="11" font-weight="600">
+                    台南 · 1 門市
+                  </text>
+                </g>
+
+                <!-- 小標題：South Taiwan -->
+                <text x="24" y="36" fill="#B08968" font-size="10" letter-spacing="2">SOUTH TAIWAN</text>
+                <text x="24" y="54" fill="#5C4033" font-size="15" font-weight="700">SUOYI COFFEE MAP</text>
+
+                <!-- 圖例 Legend -->
+                <g transform="translate(24,210)">
+                  <rect x="0" y="0" width="130" height="34" rx="10" fill="#FFFFFF" stroke="#F0E0CF"/>
+                  <circle cx="14" cy="12" r="5" fill="#5C4033"/>
+                  <text x="26" y="16" fill="#5C4033" font-size="10">高雄群聚門市</text>
+                  <circle cx="14" cy="24" r="5" fill="#D4A373"/>
+                  <text x="26" y="28" fill="#5C4033" font-size="10">台南安平門市</text>
+                </g>
+              </svg>
+            </div>
+
+            <div class="p-3 p-md-4">
+              <div class="d-flex justify-content-between align-items-center mb-2">
+                <h3 class="h6 fw-bold text-brown mb-0">品牌版圖 · 南台灣門市分佈</h3>
+                <span class="badge rounded-pill bg-light text-brown border small">
+                  共 5 門市 · 持續拓點中
+                </span>
+              </div>
+              <p class="small text-muted mb-2">
+                目前門市集中於高雄市鳥松、新興、左營與台南安平區，以外帶咖啡吧為主體，
+                結合 UberEats、Foodpanda 外送平台，讓「平價奢華」的咖啡走進更多生活圈。
+              </p>
+              <ul class="small text-muted mb-3">
+                <li>高雄市：鳥松 / 新興 / 左營，共 <strong>4 門市</strong></li>
+                <li>台南市：安平區康平商圈 <strong>1 門市</strong></li>
+                <li>標準化設備 + 外帶吧動線 + 外送平台，適合街角、小坪數店型加盟展店</li>
+              </ul>
+
+              <!-- 門市實景縮圖列 -->
+              <div class="mb-2 small text-muted">門市實景：</div>
+              <div class="d-flex gap-2 mb-3">
+                <img src="assets/img/stores/stores-barista-back.jpg" alt="餐車實景與外帶杯" class="img-fluid rounded" style="width: 25%; object-fit: cover;">
+                <img src="assets/img/stores/stores-signboard.jpg" alt="所以咖啡大型招牌" class="img-fluid rounded" style="width: 25%; object-fit: cover;">
+                <img src="assets/img/stores/stores-cart-bar.jpg" alt="不鏽鋼餐車與紅色咖啡機" class="img-fluid rounded" style="width: 25%; object-fit: cover;">
+                <img src="assets/img/stores/stores-interior-sign.jpg" alt="所以 coffee 室內吧台" class="img-fluid rounded d-none d-md-block" style="width: 25%; object-fit: cover;">
+              </div>
+
+              <div class="d-flex flex-wrap gap-2 small">
+                <span class="delivery-chip delivery-fp">
+                  <i class="bi bi-bicycle"></i> Foodpanda 合作中
+                </span>
+                <span class="delivery-chip delivery-ue">
+                  <i class="bi bi-bag-check"></i> UberEats 合作中
+                </span>
+                <span class="badge bg-light text-brown border border-light-subtle">
+                  外帶咖啡吧 · 得來速靈感
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        </div>        
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. 高雄門市 -->
+  <section class="py-5">
+    <div class="container">
+      <div class="d-flex justify-content-between align-items-end mb-4">
+        <div>
+          <h2 class="h4 text-brown fw-bold mb-1">高雄市門市 · Kaohsiung City</h2>
+          <p class="small text-muted mb-0">品牌發源地，從鳥松起家，向新興、左營穩健擴張。</p>
+        </div>
+      </div>
+
+      <div class="row g-4">
+        <!-- 鳥松大智店 (總店) -->
+        <div class="col-md-6 col-lg-4">
+          <div class="store-card h-100 store-highlight">
+            <div class="p-3 border-bottom d-flex justify-content-between align-items-center">
+              <div>
+                <div class="store-badge-city mb-1">KHH · 鳥松</div>
+                <h3 class="h6 fw-bold text-brown mb-0">鳥松大智店</h3>
+                <small class="text-muted">品牌創始店</small>
+              </div>
+              <span class="badge bg-brown text-white small">總店</span>
+            </div>
+            <div class="p-3">
+              <p class="small text-muted mb-2">
+                <i class="bi bi-geo-alt-fill me-1"></i> 高雄市鳥松區大智路40號<br>
+                <i class="bi bi-telephone-fill me-1"></i> 0976-451-451
+              </p>
+
+              <!-- 外送平台按鈕 -->
+              <div class="d-flex flex-wrap gap-2 mb-2">
+                <a href="https://www.foodpanda.com.tw/restaurant/w92e/suo-yi-ka-pei-niao-song-da-zhi-dian" target="_blank"
+                  class="delivery-chip delivery-fp text-decoration-none">
+                  <i class="bi bi-bicycle"></i> Foodpanda
+                </a>
+                <a href="https://www.ubereats.com/tw/store/%E6%89%80%E4%BB%A5%E5%92%96%E5%95%A1-%E9%B3%A5%E6%9D%BE%E5%A4%A7%E6%99%BA%E5%BA%97/_iM0VBMxUxy3HS-DA1spSQ" target="_blank"
+                  class="delivery-chip delivery-ue text-decoration-none">
+                  <i class="bi bi-bag-check"></i> UberEats
+                </a>
+              </div>
+
+              <!-- Google 地圖按鈕 -->
+              <div class="mb-2">
+                <a href="https://www.google.com/maps?q=高雄市鳥松區大智路40號 所以咖啡" 
+                  target="_blank" class="btn btn-sm btn-outline-secondary">
+                  <i class="bi bi-map"></i> 在 Google 地圖中查看
+                </a>
+              </div>
+
+              <small class="text-muted d-block">
+                以不鏽鋼餐車起家，將專業設備塞進小小空間，是所以咖啡一切的開始。週末常有手沖體驗與季節限定甜點，適合短暫停留品味。
+              </small>
+            </div>
+          </div>
+        </div>
+
+        <!-- 新興新田店 -->
+        <div class="col-md-6 col-lg-4">
+          <div class="store-card h-100">
+            <div class="p-3 border-bottom d-flex justify-content-between align-items-center">
+              <div>
+                <div class="store-badge-city mb-1">KHH · 新興</div>
+                <h3 class="h6 fw-bold text-brown mb-0">新興新田店</h3>
+                <small class="text-muted">近新堀江商圈</small>
+              </div>
+            </div>
+            <div class="p-3">
+              <p class="small text-muted mb-2">
+                <i class="bi bi-geo-alt-fill me-1"></i> 高雄市新興區新田路87號<br>
+                <i class="bi bi-telephone-fill me-1"></i> 0900-474-688
+              </p>
+              <div class="d-flex flex-wrap gap-2 mb-2">
+                <a href="https://www.foodpanda.com.tw/restaurant/g195/suo-yi-ka-pei-xin-xing-xin-tian-dian" target="_blank"
+                   class="delivery-chip delivery-fp text-decoration-none">
+                  <i class="bi bi-bicycle"></i> Foodpanda
+                </a>
+                <a href="https://www.ubereats.com/tw/store/%E6%89%80%E4%BB%A5%E5%92%96%E5%95%A1-%E6%96%B0%E8%88%88%E6%96%B0%E7%94%B0%E5%BA%97/JDJBdePsWsKmjh7LsqMKrg" target="_blank"
+                   class="delivery-chip delivery-ue text-decoration-none">
+                  <i class="bi bi-bag-check"></i> UberEats
+                </a>
+              </div>
+              <!-- Google 地圖按鈕 -->
+              <div class="mb-2">
+                <a href="https://www.google.com/maps?q=高雄市新興區新田路87號 所以咖啡" 
+                  target="_blank" class="btn btn-sm btn-outline-secondary">
+                  <i class="bi bi-map"></i> 在 Google 地圖中查看
+                </a>
+              </div>
+              <small class="text-muted d-block">
+                靠近新堀江與市中心商圈，下班、逛街前後順手帶一杯的最佳據點。店內常有外帶快取線，節省等候時間。
+              </small>
+            </div>
+          </div>
+        </div>
+
+        <!-- 左營富國店 -->
+        <div class="col-md-6 col-lg-4">
+          <div class="store-card h-100">
+            <div class="p-3 border-bottom d-flex justify-content-between align-items-center">
+              <div>
+                <div class="store-badge-city mb-1">KHH · 左營</div>
+                <h3 class="h6 fw-bold text-brown mb-0">左營富國店</h3>
+                <small class="text-muted">北高雄熱點</small>
+              </div>
+            </div>
+            <div class="p-3">
+              <p class="small text-muted mb-2">
+                <i class="bi bi-geo-alt-fill me-1"></i> 高雄市左營區富國路48號<br>
+                <i class="bi bi-telephone-fill me-1"></i> 0916-921-158
+              </p>
+              <div class="d-flex flex-wrap gap-2 mb-2">
+                <a href="https://www.foodpanda.com.tw/restaurant/pl7z/suo-yi-ka-pei-zuo-ying-fu-guo-dian" target="_blank"
+                   class="delivery-chip delivery-fp text-decoration-none">
+                  <i class="bi bi-bicycle"></i> Foodpanda
+                </a>
+                <a href="https://www.ubereats.com/tw/store/%E6%89%80%E4%BB%A5%E5%92%96%E5%95%A1-%E5%B7%A6%E7%87%9F%E5%AF%8C%E5%9C%8B%E5%BA%97/oo-We7ElUmenklgli1xXVQ" target="_blank"
+                   class="delivery-chip delivery-ue text-decoration-none">
+                  <i class="bi bi-bag-check"></i> UberEats
+                </a>
+              </div>
+              <!-- Google 地圖按鈕 -->
+              <div class="mb-2">
+                <a href="https://www.google.com/maps?q=高雄市左營區富國路48號 所以咖啡" 
+                  target="_blank" class="btn btn-sm btn-outline-secondary">
+                  <i class="bi bi-map"></i> 在 Google 地圖中查看
+                </a>
+              </div>
+              <small class="text-muted d-block">
+                服務北高雄通勤與家庭客，結合外送平台，成為生活圈的日常咖啡吧。店內會不定期推出在地限定口味，回應社區喜好。
+              </small>
+            </div>
+          </div>
+        </div>
+
+        <!-- 新興復橫店 -->
+        <div class="col-md-6 col-lg-4">
+          <div class="store-card h-100">
+            <div class="p-3 border-bottom d-flex justify-content-between align-items-center">
+              <div>
+                <div class="store-badge-city mb-1">KHH · 新興</div>
+                <h3 class="h6 fw-bold text-brown mb-0">新興復橫店</h3>
+                <small class="text-muted">市區外帶動線佳</small>
+              </div>
+            </div>
+            <div class="p-3">
+              <p class="small text-muted mb-2">
+                <i class="bi bi-geo-alt-fill me-1"></i> 高雄市新興區復橫一路116號<br>
+                <i class="bi bi-telephone-fill me-1"></i> 0989-319-123
+              </p>
+              <div class="d-flex flex-wrap gap-2 mb-2">
+                <a href="https://www.foodpanda.com.tw/restaurant/cutn/suo-yi-ka-pei-xin-xing-fu-heng-dian" target="_blank"
+                   class="delivery-chip delivery-fp text-decoration-none">
+                  <i class="bi bi-bicycle"></i> Foodpanda
+                </a>
+                <a href="https://www.ubereats.com/tw-en/store/%E6%89%80%E4%BB%A5%E5%92%96%E5%95%A1-%E6%96%B0%E8%88%88%E5%BE%A9%E6%A9%AB%E5%BA%97/LntinEUuWbuHR07khi8ORA" target="_blank"
+                   class="delivery-chip delivery-ue text-decoration-none">
+                  <i class="bi bi-bag-check"></i> UberEats
+                </a>
+              </div>
+              <!-- Google 地圖按鈕 -->
+              <div class="mb-2">
+                <a href="https://www.google.com/maps?q=高雄市新興區復橫一路116號 所以咖啡" 
+                  target="_blank" class="btn btn-sm btn-outline-secondary">
+                  <i class="bi bi-map"></i> 在 Google 地圖中查看
+                </a>
+              </div>
+              <small class="text-muted d-block">
+                以外帶與外送為主的機能型店點，展現品牌標準化設備與動線設計。快速出杯與穩定風味是此店的兩大特色。
+              </small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. 台南門市（特別標示你所在城市） -->
+  <section class="py-5 bg-white">
+    <div class="container">
+      <div class="d-flex justify-content-between align-items-end mb-4">
+        <div>
+          <h2 class="h4 text-brown fw-bold mb-1">台南市門市 · Tainan City</h2>
+          <p class="small text-muted mb-0">進軍台南安平，將南部外帶咖啡版圖向西海岸延伸。</p>
+        </div>
+      </div>
+
+      <div class="row g-4">
+        <!-- 台南康平店 -->
+        <div class="col-md-6 col-lg-5">
+          <div class="store-card h-100 store-highlight">
+            <div class="p-3 border-bottom d-flex justify-content-between align-items-center">
+              <div>
+                <div class="store-badge-city mb-1">TNN · 安平</div>
+                <h3 class="h6 fw-bold text-brown mb-0">台南康平店</h3>
+                <small class="text-muted">安平區指標店</small>
+              </div>
+              <span class="badge bg-success text-white small">營運中</span>
+            </div>
+            <div class="p-3">
+              <p class="small text-muted mb-2">
+                <i class="bi bi-geo-alt-fill me-1"></i> 台南市安平區健康三街25號<br>
+                <i class="bi bi-telephone-fill me-1"></i> 0972-015-126
+              </p>
+              <div class="d-flex flex-wrap gap-2 mb-2">
+                <a href="https://www.foodpanda.com.tw/restaurant/x2mr/suo-yi-ka-pei-tai-nan-kang-ping-dian" target="_blank"
+                   class="delivery-chip delivery-fp text-decoration-none">
+                  <i class="bi bi-bicycle"></i> Foodpanda
+                </a>
+                <a href="https://www.ubereats.com/tw/store/%E6%89%80%E4%BB%A5%E5%92%96%E5%95%A1-%E5%8F%B0%E5%8D%97%E5%BA%B7%E5%B9%B3%E5%BA%97/R8vmPeTgUcKkFT5-mTpqDA" target="_blank"
+                   class="delivery-chip delivery-ue text-decoration-none">
+                  <i class="bi bi-bag-check"></i> UberEats
+                </a>
+              </div>
+              <!-- Google 地圖按鈕 -->
+              <div class="mb-2">
+                <a href="https://www.google.com/maps?q=台南市安平區健康三街25號 所以咖啡" 
+                  target="_blank" class="btn btn-sm btn-outline-secondary">
+                  <i class="bi bi-map"></i> 在 Google 地圖中查看
+                </a>
+              </div>
+              <small class="text-muted d-block">
+                結合安平觀光與社區機能，服務在地居民與遊客的日常咖啡需求。
+              </small>
+            </div>
+          </div>
+        </div>
+
+        <!-- 給加盟主看的「版圖說明」 -->
+        <div class="col-md-6 col-lg-7">
+          <div class="p-4 rounded-4 border bg-light h-100 d-flex flex-column justify-content-center">
+            <h3 class="h6 fw-bold text-brown mb-3">品牌版圖 · 南部起點，向外拓展</h3>
+            <p class="small text-muted mb-3">
+              從高雄鳥松第一台不鏽鋼餐車出發，現在已布局高雄四區與台南安平，並同步與 UberEats、Foodpanda 合作，讓
+              「平價奢華」的咖啡體驗延伸到更多生活圈。
+            </p>
+            <ul class="small text-muted mb-3">
+              <li>標準化設備規劃：雙孔義式機、恆壓溫系統、五道 RO 濾水。</li>
+              <li>外帶為主，外送加值：店面坪數彈性，適合街角、小基地型物件。</li>
+              <li>已在高雄、台南建立實績門市，品牌能見度穩定提升中。</li>
+            </ul>
+            <a href="franchise.html" class="btn btn-outline-brown rounded-pill fw-bold align-self-start">
+              了解加盟模式 <i class="bi bi-chevron-right"></i>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. 加盟 CTA：從門市版圖導向加盟專區 -->
+  <section class="py-5">
+    <div class="container">
+      <div class="franchise-cta p-4 p-md-5">
+        <div class="row align-items-center gy-4">
+          <div class="col-lg-7">
+            <h2 class="h4 fw-bold mb-3">也想在你的城市，開一間所以咖啡嗎？</h2>
+            <p class="small mb-3">
+              我們相信，美味不該高價，更不該只在店內享有。以不鏽鋼餐車為起點，
+              所以咖啡將「得來速」的靈感帶進台灣街角，結合標準化設備、外帶吧動線與外送平台，
+              讓每一間門市都能在小坪數中創造穩定營收。
+            </p>
+            <ul class="small mb-3">
+              <li>南台灣 5 門市營運實績，品牌模型已驗證。</li>
+              <li>設備、配方、SOP 一次到位，縮短摸索期。</li>
+              <li>外帶＋外送雙線營收，靈活應對不同商圈型態。</li>
+            </ul>
+            <a href="franchise.html" class="btn btn-light text-brown fw-bold rounded-pill px-4">
+              前往加盟專區 <i class="bi bi-chevron-right"></i>
+            </a>
+          </div>
+          <div class="col-lg-5 text-lg-end text-center">
+            <div class="d-inline-block text-start small opacity-75">
+              <div class="mb-2">
+                <span class="badge bg-light text-brown me-2"><i class="bi bi-geo-alt"></i> 高雄 / 台南</span>
+                <span class="badge bg-light text-brown"><i class="bi bi-diagram-3"></i> 外帶吧型態</span>
+              </div>
+              <div>熱愛咖啡，所以相遇；平價奢華，所以咖啡。</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- 社群與評價 -->
+  <section class="py-4 bg-white">
+    <div class="container small">
+      <div class="row gy-3 align-items-center">
+        <div class="col-md-6">
+          <div class="section-title mb-1">SOCIAL & REVIEW</div>
+          <p class="mb-1 text-brown fw-bold">Google 評價 4.8★ 以上 · 高雄 & 台南在地好評</p>
+          <p class="mb-0 text-muted">
+            「服務親切」、「出杯很快」、「香氣十足」是顧客常見的三大回饋。
+          </p>
+        </div>
+        <div class="col-md-6 text-md-end">
+          <span class="me-3">追蹤我們：</span>
+          <a href="https://www.facebook.com/profile.php?id=100076341999740" target="_blank" class="text-decoration-none text-brown me-2"><i class="bi bi-facebook"></i> Facebook</a>
+          <a href="https://www.instagram.com/suoyicoffee/?hl=zh-tw" target="_blank" class="text-decoration-none text-brown me-2"><i class="bi bi-instagram"></i> Instagram</a>
+          <a href="contact.html" class="text-decoration-none text-brown"><i class="bi bi-line"></i> LINE 官方帳號</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- Footer -->
+<footer class="py-4 border-top">
+  <div class="container small text-muted d-flex flex-column flex-md-row justify-content-between align-items-center">
+    <div class="mb-2 mb-md-0">
+      © 2025 所以咖啡 SUOYI COFFEE. All rights reserved.
+    </div>
+    <div>
+      加盟洽詢專線：<a href="tel:0981451451" class="text-brown fw-bold text-decoration-none">0981-451-451</a>　
+      Email：<a href="mailto:suoyicoffee@gmail.com" class="text-brown fw-bold text-decoration-none">suoyicoffee@gmail.com</a>
+    </div>
+  </div>
+</footer>
+
+<!-- Bootstrap 5 Bundle JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

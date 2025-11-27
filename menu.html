@@ -1,0 +1,837 @@
+<!doctype html>
+<html lang="zh-Hant-TW">
+<head>
+  <meta charset="utf-8">
+  <title>所以咖啡｜完整菜單 — 拿鐵、季節特飲與價格</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- SEO 基本設定 -->
+  <meta name="description" content="查看我們的完整菜單：拿鐵、海鹽焦糖拿鐵、茶飲與價格。平價精品咖啡，每一杯都有理由。">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://suoyicoffee.com/menu.html">
+  <link rel="icon" href="assets/img/logo/logo-brown-on-white.png" />
+  <!-- Open Graph / Social -->
+  <meta property="og:site_name" content="所以咖啡 SUOYI COFFEE">
+  <!-- 原始 og:title / og:description -->
+  <meta property="og:title" content="所以咖啡｜完整菜單 — 拿鐵、季節特飲與價格">
+  <meta property="og:description" content="查看我們的完整菜單：拿鐵、海鹽焦糖拿鐵、茶飲與價格。平價精品咖啡，每一杯都有理由。">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://suoyicoffee.com/menu.html">
+  <meta property="og:image" content="https://suoyicoffee.com/assets/img/products/products_all.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <!-- 原始 twitter:title / twitter:description -->
+  <meta name="twitter:title" content="所以咖啡｜完整菜單 — 拿鐵、季節特飲與價格">
+  <meta name="twitter:description" content="查看我們的完整菜單：拿鐵、海鹽焦糖拿鐵、茶飲與價格。平價精品咖啡，每一杯都有理由。">
+  <meta name="twitter:image" content="https://suoyicoffee.com/assets/img/products/products_all.jpg">
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <!-- 自訂 CSS -->
+  <link rel="stylesheet" href="assets/css/custom.css">
+
+  <!-- Preload LCP 圖片（菜單首圖 / 代表圖） -->
+  <link rel="preload" as="image" href="assets/img/products/latte.jpg">
+
+  <!-- 結構化資料（JSON-LD）: CafeOrCoffeeShop（保持與首頁一致的商家資訊） -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "CafeOrCoffeeShop",
+    "name": "所以咖啡 SUOYI COFFEE",
+    "url": "https://suoyicoffee.com/",
+    "logo": "https://suoyicoffee.com/assets/img/logo/logo.png",
+    "telephone": "0981-451-451",
+    "sameAs": [
+      "https://www.facebook.com/profile.php?id=100076341999740",
+      "https://www.instagram.com/suoyicoffee/"
+    ],
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "大智路 40 號",
+      "addressLocality": "鳥松區",
+      "addressRegion": "高雄市",
+      "addressCountry": "TW"
+    },
+    "openingHours": "Mo-Su 07:00-17:00"
+  }
+  </script>
+
+  <style>
+  /* === 整體風格 === */
+  /* 85度C 風格：明亮零售感 + 價格強調 + 品牌咖啡金色調 */
+  
+  /* 分類導航列（Sticky） */
+  .category-nav {
+    background: rgba(255, 255, 255, 0.96);
+    backdrop-filter: blur(6px);
+    border-bottom: 1px solid #eee;
+    overflow-x: auto;
+    white-space: nowrap;
+    z-index: 1020; /* 比導覽列低一層 */
+  }
+
+  .category-link {
+    color: #666;
+    font-weight: 700;
+    padding: 14px 18px;
+    display: inline-block;
+    text-decoration: none;
+    border-bottom: 3px solid transparent;
+    transition: all 0.3s;
+  }
+
+  .category-link:hover,
+  .category-link.active {
+    color: #5C4033; /* 品牌棕 */
+    border-bottom-color: #D4A373; /* 品牌金 */
+  }
+
+  /* === 商品卡片 === */
+  .menu-card {
+    border: 1px solid #f0f0f0;
+    border-radius: 8px;
+    background: #fff;
+    overflow: hidden;
+    height: 100%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+  }
+
+  .menu-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.08);
+    border-color: #D4A373;
+  }
+
+  /* === 圖片區（關鍵修正：完整比例呈現） === */
+  .menu-img {
+    width: 100%;
+    height: 240px; /* 可微調為 220–260px 依實際視覺較好比例 */
+    object-fit: contain; /* 保留完整圖片比例 */
+    object-position: center;
+    background-color: #fff; /* 保持淺底統一外觀 */
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    margin: 0 auto;
+    display: block;
+    transition: transform 0.3s ease;
+  }
+
+  /* hover 時略放大但維持比例 */
+  .menu-card:hover .menu-img {
+    transform: scale(1.05);
+  }
+
+  /* 若無圖片時使用預設占位 */
+  .menu-img-placeholder {
+    height: 240px;
+    background-color: #F9F9F9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ddd;
+    font-size: 3rem;
+  }
+
+  .menu-thumbs {
+    display: flex;
+    gap: 6px;
+    margin-top: 4px;
+  }
+  .menu-thumbs img {
+    width: 48%;
+    height: 60px;
+    object-fit: contain;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: border-color 0.2s;
+  }
+  .menu-thumbs img:hover {
+    border-color: #D4A373;
+  }
+
+  /* === 價格標籤 === */
+  .price-tag {
+    color: #B12704; /* 強調紅 */
+    font-size: 1.2rem;
+    font-weight: 800;
+  }
+
+  /* === 商品等級 / 狀態標籤 === */
+  .badge-rec { background-color: #FF9800; color: #fff; } /* 推薦 */
+  .badge-new { background-color: #4CAF50; color: #fff; } /* 新品 */
+  .badge-hot { background-color: #F44336; color: #fff; } /* 熱銷 */
+  .badge-promo { background-color: #E91E63; color: #fff; } /* 活動 */
+  .badge-info {
+    background-color: #607D8B;
+    color: #fff;
+    font-size: 0.7rem;
+  }
+
+  /* === 底部資訊框 === */
+  .info-box {
+    background-color: #F8F3ED;
+    border: 2px solid #D4A373;
+    border-radius: 12px;
+    padding: 1rem;
+  }
+
+  /* === RWD 微調 === */
+  @media (max-width: 576px) {
+    .menu-img {
+      height: 180px; /* 手機上略縮短，維持比例一致 */
+    }
+    .price-tag {
+      font-size: 1.1rem;
+    }
+  }
+</style>
+</head>
+<body class="bg-light">
+
+<!-- 主導覽列 -->
+<nav class="navbar navbar-expand-md bg-white shadow-sm fixed-top">
+  <div class="container">
+    <a class="navbar-brand fw-bold text-brown d-flex align-items-center" href="index.html">
+      <img src="assets/img/logo/logo-brown-on-white.png" alt="所以咖啡" width="32" height="32" class="me-2">
+      所以咖啡 SUOYI COFFEE</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMain">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navMain">
+      <ul class="navbar-nav ms-auto mb-2 mb-md-0 small">
+        <li class="nav-item"><a class="nav-link" href="index.html">首頁</a></li>
+        <li class="nav-item"><a class="nav-link active" href="menu.html">嚴選菜單</a></li>
+        <li class="nav-item"><a class="nav-link" href="stores.html">門市據點</a></li>
+        <li class="nav-item"><a class="nav-link" href="franchise.html">加盟專區</a></li>
+        <li class="nav-item"><a class="nav-link" href="about.html">關於所以</a></li>
+        <li class="nav-item"><a class="nav-link" href="contact.html">聯絡我們</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<main style="padding-top: 60px;">
+  <!-- 菜單 Hero -->
+  <section class="bg-brown py-4 text-white text-center">
+    <div class="container">
+      <h1 class="h3 fw-bold mb-1">嚴選菜單</h1>
+      <p class="small opacity-75 mb-2">平價奢華 · 職人手作 · 每日新鮮</p>
+      <div class="menu-hero-headings d-none d-md-block mb-2">
+        <span class="keyword-pill text-brown"><i class="bi bi-star-fill text-warning me-1"></i>咖啡系列 · COFFEE</span>
+        <span class="keyword-pill text-brown"><i class="bi bi-cup-hot-fill text-warning me-1"></i>歐蕾 & 茶系列 · AU LAIT / TEA</span>
+        <span class="keyword-pill text-brown"><i class="bi bi-truck text-warning me-1"></i>外送與優惠 · Delivery & Promo</span>
+        <p class="small text-white-50 mt-2">瀏覽所以咖啡完整菜單：從經典美式、香醇拿鐵到季節限定的海鹽焦糖拿鐵，所有品項皆標示價格與建議搭配，方便外帶與外送選購。</p>
+      </div>
+    </div>
+  </section>
+
+   <!-- 分類導航 (Sticky) -->
+  <div class="category-nav sticky-top" style="top: 56px;">
+    <div class="container text-center">
+      <a href="#coffee" class="category-link active">☕ 咖啡系列</a>
+      <a href="#aulait" class="category-link">🥛 歐蕾系列</a>
+      <a href="#tea" class="category-link">🍃 茶系列</a>
+      <a href="#pricelist" class="category-link">📋 完整價目表</a>
+      <a href="#delivery" class="category-link">🛵 外送專區</a>
+      <a href="#info" class="category-link">ℹ️ 訂購須知</a>
+    </div>
+  </div>
+  <div class="container py-5">
+    <!-- 1. 咖啡系列 (圖片卡片區) -->
+    <div id="coffee" class="mb-5 scroll-margin-top">
+      <h2 class="h4 text-brown fw-bold border-start border-4 border-warning ps-3 mb-4">咖啡系列 COFFEE</h2>
+      <div class="row g-3">
+        
+        <!-- 美式咖啡 -->
+        <div class="col-6 col-md-4 col-lg-3">
+          <div class="menu-card">
+            <!-- 主圖：美式咖啡 -->
+            <img id="americano-main" src="assets/img/products/Americano.jpg" class="menu-img" alt="美式咖啡 Americano">
+            <div class="p-3">
+              <h5 class="h6 fw-bold mb-1">美式咖啡</h5>
+              <small class="text-muted d-block mb-2">Americano</small>
+              <small class="text-secondary d-block mb-2" style="font-size: 0.75rem;">嚴選咖啡豆，香氣風味均衡，品嚐最純粹風味。我們的美式強調清澈的酸質與乾淨收尾，適合喜歡單純咖啡風味的你。</small>
+              <div class="d-flex justify-content-between align-items-center mt-2">
+                <span class="price-tag">$65</span>
+              </div>
+              <div class="menu-thumbs">
+                <img src="assets/img/products/Americano.jpg" alt="美式咖啡 Americano" onclick="document.getElementById('americano-main').src=this.src;">
+                <img src="assets/img/products/Americano_2.jpg" alt="美式咖啡 Americano" onclick="document.getElementById('americano-main').src=this.src;">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 檸檬冰美式 -->
+        <div class="col-6 col-md-4 col-lg-3">
+          <div class="menu-card">
+            <img src="assets/img/products/Sicilian_Coffee.jpg" class="menu-img" alt="檸檬冰美式 Sicilian Coffee">
+            <div class="p-3">
+              
+              <h5 class="h6 fw-bold mb-1">檸檬冰美式 <span class="badge badge-new mb-1">推薦</span></h5>
+              <small class="text-muted d-block mb-2">Sicilian Coffee</small>
+              <!-- 新增描述：檸檬冰美式 -->
+              <small class="text-secondary d-block mb-2" style="font-size: 0.75rem;">將新鮮檸檬與冰咖啡結合，酸香提亮咖啡風味，夏季限定，口感清爽。</small>
+              <div class="d-flex justify-content-between align-items-center">
+                <span class="price-tag">$85</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 鮮橙冰美式 -->
+        <div class="col-6 col-md-4 col-lg-3">
+          <div class="menu-card">
+            <img src="assets/img/products/Orange_Americano.jpg" class="menu-img" alt="鮮橙冰美式 Orange Americano">
+            <div class="p-3">
+              <h5 class="h6 fw-bold mb-1">鮮橙冰美式</h5>
+              <small class="text-muted d-block mb-2">Orange Americano</small>
+              <small class="text-secondary d-block mb-2" style="font-size: 0.75rem;">以新鮮橙汁提味，帶來果香與咖啡的美妙對話；僅供冷飲選擇，適合喜歡果香的顧客。</small>
+              <div class="d-flex justify-content-between align-items-center">
+                <span class="price-tag">$85</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 香醇拿鐵 -->
+        <div class="col-6 col-md-4 col-lg-3">
+          <div class="menu-card">
+            <img src="assets/img/products/latte.jpg" class="menu-img" alt="香醇拿鐵 Latte">
+            <div class="p-3">
+              
+              <h5 class="h6 fw-bold mb-1">香醇拿鐵 <span class="badge badge-hot mb-1">人氣招牌</span></h5>
+              <small class="text-muted d-block mb-1">Latte</small>
+              <small class="text-secondary d-block mb-2" style="font-size: 0.75rem;">咖啡與鮮奶黃金比例，口感順滑、奶香與咖啡風味平衡，是每日首選。</small>
+              <div class="d-flex justify-content-between align-items-center">
+                <span class="price-tag">$75</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 卡布奇諾 -->
+        <div class="col-6 col-md-4 col-lg-3">
+          <div class="menu-card">
+            <img src="assets/img/products/Cappuccino2.jpg" class="menu-img" alt="卡布奇諾 Cappuccino">
+            <div class="p-3">
+              <h5 class="h6 fw-bold mb-1">卡布奇諾</h5>
+              <small class="text-muted d-block mb-1">Cappuccino</small>
+              <small class="text-secondary d-block mb-2" style="font-size: 0.75rem;">經典奶泡層次，保留濃郁意式香氣與綿密口感，適合搭配甜點。</small>
+              <div class="d-flex justify-content-between align-items-center">
+                <span class="price-tag">$75</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 淡拿鐵 -->
+        <div class="col-6 col-md-4 col-lg-3">
+          <div class="menu-card">
+            <img src="assets/img/products/Single_Espresso_Latte2.jpg" class="menu-img" alt="淡拿鐵 Single Espresso Latte">
+            <div class="p-3">
+              <h5 class="h6 fw-bold mb-1">淡拿鐵</h5>
+              <small class="text-muted d-block mb-1">Single Espresso Latte</small>
+              <small class="text-secondary d-block mb-2" style="font-size: 0.75rem;">以單份濃縮輕柔呈現，咖啡風味較為溫和，適合偏好奶香的顧客。</small>
+              <div class="d-flex justify-content-between align-items-center">
+                <span class="price-tag">$75</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 厚拿鐵 -->
+        <div class="col-6 col-md-4 col-lg-3">
+          <div class="menu-card">
+            <img src="assets/img/products/Triple_Espresso_Latte.jpg" class="menu-img" alt="厚拿鐵 Triple Espresso Latte">
+            <div class="p-3">
+              
+              <h5 class="h6 fw-bold mb-1">厚拿鐵 <span class="badge badge-rec mb-1">重口味</span></h5>
+              <small class="text-muted d-block mb-1">Triple Espresso Latte</small>
+              <small class="text-secondary d-block mb-2" style="font-size: 0.75rem;">三份濃縮帶來更直率的咖啡風味，適合需要提神或喜歡濃郁咖啡感的人。</small>
+              <div class="d-flex justify-content-between align-items-center">
+                <span class="price-tag">$95</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 風味拿鐵系列 (統一價格) -->
+        <div class="col-6 col-md-4 col-lg-3">
+          <div class="menu-card">
+            <img id="brown-sugar-main" src="assets/img/products/Brown_Sugar_Latte_1.jpg" class="menu-img" alt="黑糖拿鐵 Brown Sugar Latte">
+            <div class="p-3">
+              <h5 class="h6 fw-bold mb-1">黑糖拿鐵</h5>
+              <small class="text-muted d-block mb-2">Brown Sugar Latte</small>
+              <small class="text-secondary d-block mb-2" style="font-size: 0.75rem;">以焦糖化黑糖帶出溫潤麥芽香，與鮮奶融合後口感香甜不膩。</small>
+              <div class="d-flex justify-content-between align-items-center mt-2">
+                <span class="price-tag">$85</span>
+              </div>
+              <div class="menu-thumbs">
+                <img src="assets/img/products/Brown_Sugar_Latte_1.jpg" alt="黑糖拿鐵 Brown Sugar Latte" onclick="document.getElementById('brown-sugar-main').src=this.src;">
+                <img src="assets/img/products/Brown_Sugar_Latte_2.jpg" alt="黑糖拿鐵 Brown Sugar Latte" onclick="document.getElementById('brown-sugar-main').src=this.src;">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-6 col-md-4 col-lg-3">
+            <div class="menu-card">
+            <img src="assets/img/products/Vanilla_Latte.jpg" class="menu-img" alt="香草拿鐵 Vanilla Latte">
+            <div class="p-3">
+              
+              <h5 class="h6 fw-bold mb-1">香草拿鐵 <span class="badge badge-info mb-1 align-self-start">甜度固定</span></h5>
+              <small class="text-muted d-block mb-2">Vanilla Latte</small>
+              <small class="text-secondary d-block mb-2" style="font-size: 0.75rem;">香草糖漿帶來細緻的甜香，適合作為每天的小確幸選擇。</small>
+              <div class="d-flex justify-content-between align-items-center">
+                <span class="price-tag">$85</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-6 col-md-4 col-lg-3">
+            <div class="menu-card">
+            <img src="assets/img/products/Roasted_Hazelnut_Latte.jpg" class="menu-img" alt="榛果拿鐵 Roasted Hazelnut Latte">
+            <div class="p-3">
+              <h5 class="h6 fw-bold mb-1">榛果拿鐵 <span class="badge badge-info mb-1 align-self-start">甜度固定</span></h5>
+              <small class="text-muted d-block mb-2">Roasted Hazelnut Latte</small>
+              <small class="text-secondary d-block mb-2" style="font-size: 0.75rem;">榛果的堅果香與咖啡交織，香氣溫和，適合搭配烘焙點心。</small>
+              <div class="d-flex justify-content-between align-items-center">
+                <span class="price-tag">$85</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-6 col-md-4 col-lg-3">
+            <div class="menu-card">
+            <img src="assets/img/products/Mocha_Latte.jpg" class="menu-img" alt="黑摩卡拿鐵 Mocha Latte">
+            <div class="p-3">
+              <h5 class="h6 fw-bold mb-1">黑摩卡拿鐵 <span class="badge badge-info mb-1 align-self-start">甜度固定</span></h5>
+              <small class="text-muted d-block mb-2">Mocha Latte</small>
+              <small class="text-secondary d-block mb-2" style="font-size: 0.75rem;">可可與咖啡的完美結合，帶有微苦的巧克力餘韻，是甜度控的好選擇。</small>
+              <div class="d-flex justify-content-between align-items-center">
+                <span class="price-tag">$85</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-6 col-md-4 col-lg-3">
+            <div class="menu-card">
+            <img src="assets/img/products/Raspberry_Latte.jpg" class="menu-img" alt="覆盆莓拿鐵 Raspberry Latte">
+            <div class="p-3">
+              
+              <h5 class="h6 fw-bold mb-1">覆盆莓拿鐵 <span class="badge badge-info mb-1 align-self-start">甜度固定</span></h5>
+              <small class="text-muted d-block mb-2">Raspberry Latte</small>
+              <small class="text-secondary d-block mb-2" style="font-size: 0.75rem;">以覆盆莓醬帶來清爽果酸，與奶香混合成清新的風味層次，季節供應為主。</small>
+              <div class="d-flex justify-content-between align-items-center">
+                <span class="price-tag">$85</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-6 col-md-4 col-lg-3">
+            <div class="menu-card">
+            <img src="assets/img/products/Salted_Caramel_Latte.jpg" class="menu-img" alt="海鹽焦糖拿鐵 Salted Caramel Latte">
+            <div class="p-3">
+              <h5 class="h6 fw-bold mb-1">海鹽焦糖拿鐵
+                <span class="badge badge-hot mb-1">招牌熱銷</span> <span class="badge badge-info mb-1 align-self-start">甜度固定</span>
+              </h5>
+              <small class="text-muted d-block mb-2">Salted Caramel Latte</small>
+              <small class="text-secondary d-block mb-2" style="font-size: 0.75rem;">招牌口味：焦糖的甜與海鹽的微鹹相互平衡，帶來更耐人尋味的層次感。</small>
+              <div class="d-flex justify-content-between align-items-center">
+                <span class="price-tag">$85</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- 2. 歐蕾系列 (圖片卡片區) -->
+    <div id="aulait" class="mb-5 scroll-margin-top">
+      <h2 class="h4 text-brown fw-bold border-start border-4 border-warning ps-3 mb-4">歐蕾系列 AU LAIT</h2>
+      <div class="row g-3">
+        <div class="col-6 col-md-4 col-lg-3">
+          <div class="menu-card">
+            <img id="fresh-milk-main" src="assets/img/products/Fresh_Milk_Tea_1.jpg" class="menu-img" alt="奶茶歐蕾 Fresh Milk Tea">
+            <div class="p-3">
+              
+              <h5 class="h6 fw-bold mb-1">奶茶歐蕾 <span class="badge badge-hot mb-1">熱銷</span> </h5>
+              <small class="text-muted d-block mb-1">Fresh Milk Tea</small>
+              <small class="text-secondary d-block mb-2" style="font-size: 0.75rem;">鮮奶茶。</small>
+              <div class="d-flex justify-content-between align-items-center mt-2">
+                <span class="price-tag">$60</span>
+              </div>
+              <div class="menu-thumbs">
+                <img src="assets/img/products/Fresh_Milk_Tea_1.jpg" alt="Fresh Milk Tea" onclick="document.getElementById('fresh-milk-main').src=this.src;">
+                <img src="assets/img/products/Fresh_Milk_Tea_2.jpg" alt="Fresh Milk Tea" onclick="document.getElementById('fresh-milk-main').src=this.src;">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-md-4 col-lg-3">
+          <div class="menu-card">
+            <img src="assets/img/products/Brown_Sugar_Milk.jpg" class="menu-img" alt="黑糖歐蕾 Brown Sugar Milk">
+            <div class="p-3">
+              
+              <h5 class="h6 fw-bold mb-1">黑糖歐蕾 <span class="badge badge-info mb-1 align-self-start">甜度固定</span></h5>
+              <small class="text-muted d-block mb-1">Brown Sugar Milk</small>
+              <small class="text-secondary d-block mb-2" style="font-size: 0.75rem;">黑糖鮮奶。</small>
+              <div class="d-flex justify-content-between align-items-center">
+                <span class="price-tag">$60</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-md-4 col-lg-3">
+          <div class="menu-card">
+            <img id="chocolate-milk-main" src="assets/img/products/Chocolate_Milk_1.jpg" class="menu-img" alt="可可歐蕾 Chocolate Milk">
+            <div class="p-3">
+              <h5 class="h6 fw-bold mb-1">可可歐蕾</h5>
+              <small class="text-muted d-block mb-1">Chocolate Milk</small>
+              <small class="text-secondary d-block mb-2" style="font-size: 0.75rem;">濃厚純可可香本身完全無糖，建議可加糖。</small>
+              <div class="d-flex justify-content-between align-items-center">
+                <span class="price-tag">$70</span>
+              </div>
+              <div class="menu-thumbs">
+                <img src="assets/img/products/Chocolate_Milk_1.jpg" alt="Chocolate Milk" onclick="document.getElementById('chocolate-milk-main').src=this.src;">
+                <img src="assets/img/products/Chocolate_Milk_2.jpg" alt="Chocolate Milk" onclick="document.getElementById('chocolate-milk-main').src=this.src;">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3. 茶系列 (圖片卡片區) -->
+    <div id="tea" class="mb-5 scroll-margin-top">
+      <h2 class="h4 text-brown fw-bold border-start border-4 border-warning ps-3 mb-4">茶系列 TEA</h2>
+      <div class="row g-3">
+        <div class="col-6 col-md-4 col-lg-3">
+          <div class="menu-card">
+            <img id="mountain-tea-main" src="assets/img/products/High_Mountain_Tea_1.jpg" class="menu-img" alt="高山金萱 High Mountain Tea">
+            <div class="p-3">
+              <h5 class="h6 fw-bold mb-1">高山金萱</h5>
+              <small class="text-muted d-block mb-1">High Mountain Tea</small>
+              <small class="text-secondary d-block mb-2" style="font-size: 0.75rem;">嚴選高品質茶葉，茶香四溢。</small>
+              <div class="d-flex justify-content-between align-items-center mt-2">
+                <span class="price-tag">$35</span>
+              </div>
+              <div class="menu-thumbs">
+                <img src="assets/img/products/High_Mountain_Tea_1.jpg" alt="High Mountain Tea" onclick="document.getElementById('mountain-tea-main').src=this.src;">
+                <img src="assets/img/products/High_Mountain_Tea_2.jpg" alt="High Mountain Tea" onclick="document.getElementById('mountain-tea-main').src=this.src;">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-md-4 col-lg-3">
+          <div class="menu-card">
+            <img id="honey-tea-main" src="assets/img/products/Honey_Flavored_Black_Tea_1.jpg" class="menu-img" alt="蜜香紅茶 Honey Scented Black Tea">
+            <div class="p-3">
+              <h5 class="h6 fw-bold mb-1">蜜香紅茶</h5>
+              <small class="text-muted d-block mb-1">Honey Scented Black Tea</small>
+              <small class="text-secondary d-block mb-2" style="font-size: 0.75rem;">嚴選茶葉製作，口感柔順甘醇，散發馥郁蜜香。</small>
+              <div class="d-flex justify-content-between align-items-center mt-2">
+                <span class="price-tag">$35</span>
+              </div>
+              <div class="menu-thumbs">
+                <img src="assets/img/products/Honey_Flavored_Black_Tea_1.jpg" alt="Honey Tea" onclick="document.getElementById('honey-tea-main').src=this.src;">
+                <img src="assets/img/products/Honey_Flavored_Black_Tea_2.jpg" alt="Honey Tea" onclick="document.getElementById('honey-tea-main').src=this.src;">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-md-4 col-lg-3">
+          <div class="menu-card">
+            <img src="assets/img/products/Orange_Plum_Iced_Tea.jpg" class="menu-img" alt="柳橙梅子冰茶 Orange Plum Iced Tea">
+            <div class="p-3">
+              
+              <h5 class="h6 fw-bold mb-1">柳橙梅子冰茶 <span class="badge badge-new mb-1">夏日限定</span></h5>
+              <small class="text-muted d-block mb-2">Orange Plum Iced Tea</small>
+              <div class="d-flex justify-content-between align-items-center">
+                <span class="price-tag">$70</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ★★★ 新增區塊：完整價目表 (Full Price List) ★★★ -->
+    <div id="pricelist" class="mb-5 scroll-margin-top">
+      <h2 class="h4 text-brown fw-bold border-start border-4 border-warning ps-3 mb-4">完整價目表 PRICE LIST</h2>
+      <div class="row g-4">
+        <!-- 咖啡系列 -->
+        <div class="col-12 col-lg-6">
+          <div class="card h-100 shadow-sm border-0">
+            <div class="card-header bg-brown text-white border-0">
+              <h2 class="h6 mb-0 fw-bold">咖啡系列 <small class="opacity-75">COFFEE</small></h2>
+            </div>
+            <div class="card-body p-0">
+              <div class="table-responsive">
+                <table class="table table-striped table-hover align-middle mb-0">
+                  <thead class="small text-muted bg-light">
+                    <tr>
+                      <th scope="col" class="ps-3">品名</th>
+                      <th scope="col" class="d-none d-sm-table-cell">英文</th>
+                      <th scope="col" class="text-end pe-3">價格</th>
+                    </tr>
+                  </thead>
+                  <tbody class="small">
+                    <tr><td class="ps-3">美式咖啡</td><td class="d-none d-sm-table-cell">Americano</td><td class="text-end pe-3 fw-bold">65</td></tr>
+                    <tr><td class="ps-3">檸檬冰美式</td><td class="d-none d-sm-table-cell">Sicilian Coffee</td><td class="text-end pe-3 fw-bold">85</td></tr>
+                    <tr><td class="ps-3">鮮橙冰美式</td><td class="d-none d-sm-table-cell">Orange Americano</td><td class="text-end pe-3 fw-bold">85</td></tr>
+                    <tr><td class="ps-3">香醇拿鐵 <span class="badge bg-warning text-dark ms-1">人氣</span></td><td class="d-none d-sm-table-cell">Latte</td><td class="text-end pe-3 fw-bold">75</td></tr>
+                    <tr><td class="ps-3">卡布奇諾</td><td class="d-none d-sm-table-cell">Cappuccino</td><td class="text-end pe-3 fw-bold">75</td></tr>
+                    <tr><td class="ps-3">淡拿鐵</td><td class="d-none d-sm-table-cell">Single Espresso Latte</td><td class="text-end pe-3 fw-bold">75</td></tr>
+                    <tr><td class="ps-3">厚拿鐵</td><td class="d-none d-sm-table-cell">Triple Espresso Latte</td><td class="text-end pe-3 fw-bold">95</td></tr>
+                    <tr><td class="ps-3">黑糖拿鐵</td><td class="d-none d-sm-table-cell">Brown Sugar Latte</td><td class="text-end pe-3 fw-bold">85</td></tr>
+                    <tr><td class="ps-3">香草拿鐵</td><td class="d-none d-sm-table-cell">Vanilla Latte</td><td class="text-end pe-3 fw-bold">85</td></tr>
+                    <tr><td class="ps-3">榛果拿鐵</td><td class="d-none d-sm-table-cell">Roasted Hazelnut Latte</td><td class="text-end pe-3 fw-bold">85</td></tr>
+                    <tr><td class="ps-3">黑摩卡拿鐵</td><td class="d-none d-sm-table-cell">Mocha Latte</td><td class="text-end pe-3 fw-bold">85</td></tr>
+                    <tr><td class="ps-3">覆盆莓拿鐵</td><td class="d-none d-sm-table-cell">Raspberry Latte</td><td class="text-end pe-3 fw-bold">85</td></tr>
+                    <tr><td class="ps-3">海鹽焦糖拿鐵 <span class="badge bg-warning text-dark ms-1">招牌</span></td><td class="d-none d-sm-table-cell">Salted Caramel Latte</td><td class="text-end pe-3 fw-bold">85</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 歐蕾系列 + 茶系列 -->
+        <div class="col-12 col-lg-6">
+          <div class="card h-100 shadow-sm border-0">
+            <div class="card-header bg-brown text-white border-0">
+              <h2 class="h6 mb-0 fw-bold">歐蕾 & 茶系列 <small class="opacity-75">OTHERS</small></h2>
+            </div>
+            <div class="card-body p-0">
+              <!-- 歐蕾 -->
+              <div class="bg-light px-3 py-2 fw-bold text-brown small border-bottom">歐蕾系列 AU LAIT</div>
+              <div class="table-responsive">
+                <table class="table table-hover align-middle mb-0">
+                  <tbody class="small">
+                    <tr>
+                      <td class="ps-3">奶茶歐蕾 <span class="text-muted ms-1" style="font-size:0.8em">鮮奶紅茶</span></td>
+                      <td class="d-none d-sm-table-cell">Fresh Milk Tea</td>
+                      <td class="text-end pe-3 fw-bold">60</td>
+                    </tr>
+                    <tr>
+                      <td class="ps-3">黑糖歐蕾 <span class="text-muted ms-1" style="font-size:0.8em">黑糖鮮奶</span></td>
+                      <td class="d-none d-sm-table-cell">Brown Sugar Milk</td>
+                      <td class="text-end pe-3 fw-bold">60</td>
+                    </tr>
+                    <tr>
+                      <td class="ps-3">可可歐蕾 <span class="text-muted ms-1" style="font-size:0.8em">可可鮮奶</span></td>
+                      <td class="d-none d-sm-table-cell">Chocolate Milk</td>
+                      <td class="text-end pe-3 fw-bold">70</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <!-- 茶 -->
+              <div class="bg-light px-3 py-2 fw-bold text-brown small border-top border-bottom">茶系列 TEA</div>
+              <div class="table-responsive">
+                <table class="table table-hover align-middle mb-0">
+                  <tbody class="small">
+                    <tr>
+                      <td class="ps-3">高山金萱 <span class="text-muted ms-1" style="font-size:0.8em">高山烏龍</span></td>
+                      <td class="d-none d-sm-table-cell">High Mountain Tea</td>
+                      <td class="text-end pe-3 fw-bold">35</td>
+                    </tr>
+                    <tr>
+                      <td class="ps-3">蜜香紅茶</td>
+                      <td class="d-none d-sm-table-cell">Honey Scented Black Tea</td>
+                      <td class="text-end pe-3 fw-bold">35</td>
+                    </tr>
+                    <tr>
+                      <td class="ps-3">柳橙梅子冰茶</td>
+                      <td class="d-none d-sm-table-cell">Orange Plum Iced Tea</td>
+                      <td class="text-end pe-3 fw-bold">70</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- ★★★ 修改區塊：外送平台專區 (Delivery) ★★★ -->
+    <div id="delivery" class="mb-5 scroll-margin-top">
+      <h2 class="h4 text-brown fw-bold border-start border-4 border-warning ps-3 mb-4">外送點餐 DELIVERY</h2>
+      
+      <!-- 引導式外送區塊 -->
+      <div class="card border-0 shadow-sm overflow-hidden">
+        <div class="row g-0">
+          <!-- 左側：視覺圖 (手機版在上方) -->
+          <div class="col-md-5 bg-brown text-white d-flex align-items-center justify-content-center p-5 text-center">
+            <div>
+              <div class="fs-1 mb-3"><i class="bi bi-scooter"></i></div>
+              <h3 class="h4 fw-bold">想喝咖啡不用出門！</h3>
+              <p class="small opacity-75 mb-0">UberEats / Foodpanda 同步上線</p>
+            </div>
+          </div>
+          
+          <!-- 右側：行動呼籲 -->
+          <div class="col-md-7">
+            <div class="card-body p-4 p-lg-5 d-flex flex-column justify-content-center h-100">
+              <h4 class="fw-bold text-brown mb-3">請選擇離您最近的門市</h4>
+              <p class="text-muted mb-4">
+                為了確保咖啡的新鮮與外送品質，請先前往「門市據點」頁面，選擇您所在區域的分店，再點擊對應的外送平台按鈕。
+              </p>
+              
+              <a href="stores.html" class="btn btn-warning btn-lg fw-bold text-dark shadow-sm">
+                <i class="bi bi-geo-alt-fill me-2"></i> 前往門市據點選擇外送
+              </a>
+              
+              <div class="mt-4 pt-3 border-top">
+                <small class="text-muted d-block mb-2">合作平台：</small>
+                <div class="d-flex gap-3 opacity-50">
+                  <span class="fw-bold"><i class="bi bi-bicycle"></i> Foodpanda</span>
+                  <span class="fw-bold"><i class="bi bi-bag-check"></i> UberEats</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 優惠券區塊 (保留，作為通用優惠展示) -->
+      <div class="row g-3 mt-2">
+        <div class="col-md-6">
+          <div class="p-3 rounded-3 text-white d-flex align-items-center" style="background: linear-gradient(45deg, #D70F64, #FF2B85);">
+            <div class="fs-1 me-3"><i class="bi bi-ticket-perforated"></i></div>
+            <div>
+              <div class="fw-bold">外送專屬優惠</div>
+              <small>滿額折抵與免運活動，請依各平台公告為準</small>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="p-3 rounded-3 text-white d-flex align-items-center" style="background: linear-gradient(45deg, #06C167, #00D28C);">
+            <div class="fs-1 me-3"><i class="bi bi-cup-hot"></i></div>
+            <div>
+              <div class="fw-bold">買一送一專區</div>
+              <small>指定飲品限時優惠，快上平台查看！</small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- 4. 底部資訊卡 (還原菜單底部) -->
+    <div id="info" class="info-box p-4 mt-5 scroll-margin-top">
+      <div class="row gy-4">
+        <div class="col-md-6">
+          <h5 class="fw-bold text-brown mb-3"><i class="bi bi-info-circle-fill me-2"></i>訂購須知</h5>
+          <ul class="list-unstyled text-muted small">
+            <li class="mb-2">● <strong>容量規格：</strong>冷飲 600ml / 熱飲 500ml</li>
+            <li class="mb-2">● <strong>甜度調整：</strong>多糖 / 正常 / 少糖 / 半糖 / 微糖 / 二分 / 一分 / 無糖</li>
+            <li class="mb-2">● <strong>冰量調整：</strong>多冰 / 正常 / 少冰 / 微冰 / 去冰 / 完全去冰 / 溫 / 熱</li>
+            <li class="mb-2">● <strong>加價升級：</strong>一份濃縮咖啡 +$35</li>
+          </ul>
+        </div>
+        <div class="col-md-6">
+          <h5 class="fw-bold text-brown mb-3"><i class="bi bi-star-fill me-2"></i>品質堅持</h5>
+          <ul class="list-unstyled text-muted small">
+            <li class="mb-2"><i class="bi bi-check-lg text-success me-2"></i>嚴選極品咖啡豆</li>
+            <li class="mb-2"><i class="bi bi-check-lg text-success me-2"></i>選用萬丹酪農戶限定鮮乳</li>
+            <li class="mb-2"><i class="bi bi-check-lg text-success me-2"></i>五道式 RO 逆滲透純水機</li>
+          </ul>
+          <div class="mt-3 p-2 bg-white rounded border">
+            <small class="fw-bold text-brown">咖啡因含量標示：</small><br>
+            <span class="badge bg-success me-1">🟢 100mg以下</span>
+            <span class="badge bg-warning text-dark me-1">🟡 100-200mg</span>
+            <span class="badge bg-danger">🔴 200mg以上</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</main>
+
+<!-- Footer -->
+<footer class="py-4 border-top">
+  <div class="container small text-muted d-flex flex-column flex-md-row justify-content-between align-items-center">
+    <div class="mb-2 mb-md-0">
+      © 2025 所以咖啡 SUOYI COFFEE. All rights reserved.
+    </div>
+    <div>
+      加盟洽詢專線：<a href="tel:0981451451" class="text-brown fw-bold text-decoration-none">0981-451-451</a>　
+      Email：<a href="mailto:suoyicoffee@gmail.com" class="text-brown fw-bold text-decoration-none">suoyicoffee@gmail.com</a>
+    </div>
+  </div>
+</footer>
+
+
+<!-- Bootstrap 5 Bundle JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<!-- 自訂 JS (處理 Sticky Nav 位移 + Scrollspy) -->
+<!-- 自訂 JS (處理 Sticky Nav 位移 + Scrollspy + 頂部重置) -->
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const navLinks = document.querySelectorAll('.category-link');
+    const sections = document.querySelectorAll('.scroll-margin-top');
+    const headerOffset = 130; // 預留 Header + Nav 高度
+
+    // 1. 點擊平滑滾動
+    navLinks.forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href');
+        const targetElement = document.querySelector(targetId);
+        
+        if (targetElement) {
+          const elementPosition = targetElement.getBoundingClientRect().top;
+          const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: "smooth"
+          });
+        }
+      });
+    });
+
+    // 2. 滾動監聽 (Scrollspy)
+    window.addEventListener('scroll', () => {
+      let current = '';
+      
+      // ★★★ 新增：檢測是否回到頂部 ★★★
+      if (window.pageYOffset < 100) {
+        // 如果距離頂部小於 100px，強制設第一個為 active (咖啡系列)
+        navLinks.forEach(link => link.classList.remove('active'));
+        if(navLinks.length > 0) navLinks[0].classList.add('active');
+        return; // 結束函式，不執行下方判斷
+      }
+
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.clientHeight;
+        
+        // 當滾動到區塊上方 150px 處時觸發
+        if (pageYOffset >= (sectionTop - 150)) {
+          current = section.getAttribute('id');
+        }
+      });
+
+      navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href').includes(current)) {
+          link.classList.add('active');
+        }
+      });
+    });
+  });
+</script>
+</body>
+</html>
