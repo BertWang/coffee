@@ -563,27 +563,27 @@
   </div>
 </section>
 
-<!-- 區塊 9：加盟主題（H2） -->
-<section class="py-5 dark-section" id="franchise-section">
+<!-- 區塊 9：加盟主題（修正版：手機完全顯示） -->
+<section class="py-5 dark-section" id="franchise-section" style="background-color:#111;">
   <div class="container">
     <div class="row gy-4 align-items-center">
       
       <!-- 左側：文案與 CTA -->
-      <div class="col-lg-6">
+      <div class="col-lg-6 order-2 order-lg-1">
         <div class="section-title">FRANCHISE</div>
-        <!-- 主題 H2：加盟 -->
         <h2 class="h4 mb-2 text-white">
           所以咖啡加盟專區 · 從餐車開始的咖啡創業
         </h2>
-        <!-- 小節 H3：創業路線說明 -->
         <h3 class="h6 text-secondary mb-3">
           小坪數、低門檻、重質感的咖啡店藍圖
         </h3>
 
         <p class="small mb-3 text-secondary">
-          從不鏽鋼餐車到高雄、台南的街角，所以咖啡走出一條「小坪數、低門檻、重質感」的創業路線。<br>
+          從不鏽鋼餐車到高雄、台南的街角，<br>
+          所以咖啡走出一條「小坪數、低門檻、重質感」的創業路線。<br>
           您不必一開始就扛店租，先用一台標準化咖啡餐車，把客人累積起來，再視商圈發展規劃小店據點。
         </p>
+
         <ul class="small mb-3 text-secondary">
           <li>餐車 / 小店雙方案，依據商圈與預算，量身規劃開店型態</li>
           <li>從拉花手法、萃取曲線到營運 SOP，總部一對一技術轉移</li>
@@ -591,12 +591,8 @@
         </ul>
 
         <div class="d-flex flex-wrap gap-2">
-          <a href="franchise.html" class="btn btn-light btn-sm rounded-pill px-4">
-            詳細加盟說明
-          </a>
-          <a href="contact.html#franchise-contact" class="btn btn-outline-light btn-sm rounded-pill px-4">
-            預約一對一諮詢
-          </a>
+          <a href="franchise.html" class="btn btn-light btn-sm rounded-pill px-4 fw-bold">詳細加盟說明</a>
+          <a href="contact.html#franchise-contact" class="btn btn-outline-light btn-sm rounded-pill px-4 fw-bold">預約一對一諮詢</a>
         </div>
 
         <p class="small text-secondary mt-3 mb-0">
@@ -605,57 +601,29 @@
       </div>
 
       <!-- 右側：圖像區 -->
-      <div class="col-lg-6">
-        <div class="rounded-3 border border-secondary overflow-hidden position-relative" 
-             style="background:#222; min-height:240px;">
-
-          <!-- 底層：創辦人插畫當背景 -->
-          <img src="assets/img/franchise/founder-illustration.jpg" 
-            alt="所以咖啡創辦人插畫" 
-            loading="lazy"
-            style="width:100%; height:100%; object-fit:cover; opacity:0.16;">
-
-          <!-- 前景內容 -->
-          <div class="position-absolute top-0 start-0 w-100 h-100 d-flex flex-column flex-md-row">
-            
-            <!-- 左：餐車示意 -->
-            <div class="flex-fill d-flex flex-column justify-content-center align-items-center p-3">
-              <div class="bg-white rounded-3 shadow-sm p-2 mb-2" style="max-width: 230px; width: 100%;">
-                <img src="assets/img/franchise/cart-wood.jpg" 
-                  alt="所以咖啡餐車 3D 示意" 
-                  loading="lazy"
-                  class="img-fluid rounded-2 mb-2">
+      <div class="col-lg-6 order-1 order-lg-2">
+        <div class="rounded-3 border border-secondary overflow-hidden position-relative bg-dark">
+          <!-- 前景內容：用 flex 自然堆疊 -->
+          <div class="d-flex flex-column flex-md-row justify-content-center align-items-center text-center text-white p-4 p-md-5 position-relative" style="z-index: 2;">
+            <!-- 左：餐車 -->
+            <div class="flex-fill mb-4 mb-md-0 me-md-3">
+              <div class="bg-white rounded-3 shadow-sm p-2 mb-2" style="max-width:200px; margin:auto;">
+                <img src="assets/img/franchise/cart-wood.jpg" alt="所以咖啡餐車示意" class="img-fluid rounded-2">
               </div>
-              <p class="small text-white text-center mb-2">
-                彈性移動的咖啡餐車，<br>
-                幫您在城市中找到屬於自己的創業據點。
-              </p>
-              <span class="badge bg-warning text-dark small rounded-pill">
-                微型創業 · 餐車起步
-              </span>
+              <p class="small mb-2">彈性移動的咖啡餐車，<br>幫您在城市中找到屬於自己的創業據點。</p>
+              <span class="badge bg-warning text-dark small rounded-pill">微型創業 · 餐車起步</span>
             </div>
-
-            <!-- 右：杯子＋金句 -->
-            <div class="flex-fill d-flex flex-column justify-content-center align-items-center p-3 border-start border-secondary">
-              <div class="bg-white rounded-3 shadow-sm p-2 mb-2" style="max-width: 180px; width: 100%;">
-                <img src="assets/img/franchise/cups-lineup.jpg" 
-                  alt="所以咖啡外帶杯形象" 
-                  loading="lazy"
-                  class="img-fluid rounded-2">
+            <!-- 右：杯子 -->
+            <div class="flex-fill">
+              <div class="bg-white rounded-3 shadow-sm p-2 mb-2" style="max-width:180px; margin:auto;">
+                <img src="assets/img/franchise/cups-lineup.jpg" alt="所以咖啡外帶杯" class="img-fluid rounded-2">
               </div>
-              <p class="small text-white text-center mb-2">
-                一杯杯看似簡單的外帶咖啡，<br>
-                背後是一套幫您站穩腳步的創業系統。
-              </p>
-              <span class="badge bg-warning text-dark small rounded-pill">
-                低門檻 · 高標準 · 可複製
-              </span>
+              <p class="small mb-2">一杯杯看似簡單的外帶咖啡，<br>背後是一套幫您站穩腳步的創業系統。</p>
+              <span class="badge bg-warning text-dark small rounded-pill">低門檻 · 高標準 · 可複製</span>
             </div>
-
           </div>
         </div>
       </div>
-
     </div>
   </div>
 </section>
@@ -680,9 +648,45 @@
     </div>
   </div>
 </section>
-
 </main>
+<!-- Welcome video modal (自動彈出) -->
+<div class="modal fade welcome-video-modal" id="welcomeVideoModal" tabindex="-1" aria-labelledby="welcomeVideoLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg modal-fullscreen-sm-down">
+    <div class="modal-content text-white border-0 rounded-4 overflow-hidden position-relative">
 
+      <!-- 關閉按鈕（右上角，白色） -->
+      <button type="button" class="btn-close btn-close-white position-absolute end-0 top-0 m-3"
+              data-bs-dismiss="modal" aria-label="Close"></button>
+
+      <!-- 標題區 -->
+      <div class="px-4 pt-4 pb-2 text-center">
+        <p class="small text-uppercase text-warning mb-1">Welcome to Suoyi Coffee</p>
+        <h5 class="mb-1 fw-bold" id="welcomeVideoLabel">熱愛咖啡，所以相遇</h5>
+        <p class="small text-white-50 mb-0">30 秒認識「所以咖啡」— 高雄起家的外帶精品咖啡品牌</p>
+      </div>
+
+      <!-- 影片區 -->
+      <div class="modal-body pt-2 pb-4 px-3 px-md-4">
+        <div class="video-wrapper bg-black rounded-3 overflow-hidden">
+          <video
+            id="welcomeVideo"
+            class="welcome-video"
+            playsinline
+            muted
+            controls
+            preload="auto"
+          >
+            <source src="assets/video/welcome_video.mp4" type="video/mp4">
+            您的瀏覽器不支援內嵌影片播放。
+          </video>
+        </div>
+        <p class="small text-center text-white-50 mt-2 mb-0">
+          小提醒：影片預設靜音播放，若想聽到聲音，請開啟播放器音量。
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
 <!-- Footer -->
 <footer class="py-4 border-top">
   <div class="container small text-muted d-flex flex-column flex-md-row justify-content-between align-items-center">

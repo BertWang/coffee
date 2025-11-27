@@ -223,7 +223,6 @@ footer {
 
 /* 1. 頁首 Hero：極簡大氣 */
 
-
 /* 裝飾性副標題 (小字) */
 .section-subtitle {
   display: block;
@@ -404,3 +403,69 @@ p.lead {
   transform: translateY(-5px);
 }
 
+/* === Welcome Video Modal 外觀調整（整段可貼）=== */
+
+/* Dialog 寬度 */
+.welcome-video-modal .modal-dialog {
+  max-width: 900px;
+}
+
+@media (max-width: 576px) {
+  .welcome-video-modal .modal-dialog {
+    margin: 1rem;
+  }
+}
+
+/* VIDEO_Modal 本體：深色 + 帶透明感 */
+.welcome-video-modal .modal-content {
+  /* 建議把 HTML 裡的 bg-dark 拿掉，改由這裡統一控制 */
+  background: rgba(15, 15, 15, 0.5);  /* 0.88 可調小一點會更透明 */
+  color: #fff;
+  border-radius: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+
+/* 影片外框：置中 + 固定在視窗高度內 */
+.video-wrapper {
+  position: relative;
+  width: 100%;
+  max-height: 75vh;
+  min-height: 40vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.11); /* 半透明黑，可調 0.3~0.5 */
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+/* 影片：不裁切，16:9 / 9:16 都完整顯示 */
+.welcome-video {
+  max-width: 100%;
+  max-height: 75vh;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  background-color: rgba(0, 0, 0, 0.11); /* 半透明黑，可調 0.3~0.5 */
+}
+
+/* 小螢幕略縮影片高度 */
+@media (max-width: 576px) {
+  .video-wrapper {
+    max-height: 60vh;
+    min-height: 35vh;
+  }
+  .welcome-video {
+    max-height: 60vh;
+  }
+}
+
+/* === 背景遮罩：帶透明感（全站所有 Modal 共用）=== */
+/* 若站上還有其他 Modal 也會用同樣效果，通常是 OK 的 */
+.modal-backdrop.show {
+  background-color: rgba(0, 0, 0, 0.11); /* 半透明黑，可調 0.3~0.5 */
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
