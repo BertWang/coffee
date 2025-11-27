@@ -154,7 +154,34 @@
       color: #059669;
       border-color: #B7E8C7;
     }
+    .delivery-line {
+      background: #E4FFE9;
+      color: #06C755;
+      border-color: #B5F0C5;
+    }
+    .delivery-line i {
+      color: #06C755;
+    }
+    /* 門市卡片：Google 地圖按鈕風格 */
+    .btn-outline-brown {
+      color: #5C4033;
+      border-color: #D4A373;
+      background-color: #fff;
+    }
+    .btn-outline-brown:hover {
+      color: #fff;
+      background-color: #5C4033;
+      border-color: #5C4033;
+    }
 
+    /* 手機版讓按鈕略寬一點，較好點擊 */
+    @media (max-width: 576px) {
+      .store-map-btn {
+        display: inline-flex;
+        justify-content: center;
+        width: 100%;
+      }
+    }
     .store-card {
       border-radius: 14px;
       border: 1px solid #F0E5DA;
@@ -395,9 +422,11 @@
             <div class="p-3">
               <p class="small text-muted mb-2">
                 <i class="bi bi-geo-alt-fill me-1"></i> 高雄市鳥松區大智路40號<br>
-                <i class="bi bi-telephone-fill me-1"></i> 0976-451-451
+                <i class="bi bi-telephone-fill me-1"></i>
+                <a href="tel:0976451451" class="text-brown fw-bold text-decoration-none">
+                  0976-451-451
+                </a>
               </p>
-
               <!-- 外送平台按鈕 -->
               <div class="d-flex flex-wrap gap-2 mb-2">
                 <a href="https://www.foodpanda.com.tw/restaurant/w92e/suo-yi-ka-pei-niao-song-da-zhi-dian" target="_blank"
@@ -408,12 +437,16 @@
                   class="delivery-chip delivery-ue text-decoration-none">
                   <i class="bi bi-bag-check"></i> UberEats
                 </a>
+                <a href="https://line.me/R/ti/p/@你的LINE官方ID" target="_blank"
+                  class="delivery-chip delivery-line text-decoration-none">
+                  <i class="bi bi-line"></i> LINE訂購取餐
+                </a>
               </div>
 
               <!-- Google 地圖按鈕 -->
               <div class="mb-2">
                 <a href="https://www.google.com/maps?q=高雄市鳥松區大智路40號 所以咖啡" 
-                  target="_blank" class="btn btn-sm btn-outline-secondary">
+                  target="_blank" class="btn btn-sm btn-outline-brown rounded-pill store-map-btn">
                   <i class="bi bi-map"></i> 在 Google 地圖中查看
                 </a>
               </div>
@@ -438,7 +471,7 @@
             <div class="p-3">
               <p class="small text-muted mb-2">
                 <i class="bi bi-geo-alt-fill me-1"></i> 高雄市新興區新田路87號<br>
-                <i class="bi bi-telephone-fill me-1"></i> 0900-474-688
+                <i class="bi bi-telephone-fill me-1"></i> <a href="tel:0900474688" class="text-brown fw-bold text-decoration-none">0900-474-688</a>
               </p>
               <div class="d-flex flex-wrap gap-2 mb-2">
                 <a href="https://www.foodpanda.com.tw/restaurant/g195/suo-yi-ka-pei-xin-xing-xin-tian-dian" target="_blank"
@@ -449,11 +482,15 @@
                    class="delivery-chip delivery-ue text-decoration-none">
                   <i class="bi bi-bag-check"></i> UberEats
                 </a>
+                <a href="https://line.me/R/ti/p/@你的LINE官方ID" target="_blank"
+                   class="delivery-chip delivery-line text-decoration-none">
+                  <i class="bi bi-line"></i> LINE訂購取餐
+                </a>
               </div>
               <!-- Google 地圖按鈕 -->
               <div class="mb-2">
                 <a href="https://www.google.com/maps?q=高雄市新興區新田路87號 所以咖啡" 
-                  target="_blank" class="btn btn-sm btn-outline-secondary">
+                  target="_blank" class="btn btn-sm btn-outline-brown rounded-pill store-map-btn">
                   <i class="bi bi-map"></i> 在 Google 地圖中查看
                 </a>
               </div>
@@ -477,7 +514,7 @@
             <div class="p-3">
               <p class="small text-muted mb-2">
                 <i class="bi bi-geo-alt-fill me-1"></i> 高雄市左營區富國路48號<br>
-                <i class="bi bi-telephone-fill me-1"></i> 0916-921-158
+                <i class="bi bi-telephone-fill me-1"></i> <a href="tel:0916921158" class="text-brown fw-bold text-decoration-none">0916-921-158</a>
               </p>
               <div class="d-flex flex-wrap gap-2 mb-2">
                 <a href="https://www.foodpanda.com.tw/restaurant/pl7z/suo-yi-ka-pei-zuo-ying-fu-guo-dian" target="_blank"
@@ -488,11 +525,15 @@
                    class="delivery-chip delivery-ue text-decoration-none">
                   <i class="bi bi-bag-check"></i> UberEats
                 </a>
+                <a href="https://line.me/R/ti/p/@你的LINE官方ID" target="_blank"
+                   class="delivery-chip delivery-line text-decoration-none">
+                  <i class="bi bi-line"></i> LINE訂購取餐
+                </a>
               </div>
               <!-- Google 地圖按鈕 -->
               <div class="mb-2">
                 <a href="https://www.google.com/maps?q=高雄市左營區富國路48號 所以咖啡" 
-                  target="_blank" class="btn btn-sm btn-outline-secondary">
+                  target="_blank" class="btn btn-sm btn-outline-brown rounded-pill store-map-btn">
                   <i class="bi bi-map"></i> 在 Google 地圖中查看
                 </a>
               </div>
@@ -516,7 +557,7 @@
             <div class="p-3">
               <p class="small text-muted mb-2">
                 <i class="bi bi-geo-alt-fill me-1"></i> 高雄市新興區復橫一路116號<br>
-                <i class="bi bi-telephone-fill me-1"></i> 0989-319-123
+                <i class="bi bi-telephone-fill me-1"></i> <a href="tel:0989319123" class="text-brown fw-bold text-decoration-none">0989-319-123</a>
               </p>
               <div class="d-flex flex-wrap gap-2 mb-2">
                 <a href="https://www.foodpanda.com.tw/restaurant/cutn/suo-yi-ka-pei-xin-xing-fu-heng-dian" target="_blank"
@@ -527,11 +568,15 @@
                    class="delivery-chip delivery-ue text-decoration-none">
                   <i class="bi bi-bag-check"></i> UberEats
                 </a>
+                <a href="https://line.me/R/ti/p/@你的LINE官方ID" target="_blank"
+                   class="delivery-chip delivery-line text-decoration-none">
+                  <i class="bi bi-line"></i> LINE訂購取餐
+                </a>
               </div>
               <!-- Google 地圖按鈕 -->
               <div class="mb-2">
                 <a href="https://www.google.com/maps?q=高雄市新興區復橫一路116號 所以咖啡" 
-                  target="_blank" class="btn btn-sm btn-outline-secondary">
+                  target="_blank" class="btn btn-sm btn-outline-brown rounded-pill store-map-btn">
                   <i class="bi bi-map"></i> 在 Google 地圖中查看
                 </a>
               </div>
@@ -565,12 +610,12 @@
                 <h3 class="h6 fw-bold text-brown mb-0">台南康平店</h3>
                 <small class="text-muted">安平區指標店</small>
               </div>
-              <span class="badge bg-success text-white small">營運中</span>
+              <span class="badge bg-success text-white small"></span>
             </div>
             <div class="p-3">
               <p class="small text-muted mb-2">
                 <i class="bi bi-geo-alt-fill me-1"></i> 台南市安平區健康三街25號<br>
-                <i class="bi bi-telephone-fill me-1"></i> 0972-015-126
+                <i class="bi bi-telephone-fill me-1"></i> <a href="tel:0972015126" class="text-brown fw-bold text-decoration-none">0972-015-126</a>
               </p>
               <div class="d-flex flex-wrap gap-2 mb-2">
                 <a href="https://www.foodpanda.com.tw/restaurant/x2mr/suo-yi-ka-pei-tai-nan-kang-ping-dian" target="_blank"
@@ -581,12 +626,17 @@
                    class="delivery-chip delivery-ue text-decoration-none">
                   <i class="bi bi-bag-check"></i> UberEats
                 </a>
+                <a href="https://line.me/R/ti/p/@你的LINE官方ID" target="_blank"
+                   class="delivery-chip delivery-line text-decoration-none">
+                  <i class="bi bi-line"></i> LINE訂購取餐
+                </a>
               </div>
               <!-- Google 地圖按鈕 -->
               <div class="mb-2">
                 <a href="https://www.google.com/maps?q=台南市安平區健康三街25號 所以咖啡" 
-                  target="_blank" class="btn btn-sm btn-outline-secondary">
-                  <i class="bi bi-map"></i> 在 Google 地圖中查看
+                  target="_blank"
+                  class="btn btn-sm btn-outline-brown rounded-pill store-map-btn">
+                  <i class="bi bi-map me-1"></i> 在 Google 地圖中查看
                 </a>
               </div>
               <small class="text-muted d-block">
