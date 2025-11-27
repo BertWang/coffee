@@ -451,14 +451,29 @@ p.lead {
   background-color: rgba(0, 0, 0, 0.11); /* 半透明黑，可調 0.3~0.5 */
 }
 
-/* 小螢幕略縮影片高度 */
+/* 小螢幕（手機）全螢幕顯示，並調整影片高度 */
 @media (max-width: 576px) {
-  .video-wrapper {
-    max-height: 60vh;
-    min-height: 35vh;
+  .welcome-video-modal .modal-dialog {
+    margin: 0;                 /* 取消四週預設外距，貼齊畫面 */
+    max-width: 100%;
   }
+
+  .welcome-video-modal .modal-content {
+    border-radius: 0;          /* 讓內容貼齊螢幕邊緣 */
+    min-height: 100vh;         /* modal 本體撐滿整個視窗高度 */
+    display: flex;
+    flex-direction: column;
+  }
+
+  .video-wrapper {
+    flex: 1 1 auto;            /* 影片區自動吃掉中間可用空間 */
+    max-height: calc(100vh - 140px); 
+    /* 上下還要預留標題 + 說明文字空間，可視實際再微調 140 這個值 */
+    min-height: 45vh;
+  }
+
   .welcome-video {
-    max-height: 60vh;
+    max-height: 100%;          /* 在 wrapper 裡最大化顯示 */
   }
 }
 
