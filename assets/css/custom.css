@@ -167,7 +167,9 @@ footer {
     max-width: 20%;
   }
 }
-
+.store-bg {
+  background: linear-gradient(to bottom, #EFEAE6 0%, #E2D0C2 100%);
+}
 /* 原有的卡片樣式保持 */
 .store-pill {
   background: #fff;
@@ -176,7 +178,9 @@ footer {
   padding: 1rem 1.25rem;
   transition: all 0.2s ease;
   height: 100%;
+  box-shadow: 0 8px 18px rgba(0,0,0,0.05);
 }
+
 .store-pill:hover {
   transform: translateY(-3px);
   box-shadow: 0 8px 16px rgba(0,0,0,0.08);
@@ -188,7 +192,17 @@ footer {
 .text-brown {
   color: #5C4033 !important;
 }
+.hover-link-btn {
+  border-color: #D4A373;
+  transition: all 0.2s ease;
+}
 
+.hover-link-btn:hover {
+  background-color: #D4A373;
+  color: #fff !important;
+  border-color: #D4A373;
+  text-decoration: none;
+}
 /* =========================================
    4. 特殊區塊 (Sections)
    ========================================= */
