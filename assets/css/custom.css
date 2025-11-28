@@ -91,7 +91,7 @@ footer {
 .menu-preview-bg {
   position: absolute;
   inset: 0;
-  background-image: url('../img/hero/hero-coffee-lineup2.jpg'); /* ← 換成你的圖片，例如 assets/img/products/menu-bg.jpg */
+  background-image: url('../img/hero/hero-coffee-lineup2.jpg'); /* ← 換成您的圖片，例如 assets/img/products/menu-bg.jpg */
   background-size: cover;
   background-position: center;
   opacity: 0.35;                  /* 背景整體淡一點，避免搶戲 */

@@ -52,7 +52,7 @@
 
 不可見的假設與設計理由（Agent 應知道）
 
-- 無建置步驟：倉庫中沒有 `package.json` 或其他打包設定，頁面大多透過 CDN（Bootstrap、Bootstrap Icons）載入 CSS/JS。不要新增假定的編譯流程，除非你也同時新增必要的設定檔與說明。
+- 無建置步驟：倉庫中沒有 `package.json` 或其他打包設定，頁面大多透過 CDN（Bootstrap、Bootstrap Icons）載入 CSS/JS。不要新增假定的編譯流程，除非您也同時新增必要的設定檔與說明。
 - JSON-LD：多數頁面含商家與 FAQ 的 JSON-LD（structured data），這有助於 Rich Results。不要移除；若要更新請保留 `@context` 與 `@type` 結構。
 - 中文與檔案系統：專案路徑與部分檔案名稱含中文（例如 `d:/所以咖啡/coffee`），在跨平台工具或自動化腳本時要注意編碼與路徑轉譯。
 
@@ -63,7 +63,7 @@
 
 遇到不確定的情況（詢問須包含）
 
-- 若你需要變更多個頁面的 title/meta，請先提供對應的 `seo/keyword-research.md` 條目或新的變更清單。
+- 若您需要變更多個頁面的 title/meta，請先提供對應的 `seo/keyword-research.md` 條目或新的變更清單。
 - 若要新增第三方腳本或追蹤 (analytics)，請先在 PR 中註明來源、用途與隱私考量（網站目前未包含 analytics 設定）。
 
 參考檔案（直接打開即可）
@@ -75,4 +75,4 @@
 - `seo/keyword-research.md`（每頁 title/meta 與關鍵字建議）
 - `seo/image-alt-report.md`（圖片 alt 稽核結果）
 
-若此指示檔有遺漏的專案細節（例如 CI、部署或未列出的 config），請告訴我，我會更新並與你確認要不要合併到現有文件。完成後我會將 TODO 標為已完成並回報變更。 
+若此指示檔有遺漏的專案細節（例如 CI、部署或未列出的 config），請告訴我，我會更新並與您確認要不要合併到現有文件。完成後我會將 TODO 標為已完成並回報變更。 
