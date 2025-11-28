@@ -584,40 +584,68 @@
       </a>
     </div>
 
-    <div class="row gy-3 small">
-      <!-- 門市 1 -->
-      <div class="col-12 col-md-4">
+    <div class="row gy-3 small justify-content-center">
+      <!-- 鳥松大智店 -->
+      <div class="col-12 col-sm-6 col-lg-5th">
         <div class="store-pill">
           <div class="fw-bold text-brown">鳥松大智店（高雄）</div>
           <div class="text-muted mb-1">高雄市鳥松區大智路 40 號</div>
-          <a href="tel:0976451451" class="text-decoration-none text-brown hover-underline">
+          <a href="tel:0976451451" class="text-decoration-none text-brown fw-bold hover-underline">
             <i class="bi bi-telephone-fill me-1"></i> 0976-451-451
           </a>
+          <div class="small text-muted mt-1">品牌創始店</div>
         </div>
       </div>
-      <!-- 門市 2 -->
-      <div class="col-12 col-md-4">
+
+      <!-- 新興新田店 -->
+      <div class="col-12 col-sm-6 col-lg-5th">
         <div class="store-pill">
           <div class="fw-bold text-brown">新興新田店（高雄）</div>
           <div class="text-muted mb-1">高雄市新興區新田路 87 號</div>
-          <!-- 請替換為實際店號 -->
-          <a href="tel:0981451451" class="text-decoration-none text-brown hover-underline">
+          <a href="tel:0900474688" class="text-decoration-none text-brown fw-bold hover-underline">
             <i class="bi bi-telephone-fill me-1"></i> 0900-474-688
           </a>
+          <div class="small text-muted mt-1">近新堀江商圈</div>
         </div>
       </div>
-      <!-- 門市 3 -->
-      <div class="col-12 col-md-4">
+
+      <!-- 左營富國店 -->
+      <div class="col-12 col-sm-6 col-lg-5th">
+        <div class="store-pill">
+          <div class="fw-bold text-brown">左營富國店（高雄）</div>
+          <div class="text-muted mb-1">高雄市左營區富國路 48 號</div>
+          <a href="tel:0916921158" class="text-decoration-none text-brown fw-bold hover-underline">
+            <i class="bi bi-telephone-fill me-1"></i> 0916-921-158
+          </a>
+          <div class="small text-muted mt-1">北高雄熱點</div>
+        </div>
+      </div>
+
+      <!-- 新興復橫店 -->
+      <div class="col-12 col-sm-6 col-lg-5th">
+        <div class="store-pill">
+          <div class="fw-bold text-brown">新興復橫店（高雄）</div>
+          <div class="text-muted mb-1">高雄市新興區復橫一路 116 號</div>
+          <a href="tel:0989319123" class="text-decoration-none text-brown fw-bold hover-underline">
+            <i class="bi bi-telephone-fill me-1"></i> 0989-319-123
+          </a>
+          <div class="small text-muted mt-1">市區外帶動線佳</div>
+        </div>
+      </div>
+
+      <!-- 台南康平店 -->
+      <div class="col-12 col-sm-6 col-lg-5th">
         <div class="store-pill">
           <div class="fw-bold text-brown">台南康平店（台南）</div>
           <div class="text-muted mb-1">台南市安平區健康三街 25 號</div>
-          <!-- 請替換為實際店號 -->
-          <a href="tel:0981451451" class="text-decoration-none text-brown hover-underline">
+          <a href="tel:0972015126" class="text-decoration-none text-brown fw-bold hover-underline">
             <i class="bi bi-telephone-fill me-1"></i> 0972-015-126
           </a>
+          <div class="small text-muted mt-1">安平區指標店</div>
         </div>
       </div>
     </div>
+
   </div>
 </section>
 
@@ -711,32 +739,38 @@
 <div class="modal fade welcome-video-modal" id="welcomeVideoModal" tabindex="-1" aria-labelledby="welcomeVideoLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered modal-lg modal-fullscreen-sm-down">
     <div class="modal-content text-white border-0 rounded-4 overflow-hidden position-relative">
+
       <!-- 關閉按鈕（右上角，白色） -->
-      <button type="button" class="btn-close btn-close-white position-absolute end-0 top-0 m-3" data-bs-dismiss="modal" aria-label="Close"></button>
+      <button type="button" class="btn-close btn-close-white position-absolute end-0 top-0 m-3"
+              data-bs-dismiss="modal" aria-label="Close"></button>
+
       <!-- 標題區 -->
       <div class="px-4 pt-4 pb-2 text-center">
         <p class="small text-uppercase text-warning mb-1">Welcome to Suoyi Coffee</p>
         <h5 class="mb-1 fw-bold" id="welcomeVideoLabel">熱愛咖啡，所以相遇</h5>
-        <p class="small text-white-50 mb-0">30 秒認識「所以咖啡」— 高雄起家的外帶精品咖啡品牌</p>
-        <p class="small text-white-50 mb-0">小提醒：影片預設靜音播放，若想聽到聲音，請開啟播放器音量。</p>
+        <p class="small text-white-50 mb-0">
+          30 秒認識「所以咖啡」— 高雄起家的外帶精品咖啡品牌
+        </p>
+        <p class="small text-white-50 mb-0">
+          小提醒：影片預設靜音播放，可手動開啟聲音。
+        </p>
       </div>
-      <!-- 新增：聲音控制按鈕 -->
-      <div class="d-flex justify-content-center mt-0">
-        <button type="button" id="videoSoundToggle" class="btn btn-sm btn-outline-light rounded-pill px-3 px-md-4 video-sound-btn">
+
+      <!-- 聲音控制按鈕 -->
+      <div class="d-flex justify-content-center mt-2">
+        <button type="button" id="videoSoundToggle"
+                class="btn btn-sm btn-outline-light rounded-pill px-3 px-md-4 video-sound-btn">
           <i class="bi bi-volume-mute-fill me-1"></i> 開啟聲音
+        </button>
+        <button type="button" class="btn btn-sm btn-outline-light rounded-pill px-3 px-md-4 ms-3 video-sound-btn"
+                data-bs-dismiss="modal" aria-label="Close">
+          <i class="bi bi-x-lg me-1"></i> 關閉影片
         </button>
       </div>
       <!-- 影片區 -->
-      <div class="modal-body pt-2 pb-4 px-3 px-md-4">
-        <div class="video-wrapper bg-black rounded-3 overflow-hidden">
-          <video
-            id="welcomeVideo"
-            class="welcome-video"
-            playsinline
-            muted
-            controls
-            preload="auto"
-          >
+      <div class="modal-body pt-3 pb-4 px-3 px-md-4">
+        <div class="video-wrapper bg-black rounded-3 overflow-hidden position-relative">
+          <video id="welcomeVideo" class="welcome-video w-100" playsinline muted controls preload="auto">
             <source src="assets/video/welcome_video.mp4" type="video/mp4">
             您的瀏覽器不支援內嵌影片播放。
           </video>

@@ -160,13 +160,33 @@ footer {
   margin-bottom: 0.5rem;
 }
 
-/* 門市膠囊樣式 */
+/* 五等分欄位：桌機寬度時維持五欄 */
+@media (min-width: 992px) {
+  .col-lg-5th {
+    flex: 0 0 20%;
+    max-width: 20%;
+  }
+}
+
+/* 原有的卡片樣式保持 */
 .store-pill {
-  border-radius: 0.75rem;
-  background: rgba(255,255,255,0.85);
-  padding: 0.75rem 1rem;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
-  font-size: 0.9rem;
+  background: #fff;
+  border: 1px solid #F0E5DA;
+  border-radius: 12px;
+  padding: 1rem 1.25rem;
+  transition: all 0.2s ease;
+  height: 100%;
+}
+.store-pill:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.08);
+  border-color: #D4A373;
+}
+.hover-underline:hover {
+  text-decoration: underline;
+}
+.text-brown {
+  color: #5C4033 !important;
 }
 
 /* =========================================

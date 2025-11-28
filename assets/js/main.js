@@ -26,6 +26,12 @@ document.addEventListener("DOMContentLoaded", function () {
         sessionStorage.setItem("welcomeVideoSeen", "1");
         }, 1500);
     //}
+    
+    // 播放完畢自動關閉
+    videoEl.addEventListener("ended", () => {
+        const modalInstance = bootstrap.Modal.getInstance(modalEl);
+        modalInstance.hide();
+    });
 
     // Modal 關閉時：暫停並回到開頭
     modalEl.addEventListener("hidden.bs.modal", () => {
@@ -41,6 +47,7 @@ document.addEventListener("DOMContentLoaded", function () {
         videoEl.play().catch(() => {});
         }
     });
+  
     // 聲音控制按鈕：切換靜音 / 有聲
     if (soundBtn) {
         soundBtn.addEventListener("click", function () {
