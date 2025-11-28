@@ -411,11 +411,30 @@ p.lead {
 .about-hero {
   /* 設定高度與背景圖 */
   min-height: 60vh; /* 讓高度夠高，展現氣勢 */
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../img/about/hero-barista-back.jpg');
+  /* 使用 about 頁面預載的 LCP 圖片以確保一致性 */
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../img/hero/hero-coffee-lineup3.jpg');
   background-size: cover;
-  background-position: center;
-  background-attachment: fixed; /* 視差滾動效果 */
+  /* desktop: 置中；mobile: 以上方為重點，避免主要內容被裁切 */
+  background-position: center center;
+  background-attachment: scroll; /* 避免 mobile 上 fixed 帶來裁切/性能問題 */
   color: white;
+}
+
+/* 更精細的響應式裁切：手機優先顯示上半部，並降低 padding 以容納視窗 */
+@media (max-width: 576px) {
+  .about-hero {
+    min-height: 48vh;
+    padding-top: 80px;
+    padding-bottom: 40px;
+    background-position: center 25%; /* 向上移動構圖，讓主題與視覺重點更可見 */
+  }
+}
+
+@media (min-width: 577px) and (max-width: 991.98px) {
+  .about-hero {
+    min-height: 56vh;
+    background-position: center 40%;
+  }
 }
 
 /* 2. 故事區塊：圖文交錯 */

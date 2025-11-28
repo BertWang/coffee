@@ -13,7 +13,7 @@
 | `index.html` | `assets/img/franchise/cups-lineup.jpg` | 所以咖啡外帶杯形象 | 加盟預告杯子圖 |
 
 | `about.html` | `assets/img/logo/logo-brown-on-white.png` | 所以咖啡 | navbar logo |
-| `about.html` | `assets/img/about/cart-3d-render.jpg` | 所以咖啡餐車設計 | 關於頁示意圖 |
+| `about.html` | `assets/img/hero/hero-coffee-lineup3.jpg` | 所以咖啡飲品形象照 | 關於頁示意圖 |
 | `about.html` | `assets/img/about/logo-design-process.jpg` | 品牌 Logo 設計理念 | 關於頁圖示 |
 | `about.html` | `assets/img/about/founder-cartoon.jpg` | 創辦人 | 關於頁創辦人圖 |
 | `about.html` | `assets/img/about/founders-contract.jpg` | 加盟合約與創辦人 | 關於頁合約圖 |
