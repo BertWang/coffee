@@ -17,13 +17,13 @@ document.addEventListener("DOMContentLoaded", function () {
     if (!hasSeen) {
         // 延遲 1.5 秒彈出，避免一載入就打斷使用者
         setTimeout(() => {
-        modal.show();
-        // 嘗試自動播放（因為 muted，大多數瀏覽器會允許）
-        videoEl.currentTime = 0;
-        videoEl.play().catch(() => {
-            // 若瀏覽器限制自動播放，就保持停在第一幀，讓使用者自行按播放
-        });
-        sessionStorage.setItem("welcomeVideoSeen", "1");
+            modal.show();
+            // 嘗試自動播放（因為 muted，大多數瀏覽器會允許）
+            videoEl.currentTime = 0;
+            videoEl.play().catch(() => {
+                // 若瀏覽器限制自動播放，就保持停在第一幀，讓使用者自行按播放
+            });
+            sessionStorage.setItem("welcomeVideoSeen", "1");
         }, 1500);
     }
 
