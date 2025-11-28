@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // 判斷是否已經看過（本次瀏覽 Session 只彈一次）
     const hasSeen = sessionStorage.getItem("welcomeVideoSeen");
 
-    //if (!hasSeen) {
+    if (!hasSeen) {
         // 延遲 1.5 秒彈出，避免一載入就打斷使用者
         setTimeout(() => {
         modal.show();
@@ -25,8 +25,8 @@ document.addEventListener("DOMContentLoaded", function () {
         });
         sessionStorage.setItem("welcomeVideoSeen", "1");
         }, 1500);
-    //}
-    
+    }
+
     // 播放完畢自動關閉
     videoEl.addEventListener("ended", () => {
         const modalInstance = bootstrap.Modal.getInstance(modalEl);
@@ -67,10 +67,11 @@ document.addEventListener("DOMContentLoaded", function () {
         }
         });
     }
+    // Modal 開啟/關閉時，切換 body 的 class 以控制背景樣式
     modalEl.addEventListener('shown.bs.modal', () => {
-    document.body.classList.add('welcome-backdrop-open');
+        document.body.classList.add('welcome-backdrop-open');
     });
     modalEl.addEventListener('hidden.bs.modal', () => {
-    document.body.classList.remove('welcome-backdrop-open');
+        document.body.classList.remove('welcome-backdrop-open');
     });    
 });
