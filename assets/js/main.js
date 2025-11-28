@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     // 判斷是否已經看過（本次瀏覽 Session 只彈一次）
-    const hasSeen = sessionStorage.getItem("welcomeVideoSeen");
+    const hasSeen = sessionStorage.getItem("welcomeVideoSeen1");
 
     if (!hasSeen) {
         // 延遲 1.5 秒彈出，避免一載入就打斷使用者
@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", function () {
         videoEl.play().catch(() => {
             // 若瀏覽器限制自動播放，就保持停在第一幀，讓使用者自行按播放
         });
-        sessionStorage.setItem("welcomeVideoSeen", "1");
+        sessionStorage.setItem("welcomeVideoSeen1", "1");
         }, 1500);
     }
 
