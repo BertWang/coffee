@@ -399,6 +399,36 @@ p.lead {
   text-transform: uppercase;
 }
 
+/* =========================================
+   行動裝置置底 CTA（Sticky CTA）
+   僅在小螢幕顯示，避免干擾桌面版
+   ========================================= */
+.sticky-cta {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1080;
+  padding: 0.5rem 0;
+  background: linear-gradient(90deg, rgba(92,64,51,0.98), rgba(141,110,90,0.98));
+  box-shadow: 0 -8px 20px rgba(0,0,0,0.12);
+  display: none;
+}
+.sticky-cta .btn {
+  font-weight: 700;
+  border-radius: 0.6rem;
+}
+.sticky-cta .btn .bi { vertical-align: -0.08em; }
+
+@media (max-width: 767.98px) {
+  .sticky-cta { display: block; }
+  .sticky-cta .container { padding-left: 0.5rem; padding-right: 0.5rem; }
+  .sticky-cta .btn { padding-top: 0.55rem; padding-bottom: 0.55rem; }
+}
+
+/* 讓頁尾不被遮擋（若需要，可在頁面加入下方 spacing 元素） */
+. { padding-bottom: 72px; }
+
 /* 圖片容器：增加質感陰影與圓角 */
 .story-img-container {
   position: relative;
@@ -561,3 +591,89 @@ p.lead {
   -webkit-backdrop-filter: blur(8px);
 }
 
+/* =========================================
+   通用卡片與互動樣式（跨頁面工具類）
+   ========================================= */
+
+/* 卡片通用懸浮效果 */
+.card-hover {
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+  border: 1px solid #f0f0f0;
+}
+.card-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px rgba(92, 64, 51, 0.08);
+  border-color: #D4A373;
+}
+
+/* 徽章樣式統一 */
+.badge-highlight {
+  background-color: #FF9800;
+  color: #fff;
+}
+.badge-new {
+  background-color: #4CAF50;
+  color: #fff;
+}
+.badge-hot {
+  background-color: #F44336;
+  color: #fff;
+}
+.badge-promo {
+  background-color: #E91E63;
+  color: #fff;
+}
+.badge-info {
+  background-color: #607D8B;
+  color: #fff;
+  font-size: 0.7rem;
+}
+.badge-soft {
+  background-color: rgba(230, 151, 104, 0.12);
+  color: #B15D27;
+}
+
+/* 邊框裝飾 */
+.border-left-thick {
+  border-left: 4px solid #D4A373;
+  padding-left: 1rem;
+}
+
+/* 文字截斷（2 行） */
+.text-truncate-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* 通用陰影懸浮 */
+.shadow-hover:hover {
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15) !important;
+}
+
+/* 按鈕通用樣式（描邊棕） */
+.btn-outline-brown {
+  color: #5C4033;
+  border-color: #D4A373;
+  background-color: #fff;
+}
+.btn-outline-brown:hover {
+  color: #fff;
+  background-color: #5C4033;
+  border-color: #5C4033;
+}
+
+/* 三路徑定位卡片 */
+.path-card {
+  border-radius: 16px;
+  border: 1px solid #f0f0f0;
+  background: #fff;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+  height: 100%;
+}
+.path-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(92, 64, 51, 0.12);
+  border-color: #D4A373;
+}
