@@ -37,19 +37,6 @@
   - 圖片皆有 `alt` 屬性（報表：`seo/image-alt-report.md`）。新增圖片時請同步加入描述性 `alt`。
   - 重要 LCP 圖片有 `link rel="preload"`，若更換圖片請同時更新 preload 標記。
 
-本地預覽與常用命令（Windows PowerShell）
-
-- 直接在專案根目錄執行快速靜態伺服器：
-  ```powershell
-  # 在 d:/所以咖啡/coffee 根目錄執行
-  python -m http.server 8000
-  # 然後開啟瀏覽器 http://localhost:8000/
-  ```
-- 若有 Node.js，可使用 `http-server`：
-  ```powershell
-  npx http-server -p 8000 -c-1
-  ```
-
 不可見的假設與設計理由（Agent 應知道）
 
 - 無建置步驟：倉庫中沒有 `package.json` 或其他打包設定，頁面大多透過 CDN（Bootstrap、Bootstrap Icons）載入 CSS/JS。不要新增假定的編譯流程，除非您也同時新增必要的設定檔與說明。
