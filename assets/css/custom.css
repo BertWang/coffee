@@ -494,9 +494,6 @@ p.lead {
   .sticky-cta .btn { padding-top: 0.55rem; padding-bottom: 0.55rem; }
 }
 
-/* 讓頁尾不被遮擋（若需要，可在頁面加入下方 spacing 元素） */
-. { padding-bottom: 72px; }
-
 /* 圖片容器：增加質感陰影與圓角 */
 .story-img-container {
   position: relative;
@@ -720,18 +717,6 @@ p.lead {
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15) !important;
 }
 
-/* 按鈕通用樣式（描邊棕） */
-.btn-outline-brown {
-  color: #5C4033;
-  border-color: #D4A373;
-  background-color: #fff;
-}
-.btn-outline-brown:hover {
-  color: #fff;
-  background-color: #5C4033;
-  border-color: #5C4033;
-}
-
 /* 三路徑定位卡片 */
 .path-card {
   border-radius: 16px;
@@ -745,3 +730,44 @@ p.lead {
   box-shadow: 0 12px 30px rgba(92, 64, 51, 0.12);
   border-color: #D4A373;
 }
+
+/* ===== Suoyi integration patch (append-only) ============================= */
+
+/* 1) 修正無效選擇器：提供可控的置底空間類名 */
+.has-sticky-cta-spacing { padding-bottom: 72px; }
+
+@media (max-width: 767.98px) {
+  body.has-sticky-cta-spacing { padding-bottom: 72px; }
+}
+
+/* 2) 可存取性：鍵盤焦點可視化 */
+a:focus, button:focus, [role="button"]:focus {
+  outline: 2px solid #D4A373;
+  outline-offset: 2px;
+}
+
+/* 3) 超連結下劃線控制（補上 base 狀態；你原本已有 :hover） */
+.hover-underline { text-decoration: none; }
+.hover-underline:hover { text-decoration: underline; }
+
+/* 4) 按鈕描邊棕：統一版本（本段位於檔尾，將覆蓋前文重複定義） */
+.btn-outline-brown {
+  color: #5C4033;
+  border-color: #D4A373;
+  background-color: #fff;
+}
+.btn-outline-brown:hover,
+.btn-outline-brown:focus {
+  color: #fff;
+  background-color: #5C4033;
+  border-color: #5C4033;
+}
+
+/* 5) 週三優惠（可選）：今日加強顯示用的輔助類名 */
+.promo-section .is-today {
+  box-shadow: 0 0 0 3px rgba(212,163,115,0.35) inset;
+  border-radius: 8px;
+}
+
+/* 6) 影像：若未指定則提供保守 lazy/async（與 JS 配合） */
+img[loading="lazy"] { content-visibility: auto; }

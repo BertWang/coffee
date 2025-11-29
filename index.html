@@ -3,28 +3,24 @@
 <head>
   <meta charset="utf-8">
   <!-- 優化後 title：加入品牌＋用途關鍵字 -->
-  <title>所以咖啡 SUOYI COFFEE｜高雄起家的外帶精品咖啡・菜單、門市與加盟資訊</title>
+  <title>所以咖啡｜台南・高雄 現沖外帶與咖啡外送、門市與加盟資訊｜週三第二杯半價</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
   <!-- SEO 基本設定：描述更具行動導向與完整關鍵字 -->
-  <meta name="description" content="所以咖啡 SUOYI COFFEE，從高雄起家的外帶精品咖啡品牌，嚴選咖啡豆與萬丹鮮乳，提供拿鐵、季節特調、果茶與加盟創業方案。立即查看菜單、門市位置與最新優惠。">
+  <meta name="description" content="南台灣現沖外帶品牌，據點位於台南與高雄。提供外帶、咖啡外送、企業外送與大型外燴；每週三外帶第二杯半價。串接 Uber Eats、Foodpanda。加盟範圍：嘉義・台南・高雄・屏東（全台洽詢）。">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://suoyicoffee.com/">
   <link rel="icon" href="assets/img/logo/logo-brown-on-white.png" />
-
   <!-- Open Graph / Social -->
   <meta property="og:site_name" content="所以咖啡 SUOYI COFFEE">
-  <meta property="og:title" content="所以咖啡 SUOYI COFFEE｜高雄外帶精品咖啡首選・菜單與門市資訊">
-  <meta property="og:description" content="高雄起家的外帶精品咖啡「所以咖啡」，嚴選豆源與萬丹鮮乳，提供拿鐵、季節特飲、果茶與加盟方案。馬上查看最新菜單與門市位置。">
+  <meta property="og:title" content="所以咖啡｜台南・高雄 現沖外帶與咖啡外送｜週三第二杯半價">
+  <meta property="og:description" content="台南／高雄門市提供現沖外帶、咖啡外送與企業外燴。每週三外帶第二杯半價。Uber Eats、Foodpanda 立即下單。加盟洽詢嘉義・台南・高雄・屏東。">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://suoyicoffee.com/">
   <meta property="og:image" content="https://suoyicoffee.com/assets/img/hero/cover.jpg">
-
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="所以咖啡 SUOYI COFFEE｜外帶精品咖啡・菜單與門市">
-  <meta name="twitter:description" content="所以咖啡 SUOYI COFFEE，從高雄出發的外帶精品咖啡品牌，嚴選咖啡豆與萬丹鮮乳，提供拿鐵、季節特調、果茶與加盟創業方案。">
+  <meta name="twitter:title" content="所以咖啡｜台南・高雄 現沖外帶與咖啡外送｜週三第二杯半價">
+  <meta name="twitter:description" content="台南／高雄門市提供現沖外帶、咖啡外送與企業外燴。每週三外帶第二杯半價。">
   <meta name="twitter:image" content="https://suoyicoffee.com/assets/img/hero/cover.jpg">
-
   <!-- Bootstrap 5 CSS（CDN） -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <!-- Bootstrap Icons -->
@@ -33,33 +29,35 @@
   <link rel="stylesheet" href="assets/css/custom.css">
   <!-- Preload LCP 圖片 -->
   <link rel="preload" as="image" href="assets/img/hero/cover.jpg">
-
-  <!-- 結構化資料（JSON-LD） -->
+  <!-- 組織層（品牌） -->
   <script type="application/ld+json">
   {
-    "@context": "https://schema.org",
-    "@type": "CafeOrCoffeeShop",
-    "name": "所以咖啡 SUOYI COFFEE",
-    "url": "https://suoyicoffee.com/",
-    "logo": "https://suoyicoffee.com/assets/img/logo/logo.png",
-    "telephone": "0981-451-451",
-    "sameAs": [
+    "@context":"https://schema.org",
+    "@type":"Organization",
+    "name":"所以咖啡 SUOYI COFFEE",
+    "url":"https://suoyicoffee.com",
+    "logo":"https://suoyicoffee.com/assets/img/logo/logo.png",
+    "sameAs":[
       "https://www.facebook.com/profile.php?id=100076341999740",
       "https://www.instagram.com/suoyicoffee/"
-    ],
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "大智路 40 號",
-      "addressLocality": "鳥松區",
-      "addressRegion": "高雄市",
-      "addressCountry": "TW"
-    },
-    "openingHours": "Mo-Su 07:00-17:00"
+    ]
+  }
+  </script>
+  <!-- 優惠（每週三第二杯半價） -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Offer",
+    "name":"每週三外帶咖啡第二杯半價",
+    "category":"Weekly Deal",
+    "priceCurrency":"TWD",
+    "availability":"https://schema.org/InStoreOnly",
+    "url":"https://suoyicoffee.com/offers.html",
+    "description":"每週三外帶限定；第二杯同品項或價低者半價；不可併用其他優惠；適用台南／高雄門市。"
   }
   </script>
 </head>
 <body class="bg-light">
-
 <!-- 導覽列 -->
 <nav class="navbar navbar-expand-md bg-white shadow-sm fixed-top">
   <div class="container">
@@ -223,14 +221,14 @@
 </section>
 
 <!-- 區塊 4：週三限定優惠（H3，小節） -->
-<section class="promo-section py-5">
+<section class="promo-section py-5" id="wednesday-offer">
   <div class="container text-center">
     <div class="promo-badge">
       <i class="bi bi-calendar-event-fill me-1"></i> 週三限定優惠
     </div>
     <!-- 使用 H3，視覺維持大字 -->
     <h3 class="h4 fw-bold mb-3 text-white">
-      咖啡迷注意！全台分店週三 -「第二杯半價」👭
+      咖啡迷注意！台南／高雄門市 週三「第二杯半價」👭
     </h3>
     <p class="text-white-50 mb-4" style="max-width: 700px; margin: 0 auto;">
       每週三造訪 <strong>所以咖啡任一門市</strong>，皆可享有飲品第二杯半價優惠！<br class="d-none d-md-inline">
@@ -243,7 +241,7 @@
         <i class="bi bi-geo-alt-fill fs-5 me-2"></i>
         <div class="text-start">
           <div class="fw-bold">適用門市</div>
-          <div>全台所以咖啡門市（高雄、台南等地）</div>
+          <div>台南／高雄 所以咖啡門市</div>
         </div>
       </div>
       <div class="d-flex align-items-center">

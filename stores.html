@@ -3,64 +3,136 @@
 <head>
   <meta charset="utf-8">
   <!-- 原始 title: 門市據點 | 所以咖啡 SUOYI COFFEE -->
-  <title>所以咖啡 門市據點 — 找到離您最近的店（高雄／台南）</title>
+  <title>所以咖啡門市據點｜台南・高雄｜外帶與外送</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- SEO 基本設定 -->
   <!-- 原始 meta description: 尋找最近的所以咖啡門市：高雄與台南的據點資訊、營業時間、地圖與外送平台連結。立即查看門市位置與聯絡方式。 -->
-  <meta name="description" content="查看所有所以咖啡門市地址、營業時間與聯絡電話。快速找到最近的分店（高雄 / 台南）。">
+  <meta name="description" content="所以咖啡 Suoyi Coffee 門市據點：台南・高雄。提供現沖外帶與咖啡外送，支援外送平台。">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://suoyicoffee.com/stores.html">
   <link rel="icon" href="assets/img/logo/logo-brown-on-white.png" />
   <!-- Open Graph / Social -->
   <meta property="og:site_name" content="所以咖啡 SUOYI COFFEE">
   <!-- 原始 og:title / og:description -->
-  <meta property="og:title" content="所以咖啡 門市據點 — 找到離您最近的店（高雄／台南）">
-  <meta property="og:description" content="查看所有所以咖啡門市地址、營業時間與聯絡電話。快速找到最近的分店（高雄 / 台南）。">
+  <meta property="og:title" content="所以咖啡門市據點｜台南・高雄｜外帶與外送">
+  <meta property="og:description" content="所以咖啡 Suoyi Coffee 門市據點：台南・高雄。提供現沖外帶與咖啡外送，支援外送平台。">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://suoyicoffee.com/stores.html">
-  <meta property="og:image" content="https://suoyicoffee.com/assets/img/hero/cover.jpg">
+  <meta property="og:image" content="https://suoyicoffee.com/assets/img/stores/stores_banner.jpg">
   <meta name="twitter:card" content="summary_large_image">
   <!-- 原始 twitter:title / twitter:description -->
-  <meta name="twitter:title" content="所以咖啡 門市據點 — 找到離您最近的店（高雄／台南）">
-  <meta name="twitter:description" content="查看所有所以咖啡門市地址、營業時間與聯絡電話。快速找到最近的分店（高雄 / 台南）。">
-  <meta name="twitter:image" content="https://suoyicoffee.com/assets/img/hero/cover.jpg">
+  <meta name="twitter:title" content="所以咖啡門市據點｜台南・高雄｜外帶與外送">
+  <meta name="twitter:description" content="所以咖啡 Suoyi Coffee 門市據點：台南・高雄。提供現沖外帶與咖啡外送，支援外送平台。">
+  <meta name="twitter:image" content="https://suoyicoffee.com/assets/img/stores/stores_banner.jpg">
   <!-- Bootstrap 5 CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <!-- Bootstrap Icons -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
   <!-- 自訂 CSS -->
   <link rel="stylesheet" href="assets/css/custom.css">
-
   <!-- Preload LCP 圖片（門市縮圖） -->
-  <link rel="preload" as="image" href="assets/img/stores/stores-signboard.jpg">
-
+  <link rel="preload" as="image" href="assets/img/stores/stores_banner.jpg">
   <!-- 結構化資料（JSON-LD）: CafeOrCoffeeShop (門市/商家資料) -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "CafeOrCoffeeShop",
-    "name": "所以咖啡 SUOYI COFFEE",
-    "url": "https://suoyicoffee.com/",
-    "logo": "https://suoyicoffee.com/assets/img/logo/logo.png",
-    "telephone": "0981-451-451",
-    "sameAs": [
-      "https://www.facebook.com/profile.php?id=100076341999740",
-      "https://www.instagram.com/suoyicoffee/"
-    ],
-    "hasPOS": true,
-    "branchOf": {
-      "@type": "Organization",
-      "name": "所以咖啡 SUOYI COFFEE",
-      "url": "https://suoyicoffee.com/"
-    },
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "大智路 40 號",
-      "addressLocality": "鳥松區",
-      "addressRegion": "高雄市",
-      "addressCountry": "TW"
-    },
-    "openingHours": "Mo-Su 07:00-17:00"
+    "@graph": [
+      {
+        "@type": "Organization",
+        "name": "所以咖啡 Suoyi Coffee",
+        "url": "https://suoyicoffee.com",
+        "logo": "https://suoyicoffee.com/assets/img/logo/logo.png",
+        "sameAs": [
+          "https://www.facebook.com/profile.php?id=100076341999740",
+          "https://www.instagram.com/suoyicoffee/"
+        ]
+      },
+      {
+        "@type": "CafeOrCoffeeShop",
+        "name": "所以咖啡 鳥松大智店（高雄）",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "大智路 40 號",
+          "addressLocality": "鳥松區",
+          "addressRegion": "高雄市",
+          "addressCountry": "TW"
+        },
+        "telephone": "+886-976-451-451",
+        "hasDelivery": true,
+        "servesCuisine": "咖啡",
+        "areaServed": ["高雄市","臺南市"],
+        "url": "https://suoyicoffee.com/stores.html#kaohsiung-birdsung",
+        "makesOffer": { "@id": "https://suoyicoffee.com/#wednesday-offer" }
+      },
+      {
+        "@type": "CafeOrCoffeeShop",
+        "name": "所以咖啡 新興新田店（高雄）",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "新田路 87 號",
+          "addressLocality": "新興區",
+          "addressRegion": "高雄市",
+          "addressCountry": "TW"
+        },
+        "telephone": "+886-900-474-688",
+        "hasDelivery": true,
+        "servesCuisine": "咖啡",
+        "areaServed": ["高雄市","臺南市"],
+        "url": "https://suoyicoffee.com/stores.html#kaohsiung-xinxing-xintian",
+        "makesOffer": { "@id": "https://suoyicoffee.com/#wednesday-offer" }
+      },
+      {
+        "@type": "CafeOrCoffeeShop",
+        "name": "所以咖啡 左營富國店（高雄）",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "富國路 48 號",
+          "addressLocality": "左營區",
+          "addressRegion": "高雄市",
+          "addressCountry": "TW"
+        },
+        "telephone": "+886-916-921-158",
+        "hasDelivery": true,
+        "servesCuisine": "咖啡",
+        "areaServed": ["高雄市","臺南市"],
+        "url": "https://suoyicoffee.com/stores.html#kaohsiung-zuoying",
+        "makesOffer": { "@id": "https://suoyicoffee.com/#wednesday-offer" }
+      },
+      {
+        "@type": "CafeOrCoffeeShop",
+        "name": "所以咖啡 新興復橫店（高雄）",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "復橫一路 116 號",
+          "addressLocality": "新興區",
+          "addressRegion": "高雄市",
+          "addressCountry": "TW"
+        },
+        "telephone": "+886-989-319-123",
+        "hasDelivery": true,
+        "servesCuisine": "咖啡",
+        "areaServed": ["高雄市","臺南市"],
+        "url": "https://suoyicoffee.com/stores.html#kaohsiung-fuheng",
+        "makesOffer": { "@id": "https://suoyicoffee.com/#wednesday-offer" }
+      },
+      {
+        "@type": "CafeOrCoffeeShop",
+        "name": "所以咖啡 台南康平店（台南）",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "健康三街 25 號",
+          "addressLocality": "安平區",
+          "addressRegion": "臺南市",
+          "addressCountry": "TW"
+        },
+        "telephone": "+886-972-015-126",
+        "hasDelivery": true,
+        "servesCuisine": "咖啡",
+        "areaServed": ["臺南市","高雄市"],
+        "url": "https://suoyicoffee.com/stores.html#tainan-anping",
+        "makesOffer": { "@id": "https://suoyicoffee.com/#wednesday-offer" }
+      }
+    ]
   }
   </script>
   <style>
@@ -526,8 +598,7 @@
                    class="delivery-chip delivery-line text-decoration-none">
                   <i class="bi bi-line"></i> LINE訂購取餐
                 </a> 
-                <a href="https://www.google.com/maps?q=高雄市左營區富國路48號 所以咖啡" 
-                  target="_blank" class="btn btn-sm btn-outline-brown rounded-pill store-map-btn">
+                <a href="https://www.google.com/maps?q=高雄市左營區富國路48號 所以咖啡" target="_blank" class="btn btn-sm btn-outline-brown rounded-pill store-map-btn">
                   <i class="bi bi-map me-1"></i> 在 Google 地圖中查看
                 </a>
               </div>
@@ -566,8 +637,7 @@
                    class="delivery-chip delivery-line text-decoration-none">
                   <i class="bi bi-line"></i> LINE訂購取餐
                 </a>
-                <a href="https://www.google.com/maps?q=高雄市新興區復橫一路116號 所以咖啡"
-                  target="_blank" class="btn btn-sm btn-outline-brown rounded-pill store-map-btn">
+                <a href="https://www.google.com/maps?q=高雄市新興區復橫一路116號 所以咖啡" target="_blank" class="btn btn-sm btn-outline-brown rounded-pill store-map-btn">
                   <i class="bi bi-map me-1"></i> 在 Google 地圖中查看
                 </a>
               </div>
