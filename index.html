@@ -43,11 +43,12 @@
     ]
   }
   </script>
-  <!-- 優惠（每週三第二杯半價） -->
+  <!-- 優惠（每週三第二杯半價）：補上固定 @id，供 stores.html makesOffer 參照 -->
   <script type="application/ld+json">
   {
     "@context":"https://schema.org",
     "@type":"Offer",
+    "@id":"https://suoyicoffee.com/offers.html#wednesday-offer",
     "name":"每週三外帶咖啡第二杯半價",
     "category":"Weekly Deal",
     "priceCurrency":"TWD",
@@ -80,9 +81,7 @@
     </div>
   </div>
 </nav>
-
 <main>
-
 <!-- 區塊 1：Hero 首屏（H1） -->
 <section class="hero-section d-flex align-items-center">
   <div class="hero-bg-circle"></div>
@@ -221,19 +220,19 @@
 </section>
 
 <!-- 區塊 4：週三限定優惠（H3，小節） -->
-<section class="promo-section py-5" id="wednesday-offer">
+<section class="promo-section py-5">
   <div class="container text-center">
     <div class="promo-badge">
       <i class="bi bi-calendar-event-fill me-1"></i> 週三限定優惠
     </div>
-    <!-- 使用 H3，視覺維持大字 -->
-    <h3 class="h4 fw-bold mb-3 text-white">
+    <!-- 加入 data-offer-headline，配合 JS 動態顯示 -->
+    <h3 class="h4 fw-bold mb-3 text-white" data-offer-headline>
       咖啡迷注意！台南／高雄門市 週三「第二杯半價」👭
     </h3>
     <p class="text-white-50 mb-4" style="max-width: 700px; margin: 0 auto;">
-      每週三造訪 <strong>所以咖啡任一門市</strong>，皆可享有飲品第二杯半價優惠！<br class="d-none d-md-inline">
+      每週三造訪 <strong>所以咖啡台南／高雄門市</strong>，皆可享有飲品第二杯半價優惠！<br class="d-none d-md-inline">
       不論是與好友共享，還是自己想再來一杯，都是最划算的選擇。<br>
-      所以咖啡堅持選用新鮮烘焙豆與萬丹鮮乳，讓您不論在哪一間店，都能喝到相同的完美比例與獨特的高品質風味。
+      所以咖啡堅持選用新鮮烘焙豆與萬丹鮮乳，讓您不論在哪一間店，都能喝到相同的完美比例與高品質風味。
     </p>
     
     <div class="d-flex justify-content-center flex-wrap gap-3 gap-md-5 text-warning small mb-4">
@@ -241,7 +240,7 @@
         <i class="bi bi-geo-alt-fill fs-5 me-2"></i>
         <div class="text-start">
           <div class="fw-bold">適用門市</div>
-          <div>台南／高雄 所以咖啡門市</div>
+          <div data-offer-scope>台南／高雄 所以咖啡門市</div>
         </div>
       </div>
       <div class="d-flex align-items-center">
@@ -253,9 +252,14 @@
       </div>
     </div>
 
-    <a href="stores.html" class="btn btn-outline-light rounded-pill px-4">
-      <i class="bi bi-geo-alt-fill me-1"></i> 查看門市據點
-    </a>
+    <div class="d-flex justify-content-center gap-2">
+      <a href="offers.html#rules" class="btn btn-light rounded-pill px-4 text-brown">
+        <i class="bi bi-card-text me-1"></i> 活動條款
+      </a>
+      <a href="stores.html" class="btn btn-outline-light rounded-pill px-4">
+        <i class="bi bi-geo-alt-fill me-1"></i> 查看門市據點
+      </a>
+    </div>
   </div>
 </section>
 
