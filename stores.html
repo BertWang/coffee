@@ -3,26 +3,29 @@
 <head>
   <meta charset="utf-8">
   <!-- 建議替換 stores.html 的 <head> 標題與描述 -->
-  <title>所以咖啡門市據點｜高雄・台南｜外帶與外送</title>
+  <title>所以咖啡門市｜高雄（鳥松・新興・左營）・台南（安平）｜咖啡外帶與外送</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- SEO 基本設定 -->
-  <meta name="description" content="所以咖啡 Suoyi Coffee 門市據點：高雄・台南。提供現沖外帶與咖啡外送；每週三外帶第二杯半價（詳情見優惠頁）。">
   <meta name="robots" content="index, follow">
+  <!-- SEO 基本設定 -->
+  <meta name="description" content="所以咖啡高雄門市，台南門市：鳥松/新興/左營/安平。現沖外帶與咖啡外送，導航/來電/平台外送一鍵直達。每週三外帶第二杯半價，詳見優惠頁。">
   <link rel="canonical" href="https://suoyicoffee.com/stores.html">
-  <link rel="icon" href="assets/img/logo/logo-brown-on-white.png" />
   <!-- Open Graph / Social -->
   <meta property="og:site_name" content="所以咖啡 SUOYI COFFEE">
-  <!-- 原始 og:title / og:description -->
-  <meta property="og:title" content="所以咖啡門市據點｜高雄・台南｜外帶與外送">
-  <meta property="og:description" content="所以咖啡 Suoyi Coffee 門市據點：高雄・台南。提供現沖外帶與咖啡外送；每週三外帶第二杯半價（詳情見優惠頁）。">
+  <meta property="og:title" content="門市與服務地區｜高雄（鳥松・新興・左營）・台南（安平）｜所以咖啡">
   <meta property="og:type" content="website">
+  <meta property="og:description" content="所以咖啡高雄門市，台南門市：鳥松/新興/左營/安平。現沖外帶與咖啡外送，導航/來電/平台外送一鍵直達。每週三外帶第二杯半價，詳見優惠頁。">
+  <meta property="og:locale" content="zh_TW">
   <meta property="og:url" content="https://suoyicoffee.com/stores.html">
   <meta property="og:image" content="https://suoyicoffee.com/assets/img/stores/stores_banner.jpg">
+  <meta property="og:image:alt" content="所以咖啡高雄與台南門市分佈與外帶外送服務">
+  <meta property="og:image:width" content="1047">
+  <meta property="og:image:height" content="630">
   <meta name="twitter:card" content="summary_large_image">
-  <!-- 原始 twitter:title / twitter:description -->
-  <meta name="twitter:title" content="所以咖啡門市據點｜高雄・台南｜外帶與外送">
-  <meta name="twitter:description" content="所以咖啡 Suoyi Coffee 門市據點：高雄・台南。提供現沖外帶與咖啡外送；每週三外帶第二杯半價（詳情見優惠頁）。">
+  <meta name="twitter:title" content="門市與服務地區｜高雄（鳥松・新興・左營）・台南（安平）｜所以咖啡">
+  <meta name="twitter:description" content="所以咖啡高雄門市，台南門市：鳥松/新興/左營/安平。現沖外帶與咖啡外送，導航/來電/平台外送一鍵直達。每週三外帶第二杯半價，詳見優惠頁。">
+  <meta name="twitter:image:alt" content="所以咖啡高雄與台南門市分佈與外帶外送服務">
   <meta name="twitter:image" content="https://suoyicoffee.com/assets/img/stores/stores_banner.jpg">
+  <link rel="icon" href="assets/img/logo/logo-brown-on-white.png" />
   <!-- Bootstrap 5 CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <!-- Bootstrap Icons -->
@@ -31,80 +34,133 @@
   <link rel="stylesheet" href="assets/css/custom.css">
   <!-- Preload LCP 圖片（門市縮圖） -->
   <link rel="preload" as="image" href="assets/img/stores/stores_banner.jpg">
-  <!-- 結構化資料（JSON-LD）: CafeOrCoffeeShop (門市/商家資料) -->
-  <!-- stores.html：Organization + 多門市（@graph），參照同一優惠 @id -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@graph": [
       {
         "@type": "Organization",
+        "@id": "https://suoyicoffee.com/#org",
         "name": "所以咖啡 Suoyi Coffee",
         "url": "https://suoyicoffee.com",
         "logo": "https://suoyicoffee.com/assets/img/logo/logo.png",
         "sameAs": [
           "https://www.facebook.com/profile.php?id=100076341999740",
           "https://www.instagram.com/suoyicoffee/"
-        ]
+        ],
+        "areaServed": ["高雄","台南","嘉義","屏東","台灣"],
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "所以咖啡主打優惠",
+          "itemListElement": [
+            { "@type": "Offer", "@id": "https://suoyicoffee.com/offers.html#wednesday-offer" }
+          ]
+        }
       },
+
       {
         "@type": "CafeOrCoffeeShop",
+        "@id": "https://suoyicoffee.com/stores.html#kh-birdsong",
         "name": "所以咖啡 鳥松大智店（高雄）",
-        "address": { "@type": "PostalAddress", "streetAddress": "大智路 40 號", "addressLocality": "鳥松區", "addressRegion": "高雄市", "addressCountry": "TW" },
+        "branchOf": { "@id": "https://suoyicoffee.com/#org" },
+        "image": "https://suoyicoffee.com/assets/img/stores/stores-barista-back.jpg",
+        "address": { "@type": "PostalAddress", "streetAddress": "大智路 40 號", "addressLocality": "鳥松區", "addressRegion": "高雄市", "postalCode": "", "addressCountry": "TW" },
         "telephone": "+886-976-451-451",
         "hasDelivery": true,
         "servesCuisine": "咖啡",
-        "areaServed": ["高雄市","臺南市"],
+        "areaServed": ["高雄市"],
+        "hasMap": "https://www.google.com/maps?q=高雄市鳥松區大智路40號 所以咖啡",
         "url": "https://suoyicoffee.com/stores.html#kaohsiung-birdsung",
-        "makesOffer": { "@id": "https://suoyicoffee.com/offers.html#wednesday-offer" }
+        "openingHoursSpecification": [
+          { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "07:00", "closes": "17:00" },
+          { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Saturday","Sunday"], "opens": "08:00", "closes": "17:00" }
+        ],
+        "makesOffer": { "@id": "https://suoyicoffee.com/offers.html#wednesday-offer" },
+        "priceRange": "$$",
+        "paymentAccepted": "Cash, CreditCard, MobilePayment",
+        "knowsAbout": ["外帶咖啡","咖啡外送","Uber Eats","Foodpanda","企業外送"]
       },
+
       {
         "@type": "CafeOrCoffeeShop",
+        "@id": "https://suoyicoffee.com/stores.html#kh-xinxing-xintian",
         "name": "所以咖啡 新興新田店（高雄）",
+        "branchOf": { "@id": "https://suoyicoffee.com/#org" },
+        "image": "https://suoyicoffee.com/assets/img/stores/stores-signboard.jpg",
         "address": { "@type": "PostalAddress", "streetAddress": "新田路 87 號", "addressLocality": "新興區", "addressRegion": "高雄市", "addressCountry": "TW" },
         "telephone": "+886-900-474-688",
         "hasDelivery": true,
         "servesCuisine": "咖啡",
-        "areaServed": ["高雄市","臺南市"],
+        "areaServed": ["高雄市"],
+        "hasMap": "https://www.google.com/maps?q=高雄市新興區新田路87號 所以咖啡",
         "url": "https://suoyicoffee.com/stores.html#kaohsiung-xinxing-xintian",
+        "openingHoursSpecification": [{ "@type": "OpeningHoursSpecification", "dayOfWeek": "Wednesday", "opens": "07:00", "closes": "17:00" }],
         "makesOffer": { "@id": "https://suoyicoffee.com/offers.html#wednesday-offer" }
       },
+
       {
         "@type": "CafeOrCoffeeShop",
+        "@id": "https://suoyicoffee.com/stores.html#kh-zuoying",
         "name": "所以咖啡 左營富國店（高雄）",
+        "branchOf": { "@id": "https://suoyicoffee.com/#org" },
+        "image": "https://suoyicoffee.com/assets/img/stores/stores-cart-bar.jpg",
         "address": { "@type": "PostalAddress", "streetAddress": "富國路 48 號", "addressLocality": "左營區", "addressRegion": "高雄市", "addressCountry": "TW" },
         "telephone": "+886-916-921-158",
         "hasDelivery": true,
         "servesCuisine": "咖啡",
-        "areaServed": ["高雄市","臺南市"],
+        "areaServed": ["高雄市"],
+        "hasMap": "https://www.google.com/maps?q=高雄市左營區富國路48號 所以咖啡",
         "url": "https://suoyicoffee.com/stores.html#kaohsiung-zuoying",
+        "openingHoursSpecification": [{ "@type": "OpeningHoursSpecification", "dayOfWeek": "Wednesday", "opens": "07:00", "closes": "17:00" }],
         "makesOffer": { "@id": "https://suoyicoffee.com/offers.html#wednesday-offer" }
       },
+
       {
         "@type": "CafeOrCoffeeShop",
+        "@id": "https://suoyicoffee.com/stores.html#kh-fuheng",
         "name": "所以咖啡 新興復橫店（高雄）",
+        "branchOf": { "@id": "https://suoyicoffee.com/#org" },
+        "image": "https://suoyicoffee.com/assets/img/stores/stores-interior-sign.jpg",
         "address": { "@type": "PostalAddress", "streetAddress": "復橫一路 116 號", "addressLocality": "新興區", "addressRegion": "高雄市", "addressCountry": "TW" },
         "telephone": "+886-989-319-123",
         "hasDelivery": true,
         "servesCuisine": "咖啡",
-        "areaServed": ["高雄市","臺南市"],
+        "areaServed": ["高雄市"],
+        "hasMap": "https://www.google.com/maps?q=高雄市新興區復橫一路116號 所以咖啡",
         "url": "https://suoyicoffee.com/stores.html#kaohsiung-fuheng",
+        "openingHoursSpecification": [{ "@type": "OpeningHoursSpecification", "dayOfWeek": "Wednesday", "opens": "07:00", "closes": "17:00" }],
         "makesOffer": { "@id": "https://suoyicoffee.com/offers.html#wednesday-offer" }
       },
+
       {
         "@type": "CafeOrCoffeeShop",
+        "@id": "https://suoyicoffee.com/stores.html#tn-anping",
         "name": "所以咖啡 台南康平店（台南）",
+        "branchOf": { "@id": "https://suoyicoffee.com/#org" },
+        "image": "https://suoyicoffee.com/assets/img/stores/stores_anping.jpg",
         "address": { "@type": "PostalAddress", "streetAddress": "健康三街 25 號", "addressLocality": "安平區", "addressRegion": "臺南市", "addressCountry": "TW" },
         "telephone": "+886-972-015-126",
         "hasDelivery": true,
         "servesCuisine": "咖啡",
-        "areaServed": ["臺南市","高雄市"],
+        "areaServed": ["臺南市"],
+        "hasMap": "https://www.google.com/maps?q=臺南市安平區健康三街25號 所以咖啡",
         "url": "https://suoyicoffee.com/stores.html#tainan-anping",
+        "openingHoursSpecification": [{ "@type": "OpeningHoursSpecification", "dayOfWeek": "Wednesday", "opens": "07:00", "closes": "17:00" }],
         "makesOffer": { "@id": "https://suoyicoffee.com/offers.html#wednesday-offer" }
       }
     ]
   }
   </script>
+  <script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"BreadcrumbList",
+  "itemListElement":[
+    { "@type":"ListItem","position":1,"name":"首頁","item":"https://suoyicoffee.com/" },
+    { "@type":"ListItem","position":2,"name":"所以咖啡門市","item":"https://suoyicoffee.com/stores.html" }
+  ]
+}
+</script>
   <style>
     /* 門市據點專用樣式 */
 
@@ -304,9 +360,10 @@
       <div class="row align-items-center gy-4">
         <div class="col-lg-7">
           <span class="hero-tag">LOCATIONS · 所有門市與地圖</span>
-          <h1 class="display-5 fw-bold text-brown mb-3">
+          <p class="h1 display-5 fw-bold text-brown mb-3">
             從不鏽鋼餐車，<br>到高雄與台南的街角。
-          </h1>
+          </p>
+          <h1 class="hero-tag">高雄（鳥松・新興・左營）・台南（安平）｜咖啡外帶與外送</h1>
           <p class="text-muted mb-4" style="max-width: 640px;">
             「所以咖啡」自 2021 年創立，以不鏽鋼餐車為基地，結合專業設備與高質感設計，打造便利又講究的外帶咖啡體驗。
             以得來速為靈感，把咖啡帶到街角，讓趕路、下班或放空時，都能遇見一杯香醇回甘的咖啡。
@@ -400,8 +457,8 @@
                 </span>
               </div>
               <p class="small text-muted mb-2">
-                目前門市集中於高雄市鳥松、新興、左營與台南安平區，以外帶咖啡吧為主體，亦有短程外送服務百人大型外燴服務。
-                結合 UberEats、Foodpanda 外送平台，讓「平價奢華」的咖啡走進更多生活圈。
+                目前門市集中於高雄（鳥松/新興/左營）與台南安平，提供現沖外帶、短程外送，服務百人大型外燴服務。
+                與平台外送（UberEats/Foodpanda），導航/來電/平台下單一鍵直達。每週三外帶第二杯半價，建議提前預訂取餐。讓「平價奢華」的咖啡走進更多生活圈。
               </p>
               <ul class="small text-muted mb-3">
                 <li>高雄市：鳥松 / 新興 / 左營，共 <strong>4 門市</strong></li>
@@ -498,7 +555,7 @@
             <!-- 週三優惠連結 -->
             <div class="mt-1">
               <a href="offers.html#rules" class="small text-decoration-none text-brown hover-underline">
-                <i class="bi bi-tag-fill me-1"></i> 週三外帶第二杯半價（詳情）
+                <i class="bi bi-tag-fill me-1"></i> 週三外帶第二杯半價 <span class="ms-1 text-muted">詳情 →</span>
               </a>
             </div>
 
@@ -550,7 +607,7 @@
 
             <div class="mt-1">
               <a href="offers.html#rules" class="small text-decoration-none text-brown hover-underline">
-                <i class="bi bi-tag-fill me-1"></i> 週三外帶第二杯半價（詳情）
+                <i class="bi bi-tag-fill me-1"></i> 週三外帶第二杯半價 <span class="ms-1 text-muted">詳情 →</span>
               </a>
             </div>
 
@@ -602,7 +659,7 @@
 
             <div class="mt-1">
               <a href="offers.html#rules" class="small text-decoration-none text-brown hover-underline">
-                <i class="bi bi-tag-fill me-1"></i> 週三外帶第二杯半價（詳情）
+                <i class="bi bi-tag-fill me-1"></i> 週三外帶第二杯半價 <span class="ms-1 text-muted">詳情 →</span>
               </a>
             </div>
 
@@ -654,7 +711,7 @@
 
             <div class="mt-1">
               <a href="offers.html#rules" class="small text-decoration-none text-brown hover-underline">
-                <i class="bi bi-tag-fill me-1"></i> 週三外帶第二杯半價（詳情）
+                <i class="bi bi-tag-fill me-1"></i> 週三外帶第二杯半價 <span class="ms-1 text-muted">詳情 →</span>
               </a>
             </div>
 
@@ -719,7 +776,7 @@
               </div>
               <div class="mt-1">
                 <a href="offers.html#rules" class="small text-decoration-none text-brown hover-underline">
-                  <i class="bi bi-tag-fill me-1"></i> 週三外帶第二杯半價（詳情）
+                  <i class="bi bi-tag-fill me-1"></i> 週三外帶第二杯半價 <span class="ms-1 text-muted">詳情 →</span>
                 </a>
               </div>
               <small class="text-muted d-block mt-2">
