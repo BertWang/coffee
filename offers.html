@@ -2,7 +2,7 @@
 <html lang="zh-Hant-TW">
 <head>
     <meta charset="utf-8">
-    <title>所以咖啡優惠｜每週三外帶第二杯半價｜高雄・台南</title>
+    <title>週三第二杯半價｜高雄・台南・屏東・嘉義同步體驗｜所以咖啡優惠</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="所以咖啡 Suoyi Coffee｜高雄・台南門市每週三外帶第二杯半價。現沖現取、快速到手；支援外送平台，企業/活動外送可洽詢。">
     <meta name="robots" content="index,follow">
@@ -11,19 +11,25 @@
     <!-- Open Graph -->
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="所以咖啡 Suoyi Coffee">
-    <meta property="og:title" content="所以咖啡優惠｜每週三外帶第二杯半價｜高雄・台南">
+    <meta property="og:title" content="週三第二杯半價｜高雄・台南・屏東・嘉義同步體驗｜所以咖啡優惠">
     <meta property="og:description" content="高雄・台南門市每週三外帶第二杯半價。現沖現取、快速到手。支援外送平台，企業/活動外送可洽詢。">
     <meta property="og:url" content="https://suoyicoffee.com/offers.html">
-    <meta property="og:image" content="https://suoyicoffee.com/assets/img/og/og-offers-1200x630.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image" content="https://suoyicoffee.com/assets/img/og/og-image-1200x630.jpg">
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="所以咖啡優惠｜每週三外帶第二杯半價｜高雄・台南">
+    <meta name="twitter:title" content="週三第二杯半價｜高雄・台南・屏東・嘉義同步體驗｜所以咖啡優惠">
     <meta name="twitter:description" content="高雄・台南門市每週三外帶第二杯半價。現沖現取、快速到手。支援外送平台。">
-    <meta name="twitter:image" content="https://suoyicoffee.com/assets/img/og/og-offers-1200x630.jpg">
+    <meta name="twitter:image" content="https://suoyicoffee.com/assets/img/og/og-image-1200x630.jpg">
 
-    <!-- CSS -->
+    <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <!-- 自訂 CSS -->
+    <link rel="stylesheet" href="assets/css/custom.css">
     <link rel="stylesheet" href="assets/css/custom.css">
     <link rel="icon" href="assets/img/logo/logo-brown-on-white.png">
     <!-- JSON-LD：Offer（提供 @id，供門市 JSON-LD 參照） -->
@@ -39,8 +45,23 @@
     "eligibleRegion": ["臺南市","高雄市"],
     "url": "https://suoyicoffee.com/offers.html",
     "description": "每週三外帶限定；第二杯同品項或價低者半價；不可併用其他優惠；適用高雄／台南門市。"
+    "eligibleRegion": ["TW-KHH","TW-TNN"],
+    "eligibleDayOfWeek": "Wednesday"
     }
     </script>
+    <style>
+      .franchise-cta {
+        background: linear-gradient(120deg, #5C4033, #8D6E5A);
+        color: #fff;
+        border-radius: 20px;
+        overflow: hidden;
+      }
+
+      .franchise-cta h2,
+      .franchise-cta p {
+        color: #fff;
+      }
+    </style>
 </head>
 <body class="bg-light">
 <nav class="navbar navbar-expand-md bg-white shadow-sm fixed-top">
@@ -187,6 +208,66 @@
     </div>
   </div>
 </section>
+<!-- 4. 加盟 CTA：從門市版圖導向加盟專區 -->
+  <section class="py-5">
+    <div class="container">
+      <div class="franchise-cta p-4 p-md-5">
+        <div class="row align-items-center gy-4">
+          <div class="col-lg-7">
+            <h2 class="h4 fw-bold mb-3">也想在您的城市，開一間所以咖啡嗎？</h2>
+            <p class="small mb-3">
+              我們相信，美味不該高價，更不該只在店內享有。以不鏽鋼餐車為起點，
+              所以咖啡將「得來速」的靈感帶進台灣街角，結合標準化設備、外帶吧動線與外送平台，
+              讓每一間門市都能在小坪數中創造穩定營收。
+            </p>
+            <ul class="small mb-3">
+              <li>南台灣 5 門市營運實績，品牌模型已驗證。</li>
+              <li>設備、配方、SOP 一次到位，縮短摸索期。</li>
+              <li>外帶＋外送雙線營收，靈活應對不同商圈型態。</li>
+            </ul>
+            <a href="franchise.html" class="btn btn-light text-brown fw-bold rounded-pill px-4">
+              前往加盟專區 <i class="bi bi-chevron-right"></i>
+            </a>
+          </div>
+          <div class="col-lg-5 text-lg-end text-center">
+            <div class="d-inline-block text-start small opacity-75">
+              <div class="mb-2">
+                <span class="badge bg-light text-brown me-2"><i class="bi bi-geo-alt"></i> 高雄 / 台南</span>
+                <span class="badge bg-light text-brown"><i class="bi bi-diagram-3"></i> 外帶吧型態</span>
+              </div>
+              <div>熱愛咖啡，所以相遇；平價奢華，所以咖啡。</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- 新增：快速導覽區塊（頁面推薦） -->
+  <section class="py-5 bg-white border-top">
+    <div class="container">
+      <h2 class="h5 text-brown fw-bold mb-4 text-center">還要了解更多？</h2>
+      <div class="row g-3 justify-content-center">
+        <div class="col-md-5">
+          <a href="menu.html" class="text-decoration-none text-dark h-100">
+            <div class="path-card p-4">
+              <i class="bi bi-cup-hot-fill fs-2 text-brown mb-2"></i>
+              <h3 class="h6 fw-bold text-brown mb-2">看看我們的菜單</h3>
+              <p class="small text-muted mb-0">從美式、拿鐵到季節限定，探索所有飲品選擇。</p>
+            </div>
+          </a>
+        </div>
+        <div class="col-md-5">
+          <a href="franchise.html" class="text-decoration-none text-dark h-100">
+            <div class="path-card p-4">
+              <i class="bi bi-rocket-fill fs-2 text-brown mb-2"></i>
+              <h3 class="h6 fw-bold text-brown mb-2">加盟創業方案</h3>
+              <p class="small text-muted mb-0">想開一間屬於自己的所以咖啡？了解加盟流程。</p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
 </main>
 
 <footer class="py-4 border-top">
