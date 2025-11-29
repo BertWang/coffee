@@ -86,11 +86,11 @@ document.addEventListener("DOMContentLoaded", function () {
     const daysToWed = (3 - d + 7) % 7;
 
     if (d === 3) {
-      headline.textContent = '今天週三｜台南／高雄門市「第二杯半價」！';
-      if (scopeEl) scopeEl.textContent = '台南／高雄 所以咖啡門市（依各店公告為準）';
+      headline.textContent = '今天週三｜高雄／台南門市「第二杯半價」！';
+      if (scopeEl) scopeEl.textContent = '高雄／台南 所以咖啡門市（依各店公告為準）';
       if (promoWrap) promoWrap.classList.add('is-today');
     } else {
-      headline.textContent = `每週三限定｜台南／高雄門市 第二杯半價（${daysToWed} 天後）`;
+      headline.textContent = `每週三限定｜高雄／台南門市 第二杯半價（${daysToWed} 天後）`;
       if (promoWrap) promoWrap.classList.remove('is-today');
     }
   })();
