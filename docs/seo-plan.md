@@ -165,7 +165,7 @@ LocalBusiness（門市/服務）：
   "@type": "CafeOrCoffeeShop",
   "name": "所以咖啡 Suoyi Coffee",
   "description": "南台灣手沖外帶品牌，提供外帶、短程外送與平台外送。",
-  "areaServed": ["台南", "高雄", "嘉義", "屏東", "台灣"],
+  "areaServed": ["高雄","台南",  "嘉義", "屏東", "台灣"],
   "hasDelivery": true,
   "servesCuisine": "咖啡",
   "url": "https://suoyicoffee.com"
