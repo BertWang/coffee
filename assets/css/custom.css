@@ -10,6 +10,21 @@ footer {
   background: #FFFFFF;
 }
 
+/* 響應式 Footer 對齊設定 */
+.footer-contact {
+  gap: 0.5rem;
+}
+
+@media (max-width: 576px) {
+  .footer-contact {
+    flex-direction: column; /* 手機改成上下排列 */
+    align-items: center;
+    text-align: center;
+  }
+  .footer-contact div {
+    margin-bottom: 4px;
+  }
+}
 /* =========================================
    2. 品牌色工具類 (Brand Colors)
    ========================================= */
