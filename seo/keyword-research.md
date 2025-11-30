@@ -78,7 +78,7 @@
 - Title：
   - 所以咖啡優惠｜每週三外帶第二杯半價｜高雄・台南
 - Meta：
-  - 高雄・台南門市每週三外帶第二杯半價。現沖現取、快速到手；外送平台之折扣依平台規則為準。  
+  - 高雄・台南門市每週三外帶第二杯半價。現萃現取、快速到手；外送平台之折扣依平台規則為準。  
 - 結構化資料：Offer 以固定 @id（/offers.html#wednesday-offer），供 stores.html makesOffer 引用。
 
 6) 加盟 franchise.html（商業意圖）
