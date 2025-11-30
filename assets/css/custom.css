@@ -746,7 +746,7 @@ a:focus, button:focus, [role="button"]:focus {
   outline-offset: 2px;
 }
 
-/* 3) 超連結下劃線控制（補上 base 狀態；你原本已有 :hover） */
+/* 3) 超連結下劃線控制（補上 base 狀態；您原本已有 :hover） */
 .hover-underline { text-decoration: none; }
 .hover-underline:hover { text-decoration: underline; }
 
