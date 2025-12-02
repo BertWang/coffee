@@ -37,6 +37,7 @@
   <!-- Preload LCP 圖片 -->
   <link rel="preload" as="image" href="assets/img/hero/hero-coffee-lineup.jpg" imagesrcset="assets/img/hero/hero-coffee-lineup.jpg">
   <!-- 組織層（品牌） -->
+  <!-- 整合後的結構化資料：包含 組織、優惠、影片 -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -50,13 +51,7 @@
           "https://www.facebook.com/profile.php?id=100076341999740",
           "https://www.instagram.com/suoyicoffee/"
         ],
-        "areaServed": [
-          "高雄",
-          "台南",
-          "嘉義",
-          "屏東",
-          "台灣"
-        ],
+        "areaServed": ["高雄", "台南", "嘉義", "屏東", "台灣"],
         "hasOfferCatalog": {
           "@type": "OfferCatalog",
           "name": "所以咖啡主打優惠",
@@ -78,10 +73,7 @@
         "url": "https://suoyicoffee.com/offers.html",
         "description": "每週三外帶限定；第二杯同品項或價低者半價；不可併用其他優惠；適用高雄／台南門市。",
         "eligibleDayOfWeek": "Wednesday",
-        "eligibleRegion": [
-          "TW-KHH",
-          "TW-TNN"
-        ]
+        "eligibleRegion": ["TW-KHH", "TW-TNN"]
       },
       {
         "@type": "VideoObject",
