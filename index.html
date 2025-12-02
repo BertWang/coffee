@@ -37,39 +37,71 @@
   <!-- 組織層（品牌） -->
   <script type="application/ld+json">
   {
-    "@context":"https://schema.org",
-    "@type":"Organization",
-    "name":"所以咖啡 SUOYI COFFEE",
-    "url":"https://suoyicoffee.com",
-    "logo":"https://suoyicoffee.com/assets/img/logo/logo.png",
-    "sameAs":[
-      "https://www.facebook.com/profile.php?id=100076341999740",
-      "https://www.instagram.com/suoyicoffee/"
-    ],
-    "areaServed":["高雄","台南","嘉義","屏東","台灣"],
-    "hasOfferCatalog":{
-      "@type":"OfferCatalog",
-      "name":"所以咖啡主打優惠",
-      "itemListElement":[
-        {"@type":"Offer","@id":"https://suoyicoffee.com/offers.html#wednesday-offer"}
-      ]
-    }
-  }
-  </script>
-  <!-- 優惠（每週三第二杯半價）：補上固定 @id，供 stores.html makesOffer 參照 -->
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"Offer",
-    "@id":"https://suoyicoffee.com/offers.html#wednesday-offer",
-    "name":"每週三外帶咖啡第二杯半價",
-    "category":"Weekly Deal",
-    "priceCurrency":"TWD",
-    "availability":"https://schema.org/InStoreOnly",
-    "url":"https://suoyicoffee.com/offers.html",
-    "description":"每週三外帶限定；第二杯同品項或價低者半價；不可併用其他優惠；適用高雄／台南門市。",
-    "eligibleDayOfWeek":"Wednesday",
-    "eligibleRegion":["TW-KHH","TW-TNN"]
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "name": "所以咖啡 SUOYI COFFEE",
+        "url": "https://suoyicoffee.com",
+        "logo": "https://suoyicoffee.com/assets/img/logo/logo.png",
+        "sameAs": [
+          "https://www.facebook.com/profile.php?id=100076341999740",
+          "https://www.instagram.com/suoyicoffee/"
+        ],
+        "areaServed": [
+          "高雄",
+          "台南",
+          "嘉義",
+          "屏東",
+          "台灣"
+        ],
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "所以咖啡主打優惠",
+          "itemListElement": [
+            {
+              "@type": "Offer",
+              "@id": "https://suoyicoffee.com/offers.html#wednesday-offer"
+            }
+          ]
+        }
+      },
+      {
+        "@type": "Offer",
+        "@id": "https://suoyicoffee.com/offers.html#wednesday-offer",
+        "name": "每週三外帶咖啡第二杯半價",
+        "category": "Weekly Deal",
+        "priceCurrency": "TWD",
+        "availability": "https://schema.org/InStoreOnly",
+        "url": "https://suoyicoffee.com/offers.html",
+        "description": "每週三外帶限定；第二杯同品項或價低者半價；不可併用其他優惠；適用高雄／台南門市。",
+        "eligibleDayOfWeek": "Wednesday",
+        "eligibleRegion": [
+          "TW-KHH",
+          "TW-TNN"
+        ]
+      },
+      {
+        "@type": "VideoObject",
+        "name": "熱愛咖啡，所以相遇｜所以咖啡品牌介紹",
+        "description": "30 秒認識「所以咖啡」— 高雄起家的外帶精品咖啡品牌。堅持嚴選極品咖啡豆、萬丹酪農限定鮮乳與五道式 RO 純水。",
+        "thumbnailUrl": [
+          "https://suoyicoffee.com/assets/video/welcome_video-cover.png"
+        ],
+        "uploadDate": "2024-01-01T08:00:00+08:00",
+        "duration": "PT30S",
+        "contentUrl": "https://suoyicoffee.com/assets/video/welcome_video.mp4",
+        "embedUrl": "https://suoyicoffee.com/assets/video/welcome_video.mp4",
+        "publisher": {
+          "@type": "Organization",
+          "name": "所以咖啡 SUOYI COFFEE",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://suoyicoffee.com/assets/img/logo/logo.png"
+          }
+        }
+      }
+    ]
   }
   </script>
 </head>
