@@ -30,6 +30,7 @@
   <!-- 自訂 CSS -->
   <link rel="stylesheet" href="assets/css/custom.css">
   <!-- 結構化資料（JSON-LD）: CafeOrCoffeeShop（保持與首頁一致的商家資訊） -->
+    <!-- 結構化資料（JSON-LD）: 完整菜單項目 (All Items) -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -39,15 +40,164 @@
     "image": "https://suoyicoffee.com/assets/img/og/og-image-1200x630.jpg",
     "url": "https://suoyicoffee.com/menu.html",
     "servesCuisine": "Coffee, Tea, Specialty Drinks",
-    "areaServed": ["高雄","台南",  "嘉義", "屏東", "台灣"],
+    "priceRange": "$$",
+    "areaServed": ["高雄", "台南", "嘉義", "屏東", "台灣"],
     "hasMenu": {
       "@type": "Menu",
-      "name": "所以咖啡菜單",
+      "name": "所以咖啡完整菜單",
       "url": "https://suoyicoffee.com/menu.html",
       "hasMenuSection": [
-        { "@type": "MenuSection", "name": "咖啡", "description": "拿鐵、卡布奇諾、美式與特調" },
-        { "@type": "MenuSection", "name": "特調飲品", "description": "海鹽焦糖拿鐵、覆盆子拿鐵、黑糖拿鐵等季節限定" },
-        { "@type": "MenuSection", "name": "茶與奶類飲品", "description": "奶茶拿鐵、可可拿鐵、高山茶系列" }
+        {
+          "@type": "MenuSection",
+          "name": "咖啡系列 COFFEE",
+          "hasMenuItem": [
+            {
+              "@type": "MenuItem",
+              "name": "美式咖啡 Americano",
+              "description": "嚴選咖啡豆，香氣風味均衡，品嚐最純粹風味。",
+              "image": "https://suoyicoffee.com/assets/img/products/Americano.jpg",
+              "offers": { "@type": "Offer", "price": "65", "priceCurrency": "TWD" }
+            },
+            {
+              "@type": "MenuItem",
+              "name": "檸檬冰美式 Sicilian Coffee",
+              "description": "西西里咖啡，新鮮檸檬與冰咖啡結合，口感清爽。",
+              "image": "https://suoyicoffee.com/assets/img/products/Sicilian_Coffee.jpg",
+              "offers": { "@type": "Offer", "price": "85", "priceCurrency": "TWD" }
+            },
+            {
+              "@type": "MenuItem",
+              "name": "鮮橙冰美式 Orange Americano",
+              "description": "新鮮柳橙汁提味，果香與咖啡的完美對話。",
+              "image": "https://suoyicoffee.com/assets/img/products/Orange_Americano.jpg",
+              "offers": { "@type": "Offer", "price": "85", "priceCurrency": "TWD" }
+            },
+            {
+              "@type": "MenuItem",
+              "name": "香醇拿鐵 Latte",
+              "description": "咖啡與鮮奶黃金比例，口感順滑，每日首選。",
+              "image": "https://suoyicoffee.com/assets/img/products/Latte_1.jpg",
+              "offers": { "@type": "Offer", "price": "75", "priceCurrency": "TWD" }
+            },
+            {
+              "@type": "MenuItem",
+              "name": "卡布奇諾 Cappuccino",
+              "description": "經典奶泡層次，保留濃郁意式香氣。",
+              "image": "https://suoyicoffee.com/assets/img/products/Cappuccino2.jpg",
+              "offers": { "@type": "Offer", "price": "75", "priceCurrency": "TWD" }
+            },
+            {
+              "@type": "MenuItem",
+              "name": "淡拿鐵 Single Espresso Latte",
+              "description": "單份濃縮輕柔呈現，適合偏好奶香者。",
+              "image": "https://suoyicoffee.com/assets/img/products/Single_Espresso_Latte2.jpg",
+              "offers": { "@type": "Offer", "price": "75", "priceCurrency": "TWD" }
+            },
+            {
+              "@type": "MenuItem",
+              "name": "厚拿鐵 Triple Espresso Latte",
+              "description": "1.5份濃縮咖啡基底，濃郁提神。",
+              "image": "https://suoyicoffee.com/assets/img/products/Triple_Espresso_Latte.jpg",
+              "offers": { "@type": "Offer", "price": "95", "priceCurrency": "TWD" }
+            },
+            {
+              "@type": "MenuItem",
+              "name": "黑糖拿鐵 Brown Sugar Latte",
+              "description": "焦糖化黑糖帶出溫潤麥芽香。",
+              "image": "https://suoyicoffee.com/assets/img/products/Brown_Sugar_Latte_1.jpg",
+              "offers": { "@type": "Offer", "price": "85", "priceCurrency": "TWD" }
+            },
+            {
+              "@type": "MenuItem",
+              "name": "香草拿鐵 Vanilla Latte",
+              "description": "細緻香草甜香，每日的小確幸。",
+              "image": "https://suoyicoffee.com/assets/img/products/Vanilla_Latte.jpg",
+              "offers": { "@type": "Offer", "price": "85", "priceCurrency": "TWD" }
+            },
+            {
+              "@type": "MenuItem",
+              "name": "榛果拿鐵 Roasted Hazelnut Latte",
+              "description": "堅果香氣溫和，適合搭配甜點。",
+              "image": "https://suoyicoffee.com/assets/img/products/Roasted_Hazelnut_Latte.jpg",
+              "offers": { "@type": "Offer", "price": "85", "priceCurrency": "TWD" }
+            },
+            {
+              "@type": "MenuItem",
+              "name": "黑摩卡拿鐵 Mocha Latte",
+              "description": "巧克力與咖啡結合，帶有微苦餘韻。",
+              "image": "https://suoyicoffee.com/assets/img/products/Mocha_Latte.jpg",
+              "offers": { "@type": "Offer", "price": "85", "priceCurrency": "TWD" }
+            },
+            {
+              "@type": "MenuItem",
+              "name": "覆盆莓拿鐵 Raspberry Latte",
+              "description": "覆盆莓醬帶來清爽果酸與層次。",
+              "image": "https://suoyicoffee.com/assets/img/products/Raspberry_Latte.jpg",
+              "offers": { "@type": "Offer", "price": "85", "priceCurrency": "TWD" }
+            },
+            {
+              "@type": "MenuItem",
+              "name": "海鹽焦糖拿鐵 Salted Caramel Latte",
+              "description": "人氣招牌，焦糖甜與海鹽微鹹的完美平衡。",
+              "image": "https://suoyicoffee.com/assets/img/products/Salted_Caramel_Latte.jpg",
+              "offers": { "@type": "Offer", "price": "85", "priceCurrency": "TWD" }
+            }
+          ]
+        },
+        {
+          "@type": "MenuSection",
+          "name": "歐蕾系列 AU LAIT",
+          "hasMenuItem": [
+            {
+              "@type": "MenuItem",
+              "name": "奶茶歐蕾 Fresh Milk Tea",
+              "description": "鮮奶紅茶，口感滑順。",
+              "image": "https://suoyicoffee.com/assets/img/products/Fresh_Milk_Tea_1.jpg",
+              "offers": { "@type": "Offer", "price": "60", "priceCurrency": "TWD" }
+            },
+            {
+              "@type": "MenuItem",
+              "name": "黑糖歐蕾 Brown Sugar Milk",
+              "description": "黑糖鮮奶，香甜不膩。",
+              "image": "https://suoyicoffee.com/assets/img/products/Brown_Sugar_Milk.jpg",
+              "offers": { "@type": "Offer", "price": "60", "priceCurrency": "TWD" }
+            },
+            {
+              "@type": "MenuItem",
+              "name": "可可歐蕾 Chocolate Milk",
+              "description": "濃厚純可可香，建議可加糖。",
+              "image": "https://suoyicoffee.com/assets/img/products/Chocolate_Milk_1.jpg",
+              "offers": { "@type": "Offer", "price": "70", "priceCurrency": "TWD" }
+            }
+          ]
+        },
+        {
+          "@type": "MenuSection",
+          "name": "茶系列 TEA",
+          "hasMenuItem": [
+            {
+              "@type": "MenuItem",
+              "name": "高山金萱 High Mountain Tea",
+              "description": "嚴選高品質茶葉，茶香四溢。",
+              "image": "https://suoyicoffee.com/assets/img/products/High_Mountain_Tea_1.jpg",
+              "offers": { "@type": "Offer", "price": "35", "priceCurrency": "TWD" }
+            },
+            {
+              "@type": "MenuItem",
+              "name": "蜜香紅茶 Honey Scented Black Tea",
+              "description": "口感柔順甘醇，散發馥郁蜜香。",
+              "image": "https://suoyicoffee.com/assets/img/products/Honey_Flavored_Black_Tea_1.jpg",
+              "offers": { "@type": "Offer", "price": "35", "priceCurrency": "TWD" }
+            },
+            {
+              "@type": "MenuItem",
+              "name": "柳橙梅子冰茶 Orange Plum Iced Tea",
+              "description": "柳橙與梅子的清新果香，酸甜爽口。",
+              "image": "https://suoyicoffee.com/assets/img/products/Orange_Plum_Iced_Tea.jpg",
+              "offers": { "@type": "Offer", "price": "70", "priceCurrency": "TWD" }
+            }
+          ]
+        }
       ]
     },
     "makesOffer": {
@@ -57,7 +207,11 @@
       "priceSpecification": {
         "@type": "UnitPriceSpecification",
         "priceCurrency": "TWD",
-        "eligibleQuantity": { "@type": "QuantitativeValue", "value": 2, "unitCode": "C62" }
+        "eligibleQuantity": {
+          "@type": "QuantitativeValue",
+          "value": 2,
+          "unitCode": "C62"
+        }
       },
       "availabilityStarts": "2025-01-01",
       "description": "每週三外帶第二杯咖啡享半價優惠"
