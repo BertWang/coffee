@@ -2,279 +2,522 @@
 <html lang="zh-Hant-TW">
 <head>
   <meta charset="utf-8">
-  <!-- SEO 重點：標題包含 [區域] + [咖啡] + [外帶/外送] -->
-  <title>鳥松咖啡推薦｜所以咖啡鳥松大智店｜現萃咖啡外帶與外送首選</title>
+  <!-- Title 優化：地區 + 品牌 + 核心服務 -->
+  <title>鳥松咖啡推薦｜所以咖啡鳥松大智店｜澄清湖周邊外帶下午茶首選</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="robots" content="index, follow">
-  
-  <!-- SEO 重點：描述包含具體地址與服務內容 -->
-  <meta name="description" content="高雄鳥松區咖啡推薦！所以咖啡鳥松大智店，位於大智路40號。提供高品質義式咖啡、拿鐵、茶飲外帶與外送服務。配合 UberEats、Foodpanda，鳥松周邊下午茶、會議咖啡首選。">
-  
-  <!-- Canonical 指向自己 -->
+  <!-- Description 優化：包含地標與服務優勢 -->
+  <meta name="description" content="高雄鳥松區咖啡首選！所以咖啡鳥松大智店，近澄清湖與長庚醫院。提供現萃拿鐵、美式咖啡外帶外送。每週三第二杯半價，在地人推薦的平價奢華咖啡。">
   <link rel="canonical" href="https://suoyicoffee.com/store-niaosong.html">
   
-  <!-- Open Graph / Social -->
-  <meta property="og:site_name" content="所以咖啡 SUOYI COFFEE">
-  <meta property="og:title" content="鳥松咖啡推薦｜所以咖啡鳥松大智店｜外帶外送">
-  <meta property="og:type" content="restaurant">
-  <meta property="og:description" content="高雄鳥松區咖啡推薦！提供高品質義式咖啡、拿鐵外帶與外送服務。配合 UberEats、Foodpanda。">
-  <meta property="og:url" content="https://suoyicoffee.com/store-niaosong.html">
-  <!-- 使用該分店的專屬圖片 -->
+  <!-- Open Graph -->
+  <meta property="og:title" content="鳥松咖啡推薦｜所以咖啡鳥松大智店">
   <meta property="og:image" content="https://suoyicoffee.com/assets/img/stores/stores-barista-back.jpg">
   
-  <link rel="icon" href="assets/img/logo/logo-brown-on-white.png" sizes="32x32" type="image/png">
-  <link rel="apple-touch-icon" href="assets/img/logo/logo-brown-on-white.png">
-  
-  <!-- CSS (維持原樣) -->
+  <!-- CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
   <link rel="stylesheet" href="assets/css/custom.css">
 
-  <!-- 單店專用樣式微調 -->
   <style>
-    .store-hero {
-      padding: 100px 0 60px;
-      background: linear-gradient(135deg, #F8F3ED 0%, #FFFFFF 100%);
-    }
-    .store-info-card {
-      background: #fff;
-      border-radius: 18px;
-      box-shadow: 0 10px 30px rgba(92, 64, 51, 0.08);
-      border: 1px solid #F0E5DA;
-      overflow: hidden;
-    }
-    .keyword-tag {
-      background: #F2E5D7;
-      color: #5C4033;
-      padding: 4px 12px;
-      border-radius: 4px;
-      font-size: 0.85rem;
-      font-weight: 600;
-      margin-right: 8px;
-      display: inline-block;
-      margin-bottom: 8px;
-    }
-    .action-btn-lg {
-      padding: 12px 20px;
-      font-size: 1.1rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      transition: all 0.3s;
-    }
-    .action-btn-lg:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    }
-    /* 嵌入地圖 RWD */
-    .map-container {
+    /* 1. 沉浸式 Hero */
+    .store-hero-v2 {
       position: relative;
-      padding-bottom: 56.25%; /* 16:9 */
-      height: 0;
-      overflow: hidden;
-      border-radius: 12px;
+      background: url('assets/img/stores/stores-barista-back.jpg') no-repeat center center/cover;
+      padding: 120px 0 80px;
+      color: white;
     }
-    .map-container iframe {
+    .store-hero-overlay {
       position: absolute;
-      top: 0;
-      left: 0;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: linear-gradient(to right, rgba(92,64,51,0.9) 0%, rgba(92,64,51,0.7) 50%, rgba(92,64,51,0.3) 100%);
+      z-index: 1;
+    }
+    .store-hero-content {
+      position: relative;
+      z-index: 2;
+    }
+
+    /* 2. 熱銷商品卡片 */
+    .menu-highlight-card {
+      border: none;
+      border-radius: 16px;
+      overflow: hidden;
+      transition: transform 0.3s;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    }
+    .menu-highlight-card:hover {
+      transform: translateY(-5px);
+    }
+    .menu-img-wrapper {
+      height: 200px;
+      overflow: hidden;
+      background: #f8f9fa;
+    }
+    .menu-img-wrapper img {
       width: 100%;
       height: 100%;
-      border: 0;
+      object-fit: cover;
+    }
+    /* 確保圖片填滿容器且不變形 */
+    .object-fit-cover {
+      object-fit: cover;
+      object-position: center;
+    }
+    /* 限制描述文字最多兩行 */
+    .text-truncate-2 {
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    /* 3. 週三優惠區塊 (深色視覺阻斷) */
+    .promo-section {
+      background: linear-gradient(135deg, #5C4033 0%, #3E2B22 100%);
+      padding: 80px 0;
+      position: relative;
+      overflow: hidden;
+    }
+    .promo-section::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background-image: radial-gradient(circle at 20% 50%, rgba(255,255,255,0.05) 0%, transparent 25%),
+                        radial-gradient(circle at 80% 20%, rgba(212,163,115,0.1) 0%, transparent 20%);
+      pointer-events: none;
+    }
+    .discount-circle {
+      animation: float 6s ease-in-out infinite;
+    }
+    @keyframes float {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+      100% { transform: translateY(0px); }
+    }
+    .letter-spacing-2 { letter-spacing: 2px; }
+
+    /* 4. 關於分店 (SEO 重點區) */
+    .about-store-text {
+      line-height: 1.8;
+      color: #6c757d;
+    }
+    .about-store-highlight {
+      color: #5C4033;
+      font-weight: 600;
+      background: #F2E5D7;
+      padding: 0 4px;
+    }
+
+    /* 5. 評價卡片 */
+    .review-card {
+      background: #fff;
+      border-radius: 12px;
+      padding: 20px;
+      border: 1px solid #eee;
+      height: 100%;
+    }
+
+    /* 6. 手機版底部黏著選單 */
+    .mobile-sticky-bar {
+      position: fixed;
+      bottom: 0; left: 0; width: 100%;
+      background: #fff;
+      box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+      z-index: 1050;
+      padding: 10px 15px;
+      display: none;
+    }
+    @media (max-width: 768px) {
+      .mobile-sticky-bar { display: flex; gap: 10px; }
+      .store-hero-v2 { padding: 100px 0 60px; }
+    }
+
+    /* FAQ Accordion */
+    .accordion-button:not(.collapsed) {
+      background-color: #F2E5D7;
+      color: #5C4033;
+    }
+    .accordion-button:focus {
+      box-shadow: none;
+      border-color: #D4A373;
     }
   </style>
 
-  <!-- JSON-LD: 單一分店結構化資料 -->
+  <!-- JSON-LD: 複合式結構資料 (已修正合併) -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "CafeOrCoffeeShop",
-    "name": "所以咖啡 鳥松大智店",
-    "image": "https://suoyicoffee.com/assets/img/stores/stores-barista-back.jpg",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "大智路 40 號",
-      "addressLocality": "鳥松區",
-      "addressRegion": "高雄市",
-      "postalCode": "833",
-      "addressCountry": "TW"
-    },
-    "geo": {
-      "@type": "GeoCoordinates",
-      "latitude": "22.6568", 
-      "longitude": "120.3568"
-    },
-    "url": "https://suoyicoffee.com/store-niaosong.html",
-    "telephone": "+886-976-451-451",
-    "openingHoursSpecification": [
-      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "07:00", "closes": "17:00" },
-      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Saturday","Sunday"], "opens": "08:00", "closes": "17:00" }
-    ],
-    "menu": "https://suoyicoffee.com/menu.html",
-    "servesCuisine": "Coffee",
-    "priceRange": "$"
+    "@graph": [
+      {
+        "@type": "CafeOrCoffeeShop",
+        "name": "所以咖啡 鳥松大智店",
+        "image": "https://suoyicoffee.com/assets/img/stores/stores-barista-back.jpg",
+        "telephone": "+886-976-451-451",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "大智路 40 號",
+          "addressLocality": "鳥松區",
+          "addressRegion": "高雄市",
+          "postalCode": "833",
+          "addressCountry": "TW"
+        },
+        "priceRange": "$",
+        "makesOffer": {
+            "@type": "Offer",
+            "name": "週三品牌日：飲品第二杯半價",
+            "description": "每週三 07:00-17:00，外帶同品項飲品享第二杯半價優惠。",
+            "priceCurrency": "TWD",
+            "availability": "https://schema.org/InStock",
+            "availabilityStarts": "07:00",
+            "availabilityEnds": "17:00",
+            "dayOfWeek": ["Wednesday"]
+        }
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "請問鳥松店有外送服務嗎？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "有的！我們提供 UberEats 與 Foodpanda 平台外送。若為公司行號或大量訂購，歡迎直接致電 0976-451-451，我們提供周邊區域免運外送服務。"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "請問附近好停車嗎？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "鳥松大智店位於住宅區，店門口可暫停機車。開車的朋友可於大智路周邊尋找路邊停車格，取餐相當方便。"
+            }
+          }
+        ]
+      }
+    ]
   }
   </script>
 </head>
-<body class="bg-light">
+<body class="bg-light d-flex flex-column min-vh-100">
 
-<!-- 導覽列 (維持一致) -->
+<!-- 導覽列 -->
 <nav class="navbar navbar-expand-md bg-white shadow-sm fixed-top">
   <div class="container">
-    <a class="navbar-brand fw-bold text-brown d-flex align-items-center" href="index.html">
-      <img src="assets/img/logo/logo-brown-on-white.png" alt="所以咖啡" width="32" height="32" class="me-2">
-      所以咖啡 SUOYI COFFEE
-    </a>
+    <a class="navbar-brand fw-bold text-brown" href="index.html">所以咖啡 SUOYI COFFEE</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMain">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navMain">
-      <ul class="navbar-nav ms-auto mb-2 mb-md-0 small">
-        <li class="nav-item"><a class="nav-link" href="index.html">首頁</a></li>
-        <li class="nav-item"><a class="nav-link" href="menu.html">嚴選菜單</a></li>
-        <li class="nav-item"><a class="nav-link active" href="stores.html">門市據點</a></li>
-        <li class="nav-item"><a class="nav-link" href="franchise.html">加盟專區</a></li>
-        <li class="nav-item"><a class="nav-link" href="contact.html">聯絡我們</a></li>
+      <ul class="navbar-nav ms-auto small">
+        <li class="nav-item"><a class="nav-link" href="stores.html">回門市總覽</a></li>
       </ul>
     </div>
   </div>
 </nav>
 
-<main>
-  <!-- 1. 分店 Hero Section -->
-  <section class="store-hero">
-    <div class="container">
-      <!-- 麵包屑導航 (SEO 加分) -->
-      <nav aria-label="breadcrumb" class="mb-4">
-        <ol class="breadcrumb small">
-          <li class="breadcrumb-item"><a href="index.html" class="text-muted text-decoration-none">首頁</a></li>
-          <li class="breadcrumb-item"><a href="stores.html" class="text-muted text-decoration-none">門市據點</a></li>
-          <li class="breadcrumb-item active text-brown" aria-current="page">鳥松大智店</li>
-        </ol>
-      </nav>
-
-      <div class="row align-items-center gy-5">
-        <!-- 左側：文字資訊 -->
-        <div class="col-lg-6">
-          <span class="badge bg-brown text-white mb-2">高雄總店</span>
-          <span class="badge bg-light text-brown border mb-2">KHH · 鳥松區</span>
-          
-          <!-- H1 包含區域關鍵字 -->
-          <h1 class="display-5 fw-bold text-brown mb-3">所以咖啡 鳥松大智店</h1>
-          <p class="lead text-muted mb-4">
-            位於鳥松大智路的質感咖啡吧。提供現萃義式咖啡、拿鐵與茶飲，專注於外帶與快速取餐體驗。
+<main class="flex-grow-1" style="padding-top: 60px;">
+  <!-- 1. Hero Section -->
+  <section class="store-hero-v2">
+    <div class="store-hero-overlay"></div>
+    <div class="container store-hero-content">
+      <div class="row">
+        <div class="col-lg-7">
+          <nav aria-label="breadcrumb">
+            <ol class="breadcrumb text-white-50 small">
+              <li class="breadcrumb-item"><a href="index.html" class="text-white-50 text-decoration-none">首頁</a></li>
+              <li class="breadcrumb-item"><a href="stores.html" class="text-white-50 text-decoration-none">門市據點</a></li>
+              <li class="breadcrumb-item active text-white" aria-current="page">鳥松大智店</li>
+            </ol>
+          </nav>
+          <span class="badge bg-warning text-dark mb-2"><i class="bi bi-clock-fill"></i> 營業中 (07:00 - 17:00)</span>
+          <h1 class="display-4 fw-bold mb-3">鳥松大智店</h1>
+          <p class="lead mb-4 opacity-90">
+            鄰近澄清湖與長庚醫院生活圈。<br>
+            堅持使用雙孔義式機與 RO 濾水，為您萃取一杯平價奢華的好咖啡。
           </p>
-          
-          <!-- 關鍵字標籤雲 (視覺化 SEO) -->
-          <div class="mb-4">
-            <span class="keyword-tag">#鳥松咖啡</span>
-            <span class="keyword-tag">#大智路美食</span>
-            <span class="keyword-tag">#高雄外帶咖啡</span>
-            <span class="keyword-tag">#會議咖啡外送</span>
-          </div>
-
-          <!-- 行動呼籲按鈕組 -->
-          <div class="d-flex flex-column flex-sm-row gap-3">
-            <a href="tel:0976451451" class="btn btn-brown action-btn-lg rounded-pill">
-              <i class="bi bi-telephone-fill"></i> 電話預訂
+          <div class="d-flex gap-3 d-none d-md-flex">
+            <a href="tel:0976451451" class="btn btn-light text-brown fw-bold rounded-pill px-4">
+              <i class="bi bi-telephone-fill me-1"></i> 電話預訂
             </a>
-            <a href="https://lin.ee/03a2Ysw" target="_blank" class="btn btn-outline-success action-btn-lg rounded-pill">
-              <i class="bi bi-line"></i> LINE 點餐
+            <a href="https://lin.ee/03a2Ysw" target="_blank" class="btn btn-outline-light fw-bold rounded-pill px-4">
+              <i class="bi bi-line me-1"></i> LINE 點餐
             </a>
-          </div>
-        </div>
-
-        <!-- 右側：店面形象圖 -->
-        <div class="col-lg-6">
-          <div class="position-relative">
-            <img src="assets/img/stores/stores-barista-back.jpg" alt="所以咖啡鳥松大智店門市外觀" class="img-fluid rounded-4 shadow-lg">
-            <!-- 浮動評價卡片 -->
-            <div class="position-absolute bottom-0 start-0 m-3 p-3 bg-white rounded-3 shadow-sm d-none d-md-block" style="max-width: 200px;">
-              <div class="d-flex align-items-center gap-1 text-warning mb-1">
-                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-              </div>
-              <p class="small mb-0 text-muted">Google 在地嚮導好評推薦</p>
-            </div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- 2. 詳細資訊與地圖 -->
+  <!-- 2. 店長推薦 · 本店熱銷 Top 3 -->
   <section class="py-5">
     <div class="container">
-      <div class="row g-4">
-        <!-- 左側：詳細資訊卡片 -->
-        <div class="col-lg-4">
-          <div class="store-info-card p-4 h-100">
-            <h2 class="h5 fw-bold text-brown mb-4">門市資訊</h2>
-            
-            <ul class="list-unstyled mb-4">
-              <li class="mb-3 d-flex">
-                <i class="bi bi-geo-alt-fill text-brown me-3 fs-5"></i>
-                <div>
-                  <strong class="d-block text-dark">地址</strong>
-                  <span class="text-muted">高雄市鳥松區大智路 40 號</span>
-                  <a href="https://www.google.com/maps?q=高雄市鳥松區大智路40號 所以咖啡" target="_blank" class="d-block small mt-1 text-brown">開啟 Google 地圖導航</a>
-                </div>
-              </li>
-              <li class="mb-3 d-flex">
-                <i class="bi bi-clock-fill text-brown me-3 fs-5"></i>
-                <div>
-                  <strong class="d-block text-dark">營業時間</strong>
-                  <span class="text-muted d-block">週一至週五：07:00 - 17:00</span>
-                  <span class="text-muted d-block">週六至週日：08:00 - 17:00</span>
-                </div>
-              </li>
-              <li class="mb-3 d-flex">
-                <i class="bi bi-telephone-fill text-brown me-3 fs-5"></i>
-                <div>
-                  <strong class="d-block text-dark">聯絡電話</strong>
-                  <a href="tel:0976451451" class="text-decoration-none text-muted">0976-451-451</a>
-                </div>
-              </li>
-            </ul>
-
-            <hr class="text-muted opacity-25 my-4">
-
-            <h3 class="h6 fw-bold text-brown mb-3">外送平台點餐</h3>
-            <div class="d-grid gap-2">
-              <a href="https://www.ubereats.com/tw/store/..." target="_blank" class="btn btn-light border text-start d-flex align-items-center justify-content-between">
-                <span><i class="bi bi-bag-check text-success me-2"></i> UberEats</span>
-                <i class="bi bi-chevron-right small text-muted"></i>
-              </a>
-              <a href="https://www.foodpanda.com.tw/restaurant/..." target="_blank" class="btn btn-light border text-start d-flex align-items-center justify-content-between">
-                <span><i class="bi bi-bicycle text-danger me-2"></i> Foodpanda</span>
-                <i class="bi bi-chevron-right small text-muted"></i>
-              </a>
+      <div class="text-center mb-4">
+        <h2 class="h4 fw-bold text-brown">店長推薦 · 本店熱銷 Top 3</h2>
+        <p class="text-muted small">不知道喝什麼？跟著在地熟客點就對了！</p>
+      </div>
+      <div class="row g-4 justify-content-center">
+        
+        <!-- Item 1: 香醇拿鐵 -->
+        <div class="col-6 col-md-4 col-lg-3">
+          <div class="menu-highlight-card bg-white h-100">
+            <div class="menu-img-wrapper position-relative">
+              <img src="assets/img/products/Latte_1.jpg" alt="香醇拿鐵" class="img-fluid w-100 h-100 object-fit-cover">
+              <span class="position-absolute top-0 end-0 badge bg-danger m-2">人氣招牌</span>
+            </div>
+            <div class="p-3 text-center">
+              <h3 class="h6 fw-bold text-brown mb-1">香醇拿鐵</h3>
+              <div class="text-warning fw-bold small mb-2">$75</div>
+              <p class="small text-muted mb-0 text-truncate-2">
+                咖啡與鮮奶黃金比例，口感順滑，每日首選。
+              </p>
             </div>
           </div>
         </div>
 
-        <!-- 右側：地圖與 SEO 內容 -->
-        <div class="col-lg-8">
-          <!-- Google Maps Embed -->
-          <div class="map-container shadow-sm mb-4">
-            <!-- 請將 src 替換為該店的 Google Maps Embed URL -->
-            <iframe src="https://maps.google.com/maps?q=高雄市鳥松區大智路40號&t=&z=15&ie=UTF8&iwloc=&output=embed" allowfullscreen="" loading="lazy"></iframe>
-          </div>
-
-          <!-- SEO 內容區塊：針對區域關鍵字撰寫 -->
-          <div class="bg-white p-4 rounded-4 border">
-            <h2 class="h4 fw-bold text-brown mb-3">關於 所以咖啡 鳥松大智店</h2>
-            <p class="text-muted">
-              <strong>所以咖啡（Suoyi Coffee）鳥松大智店</strong> 是品牌的創始基地，座落於寧靜的鳥松住宅區。我們致力於為鳥松區的居民與上班族，提供一杯平價卻不妥協品質的精品咖啡。
-            </p>
-            <p class="text-muted">
-              無論您是早晨通勤需要一杯提神的<strong>美式咖啡</strong>，或是午後想要來杯香醇的<strong>拿鐵</strong>放鬆心情，我們專業的咖啡師都能為您現萃製作。店內採用雙孔義式機與五道 RO 濾水系統，確保每一杯咖啡的純淨風味。
-            </p>
-            <div class="alert alert-light border-start border-4 border-brown" role="alert">
-              <h4 class="h6 fw-bold mb-1"><i class="bi bi-info-circle-fill me-2"></i>鳥松區外送服務</h4>
-              <p class="small mb-0 text-muted">
-                我們提供周邊區域的咖啡外送服務，適合公司會議、學校活動或家庭聚會。歡迎透過 LINE 或電話提前預訂，享受免運或大量訂購優惠。
+        <!-- Item 2: 海鹽焦糖拿鐵 -->
+        <div class="col-6 col-md-4 col-lg-3">
+          <div class="menu-highlight-card bg-white h-100">
+            <div class="menu-img-wrapper position-relative">
+              <img src="assets/img/products/Salted_Caramel_Latte.jpg" alt="海鹽焦糖拿鐵" class="img-fluid w-100 h-100 object-fit-cover">
+              <span class="position-absolute top-0 end-0 badge bg-warning text-dark m-2">店長推薦</span>
+            </div>
+            <div class="p-3 text-center">
+              <h3 class="h6 fw-bold text-brown mb-1">海鹽焦糖拿鐵</h3>
+              <div class="text-warning fw-bold small mb-2">$85</div>
+              <p class="small text-muted mb-0 text-truncate-2">
+                焦糖甜與海鹽微鹹的完美平衡，層次豐富。
               </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 3: 高山金萱 -->
+        <div class="col-6 col-md-4 col-lg-3">
+          <div class="menu-highlight-card bg-white h-100">
+            <div class="menu-img-wrapper position-relative">
+              <img src="assets/img/products/High_Mountain_Tea_1.jpg" alt="高山金萱" class="img-fluid w-100 h-100 object-fit-cover">
+            </div>
+            <div class="p-3 text-center">
+              <h3 class="h6 fw-bold text-brown mb-1">高山金萱</h3>
+              <div class="text-warning fw-bold small mb-2">$35</div>
+              <p class="small text-muted mb-0 text-truncate-2">
+                嚴選高品質茶葉，茶香四溢，清爽回甘首選。
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      
+      <!-- CTA 按鈕 -->
+      <div class="text-center mt-4">
+        <a href="menu.html" class="btn btn-outline-brown rounded-pill btn-sm px-4">
+          查看完整菜單與價格 <i class="bi bi-arrow-right ms-1"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. 週三品牌日 (SEO + 轉化) -->
+  <section class="promo-section text-white">
+    <div class="container">
+      <div class="row align-items-center gy-4">
+        <div class="col-lg-7 text-center text-lg-start">
+          <div class="d-inline-flex align-items-center gap-2 px-3 py-1 rounded-pill bg-warning text-dark fw-bold small mb-3">
+            <i class="bi bi-stopwatch-fill"></i> 每週三限定 · Brand Day
+          </div>
+          <h3 class="display-6 fw-bold mb-3">
+            週三小確幸，<br>
+            <span class="text-warning">第二杯半價</span> 在這裡！
+          </h3>
+          <p class="text-white-50 mb-4 lead">
+            不用跑遠，就在 <strong>所以咖啡 鳥松大智店</strong>。<br>
+            無論是招牌拿鐵、美式咖啡或高山金萱，每週三全時段皆享同品項第二杯半價。
+          </p>
+          <div class="d-flex flex-wrap justify-content-center justify-content-lg-start gap-4 mb-4">
+            <div class="d-flex align-items-center gap-2">
+              <div class="icon-box bg-white text-brown rounded-circle d-flex align-items-center justify-content-center" style="width:40px; height:40px;">
+                <i class="bi bi-clock-history"></i>
+              </div>
+              <div class="text-start lh-1">
+                <small class="text-white-50 d-block mb-1">活動時間</small>
+                <span class="fw-bold">每週三 07:00 - 18:00</span>
+              </div>
+            </div>
+          </div>
+          <div class="d-flex flex-column flex-sm-row gap-3 justify-content-center justify-content-lg-start">
+            <a href="menu.html" class="btn btn-warning text-dark fw-bold rounded-pill px-4 py-2">
+              <i class="bi bi-cup-hot-fill me-1"></i> 先看菜單選飲料
+            </a>
+            
+            <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&amp;text=所以咖啡週三半價&amp;details=記得去買咖啡！第二杯半價優惠。&amp;location=高雄市鳥松區大智路40號" 
+               target="_blank" 
+               class="btn btn-outline-light rounded-pill px-4 py-2">
+              <i class="bi bi-calendar-plus me-1"></i> 加入行事曆提醒
+            </a>
+          </div>
+        </div>
+        <div class="col-lg-5 text-center">
+          <div class="promo-visual position-relative d-inline-block">
+            <div class="discount-circle rounded-circle bg-white text-brown d-flex flex-column align-items-center justify-content-center shadow-lg" 
+                 style="width: 220px; height: 220px; margin: 0 auto;">
+              <span class="display-1 fw-bold lh-1">50<small class="fs-4">%</small></span>
+              <span class="fs-3 fw-bold lh-1">OFF</span>
+              <span class="small mt-2 text-muted letter-spacing-2">2nd CUP</span>
+            </div>
+            <div class="position-absolute top-50 start-50 translate-middle border border-warning rounded-circle opacity-50" style="width: 240px; height: 240px; z-index: -1;"></div>
+            <div class="position-absolute top-50 start-50 translate-middle border border-white rounded-circle opacity-25" style="width: 260px; height: 260px; z-index: -2;"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. 關於分店 (SEO 核心文案區) -->
+  <section class="py-5 bg-white border-bottom">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-10">
+          <div class="text-center mb-4">
+            <span class="text-brown fw-bold small letter-spacing-2">ABOUT STORE</span>
+            <h2 class="h3 fw-bold text-brown">深耕鳥松，一杯有溫度的日常咖啡</h2>
+          </div>
+          <div class="about-store-text">
+            <p>
+              <strong>所以咖啡（Suoyi Coffee）鳥松大智店</strong> 是品牌的創始基地，座落於寧靜的鳥松住宅區，鄰近 <span class="about-store-highlight">澄清湖風景區</span> 與 <span class="about-store-highlight">高雄長庚醫院</span> 生活圈。我們致力於為在地的居民、醫護人員與上班族，提供一杯平價卻不妥協品質的精品咖啡。
+            </p>
+            <p>
+              不同於一般快速早餐店，我們堅持使用<strong>雙孔義式機</strong>與<strong>五道 RO 濾水系統</strong>，確保每一杯咖啡的純淨風味。無論您是早晨通勤需要一杯提神的<strong>美式咖啡</strong>，或是午後想要來杯香醇的<strong>拿鐵</strong>放鬆心情，我們專業的咖啡師都能為您現萃製作。
+            </p>
+            <p>
+              此外，我們也深知鳥松區與周邊 <span class="about-store-highlight">正修科技大學</span> 的需求，特別提供<strong>會議咖啡外送</strong>與<strong>下午茶團購</strong>服務。透過 LINE 或電話提前預訂，讓您在忙碌的工作或學習中，也能輕鬆享用高品質的現煮咖啡。
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. 資訊與地圖 -->
+  <section class="py-5 bg-light">
+    <div class="container">
+      <div class="row g-5">
+        <div class="col-lg-5">
+          <h2 class="h4 fw-bold text-brown mb-4">門市資訊</h2>
+          <ul class="list-unstyled">
+            <li class="mb-3">
+              <strong class="d-block text-dark"><i class="bi bi-geo-alt-fill text-brown me-2"></i>地址</strong>
+              <span class="text-muted ms-4">高雄市鳥松區大智路 40 號</span>
+              <div class="ms-4 mt-2 small text-muted bg-white border p-3 rounded">
+                <i class="bi bi-pin-map-fill text-brown"></i> <strong>交通指引：</strong><br>
+                位於大智路住宅區，門口可暫停機車。<br>
+                距離 <span class="text-dark fw-bold">高雄長庚醫院</span> 車程約 5 分鐘。<br>
+                距離 <span class="text-dark fw-bold">澄清湖棒球場</span> 車程約 3 分鐘。
+              </div>
+            </li>
+            <li class="mb-3">
+              <strong class="d-block text-dark"><i class="bi bi-clock-fill text-brown me-2"></i>營業時間</strong>
+              <span class="text-muted ms-4">週一到週六 07:00-18:00 / 週日 07:00-16:00</span>
+            </li>
+            <li class="mb-3">
+              <strong class="d-block text-dark"><i class="bi bi-telephone-fill text-brown me-2"></i>電話</strong>
+              <a href="tel:0976451451" class="text-brown fw-bold ms-4 text-decoration-none">0976-451-451</a>
+            </li>
+          </ul>
+          
+          <h3 class="h6 fw-bold text-brown mt-4 mb-3">外送服務</h3>
+          <div class="d-flex gap-2">
+            <a href="#" class="btn btn-sm btn-white border text-dark"><i class="bi bi-bicycle text-danger"></i> Foodpanda</a>
+            <a href="#" class="btn btn-sm btn-white border text-dark"><i class="bi bi-bag-check text-success"></i> UberEats</a>
+          </div>
+        </div>
+        
+        <div class="col-lg-7">
+          <div class="ratio ratio-16x9 rounded-4 overflow-hidden shadow-sm border">
+            
+            <iframe src="https://maps.google.com/maps?q=高雄市鳥松區大智路40號&amp;t=&amp;z=15&amp;ie=UTF8&amp;iwloc=&amp;output=embed" allowfullscreen="" loading="lazy"></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. 真實好評 -->
+  <section class="py-5 bg-white">
+    <div class="container">
+      <h2 class="h4 fw-bold text-brown text-center mb-4">在地鄉親怎麼說？</h2>
+      <div class="row g-3">
+        <div class="col-md-4">
+          <div class="review-card">
+            <div class="text-warning mb-2"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div>
+            <p class="mb-2 text-dark fw-bold">"咖啡順口，老闆親切！"</p>
+            <p class="small text-muted mb-0">每天上班前都會來買一杯拿鐵，出杯速度很快，咖啡味道很濃郁，不會因為是外帶店就馬虎。</p>
+            <div class="mt-3 small text-muted">- Google 在地嚮導 陳小姐</div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="review-card">
+            <div class="text-warning mb-2"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div>
+            <p class="mb-2 text-dark fw-bold">"CP值超高"</p>
+            <p class="small text-muted mb-0">這個價位能喝到這種品質的咖啡真的很划算，尤其是每週三還有優惠，大推！</p>
+            <div class="mt-3 small text-muted">- 林先生</div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="review-card">
+            <div class="text-warning mb-2"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div>
+            <p class="mb-2 text-dark fw-bold">"環境乾淨"</p>
+            <p class="small text-muted mb-0">雖然是外帶店，但店面維持得很乾淨，看起來很舒服。茶類飲品也很不錯。</p>
+            <div class="mt-3 small text-muted">- Zhang Kevin</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. FAQ -->
+  <section class="py-5 bg-light">
+    <div class="container">
+      <h2 class="h4 fw-bold text-brown text-center mb-4">常見問題 FAQ</h2>
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <div class="accordion" id="storeFaq">
+            <div class="accordion-item border-0 border-bottom bg-transparent">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed bg-transparent shadow-none fw-bold text-brown" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                  Q: 請問有外送服務嗎？門檻是多少？
+                </button>
+              </h2>
+              <div id="faq1" class="accordion-collapse collapse" data-bs-parent="#storeFaq">
+                <div class="accordion-body text-muted small">
+                  我們與 UberEats、Foodpanda 皆有合作。若您位於鳥松區周邊（如長庚醫院、正修科大），歡迎來電 0976-451-451 洽詢店家親送服務，滿額即可免運。
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item border-0 border-bottom bg-transparent">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed bg-transparent shadow-none fw-bold text-brown" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                  Q: 請問有什麼優惠活動嗎？
+                </button>
+              </h2>
+              <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#storeFaq">
+                <div class="accordion-body text-muted small">
+                  每週三為「所以咖啡品牌日」，來店外帶享第二杯半價優惠！此外，加入我們的 LINE 官方帳號，不定期會有好友專屬優惠券。
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item border-0 border-bottom bg-transparent">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed bg-transparent shadow-none fw-bold text-brown" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                  Q: 可以使用電子支付嗎？
+                </button>
+              </h2>
+              <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#storeFaq">
+                <div class="accordion-body text-muted small">
+                  可以的！我們支援 LINE Pay、街口支付以及台灣 Pay，讓您付款更快速方便。
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -292,13 +535,34 @@
       </a>
     </div>
   </section>
-
 </main>
 
-<!-- Footer (維持一致) -->
-<footer class="py-4 bg-white border-top">
-  <div class="container small text-muted text-center">
-    © 2021 所以咖啡 SUOYI COFFEE. All rights reserved.
+<!-- 手機版底部黏著選單 -->
+<div class="mobile-sticky-bar">
+  <a href="tel:0976451451" class="btn btn-brown flex-grow-1 rounded-pill fw-bold">
+    <i class="bi bi-telephone-fill"></i> 電話預訂
+  </a>
+  <a href="https://lin.ee/03a2Ysw" target="_blank" class="btn btn-success flex-grow-1 rounded-pill fw-bold">
+    <i class="bi bi-line"></i> LINE 點餐
+  </a>
+</div>
+
+<!-- Footer -->
+<footer class="py-4 border-top mt-auto">
+  <div class="container small text-muted d-flex flex-column flex-md-row justify-content-between align-items-center text-center text-md-start">
+    <div class="mb-2 mb-md-0">
+      © 2021 所以咖啡 SUOYI COFFEE. All rights reserved.
+    </div>
+    <div class="footer-contact d-flex flex-column flex-md-row align-items-center text-center text-md-start">
+      <div class="me-md-3 mb-1 mb-md-0">
+        加盟專線：
+        <a href="tel:0981451451" class="text-brown fw-bold text-decoration-none">0981-451-451 (曾先生)</a>
+      </div>
+      <div>
+        Email：
+        <a href="mailto:suoyicoffee@gmail.com" class="text-brown fw-bold text-decoration-none">suoyicoffee@gmail.com</a>
+      </div>
+    </div>
   </div>
 </footer>
 
