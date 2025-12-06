@@ -7,19 +7,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="所以咖啡鳥松大智店提供香醇拿鐵、美式咖啡與外送服務。鄰近澄清湖、高雄長庚醫院，是在地人推薦的平價下午茶與咖啡首選。每週三第二杯半價，立即來訪或線上訂購！">
   <link rel="canonical" href="https://suoyicoffee.com/store-niaosong.html">
-
   <!-- Open Graph for social sharing -->
   <meta property="og:type" content="website">
   <meta property="og:locale" content="zh_TW">
   <meta property="og:title" content="所以咖啡鳥松大智店｜澄清湖咖啡推薦">
   <meta property="og:description" content="高雄鳥松區在地人最愛咖啡店。近澄清湖、長庚醫院，主打外帶拿鐵與每週優惠。">
   <meta property="og:url" content="https://suoyicoffee.com/store-niaosong.html">
-  <meta property="og:image" content="https://suoyicoffee.com/assets/img/stores/stores-barista-back.jpg">
+  <meta property="og:image" content="https://suoyicoffee.com/assets/img/stores/niaosong.jpg">
   <meta property="og:site_name" content="所以咖啡 Suoyi Coffee">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="所以咖啡鳥松大智店">
   <meta name="twitter:description" content="高雄鳥松咖啡、澄清湖下午茶、外帶外送平價首選。">
-
+  <link rel="icon" href="assets/img/logo/logo-brown-on-white.png" sizes="32x32" type="image/png">
+  <link rel="icon" href="assets/img/logo/logo-brown-on-white.png" sizes="192x192" type="image/png">
+  <link rel="apple-touch-icon" href="assets/img/logo/logo-brown-on-white.png">
   <!-- CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
@@ -29,7 +30,7 @@
     /* 1. 沉浸式 Hero */
     .store-hero-v2 {
       position: relative;
-      background: url('assets/img/stores/stores-barista-back.jpg') no-repeat center center/cover;
+      background: url('assets/img/stores/niaosong.jpg') no-repeat center center/cover;
       padding: 120px 0 80px;
       color: white;
     }
@@ -160,7 +161,7 @@
         "@type": "CafeOrCoffeeShop",
         "@id": "https://suoyicoffee.com/store-niaosong.html#store",
         "name": "所以咖啡 鳥松大智店",
-        "image": "https://suoyicoffee.com/assets/img/stores/stores-barista-back.jpg",
+        "image": "https://suoyicoffee.com/assets/img/stores/niaosong.jpg",
         "url": "https://suoyicoffee.com/store-niaosong.html",
         "telephone": "+886-976-451-451",
         "servesCuisine": "Coffee, Dessert, Tea",
@@ -359,6 +360,15 @@
           <div class="d-flex flex-wrap justify-content-center justify-content-lg-start gap-4 mb-4">
             <div class="d-flex align-items-center gap-2">
               <div class="icon-box bg-white text-brown rounded-circle d-flex align-items-center justify-content-center" style="width:40px; height:40px;">
+                <i class="bi bi-geo-alt-fill"></i>
+              </div>
+              <div class="text-start lh-1">
+                <small class="text-white-50 d-block mb-1">適用據點</small>
+                <span class="fw-bold">鳥松大智店 限定</span>
+              </div>
+            </div>
+            <div class="d-flex align-items-center gap-2">
+              <div class="icon-box bg-white text-brown rounded-circle d-flex align-items-center justify-content-center" style="width:40px; height:40px;">
                 <i class="bi bi-clock-history"></i>
               </div>
               <div class="text-start lh-1">
@@ -439,7 +449,7 @@
             </li>
             <li class="mb-3">
               <strong class="d-block text-dark"><i class="bi bi-clock-fill text-brown me-2"></i>營業時間</strong>
-              <span class="text-muted ms-4">週一到週六 07:00-18:00 / 週日 07:00-16:00</span>
+              <span class="text-muted ms-4">週一到週六 07:00-18:00 / 週日 07:00-16:00 (依各店公告為準)</span>
             </li>
             <li class="mb-3">
               <strong class="d-block text-dark"><i class="bi bi-telephone-fill text-brown me-2"></i>電話</strong>
@@ -449,8 +459,21 @@
           
           <h3 class="h6 fw-bold text-brown mt-4 mb-3">外送服務</h3>
           <div class="d-flex gap-2">
-            <a href="#" class="btn btn-sm btn-white border text-dark"><i class="bi bi-bicycle text-danger"></i> Foodpanda</a>
-            <a href="#" class="btn btn-sm btn-white border text-dark"><i class="bi bi-bag-check text-success"></i> UberEats</a>
+            <a href="https://www.foodpanda.com.tw/restaurant/w92e/suo-yi-ka-pei-niao-song-da-zhi-dian?utm_source=site&utm_medium=stores&utm_campaign=delivery"
+                target="_blank" rel="noopener noreferrer"
+                class="delivery-chip delivery-fp text-decoration-none">
+              <i class="bi bi-bicycle"></i> Foodpanda
+            </a>
+            <a href="https://www.ubereats.com/tw/store/%E6%89%80%E4%BB%A5%E5%92%96%E5%95%A1-%E9%B3%A5%E6%9D%BE%E5%A4%A7%E6%99%BA%E5%BA%97/_iM0VBMxUxy3HS-DA1spSQ?utm_source=site&utm_medium=stores&utm_campaign=delivery"
+                target="_blank" rel="noopener noreferrer"
+                class="delivery-chip delivery-ue text-decoration-none">
+              <i class="bi bi-bag-check"></i> UberEats
+            </a>
+            <a href="https://lin.ee/03a2Ysw"
+                target="_blank" rel="noopener noreferrer"
+                class="delivery-chip delivery-line text-decoration-none">
+              <i class="bi bi-line"></i> LINE訂購取餐
+            </a>
           </div>
         </div>
         

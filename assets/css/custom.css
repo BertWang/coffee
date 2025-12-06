@@ -771,3 +771,34 @@ a:focus, button:focus, [role="button"]:focus {
 
 /* 6) 影像：若未指定則提供保守 lazy/async（與 JS 配合） */
 img[loading="lazy"] { content-visibility: auto; }
+
+/* 7) 外送服務標籤 */
+
+.delivery-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  border-radius: 999px;
+  padding: 0.15rem 0.7rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  border: 1px solid rgba(0,0,0,0.08);
+}
+.delivery-fp {
+  background: #FFE5F1;
+  color: #D70F64;
+  border-color: #F8B6D4;
+}
+.delivery-ue {
+  background: #E4F8EC;
+  color: #059669;
+  border-color: #B7E8C7;
+}
+.delivery-line {
+  background: #E4FFE9;
+  color: #06C755;
+  border-color: #B5F0C5;
+}
+.delivery-line i {
+  color: #06C755;
+}
