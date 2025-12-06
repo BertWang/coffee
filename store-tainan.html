@@ -8,12 +8,23 @@
   <!-- Description 優化：包含觀光與在地生活圈關鍵字 -->
   <meta name="description" content="台南安平區咖啡首選！所以咖啡台南康平店，近安平老街與台南市政府。提供現萃拿鐵、美式咖啡外帶外送。每週三第二杯半價，在地人推薦的平價奢華咖啡。">
   <link rel="canonical" href="https://suoyicoffee.com/store-tainan.html">
-  
-  <!-- Open Graph -->
-  <meta property="og:title" content="安平咖啡推薦｜所以咖啡台南康平店">
-  <meta property="og:image" content="https://suoyicoffee.com/assets/img/stores/stores_anping.jpg">
-  
 
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="zh_TW">
+  <meta property="og:title" content="安平咖啡推薦｜所以咖啡台南康平店">
+  <meta property="og:description" content="所以咖啡台南康平店位於安平老街與市政府商圈旁，提供外帶、外送咖啡服務，是安平區上班族與旅客最愛的咖啡店。">
+  <meta property="og:url" content="https://suoyicoffee.com/store-tainan.html">
+  <meta property="og:image" content="https://suoyicoffee.com/assets/img/stores/store-tainan.jpg">
+  <meta property="og:site_name" content="所以咖啡 Suoyi Coffee">
+
+  <!-- Twitter Cards -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="所以咖啡台南康平店">
+  <meta name="twitter:description" content="安平咖啡推薦，近安平老街與台南市政府，外帶外送下午茶首選。">
+  <meta name="twitter:image" content="https://suoyicoffee.com/assets/img/stores/store-tainan.jpg">
+
+  <!-- Favicon -->
   <link rel="icon" href="assets/img/logo/logo-brown-on-white.png" sizes="32x32" type="image/png">
   <link rel="icon" href="assets/img/logo/logo-brown-on-white.png" sizes="192x192" type="image/png">
   <link rel="apple-touch-icon" href="assets/img/logo/logo-brown-on-white.png">
@@ -27,7 +38,7 @@
     /* 1. 沉浸式 Hero */
     .store-hero-v2 {
       position: relative;
-      background: url('assets/img/stores/stores_anping.jpg') no-repeat center center/cover;
+      background: url('assets/img/stores/store-tainan.jpg') no-repeat center center/cover;
       padding: 120px 0 80px;
       color: white;
     }
@@ -148,36 +159,60 @@
       border-color: #D4A373;
     }
   </style>
-
-  <!-- JSON-LD: 複合式結構資料 -->
+  <!-- 結構化資料（JSON-LD） -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@graph": [
       {
         "@type": "CafeOrCoffeeShop",
+        "@id": "https://suoyicoffee.com/store-tainan.html#store",
         "name": "所以咖啡 台南康平店",
-        "image": "https://suoyicoffee.com/assets/img/stores/stores_anping.jpg",
+        "image": "https://suoyicoffee.com/assets/img/stores/store-tainan.jpg",
+        "url": "https://suoyicoffee.com/store-tainan.html",
         "telephone": "+886-972-015-126",
+        "servesCuisine": "Coffee, Dessert, Tea",
+        "priceRange": "$",
         "address": {
           "@type": "PostalAddress",
-          "streetAddress": "健康三街 25 號",
+          "streetAddress": "台南市安平區健康三街25號",
           "addressLocality": "安平區",
           "addressRegion": "臺南市",
           "postalCode": "708",
           "addressCountry": "TW"
         },
-        "priceRange": "$",
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 22.9875,
+          "longitude": 120.1792
+        },
+        "openingHoursSpecification": [
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Tuesday", "Wednesday", "Thursday", "Friday"],
+            "opens": "07:00",
+            "closes": "17:00"
+          },
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Saturday", "PublicHolidays"],
+            "opens": "09:00",
+            "closes": "17:00"
+          }
+        ],
         "makesOffer": {
-            "@type": "Offer",
-            "name": "週三品牌日：飲品第二杯半價",
-            "description": "每週三 07:00-17:00，外帶同品項飲品享第二杯半價優惠。",
-            "priceCurrency": "TWD",
-            "availability": "https://schema.org/InStock",
-            "availabilityStarts": "07:00",
-            "availabilityEnds": "17:00",
-            "dayOfWeek": ["Wednesday"]
-        }
+          "@type": "Offer",
+          "name": "週三品牌日：飲品第二杯半價",
+          "description": "每週三 07:00–17:00，外帶同品項飲品享第二杯半價優惠。",
+          "priceCurrency": "TWD",
+          "availability": "https://schema.org/InStock",
+          "availabilityStarts": "07:00",
+          "availabilityEnds": "17:00",
+          "dayOfWeek": ["Wednesday"]
+        },
+        "sameAs": [
+          "https://www.instagram.com/suoyi_coffee/"
+        ]
       },
       {
         "@type": "FAQPage",
@@ -187,7 +222,7 @@
             "name": "請問台南店有外送服務嗎？",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "有的！我們提供 UberEats 與 Foodpanda 平台外送。安平區周邊、市政府機關若有大量訂購需求，歡迎致電 0972-015-126 洽詢。"
+              "text": "有的！所以咖啡台南康平店提供 UberEats 與 Foodpanda 外送平台服務。安平區與台南市政府周邊企業如有大量訂購需求，歡迎致電 0972-015-126 洽詢。"
             }
           }
         ]
