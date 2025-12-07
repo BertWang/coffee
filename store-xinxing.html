@@ -145,6 +145,73 @@
       box-shadow: none;
       border-color: #D4A373;
     }
+
+  
+    /* IG Grid - 模擬 IG 牆效果，速度快且對 SEO 友善 */
+    .ig-grid-wrapper {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr); /* 手機版 2欄 */
+      gap: 8px;
+    }
+    @media (min-width: 768px) {
+      .ig-grid-wrapper {
+        grid-template-columns: repeat(4, 1fr); /* 電腦版 4欄 */
+      }
+    }
+    .ig-item {
+      position: relative;
+      padding-bottom: 100%; /* 1:1 正方形 */
+      overflow: hidden;
+      border-radius: 8px;
+      background-color: #f8f9fa;
+    }
+    .ig-item img {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+    .ig-item:hover img {
+      transform: scale(1.1);
+    }
+    .ig-overlay {
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0,0,0,0.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transition: opacity 0.3s;
+      color: white;
+      font-size: 1.5rem;
+    }
+    .ig-item:hover .ig-overlay {
+      opacity: 1;
+    }
+
+    /* FB Card */
+    .fb-static-card {
+      background: #F0F2F5; /* FB 背景色 */
+      border-radius: 12px;
+      padding: 20px;
+      border: 1px solid #ddd;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+    .fb-avatar {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      border: 3px solid #fff;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      margin-bottom: 15px;
+    }
   </style>
 
   <!-- JSON-LD: 複合式結構資料 -->
@@ -228,7 +295,9 @@
               <li class="breadcrumb-item active text-white" aria-current="page">新興新田店</li>
             </ol>
           </nav>
-          <span class="badge bg-warning text-dark mb-2"><i class="bi bi-clock-fill"></i> 營業中 (07:00 - 17:00)</span>
+          <span id="store-status-badge" class="badge bg-secondary text-white mb-2">
+            <i class="bi bi-hourglass-split"></i> 載入資訊中...
+          </span>
           <h1 class="display-4 fw-bold mb-3">新興新田店</h1>
           <p class="lead mb-4 opacity-90">
             新堀江商圈的時尚咖啡吧。<br>
@@ -380,32 +449,7 @@
     </div>
   </section>
 
-  <!-- 4. 關於分店 (SEO 核心文案區) -->
-  <section class="py-5 bg-white border-bottom">
-    <div class="container">
-      <div class="row justify-content-center">
-        <div class="col-lg-10">
-          <div class="text-center mb-4">
-            <span class="text-brown fw-bold small letter-spacing-2">ABOUT STORE</span>
-            <h2 class="h3 fw-bold text-brown">新堀江逛街首選，手拿一杯時尚咖啡</h2>
-          </div>
-          <div class="about-store-text">
-            <p>
-              <strong>所以咖啡（Suoyi Coffee）新興新田店</strong> 座落於高雄潮流指標 <span class="about-store-highlight">新堀江商圈</span>，鄰近綠意盎然的 <span class="about-store-highlight">中央公園</span> 與城市光廊。我們是年輕族群與逛街人潮的最佳補給站，提供平價卻充滿質感的現萃咖啡。
-            </p>
-            <p>
-              店面設計簡約時尚，設有快速外帶窗口。無論您是正在逛街購物，或是準備前往中央公園散步，都能隨手帶走一杯香醇的<strong>拿鐵</strong>或清爽的<strong>西西里檸檬咖啡</strong>。我們堅持使用高品質咖啡豆與萬丹鮮乳，讓每一口都成為逛街時的小確幸。
-            </p>
-            <p>
-              此外，我們也深受周邊服飾店與商家的喜愛，提供<strong>商圈外送服務</strong>。透過 LINE 點餐，不用離開櫃位也能享用美味咖啡，是新興區店家下午茶的熱門選擇。
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 5. 資訊與地圖 -->
+  <!-- 資訊與地圖 -->
   <section class="py-5 bg-light">
     <div class="container">
       <div class="row g-5">
@@ -468,33 +512,139 @@
     </div>
   </section>
 
-  <!-- 6. 真實好評 -->
-  <section class="py-5 bg-white">
+  <!-- 5. 社群口碑 -->
+  <section class="py-5 bg-white border-top border-bottom">
     <div class="container">
-      <h2 class="h4 fw-bold text-brown text-center mb-4">在地鄉親怎麼說？</h2>
-      <div class="row g-3">
-        <div class="col-md-4">
-          <div class="review-card">
-            <div class="text-warning mb-2"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div>
-            <p class="mb-2 text-dark fw-bold">"逛街必買！"</p>
-            <p class="small text-muted mb-0">每次來新堀江都會買一杯，拿鐵很順口，而且出杯速度很快，不用等太久。</p>
-            <div class="mt-3 small text-muted">- Google 在地嚮導 Amy</div>
+      <!-- 標題區 -->
+      <div class="text-center mb-5">
+        <h2 class="h3 fw-bold text-brown">在地鄉親與社群推薦</h2>
+        <p class="text-muted">追蹤我們的社群，掌握最新優惠與店休公告</p>
+      </div>
+      <div class="row g-5">
+        <!-- 左側：Instagram 視覺牆 -->
+        <div class="col-lg-7 order-2 order-lg-1">
+          <div class="d-flex justify-content-between align-items-end mb-3">
+            <div>
+              <!-- 這裡的帳號也會動態換 -->
+              <h3 class="h5 fw-bold text-brown mb-0"><i class="bi bi-instagram me-2"></i>Instagram</h3>
+              <small id="ig-handle-display" class="text-muted">@suoyi_coffee_sintian</small>
+            </div>
+            <a id="ig-follow-btn" href="#" target="_blank" class="btn btn-sm btn-outline-brown rounded-pill">
+              追蹤我們
+            </a>
+          </div>
+          <!-- 圖片容器：清空內容，交給 JS 產生 -->
+          <div id="ig-grid-container" class="ig-grid-wrapper">
+            <!-- IG Item 1 -->
+            <a href="https://www.instagram.com/suoyi_coffee_sintian/" target="_blank" class="ig-item d-block">
+              <img src="assets/img/products/Latte_1.jpg" alt="所以咖啡拿鐵">
+              <div class="ig-overlay"><i class="bi bi-heart-fill"></i></div>
+            </a>
+            <!-- IG Item 2 -->
+            <a href="https://www.instagram.com/suoyi_coffee_sintian/" target="_blank" class="ig-item d-block">
+              <img src="assets/img/products/Salted_Caramel_Latte.jpg" alt="海鹽焦糖拿鐵">
+              <div class="ig-overlay"><i class="bi bi-heart-fill"></i></div>
+            </a>
+            <!-- IG Item 3 -->
+            <a href="https://www.instagram.com/suoyi_coffee_sintian/" target="_blank" class="ig-item d-block">
+              <img src="assets/img/products/High_Mountain_Tea_1.jpg" alt="高山金萱">
+              <div class="ig-overlay"><i class="bi bi-heart-fill"></i></div>
+            </a>
+            <!-- IG Item 4 (店景或活動) -->
+            <a href="https://www.instagram.com/suoyi_coffee_sintian/" target="_blank" class="ig-item d-block">
+              <img src="assets/img/stores/fuheng.jpg" alt="新興新田店景">
+              <div class="ig-overlay"><i class="bi bi-images"></i></div>
+            </a>
           </div>
         </div>
-        <div class="col-md-4">
-          <div class="review-card">
-            <div class="text-warning mb-2"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div>
-            <p class="mb-2 text-dark fw-bold">"店員親切"</p>
-            <p class="small text-muted mb-0">雖然很忙但店員態度都很好，也會主動介紹優惠，週三第二杯半價真的很划算。</p>
-            <div class="mt-3 small text-muted">- 王先生</div>
+        <!-- 右側：FB 與 Google 連結 -->
+        <div class="col-lg-5 order-1 order-lg-2">
+          <div class="row g-3">
+            <!-- Facebook 卡片 -->
+            <div class="col-12">
+              <div class="fb-static-card">
+                <!-- 請換成 FB 大頭貼圖片 -->
+                <img src="assets/img/logo/logo-brown-on-white.png" alt="FB Logo" class="fb-avatar">
+                <h4 class="h6 fw-bold text-dark">所以咖啡-新田店</h4>
+                <p class="small text-muted mb-3">
+                  按讚粉絲專頁，掌握每週三品牌日最新消息與臨時店休公告。
+                </p>
+                <a href="https://www.facebook.com/profile.php?id=100092282511614" target="_blank" class="btn btn-primary btn-sm rounded-pill px-4 fw-bold">
+                  <i class="bi bi-facebook me-1"></i> 前往 Facebook 按讚
+                </a>
+              </div>
+            </div>
+            <!-- Google 動態商家卡片 -->
+            <div class="col-12">
+              <div class="google-dynamic-card">
+                <!-- 標頭：評分與動態星星 -->
+                <div class="d-flex justify-content-between align-items-center mb-3 border-bottom pb-2">
+                  <div class="d-flex align-items-center">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" alt="Google" class="g-logo-icon me-2">
+                    <span class="fw-bold text-dark">Google 商家評價</span>
+                  </div>
+                  <!-- ID 用於 JS 更新分數 -->
+                  <div id="google-rating-display" class="fs-5 fw-bold text-dark">
+                    4.9 <i class="bi bi-star-fill star-pulse ms-1"></i>
+                  </div>
+                </div>
+                <!-- 動態輪播區：模擬真實評論流動 -->
+                <div class="review-slider-window">
+                  <div id="google-reviews-track" class="review-track">                    
+                    <div class="review-item">
+                      <div class="d-flex align-items-center gap-2 mb-1">
+                        <span class="badge bg-warning text-dark rounded-pill" style="font-size: 0.7rem;">在地嚮導</span>
+                        <span class="fw-bold text-brown small">Jason Wu</span>
+                      </div>
+                      <p class="mb-0 small text-muted text-truncate">"在這個地段能喝到這種品質跟價格的咖啡真的很難得，大推西西里咖啡！"</p>
+                    </div>                    
+                    <div class="review-item">
+                      <div class="d-flex align-items-center gap-2 mb-1">
+                        <span class="fw-bold text-brown small">王先生</span>
+                      </div>
+                      <p class="mb-0 small text-muted text-truncate">"雖然很忙但店員態度都很好，也會主動介紹優惠，週三第二杯半價真的很划算。"</p>
+                    </div>                    
+                    <div class="review-item">
+                      <div class="d-flex align-items-center gap-2 mb-1">
+                        <span class="fw-bold text-brown small"> Google 在地嚮導 Amy</span>
+                      </div>
+                      <p class="mb-0 small text-muted text-truncate">"每次來新堀江都會買一杯，拿鐵很順口，而且出杯速度很快，不用等太久。"</p>
+                    </div>
+                  </div>
+                </div>
+                <!-- CTA 按鈕 -->
+                <div class="text-center">
+                  <a href="https://maps.app.goo.gl/2qHfvCw1uF2jTSPv7" target="_blank" class="btn btn-outline-secondary btn-sm rounded-pill w-100">
+                    <i class="bi bi-map-fill me-1"></i> 查看真實評論
+                  </a>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-        <div class="col-md-4">
-          <div class="review-card">
-            <div class="text-warning mb-2"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div>
-            <p class="mb-2 text-dark fw-bold">"好喝又平價"</p>
-            <p class="small text-muted mb-0">在這個地段能喝到這種品質跟價格的咖啡真的很難得，大推西西里咖啡！</p>
-            <div class="mt-3 small text-muted">- Jason Wu</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 關於分店 (SEO 核心文案區) -->
+  <section class="py-5 bg-light">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-10">
+          <div class="text-center mb-4">
+            <span class="text-brown fw-bold small letter-spacing-2">ABOUT STORE</span>
+            <h2 class="h3 fw-bold text-brown">新堀江逛街首選，手拿一杯時尚咖啡</h2>
+          </div>
+          <div class="about-store-text">
+            <p>
+              <strong>所以咖啡（Suoyi Coffee）新興新田店</strong> 座落於高雄潮流指標 <span class="about-store-highlight">新堀江商圈</span>，鄰近綠意盎然的 <span class="about-store-highlight">中央公園</span> 與城市光廊。我們是年輕族群與逛街人潮的最佳補給站，提供平價卻充滿質感的現萃咖啡。
+            </p>
+            <p>
+              店面設計簡約時尚，設有快速外帶窗口。無論您是正在逛街購物，或是準備前往中央公園散步，都能隨手帶走一杯香醇的<strong>拿鐵</strong>或清爽的<strong>西西里檸檬咖啡</strong>。我們堅持使用高品質咖啡豆與萬丹鮮乳，讓每一口都成為逛街時的小確幸。
+            </p>
+            <p>
+              此外，我們也深受周邊服飾店與商家的喜愛，提供<strong>商圈外送服務</strong>。透過 LINE 點餐，不用離開櫃位也能享用美味咖啡，是新興區店家下午茶的熱門選擇。
+            </p>
           </div>
         </div>
       </div>
@@ -502,7 +652,7 @@
   </section>
 
   <!-- 7. FAQ -->
-  <section class="py-5 bg-light">
+  <section class="py-5 bg-white">
     <div class="container">
       <h2 class="h4 fw-bold text-brown text-center mb-4">常見問題 FAQ</h2>
       <div class="row justify-content-center">
@@ -550,7 +700,7 @@
     </div>
   </section>
 
-  <!-- 3. 底部 CTA：查看其他門市 -->
+  <!-- 底部 CTA：查看其他門市 -->
   <section class="py-5 bg-brown text-white text-center">
     <div class="container">
       <h2 class="h4 fw-bold mb-3">不在新興區嗎？</h2>
@@ -592,5 +742,11 @@
 </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  // 設定：新興新田店 Place ID
+  const PLACE_ID = 'ChIJWzOE2GUFbjQR5l4xi99kWMY'; // ID for 新興新田店
+</script>
+<script src="assets/js/branches-config.js"></script>
+<script src="assets/js/store-page.js"></script>
 </body>
 </html>

@@ -111,30 +111,3 @@
   }
   // 啟動
   initStoreData();
-
-
-// (這段不用改，只是讓您確認邏輯)
-const params = new URLSearchParams(window.location.search);
-const currentBranchId = params.get('id') || 'niaosong'; 
-const branch = branchData[currentBranchId];
-
-if (branch) {
-    // 1. 自動換成該分店的 IG 帳號文字 (例如 @suoyi_coffee_sintian)
-    document.getElementById('ig-handle-display').textContent = `@${branch.igAccount}`;
-    
-    // 2. 自動換成該分店的 IG 連結
-    document.getElementById('ig-follow-btn').href = branch.igUrl;
-
-    // 3. 自動換成該分店的 4 張照片
-    const container = document.getElementById('ig-grid-container');
-    let html = '';
-    branch.igPhotos.forEach(photo => {
-        html += `
-          <a href="${photo.link}" target="_blank" class="ig-item d-block">
-            <img src="${photo.img}" alt="${branch.name} IG Photo">
-            <div class="ig-overlay"><i class="bi bi-heart-fill"></i></div>
-          </a>
-        `;
-    });
-    container.innerHTML = html;
-}

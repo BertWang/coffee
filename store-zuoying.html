@@ -157,6 +157,73 @@
       box-shadow: none;
       border-color: #D4A373;
     }
+
+  
+    /* IG Grid - 模擬 IG 牆效果，速度快且對 SEO 友善 */
+    .ig-grid-wrapper {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr); /* 手機版 2欄 */
+      gap: 8px;
+    }
+    @media (min-width: 768px) {
+      .ig-grid-wrapper {
+        grid-template-columns: repeat(4, 1fr); /* 電腦版 4欄 */
+      }
+    }
+    .ig-item {
+      position: relative;
+      padding-bottom: 100%; /* 1:1 正方形 */
+      overflow: hidden;
+      border-radius: 8px;
+      background-color: #f8f9fa;
+    }
+    .ig-item img {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+    .ig-item:hover img {
+      transform: scale(1.1);
+    }
+    .ig-overlay {
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0,0,0,0.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transition: opacity 0.3s;
+      color: white;
+      font-size: 1.5rem;
+    }
+    .ig-item:hover .ig-overlay {
+      opacity: 1;
+    }
+
+    /* FB Card */
+    .fb-static-card {
+      background: #F0F2F5; /* FB 背景色 */
+      border-radius: 12px;
+      padding: 20px;
+      border: 1px solid #ddd;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+    .fb-avatar {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      border: 3px solid #fff;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      margin-bottom: 15px;
+    }
   </style>
 
   <!-- JSON-LD: 複合式結構資料 -->
@@ -237,7 +304,9 @@
               <li class="breadcrumb-item active text-white" aria-current="page">左營富國店</li>
             </ol>
           </nav>
-          <span class="badge bg-warning text-dark mb-2"><i class="bi bi-clock-fill"></i> 營業中 (07:00 - 17:00)</span>
+          <span id="store-status-badge" class="badge bg-secondary text-white mb-2">
+            <i class="bi bi-hourglass-split"></i> 載入資訊中...
+          </span>
           <h1 class="display-4 fw-bold mb-3">左營富國店</h1>
           <p class="lead mb-4 opacity-90">
             北高雄購物商圈的休憩站。<br>
@@ -389,31 +458,6 @@
     </div>
   </section>
 
-  <!-- 4. 關於分店 (SEO 核心文案區) -->
-  <section class="py-5 bg-white border-bottom">
-    <div class="container">
-      <div class="row justify-content-center">
-        <div class="col-lg-10">
-          <div class="text-center mb-4">
-            <span class="text-brown fw-bold small letter-spacing-2">ABOUT STORE</span>
-            <h2 class="h3 fw-bold text-brown">北高雄生活圈，隨手可得的平價奢華</h2>
-          </div>
-          <div class="about-store-text">
-            <p>
-              <strong>所以咖啡（Suoyi Coffee）左營富國店</strong> 位於北高雄熱鬧的富國路商圈，緊鄰 <span class="about-store-highlight">義享天地</span> 與 <span class="about-store-highlight">好市多 Costco</span>。我們為忙碌的都市人提供一個快速充電的咖啡站，讓您在購物、通勤或辦公的空檔，能輕鬆享用一杯高品質的現萃咖啡。
-            </p>
-            <p>
-              店內設備比照總店規格，採用雙孔義式機與 RO 濾水系統。無論是搭乘 <span class="about-store-highlight">捷運凹子底站</span> 的通勤族，或是周邊辦公大樓的上班族，都能透過 LINE 線上點餐，到店即取，節省寶貴時間。
-            </p>
-            <p>
-              我們也提供周邊企業與商家的<strong>下午茶外送服務</strong>。一杯香醇的拿鐵或清爽的西西里咖啡，是會議中最好的提神夥伴。歡迎提前預訂，享受專人外送的便利。
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!-- 5. 資訊與地圖 -->
   <section class="py-5 bg-light">
     <div class="container">
@@ -470,33 +514,140 @@
     </div>
   </section>
 
-  <!-- 6. 真實好評 -->
-  <section class="py-5 bg-white">
+  <!-- 社群口碑 -->
+  <section class="py-5 bg-white border-top border-bottom">
     <div class="container">
-      <h2 class="h4 fw-bold text-brown text-center mb-4">在地鄉親怎麼說？</h2>
-      <div class="row g-3">
-        <div class="col-md-4">
-          <div class="review-card">
-            <div class="text-warning mb-2"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div>
-            <p class="mb-2 text-dark fw-bold">"逛街累了必喝"</p>
-            <p class="small text-muted mb-0">去義享天地前都會先來買一杯，比百貨公司裡的便宜又好喝，拿鐵奶泡很綿密。</p>
-            <div class="mt-3 small text-muted">- Google 在地嚮導 Kevin</div>
+      <!-- 標題區 -->
+      <div class="text-center mb-5">
+        <h2 class="h3 fw-bold text-brown">在地鄉親與社群推薦</h2>
+        <p class="text-muted">追蹤我們的社群，掌握最新優惠與店休公告</p>
+      </div>
+      <div class="row g-5">
+        <!-- 左側：Instagram 視覺牆 -->
+        <div class="col-lg-7 order-2 order-lg-1">
+          <div class="d-flex justify-content-between align-items-end mb-3">
+            <div>
+              <!-- 這裡的帳號也會動態換 -->
+              <h3 class="h5 fw-bold text-brown mb-0"><i class="bi bi-facebook me-2"></i>Facebook</h3>
+              <small id="ig-handle-display" class="text-muted">@suoyi_coffee</small>
+            </div>
+            <a id="ig-follow-btn" href="#" target="_blank" class="btn btn-sm btn-outline-brown rounded-pill">
+              追蹤我們
+            </a>
+          </div>
+          <!-- 圖片容器：清空內容，交給 JS 產生 -->
+          <div id="ig-grid-container" class="ig-grid-wrapper">
+            <!-- IG Item 1 -->
+            <a href="https://www.instagram.com/suoyi_coffee/" target="_blank" class="ig-item d-block">
+              <img src="assets/img/products/Latte_1.jpg" alt="所以咖啡拿鐵">
+              <div class="ig-overlay"><i class="bi bi-heart-fill"></i></div>
+            </a>
+            <!-- IG Item 2 -->
+            <a href="https://www.instagram.com/suoyi_coffee/" target="_blank" class="ig-item d-block">
+              <img src="assets/img/products/Salted_Caramel_Latte.jpg" alt="海鹽焦糖拿鐵">
+              <div class="ig-overlay"><i class="bi bi-heart-fill"></i></div>
+            </a>
+            <!-- IG Item 3 -->
+            <a href="https://www.instagram.com/suoyi_coffee/" target="_blank" class="ig-item d-block">
+              <img src="assets/img/products/High_Mountain_Tea_1.jpg" alt="高山金萱">
+              <div class="ig-overlay"><i class="bi bi-heart-fill"></i></div>
+            </a>
+            <!-- IG Item 4 (店景或活動) -->
+            <a href="https://www.instagram.com/suoyi_coffee/" target="_blank" class="ig-item d-block">
+              <img src="assets/img/stores/annping.jpg" alt="富國店">
+              <div class="ig-overlay"><i class="bi bi-images"></i></div>
+            </a>
           </div>
         </div>
-        <div class="col-md-4">
-          <div class="review-card">
-            <div class="text-warning mb-2"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div>
-            <p class="mb-2 text-dark fw-bold">"辦公室下午茶"</p>
-            <p class="small text-muted mb-0">我們公司常叫這間的外送，出餐速度快，包裝也很完整，推薦西西里咖啡！</p>
-            <div class="mt-3 small text-muted">- 陳小姐</div>
+        <!-- 右側：FB 與 Google 連結 -->
+        <div class="col-lg-5 order-1 order-lg-2">
+          <div class="row g-3">
+            <!-- Facebook 卡片 -->
+            <div class="col-12">
+              <div class="fb-static-card">
+                <!-- 請換成 FB 大頭貼圖片 -->
+                <img src="assets/img/logo/logo-brown-on-white.png" alt="FB Logo" class="fb-avatar">
+                <h4 class="h6 fw-bold text-dark">所以咖啡Suoyi Coffee 左營富國店 </h4>
+                <p class="small text-muted mb-3">
+                  按讚粉絲專頁，掌握每週三品牌日最新消息與臨時店休公告。
+                </p>
+                <a href="https://www.facebook.com/profile.php?id=61561338994905" target="_blank" class="btn btn-primary btn-sm rounded-pill px-4 fw-bold">
+                  <i class="bi bi-facebook me-1"></i> 前往 Facebook 按讚
+                </a>
+              </div>
+            </div>
+            <!-- Google 動態商家卡片 -->
+            <div class="col-12">
+              <div class="google-dynamic-card">
+                <!-- 標頭：評分與動態星星 -->
+                <div class="d-flex justify-content-between align-items-center mb-3 border-bottom pb-2">
+                  <div class="d-flex align-items-center">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" alt="Google" class="g-logo-icon me-2">
+                    <span class="fw-bold text-dark">Google 商家評價</span>
+                  </div>
+                  <!-- ID 用於 JS 更新分數 -->
+                  <div id="google-rating-display" class="fs-5 fw-bold text-dark">
+                    4.9 <i class="bi bi-star-fill star-pulse ms-1"></i>
+                  </div>
+                </div>
+                <!-- 動態輪播區：模擬真實評論流動 -->
+                <div class="review-slider-window">
+                  <div id="google-reviews-track" class="review-track">                    
+                    <div class="review-item">
+                      <div class="d-flex align-items-center gap-2 mb-1">
+                        <span class="badge bg-warning text-dark rounded-pill" style="font-size: 0.7rem;">在地嚮導</span>
+                        <span class="fw-bold text-brown small">林先生</span>
+                      </div>
+                      <p class="mb-0 small text-muted text-truncate">"去義享天地前都會先來買一杯，比百貨公司裡的便宜又好喝，拿鐵奶泡很綿密。"</p>
+                    </div>                    
+                    <div class="review-item">
+                      <div class="d-flex align-items-center gap-2 mb-1">
+                        <span class="fw-bold text-brown small">陳小姐</span>
+                      </div>
+                      <p class="mb-0 small text-muted text-truncate">"我們公司常叫這間的外送，出餐速度快，包裝也很完整，推薦西西里咖啡！"</p>
+                    </div>                    
+                    <div class="review-item">
+                      <div class="d-flex align-items-center gap-2 mb-1">
+                        <span class="fw-bold text-brown small">Google 在地嚮導 Kevin</span>
+                      </div>
+                      <p class="mb-0 small text-muted text-truncate">"富國路上算好暫停機車，買完就走很方便。店員服務態度很親切。"</p>
+                    </div>
+                  </div>
+                </div>
+                <!-- CTA 按鈕 -->
+                <div class="text-center">
+                  <a href="https://maps.app.goo.gl/jZ6Z65g5a8nPhyGi7" target="_blank" class="btn btn-outline-secondary btn-sm rounded-pill w-100">
+                    <i class="bi bi-map-fill me-1"></i> 查看真實評論
+                  </a>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-        <div class="col-md-4">
-          <div class="review-card">
-            <div class="text-warning mb-2"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div>
-            <p class="mb-2 text-dark fw-bold">"方便好停車"</p>
-            <p class="small text-muted mb-0">富國路上算好暫停機車，買完就走很方便。店員服務態度很親切。</p>
-            <div class="mt-3 small text-muted">- 林先生</div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- 關於分店 (SEO 核心文案區) -->
+  <section class="py-5 bg-light">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-10">
+          <div class="text-center mb-4">
+            <span class="text-brown fw-bold small letter-spacing-2">ABOUT STORE</span>
+            <h2 class="h3 fw-bold text-brown">北高雄生活圈，隨手可得的平價奢華</h2>
+          </div>
+          <div class="about-store-text">
+            <p>
+              <strong>所以咖啡（Suoyi Coffee）左營富國店</strong> 位於北高雄熱鬧的富國路商圈，緊鄰 <span class="about-store-highlight">義享天地</span> 與 <span class="about-store-highlight">好市多 Costco</span>。我們為忙碌的都市人提供一個快速充電的咖啡站，讓您在購物、通勤或辦公的空檔，能輕鬆享用一杯高品質的現萃咖啡。
+            </p>
+            <p>
+              店內設備比照總店規格，採用雙孔義式機與 RO 濾水系統。無論是搭乘 <span class="about-store-highlight">捷運凹子底站</span> 的通勤族，或是周邊辦公大樓的上班族，都能透過 LINE 線上點餐，到店即取，節省寶貴時間。
+            </p>
+            <p>
+              我們也提供周邊企業與商家的<strong>下午茶外送服務</strong>。一杯香醇的拿鐵或清爽的西西里咖啡，是會議中最好的提神夥伴。歡迎提前預訂，享受專人外送的便利。
+            </p>
           </div>
         </div>
       </div>
@@ -504,7 +655,7 @@
   </section>
 
   <!-- 7. FAQ -->
-  <section class="py-5 bg-light">
+  <section class="py-5 bg-white">
     <div class="container">
       <h2 class="h4 fw-bold text-brown text-center mb-4">常見問題 FAQ</h2>
       <div class="row justify-content-center">
@@ -594,5 +745,11 @@
 </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  // 設定：左營富國店 Place ID
+  const PLACE_ID = 'ChIJPbepv9YFbjQRfenG0QcZsAg'; // ID for 左營富國店
+</script>
+<script src="assets/js/branches-config.js"></script>
+<script src="assets/js/store-page.js"></script>
 </body>
 </html>
