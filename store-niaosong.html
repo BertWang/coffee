@@ -542,19 +542,20 @@
         <p class="text-muted">追蹤我們的社群，掌握最新優惠與店休公告</p>
       </div>
       <div class="row g-5">
-        <!-- 左側：Instagram 視覺牆 (靜態模擬，速度最快) -->
+        <!-- 左側：Instagram 視覺牆 -->
         <div class="col-lg-7 order-2 order-lg-1">
           <div class="d-flex justify-content-between align-items-end mb-3">
             <div>
+              <!-- 這裡的帳號也會動態換 -->
               <h3 class="h5 fw-bold text-brown mb-0"><i class="bi bi-instagram me-2"></i>Instagram</h3>
-              <small class="text-muted">追蹤 @suoyicoffee 獲得最新優惠</small>
+              <small id="ig-handle-display" class="text-muted">@suoyicoffee</small>
             </div>
-            <a href="https://www.instagram.com/suoyicoffee/" target="_blank" class="btn btn-sm btn-outline-brown rounded-pill">
+            <a id="ig-follow-btn" href="#" target="_blank" class="btn btn-sm btn-outline-brown rounded-pill">
               追蹤我們
             </a>
           </div>
-          <!-- 這裡放 4 張最具代表性的 IG 照片，建議手動更新或選用經典圖 -->
-          <div class="ig-grid-wrapper">
+          <!-- 圖片容器：清空內容，交給 JS 產生 -->
+          <div id="ig-grid-container" class="ig-grid-wrapper">
             <!-- IG Item 1 -->
             <a href="https://www.instagram.com/suoyicoffee/" target="_blank" class="ig-item d-block">
               <img src="assets/img/products/Latte_1.jpg" alt="所以咖啡拿鐵">
@@ -740,7 +741,6 @@
     <i class="bi bi-line"></i> LINE 點餐
   </a>
 </div>
-
 <!-- Footer -->
 <footer class="py-4 border-top mt-auto">
   <div class="container small text-muted d-flex flex-column flex-md-row justify-content-between align-items-center text-center text-md-start">
@@ -760,150 +760,11 @@
   </div>
 </footer>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-
-<!-- 請將這段放在 </body> 結尾標籤之前 -->
 <script>
   // 設定：鳥松店 Place ID
   const PLACE_ID = 'ChIJD4nqxeIbbjQRLgFyyMFmlL8'; // ID for 鳥松大智店
 </script>
-<script>
-  (g=>{var h,a,k,p="The Google Maps JavaScript API",c="google",l="importLibrary",q="__ib__",m=document,b=window;b=b[c]||(b[c]={});var d=b.maps||(b.maps={}),r=new Set,e=new URLSearchParams,u=()=>h||(h=new Promise(async(f,n)=>{await (a=m.createElement("script"));e.set("libraries",[...r]+"");for(k in g)e.set(k.replace(/[A-Z]/g,t=>"_"+t[0].toLowerCase()),g[k]);e.set("callback",c+".maps."+q);a.src=`https://maps.${c}apis.com/maps/api/js?`+e;d[q]=f;a.onerror=()=>h=n(Error(p+" could not load."));a.nonce=m.querySelector("script[nonce]")?.nonce||"";m.head.append(a)}));d[l]?console.warn(p+" only loads once. Ignoring:",g):d[l]=(f,...n)=>r.add(f)&&u().then(()=>d[l](f,...n))})({
-    key: "AIzaSyDwPxjg1QXV28eSg4_mP4_e-iocQj6KDg4",
-    v: "beta",
-  });
-
-
-  async function initStoreData() {
-    try {
-      // 1. 載入 Places Library
-      const { Place } = await google.maps.importLibrary("places");
-      
-      // 2. 建立 Place 物件
-      const place = new Place({
-        id: PLACE_ID,
-        requestedLanguage: 'zh-TW',
-      });
-
-      // 3. 抓取資料
-      await place.fetchFields({
-        fields: [
-          'displayName', 
-          'rating', 
-          'userRatingCount', 
-          'reviews', 
-          'regularOpeningHours', // 雖然我們改用 isOpen()，但抓這個欄位有助於 isOpen() 判斷
-          'photos'
-        ],
-      });
-
-      // 4. 取得營業狀態 (修正點：改用 place.isOpen())
-      // isOpen() 是非同步的，會回傳 Promise<boolean | null>
-      const isOpen = await place.isOpen();
-
-      // 5. 更新 UI
-      updateStoreStatus(isOpen); // 直接傳入 true/false
-      updateReviews(place.reviews, place.rating, place.userRatingCount);
-      updatePhotos(place.photos);
-      updateJsonLdSchema(place);
-
-    } catch (error) {
-      console.error("Google Maps 資料載入失敗:", error);
-      // 失敗時不動作，網頁維持靜態內容
-    }
-  }
-
-  // --- UI 更新邏輯 ---
-
-  // 1. 更新營業狀態 (修正點：接收 boolean)
-  function updateStoreStatus(isOpen) {
-    const badge = document.getElementById('store-status-badge');
-    
-    // 如果 isOpen 是 null (代表沒資料)，則不更新
-    if (isOpen === null || isOpen === undefined) return;
-
-    if (isOpen) {
-      badge.className = 'badge bg-success text-white mb-2';
-      badge.innerHTML = '<i class="bi bi-clock-fill"></i> 現正營業中';
-    } else {
-      badge.className = 'badge bg-danger text-white mb-2';
-      badge.innerHTML = '<i class="bi bi-moon-stars-fill"></i> 休息中';
-    }
-  }
-
-  // 2. 更新評論
-  function updateReviews(reviews, rating, count) {
-    if (rating) {
-      document.getElementById('google-rating-display').innerHTML = 
-        `${rating} <i class="bi bi-star-fill star-pulse ms-1"></i> <span class="fs-6 text-muted">(${count})</span>`;
-    }
-
-    const track = document.getElementById('google-reviews-track');
-    if (reviews && reviews.length > 0) {
-      let html = '';
-      const textReviews = reviews.filter(r => r.text).slice(0, 5);
-      
-      textReviews.forEach(review => {
-        const shortText = review.text.length > 40 ? review.text.substring(0, 40) + '...' : review.text;
-        // 安全存取作者資訊
-        const photoUrl = review.authorAttribution?.photoUri || 'assets/img/logo/logo-brown-on-white.png';
-        const authorName = review.authorAttribution?.displayName || 'Google 使用者';
-
-        html += `
-          <div class="review-item">
-            <div class="d-flex align-items-center gap-2 mb-1">
-               <img src="${photoUrl}" style="width:20px; height:20px; border-radius:50%;">
-               <span class="fw-bold text-brown small">${authorName}</span>
-            </div>
-            <small class="text-muted">${shortText}</small>
-          </div>
-        `;
-      });
-      track.innerHTML = html;
-    }
-  }
-
-  // 3. 更新照片
-  function updatePhotos(photos) {
-    const container = document.getElementById('google-photos-container');
-    if (photos && photos.length > 0) {
-      let html = '';
-      photos.slice(0, 4).forEach(photo => {
-        const url = photo.getURI({ maxWidth: 400, maxHeight: 400 });
-        html += `
-          <div class="col-6 col-md-3">
-            <div class="ratio ratio-1x1">
-              <img src="${url}" class="img-fluid rounded shadow-sm object-fit-cover" alt="門市照片" style="width:100%; height:100%; object-fit:cover;">
-            </div>
-          </div>
-        `;
-      });
-      container.innerHTML = html;
-    }
-  }
-
-  // 4. 更新 SEO Schema
-  function updateJsonLdSchema(place) {
-    const script = document.querySelector('script[type="application/ld+json"]');
-    if (script) {
-      try {
-        const data = JSON.parse(script.textContent);
-        const storeData = data['@graph'].find(item => item['@type'] === 'CafeOrCoffeeShop');
-        
-        if (storeData && place.rating) {
-          storeData.aggregateRating = {
-            "@type": "AggregateRating",
-            "ratingValue": place.rating,
-            "reviewCount": place.userRatingCount
-          };
-          script.textContent = JSON.stringify(data);
-        }
-      } catch (e) {
-        console.warn("Schema update failed", e);
-      }
-    }
-  }
-  // 啟動
-  initStoreData();
-</script>
+<script src="assets/js/branches-config.js"></script>
+<script src="assets/js/store-page.js"></script>
 </body>
 </html>
