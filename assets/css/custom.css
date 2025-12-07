@@ -802,3 +802,68 @@ img[loading="lazy"] { content-visibility: auto; }
 .delivery-line i {
   color: #06C755;
 }
+
+/* Google 動態商家卡片 AIzaSyDwPxjg1QXV28eSg4_mP4_e-iocQj6KDg4 */
+.google-dynamic-card {
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  position: relative;
+  overflow: hidden;
+}
+
+/* 1. 星星呼吸燈效果 */
+.star-pulse {
+  animation: pulse-gold 2s infinite;
+  color: #ffc107; /* Bootstrap warning color */
+  display: inline-block;
+}
+@keyframes pulse-gold {
+  0% { transform: scale(1); text-shadow: 0 0 0 rgba(255, 193, 7, 0.4); }
+  50% { transform: scale(1.2); text-shadow: 0 0 10px rgba(255, 193, 7, 0.8); }
+  100% { transform: scale(1); text-shadow: 0 0 0 rgba(255, 193, 7, 0.4); }
+}
+
+/* 2. 評論輪播視窗 */
+.review-slider-window {
+  height: 80px; /* 固定高度，只顯示一則 */
+  overflow: hidden;
+  position: relative;
+  margin-bottom: 15px;
+  border-left: 3px solid #5C4033; /* 品牌色裝飾線 */
+  padding-left: 15px;
+  background: #f9f9f9;
+  border-radius: 0 8px 8px 0;
+  display: flex;
+  align-items: center;
+}
+
+/* 輪播軌道 */
+.review-track {
+  /* 3則評論，總時間 9秒，每則停留約 2秒 */
+  animation: slide-up-scroll 9s ease-in-out infinite;
+}
+
+.review-item {
+  height: 80px; /* 對應視窗高度 */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* 輪播動畫關鍵影格 (3則評論循環) */
+@keyframes slide-up-scroll {
+  0%, 25% { transform: translateY(0); }        /* 顯示第1則 */
+  33%, 58% { transform: translateY(-80px); }   /* 顯示第2則 */
+  66%, 91% { transform: translateY(-160px); }  /* 顯示第3則 */
+  100% { transform: translateY(0); }           /* 回到第1則 */
+}
+
+/* Google Logo 小圖標 */
+.g-logo-icon {
+  width: 24px;
+  height: 24px;
+  vertical-align: sub;
+}
