@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // 本次瀏覽 Session 只彈一次
     const hasSeen = sessionStorage.getItem("welcomeVideoSeen");
     if (!hasSeen) {
-      // 延遲 1.5 秒彈出，避免一載入就打斷使用者
+      // 延遲 1分鐘彈出，避免一載入就打斷使用者
       setTimeout(() => {
         modal.show();
         // 嘗試自動播放（muted 狀態下多數瀏覽器允許）
@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", function () {
           // 瀏覽器限制自動播放時，維持停在第一幀，讓使用者自行播放
         });
         sessionStorage.setItem("welcomeVideoSeen", "1");
-      }, 1500);
+      }, 60000); // 1 分鐘
     }
 
     // 播放完畢自動關閉
