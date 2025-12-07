@@ -762,61 +762,64 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
 <!-- 請將這段放在 </body> 結尾標籤之前 -->
-
-<script>
-  ((g)=>{var h,a,k,p="The Google Maps JavaScript API",c="google",l="importLibrary",q="__ib__",m=document,b=window;b=b[c]||(b[c]={});var d=b.maps||(b.maps={}),r=new Set,e=new URLSearchParams,u=()=>h||(h=new Promise(async(f,n)=>{await (a=m.createElement("script"));e.set("libraries",[...r]+"");for(k in g)e.set(k.replace(/[A-Z]/g,t=>"_"+t[0].toLowerCase()),g[k]);e.set("callback",c+".maps."+q);a.src=`https://maps.${c}apis.com/maps/api/js?`+e;d[q]=f;a.onerror=()=>h=n(Error(p+" could not load."));a.nonce=m.querySelector("script[nonce]")?.nonce||"";m.head.append(a)}));d[l]?console.warn(p+" only loads once. Ignoring:",g):d[l]=(f,...n)=>r.add(f)&&u().then(()=>d[l](f,...n))})({
-    key: "AIzaSyDwPxjg1QXV28eSg4_mP4_e-iocQj6KDg4", 
-    v: "weekly",
-  });
-</script>
-
 <script>
   // 設定：鳥松店 Place ID
-  const PLACE_ID = 'ChIJD4nqxeIbbjQRLgFyyMFmlL8'; 
+  const PLACE_ID = 'ChIJD4nqxeIbbjQRLgFyyMFmlL8'; // ID for 鳥松大智店
+</script>
+<script>
+  ((g)=>{var h,a,k,p="The Google Maps JavaScript API",c="google",l="importLibrary",q="__ib__",m=document,b=window;b=b[c]||(b[c]={});var d=b.maps||(b.maps={}),r=new Set,e=new URLSearchParams,u=()=>h||(h=new Promise(async(f,n)=>{await (a=m.createElement("script"));e.set("libraries",[...r]+"");for(k in g)e.set(k.replace(/[A-Z]/g,t=>"_"+t[0].toLowerCase()),g[k]);e.set("callback",c+".maps."+q);a.src=`https://maps.${c}apis.com/maps/api/js?`+e;d[q]=f;a.onerror=()=>h=n(Error(p+" could not load."));a.nonce=m.querySelector("script[nonce]")?.nonce||"";m.head.append(a)}));d[l]?console.warn(p+" only loads once. Ignoring:",g):d[l]=(f,...n)=>r.add(f)&&u().then(()=>d[l](f,...n))})({
+    key: "AIzaSyDwPxjg1QXV28eSg4_mP4_e-iocQj6KDg4", //API Key
+    v: "weekly",
+  });
 
   async function initStoreData() {
     try {
-      // 1. 載入需要的 Libraries (新版寫法)
+      // 1. 載入 Places Library
       const { Place } = await google.maps.importLibrary("places");
       
-      // 2. 建立 Place 物件 (New API)
+      // 2. 建立 Place 物件
       const place = new Place({
         id: PLACE_ID,
-        requestedLanguage: 'zh-TW', // 強制中文
+        requestedLanguage: 'zh-TW',
       });
 
-      // 3. 抓取資料 (欄位名稱與舊版不同，請注意)
-      // 費用提示：Basic (id, displayName) 免費 / Atmosphere (rating, reviews) 付費 / Contact (openingHours) 付費
+      // 3. 抓取資料
       await place.fetchFields({
         fields: [
           'displayName', 
           'rating', 
           'userRatingCount', 
           'reviews', 
-          'regularOpeningHours'
+          'regularOpeningHours', // 雖然我們改用 isOpen()，但抓這個欄位有助於 isOpen() 判斷
+          'photos'
         ],
       });
 
-      // 4. 執行更新 UI 的函式
-      updateStoreStatus(place.regularOpeningHours);
+      // 4. 取得營業狀態 (修正點：改用 place.isOpen())
+      // isOpen() 是非同步的，會回傳 Promise<boolean | null>
+      const isOpen = await place.isOpen();
+
+      // 5. 更新 UI
+      updateStoreStatus(isOpen); // 直接傳入 true/false
       updateReviews(place.reviews, place.rating, place.userRatingCount);
       updatePhotos(place.photos);
       updateJsonLdSchema(place);
 
     } catch (error) {
       console.error("Google Maps 資料載入失敗:", error);
-      // 失敗時 UI 會維持 HTML 預設的靜態內容 (Fallback)
+      // 失敗時不動作，網頁維持靜態內容
     }
   }
 
-  // 更新營業狀態
-  function updateStoreStatus(openingHours) {
-    const badge = document.getElementById('store-status-badge');
-    if (!openingHours) return;
+  // --- UI 更新邏輯 ---
 
-    // 新版 API 檢查營業狀態的方法
-    const isOpen = openingHours.isOpenAtDate(new Date());
+  // 1. 更新營業狀態 (修正點：接收 boolean)
+  function updateStoreStatus(isOpen) {
+    const badge = document.getElementById('store-status-badge');
     
+    // 如果 isOpen 是 null (代表沒資料)，則不更新
+    if (isOpen === null || isOpen === undefined) return;
+
     if (isOpen) {
       badge.className = 'badge bg-success text-white mb-2';
       badge.innerHTML = '<i class="bi bi-clock-fill"></i> 現正營業中';
@@ -826,26 +829,22 @@
     }
   }
 
-  // 更新評論
+  // 2. 更新評論
   function updateReviews(reviews, rating, count) {
-    // 更新分數
     if (rating) {
       document.getElementById('google-rating-display').innerHTML = 
         `${rating} <i class="bi bi-star-fill star-pulse ms-1"></i> <span class="fs-6 text-muted">(${count})</span>`;
     }
 
-    // 更新輪播
     const track = document.getElementById('google-reviews-track');
     if (reviews && reviews.length > 0) {
       let html = '';
-      // 過濾掉沒文字的評論，取前 5 則
       const textReviews = reviews.filter(r => r.text).slice(0, 5);
       
       textReviews.forEach(review => {
-        // 截斷過長文字
         const shortText = review.text.length > 40 ? review.text.substring(0, 40) + '...' : review.text;
-        // 新版 API 的作者照片欄位可能不同，需檢查
-        const photoUrl = review.authorAttribution?.photoUri || 'assets/img/logo/logo-brown-on-white.png'; // 預設圖
+        // 安全存取作者資訊
+        const photoUrl = review.authorAttribution?.photoUri || 'assets/img/logo/logo-brown-on-white.png';
         const authorName = review.authorAttribution?.displayName || 'Google 使用者';
 
         html += `
@@ -862,7 +861,26 @@
     }
   }
 
-  // 更新 SEO Schema
+  // 3. 更新照片
+  function updatePhotos(photos) {
+    const container = document.getElementById('google-photos-container');
+    if (photos && photos.length > 0) {
+      let html = '';
+      photos.slice(0, 4).forEach(photo => {
+        const url = photo.getURI({ maxWidth: 400, maxHeight: 400 });
+        html += `
+          <div class="col-6 col-md-3">
+            <div class="ratio ratio-1x1">
+              <img src="${url}" class="img-fluid rounded shadow-sm object-fit-cover" alt="門市照片" style="width:100%; height:100%; object-fit:cover;">
+            </div>
+          </div>
+        `;
+      });
+      container.innerHTML = html;
+    }
+  }
+
+  // 4. 更新 SEO Schema
   function updateJsonLdSchema(place) {
     const script = document.querySelector('script[type="application/ld+json"]');
     if (script) {
