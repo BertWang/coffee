@@ -1,45 +1,93 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset 
+  xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <!-- 首頁 -->
   <url>
     <loc>https://suoyicoffee.com/</loc>
-    <lastmod>2025-12-02</lastmod>
+    <lastmod>2025-12-09</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.00</priority>
   </url>
+
+  <!-- 關於我們 -->
   <url>
     <loc>https://suoyicoffee.com/about.html</loc>
-    <lastmod>2025-12-02</lastmod>
+    <lastmod>2025-12-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
   </url>
+
+  <!-- 菜單 -->
   <url>
     <loc>https://suoyicoffee.com/menu.html</loc>
-    <lastmod>2025-12-02</lastmod>
+    <lastmod>2025-12-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
+
+  <!-- 門市總覽 -->
   <url>
     <loc>https://suoyicoffee.com/stores.html</loc>
-    <lastmod>2025-12-02</lastmod>
+    <lastmod>2025-12-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
   </url>
+
+  <!-- 分店專頁 -->
+  <url>
+    <loc>https://suoyicoffee.com/store-niaosong.html</loc>
+    <lastmod>2025-12-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.70</priority>
+  </url>
+  <url>
+    <loc>https://suoyicoffee.com/store-xinxing.html</loc>
+    <lastmod>2025-12-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.70</priority>
+  </url>
+  <url>
+    <loc>https://suoyicoffee.com/store-zuoying.html</loc>
+    <lastmod>2025-12-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.70</priority>
+  </url>
+  <url>
+    <loc>https://suoyicoffee.com/store-fuheng.html</loc>
+    <lastmod>2025-12-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.70</priority>
+  </url>
+  <url>
+    <loc>https://suoyicoffee.com/store-tainan.html</loc>
+    <lastmod>2025-12-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.70</priority>
+  </url>
+
+  <!-- 加盟專區 -->
   <url>
     <loc>https://suoyicoffee.com/franchise.html</loc>
-    <lastmod>2025-12-02</lastmod>
+    <lastmod>2025-12-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
+
+  <!-- 聯絡我們 -->
   <url>
     <loc>https://suoyicoffee.com/contact.html</loc>
-    <lastmod>2025-12-02</lastmod>
+    <lastmod>2025-12-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.50</priority>
   </url>
+
+  <!-- 優惠活動 -->
   <url>
     <loc>https://suoyicoffee.com/offers.html</loc>
-    <lastmod>2025-12-02</lastmod>
+    <lastmod>2025-12-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.50</priority>
   </url>
+
 </urlset>
