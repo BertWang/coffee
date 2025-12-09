@@ -185,15 +185,24 @@ footer {
 .store-bg {
   background: linear-gradient(to bottom, #EFEAE6 0%, #E2D0C2 100%);
 }
-/* 原有的卡片樣式保持 */
+.text-brown {
+  color: #5C4033 !important;
+}
+
+/* 卡片樣式 (加入 Flexbox 以對齊底部按鈕) */
 .store-pill {
   background: #fff;
   border: 1px solid #F0E5DA;
   border-radius: 12px;
   padding: 1rem 1.25rem;
   transition: all 0.2s ease;
-  height: 100%;
+  height: 100%; /* 確保高度填滿 */
   box-shadow: 0 8px 18px rgba(0,0,0,0.05);
+  
+  /* 新增：讓內容垂直分佈，按鈕置底 */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .store-pill:hover {
@@ -201,23 +210,45 @@ footer {
   box-shadow: 0 8px 16px rgba(0,0,0,0.08);
   border-color: #D4A373;
 }
+
 .hover-underline:hover {
   text-decoration: underline;
 }
-.text-brown {
-  color: #5C4033 !important;
-}
+
+/* 查看全部按鈕樣式 */
 .hover-link-btn {
   border-color: #D4A373;
   transition: all 0.2s ease;
 }
-
 .hover-link-btn:hover {
   background-color: #D4A373;
   color: #fff !important;
   border-color: #D4A373;
   text-decoration: none;
 }
+
+/* 店名連結 Hover 效果 */
+.store-link-title {
+  transition: color 0.2s;
+}
+.store-link-title:hover {
+  color: #D4A373 !important;
+}
+
+/* 進入門市小按鈕 */
+.btn-store-entry {
+  font-size: 0.85rem;
+  background-color: #F2E5D7; /* 淺棕色底 */
+  color: #5C4033;
+  border: none;
+  transition: all 0.2s;
+  margin-top: 1rem; /* 與上方內容保持距離 */
+}
+.btn-store-entry:hover {
+  background-color: #5C4033; /* 深棕色底 */
+  color: #fff;
+}
+
 /* =========================================
    4. 特殊區塊 (Sections)
    ========================================= */

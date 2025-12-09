@@ -619,86 +619,179 @@
   </div>
 </section>
 
-<!-- 區塊 8：門市主題（加入電話撥打功能） -->
+<!-- 區塊 8：門市主題（已整合分店專頁連結） -->
 <section id="stores-section" class="py-5 store-bg">
   <div class="container">
+    
+    <!-- 內嵌 CSS：確保卡片排版與按鈕樣式正確 -->
+    <style>
+      /* 讓卡片內容垂直撐滿，按鈕置底 */
+      .store-pill {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 100%;
+        background: #fff;
+        border: 1px solid #F0E5DA;
+        border-radius: 12px;
+        padding: 1rem 1.25rem;
+        transition: all 0.2s ease;
+        box-shadow: 0 8px 18px rgba(0,0,0,0.05);
+      }
+      .store-pill:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 16px rgba(0,0,0,0.08);
+        border-color: #D4A373;
+      }
+      
+      /* 店名連結 Hover 變色 */
+      .store-link-title {
+        transition: color 0.2s;
+      }
+      .store-link-title:hover {
+        color: #D4A373 !important;
+      }
+
+      /* 「進入門市」小按鈕樣式 */
+      .btn-store-entry {
+        font-size: 0.85rem;
+        background-color: #F2E5D7; /* 淺棕色底 */
+        color: #5C4033;
+        border: none;
+        transition: all 0.2s;
+        margin-top: 1rem; /* 與上方資訊保持距離 */
+      }
+      .btn-store-entry:hover {
+        background-color: #5C4033; /* 深棕色底 */
+        color: #fff;
+      }
+    </style>
+
+    <!-- 標題區塊 -->
     <div class="d-flex justify-content-between align-items-end mb-3">
       <div>
-        <!-- 主題 H2：門市 -->
         <h2 class="h4 text-brown mb-1">所以咖啡門市據點</h2>
         <p class="text-muted small mb-0">
           高雄、台南等地陸續展店中，歡迎就近選擇門市，帶走您今天的那一杯。
         </p>
       </div>
 
-      <!-- 新增邊框 & hover 效果 -->
       <a href="stores.html"
         class="small text-brown text-decoration-none border rounded-pill px-3 py-1 hover-link-btn">
         查看所有門市與地圖 →
       </a>
     </div>
+
+    <!-- 門市列表 -->
     <div class="row gy-3 small justify-content-center">
-      <!-- 鳥松大智店 -->
+      
+      <!-- 1. 鳥松大智店 -->
       <div class="col-12 col-sm-6 col-lg-5th">
         <div class="store-pill">
-          <div class="fw-bold text-brown">鳥松大智店（高雄）</div>
-          <div class="text-muted mb-1">高雄市鳥松區大智路 40 號</div>
-          <a href="tel:0976451451" class="text-decoration-none text-brown fw-bold hover-underline">
-            <i class="bi bi-telephone-fill me-1"></i> 0976-451-451
+          <div>
+            <h3 class="h6 fw-bold mb-1">
+              <a href="store-niaosong.html" class="text-brown text-decoration-none store-link-title">
+                鳥松大智店（高雄）
+              </a>
+            </h3>
+            <div class="text-muted mb-2">高雄市鳥松區大智路 40 號</div>
+            <a href="tel:0976451451" class="text-decoration-none text-brown fw-bold hover-underline d-block mb-2">
+              <i class="bi bi-telephone-fill me-1"></i> 0976-451-451
+            </a>
+            <div class="small text-muted"><i class="bi bi-tag-fill me-1"></i>品牌創始店</div>
+          </div>
+          <!-- 底部按鈕 -->
+          <a href="store-niaosong.html" class="btn btn-store-entry rounded-pill w-100 fw-bold text-decoration-none">
+            進入門市 <i class="bi bi-arrow-right-short"></i>
           </a>
-          <div class="small text-muted mt-1">品牌創始店</div>
         </div>
       </div>
 
-      <!-- 新興新田店 -->
+      <!-- 2. 新興新田店 -->
       <div class="col-12 col-sm-6 col-lg-5th">
         <div class="store-pill">
-          <div class="fw-bold text-brown">新興新田店（高雄）</div>
-          <div class="text-muted mb-1">高雄市新興區新田路 87 號</div>
-          <a href="tel:0900474688" class="text-decoration-none text-brown fw-bold hover-underline">
-            <i class="bi bi-telephone-fill me-1"></i> 0900-474-688
+          <div>
+            <h3 class="h6 fw-bold mb-1">
+              <a href="store-xinxing.html" class="text-brown text-decoration-none store-link-title">
+                新興新田店（高雄）
+              </a>
+            </h3>
+            <div class="text-muted mb-2">高雄市新興區新田路 87 號</div>
+            <a href="tel:0900474688" class="text-decoration-none text-brown fw-bold hover-underline d-block mb-2">
+              <i class="bi bi-telephone-fill me-1"></i> 0900-474-688
+            </a>
+            <div class="small text-muted"><i class="bi bi-tag-fill me-1"></i>近新堀江商圈</div>
+          </div>
+          <a href="store-xinxing.html" class="btn btn-store-entry rounded-pill w-100 fw-bold text-decoration-none">
+            進入門市 <i class="bi bi-arrow-right-short"></i>
           </a>
-          <div class="small text-muted mt-1">近新堀江商圈</div>
         </div>
       </div>
 
-      <!-- 左營富國店 -->
+      <!-- 3. 左營富國店 -->
       <div class="col-12 col-sm-6 col-lg-5th">
         <div class="store-pill">
-          <div class="fw-bold text-brown">左營富國店（高雄）</div>
-          <div class="text-muted mb-1">高雄市左營區富國路 48 號</div>
-          <a href="tel:0916921158" class="text-decoration-none text-brown fw-bold hover-underline">
-            <i class="bi bi-telephone-fill me-1"></i> 0916-921-158
+          <div>
+            <h3 class="h6 fw-bold mb-1">
+              <a href="store-zuoying.html" class="text-brown text-decoration-none store-link-title">
+                左營富國店（高雄）
+              </a>
+            </h3>
+            <div class="text-muted mb-2">高雄市左營區富國路 48 號</div>
+            <a href="tel:0916921158" class="text-decoration-none text-brown fw-bold hover-underline d-block mb-2">
+              <i class="bi bi-telephone-fill me-1"></i> 0916-921-158
+            </a>
+            <div class="small text-muted"><i class="bi bi-tag-fill me-1"></i>近義享天地百貨</div>
+          </div>
+          <a href="store-zuoying.html" class="btn btn-store-entry rounded-pill w-100 fw-bold text-decoration-none">
+            進入門市 <i class="bi bi-arrow-right-short"></i>
           </a>
-          <div class="small text-muted mt-1">近義享天地百貨</div>
         </div>
       </div>
 
-      <!-- 新興復橫店 -->
+      <!-- 4. 新興復橫店 -->
       <div class="col-12 col-sm-6 col-lg-5th">
         <div class="store-pill">
-          <div class="fw-bold text-brown">新興復橫店（高雄）</div>
-          <div class="text-muted mb-1">高雄市新興區復橫一路 116 號</div>
-          <a href="tel:0989319123" class="text-decoration-none text-brown fw-bold hover-underline">
-            <i class="bi bi-telephone-fill me-1"></i> 0989-319-123
+          <div>
+            <h3 class="h6 fw-bold mb-1">
+              <a href="store-fuheng.html" class="text-brown text-decoration-none store-link-title">
+                新興復橫店（高雄）
+              </a>
+            </h3>
+            <div class="text-muted mb-2">高雄市新興區復橫一路 116 號</div>
+            <a href="tel:0989319123" class="text-decoration-none text-brown fw-bold hover-underline d-block mb-2">
+              <i class="bi bi-telephone-fill me-1"></i> 0989-319-123
+            </a>
+            <div class="small text-muted"><i class="bi bi-tag-fill me-1"></i>市區外帶動線佳</div>
+          </div>
+          <a href="store-fuheng.html" class="btn btn-store-entry rounded-pill w-100 fw-bold text-decoration-none">
+            進入門市 <i class="bi bi-arrow-right-short"></i>
           </a>
-          <div class="small text-muted mt-1">市區外帶動線佳</div>
         </div>
       </div>
 
-      <!-- 台南康平店 -->
+      <!-- 5. 台南康平店 -->
       <div class="col-12 col-sm-6 col-lg-5th">
         <div class="store-pill">
-          <div class="fw-bold text-brown">台南康平店（台南）</div>
-          <div class="text-muted mb-1">台南市安平區健康三街 25 號</div>
-          <a href="tel:0972015126" class="text-decoration-none text-brown fw-bold hover-underline">
-            <i class="bi bi-telephone-fill me-1"></i> 0972-015-126
+          <div>
+            <h3 class="h6 fw-bold mb-1">
+              <a href="store-tainan.html" class="text-brown text-decoration-none store-link-title">
+                台南康平店（台南）
+              </a>
+            </h3>
+            <div class="text-muted mb-2">台南市安平區健康三街 25 號</div>
+            <a href="tel:0972015126" class="text-decoration-none text-brown fw-bold hover-underline d-block mb-2">
+              <i class="bi bi-telephone-fill me-1"></i> 0972-015-126
+            </a>
+            <div class="small text-muted"><i class="bi bi-tag-fill me-1"></i>安平區指標店</div>
+          </div>
+          <a href="store-tainan.html" class="btn btn-store-entry rounded-pill w-100 fw-bold text-decoration-none">
+            進入門市 <i class="bi bi-arrow-right-short"></i>
           </a>
-          <div class="small text-muted mt-1">安平區指標店</div>
         </div>
       </div>
+
     </div>
-
   </div>
 </section>
 
