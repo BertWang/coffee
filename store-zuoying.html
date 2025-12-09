@@ -226,52 +226,84 @@
     }
   </style>
 
-  <!-- JSON-LD: 複合式結構資料 -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "CafeOrCoffeeShop",
-        "name": "所以咖啡 左營富國店",
-        "image": "https://suoyicoffee.com/assets/img/stores/zuoying.jpg",
-        "telephone": "+886-916-921-158",
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "富國路 48 號",
-          "addressLocality": "左營區",
-          "addressRegion": "高雄市",
-          "postalCode": "813",
-          "addressCountry": "TW"
-        },
-        "priceRange": "$",
-        "makesOffer": {
-            "@type": "Offer",
-            "name": "週三品牌日：飲品第二杯半價",
-            "description": "每週三 07:00-17:00，外帶同品項飲品享第二杯半價優惠。",
-            "priceCurrency": "TWD",
-            "availability": "https://schema.org/InStock",
-            "availabilityStarts": "07:00",
-            "availabilityEnds": "16:00",
-            "dayOfWeek": ["Wednesday"]
-        }
+<!-- JSON-LD：Cafe + Offer + FAQ -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "CafeOrCoffeeShop",
+      "@id": "https://suoyicoffee.com/store-zuoying.html#store",
+      "name": "所以咖啡 左營富國店",
+      "image": "https://suoyicoffee.com/assets/img/stores/zuoying.jpg",
+      "url": "https://suoyicoffee.com/store-zuoying.html",
+      "telephone": "+886-916-921-158",
+      "priceRange": "$",
+      "servesCuisine": "Coffee, Tea, Specialty Drinks",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "高雄市左營區富國路 48 號",
+        "addressLocality": "左營區",
+        "addressRegion": "高雄市",
+        "postalCode": "813",
+        "addressCountry": "TW"
       },
-      {
-        "@type": "FAQPage",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "請問左營店有外送服務嗎？",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "有的！我們提供 UberEats 與 Foodpanda 平台外送。若為義享天地、好市多周邊公司行號，歡迎直接致電 0916-921-158 預訂下午茶外送。"
-            }
-          }
-        ]
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 22.6626,
+        "longitude": 120.3054
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday",
+            "Saturday"
+          ],
+          "opens": "07:00",
+          "closes": "17:00"
+        }
+      ],
+      "makesOffer": {
+        "@type": "Offer",
+        "@id": "https://suoyicoffee.com/offers.html#wednesday-offer",
+        "name": "週三品牌日：飲品第二杯半價",
+        "description": "每週三 07:00–17:00 外帶同品項飲品享第二杯半價優惠。",
+        "priceCurrency": "TWD",
+        "availability": "https://schema.org/InStock",
+        "availabilityStarts": "07:00",
+        "availabilityEnds": "17:00",
+        "dayOfWeek": ["Wednesday"]
       }
-    ]
-  }
-  </script>
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "請問左營富國店有外送服務嗎？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "有的！我們提供 UberEats 與 Foodpanda 平台外送。若為義享天地、好市多或附近公司行號，歡迎直接致電 0916-921-158 預訂下午茶外送。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "左營店最近的捷運站是哪一站？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "最近的捷運站是紅線 R14「巨蛋站」，由 5 號出口出站後沿裕誠路步行約 4 分鐘即可抵達本店。"
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
 </head>
 <body class="bg-light d-flex flex-column min-vh-100">
 
@@ -466,13 +498,18 @@
           <h2 class="h4 fw-bold text-brown mb-4">門市資訊</h2>
           <ul class="list-unstyled">
             <li class="mb-3">
-              <strong class="d-block text-dark"><i class="bi bi-geo-alt-fill text-brown me-2"></i>地址</strong>
+              <strong class="d-block text-dark">
+                <i class="bi bi-geo-alt-fill text-brown me-2"></i>地址
+              </strong>
               <span class="text-muted ms-4">高雄市左營區富國路 48 號</span>
               <div class="ms-4 mt-2 small text-muted bg-white border p-3 rounded">
                 <i class="bi bi-pin-map-fill text-brown"></i> <strong>交通指引：</strong><br>
-                近 <span class="text-dark fw-bold">義享天地</span> (步行約 5 分鐘)<br>
+                位於 <span class="text-dark fw-bold">博愛路</span> 與 <span class="text-dark fw-bold">富國路商圈</span> 交會處，捷運、公車、步行皆便利。<br>
+                近 <span class="text-dark fw-bold">捷運巨蛋站</span>（紅線 R14，步行約 4 分鐘）<br>
+                近 <span class="text-dark fw-bold">義享天地購物中心</span> (步行約 5 分鐘)<br>
                 近 <span class="text-dark fw-bold">好市多大順店</span> (車程約 3 分鐘)<br>
-                近 <span class="text-dark fw-bold">捷運凹子底站</span> (車程約 3 分鐘)
+                近 <span class="text-dark fw-bold">漢神巨蛋</span> (步行約 6 分鐘)<br>
+                可搭乘公車 217、318、紅36 於「富國路口站」下車，步行約 1 分鐘即達。
               </div>
             </li>
             <li class="mb-3">
