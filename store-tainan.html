@@ -248,6 +248,25 @@
           "postalCode": "708",
           "addressCountry": "TW"
         },
+        "areaServed": [
+          {
+            "@type": "GeoCircle",
+            "geoMidpoint": {
+              "@type": "GeoCoordinates",
+              "latitude": 22.9875,
+              "longitude": 120.1792
+            },
+            "geoRadius": "3000" 
+          },
+          {
+            "@type": "Place",
+            "name": "安平區"
+          },
+          {
+            "@type": "Place",
+            "name": "台南市政府周邊"
+          }
+        ],
         "geo": {
           "@type": "GeoCoordinates",
           "latitude": 22.9875,
@@ -334,7 +353,7 @@
           </span>
           <h1 class="display-4 fw-bold mb-3">台南康平店</h1>
           <p class="lead mb-4 opacity-90">
-            安平老街旁的咖啡香。<br>
+            安平億載金城旁的咖啡香。<br>
             鄰近台南市政府，在地人與遊客的休憩首選。
           </p>
           <div class="d-flex gap-3 d-none d-md-flex">
@@ -363,7 +382,7 @@
         <div class="col-6 col-md-4 col-lg-3">
           <div class="menu-highlight-card bg-white h-100">
             <div class="menu-img-wrapper position-relative">
-              <img src="assets/img/products/Latte_1.jpg" alt="香醇拿鐵" class="img-fluid w-100 h-100 object-fit-cover">
+              <img src="assets/img/products/Latte_1.jpg" alt="台南安平外帶咖啡推薦：所以咖啡香醇拿鐵" class="img-fluid w-100 h-100 object-fit-cover">
               <span class="position-absolute top-0 end-0 badge bg-danger m-2">人氣招牌</span>
             </div>
             <div class="p-3 text-center">
@@ -380,7 +399,7 @@
         <div class="col-6 col-md-4 col-lg-3">
           <div class="menu-highlight-card bg-white h-100">
             <div class="menu-img-wrapper position-relative">
-              <img src="assets/img/products/Salted_Caramel_Latte.jpg" alt="海鹽焦糖拿鐵" class="img-fluid w-100 h-100 object-fit-cover">
+              <img src="assets/img/products/Salted_Caramel_Latte.jpg" alt="台南安平外帶咖啡推薦：所以咖啡海鹽焦糖拿鐵" class="img-fluid w-100 h-100 object-fit-cover">
               <span class="position-absolute top-0 end-0 badge bg-warning text-dark m-2">店長推薦</span>
             </div>
             <div class="p-3 text-center">
@@ -494,15 +513,19 @@
               <strong class="d-block text-dark"><i class="bi bi-geo-alt-fill text-brown me-2"></i>地址</strong>
               <span class="text-muted ms-4">台南市安平區健康三街 25 號</span>
               <div class="ms-4 mt-2 small text-muted bg-white border p-3 rounded">
-                <i class="bi bi-pin-map-fill text-brown"></i> <strong>交通指引：</strong><br>
+                <div class="mb-2">
+                  <i class="bi bi-p-square-fill text-brown"></i> <strong>停車資訊：</strong><br>
+                  門口設有 <span class="text-dark">機車停車位</span>；汽車可停放於 <span class="text-dark">健康三街路邊停車格</span> 或 <span class="text-dark">建平公園周邊</span>。
+                </div>
+                <i class="bi bi-pin-map-fill text-brown"></i> <strong>地標指引：</strong><br>
                 位於 <span class="text-dark fw-bold">安平區康平商圈</span><br>
-                近 <span class="text-dark fw-bold">台南市政府</span> (車程約 3 分鐘)<br>
+                近 <span class="text-dark fw-bold">台南市政府/市議會</span> (車程約 3 分鐘)<br>
                 近 <span class="text-dark fw-bold">安平老街</span> (車程約 5 分鐘)
               </div>
             </li>
             <li class="mb-3">
               <strong class="d-block text-dark"><i class="bi bi-clock-fill text-brown me-2"></i>營業時間</strong>
-              <span class="text-muted ms-4">週二至週五 07:00-17:00 / 週六及國定假日 09:00-17:00</span>
+              <span class="text-muted ms-4">週二至週五 07:00-16:30 / 週六及國定假日 09:00-17:00</span>
             </li>
             <li class="mb-3">
               <strong class="d-block text-dark"><i class="bi bi-telephone-fill text-brown me-2"></i>電話</strong>
@@ -545,6 +568,7 @@
         <p class="text-muted">追蹤我們的社群，掌握最新優惠與店休公告</p>
       </div>
       <div class="row g-5">
+        
         <!-- 左側：Instagram 視覺牆 -->
         <div class="col-lg-7 order-2 order-lg-1">
           <div class="d-flex justify-content-between align-items-end mb-3">
@@ -576,15 +600,17 @@
             </a>
             <!-- IG Item 4 (店景或活動) -->
             <a href="https://www.instagram.com/suoyi_coffee/" target="_blank" class="ig-item d-block">
-              <img src="assets/img/stores/annping.jpg" alt="安平店景">
+              <img src="assets/img/stores/annping.jpg" alt="所以咖啡台南康平店門市外觀">
               <div class="ig-overlay"><i class="bi bi-images"></i></div>
             </a>
           </div>
         </div>
-        <!-- 右側：FB 與 Google 連結 -->
+
+        <!-- 右側：Google 評價 + Threads 動態 -->
         <div class="col-lg-5 order-1 order-lg-2">
           <div class="row g-3">
-            <!-- Google 動態商家卡片 -->
+            
+            <!-- 1. Google 動態商家卡片 -->
             <div class="col-12">
               <div class="google-dynamic-card">
                 <!-- 標頭：評分與動態星星 -->
@@ -630,6 +656,27 @@
                 </div>
               </div>
             </div>
+
+            <!-- 2. Threads 卡片 (新增區塊) -->
+            <div class="col-12">
+              <div class="threads-static-card bg-light border rounded-4 p-3 d-flex align-items-center justify-content-between shadow-sm" style="transition: transform 0.2s;">
+                <div class="d-flex align-items-center gap-3">
+                  <!-- Threads Logo (黑色圓底) -->
+                  <div class="bg-black text-white rounded-circle d-flex align-items-center justify-content-center" style="width: 50px; height: 50px; flex-shrink: 0;">
+                    <i class="bi bi-threads fs-3"></i>
+                  </div>
+                  <div class="lh-1">
+                    <h4 class="h6 fw-bold mb-1 text-dark">Threads 脆起來</h4>
+                    <small class="text-muted">@suoyi_coffee</small>
+                    <div class="small text-brown mt-1"><i class="bi bi-chat-quote-fill me-1"></i>看老闆碎碎念與幕後花絮</div>
+                  </div>
+                </div>
+                <a href="https://www.threads.net/@suoyi_coffee" target="_blank" class="btn btn-dark rounded-pill btn-sm px-3 py-2 fw-bold">
+                  追蹤
+                </a>
+              </div>
+            </div>
+
           </div>
         </div>
       </div>
@@ -650,7 +697,7 @@
               <strong>所以咖啡（Suoyi Coffee）台南康平店</strong> 是品牌進軍台南的首間門市，座落於充滿歷史與活力的 <span class="about-store-highlight">安平區</span>。我們鄰近熱鬧的 <span class="about-store-highlight">安平老街</span> 與 <span class="about-store-highlight">台南市政府</span>，是觀光客的中繼站，也是在地居民的日常咖啡館。
             </p>
             <p>
-              我們將高雄總店的堅持帶到台南，使用雙孔義式機與 RO 濾水系統，確保每一杯咖啡的品質。無論您是來安平旅遊需要一杯解渴的<strong>冰美式</strong>，或是市府洽公需要一杯提神的<strong>拿鐵</strong>，我們都能為您快速製作。
+              我們將高雄總店的堅持帶到台南，使用雙孔義式機與 RO 濾水系統，確保每一杯咖啡的品質。無論您是來安平旅遊需要一杯解渴的<strong>冰美式</strong>，或是市府機關、地方法院與周邊辦公室需要一杯提神的<strong>拿鐵</strong>，我們都能為您快速製作。針對會議與活動，我們亦提供大宗桶裝咖啡與外送服務。
             </p>
             <p>
               此外，我們也提供周邊機關與學校的<strong>下午茶外送服務</strong>。透過 LINE 或電話提前預訂，讓您在忙碌的工作中，也能輕鬆享用高品質的現煮咖啡。
