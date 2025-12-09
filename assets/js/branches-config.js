@@ -55,13 +55,13 @@ const branchData = {
     // 高雄左營富國店 (獨立帳號) ---
     "zuoying": {
         name: "左營富國店",
-        igAccount: "所以咖啡左營富國店",
-        igUrl: "https://www.facebook.com/profile.php?id=61561338994905",
+        igAccount: "331zyble",
+        igUrl: "https://www.instagram.com/331zyble",
         igPhotos: [
-            { img: "assets/img/stores/zuoying/ig_1.jpg", link: "https://www.facebook.com/profile.php?id=61561338994905" },
-            { img: "assets/img/stores/zuoying/ig_2.jpg", link: "https://www.facebook.com/profile.php?id=61561338994905" },
-            { img: "assets/img/stores/zuoying/ig_3.jpg", link: "https://www.facebook.com/profile.php?id=61561338994905" },
-            { img: "assets/img/stores/zuoying/ig_4.jpg", link: "https://www.facebook.com/profile.php?id=61561338994905" }
+            { img: "assets/img/stores/zuoying/ig_1.jpg", link: "https://www.instagram.com/331zyble" },
+            { img: "assets/img/stores/zuoying/ig_2.jpg", link: "https://www.instagram.com/331zyble" },
+            { img: "assets/img/stores/zuoying/ig_3.jpg", link: "https://www.instagram.com/331zyble" },
+            { img: "assets/img/stores/zuoying/ig_4.jpg", link: "https://www.instagram.com/331zyble" }
         ]
     }
 };
