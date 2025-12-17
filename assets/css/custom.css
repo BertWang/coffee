@@ -898,3 +898,43 @@ img[loading="lazy"] { content-visibility: auto; }
   height: 24px;
   vertical-align: sub;
 }
+
+/* =========================================
+   吉祥物專屬樣式 (Mascot)
+   ========================================= */
+
+/* 確保圖片在圓形容器中完美填滿 */
+.object-fit-cover {
+  object-fit: cover;
+}
+
+/* 首頁頭像懸浮動畫 */
+.mascot-avatar-float {
+  animation: mascotFloat 3s ease-in-out infinite;
+  transition: transform 0.3s ease;
+}
+.mascot-avatar-float:hover {
+  animation-play-state: paused;
+  transform: scale(1.05) rotate(5deg);
+}
+
+@keyframes mascotFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+/* 按鈕微放大效果 */
+.hover-scale {
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+.hover-scale:hover {
+  transform: scale(1.05);
+  background-color: #fff;
+  color: #5C4033;
+  border-color: #fff;
+}
+
+/* 關於我們頁面的引言裝飾 */
+.border-warning {
+  border-color: #D4A373 !important; /* 確保使用品牌金 */
+}
