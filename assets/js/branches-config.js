@@ -26,9 +26,9 @@ const branchData = {
         ]
     },
 
-    //新興新田店 (獨立帳號) ---
+    //新興林森店 (獨立帳號) ---
     "xintian": { // ID 建議用英文拼音
-        name: "新興新田店",
+        name: "新興林森店",
         igAccount: "suoyi_coffee_sintian",
         igUrl: "https://www.instagram.com/suoyi_coffee_sintian/",
         igPhotos: [
@@ -70,7 +70,7 @@ const branchData = {
 const fileMapping = {
     'store-niaosong.html': 'niaosong', // 鳥松店
     'store-tainan.html':   'anping',   // 安平店 
-    'store-xinxing.html':  'xintian',  // 新興新田店 
+    'store-xinxing.html':  'xintian',  // 新興林森店 
     'store-fuheng.html':   'fuheng',   // 新興復橫店
     'store-zuoying.html':  'zuoying'   // 左營富國店
 };
