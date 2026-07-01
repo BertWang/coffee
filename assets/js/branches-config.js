@@ -2,7 +2,7 @@ const branchData = {
     // --- 1. 鳥松大智店 (使用總部帳號) ---
     "niaosong": {
         name: "鳥松大智店",
-        igAccount: "suoyicoffee", 
+        igAccount: "suoyicoffee",
         igUrl: "https://www.instagram.com/suoyicoffee/",
         igPhotos: [
             { img: "assets/img/stores/niaosong/ig_1.jpg", link: "https://www.instagram.com/suoyicoffee/" },
@@ -63,16 +63,35 @@ const branchData = {
             { img: "assets/img/stores/zuoying/ig_3.jpg", link: "https://www.instagram.com/331zyble" },
             { img: "assets/img/stores/zuoying/ig_4.jpg", link: "https://www.instagram.com/331zyble" }
         ]
+    },
+
+    // 楠梓新店 (獨立帳號) ---
+    "nanzi": {
+        name: "楠梓新店",
+        igAccount: "楠梓新店 FB 粉絲專頁",
+        igUrl: "https://www.facebook.com/profile.php?id=61590770165550",
+        igPhotos: [
+            { img: "assets/img/stores/nanzi/fb1.jpg", link: "https://www.facebook.com/photo.php?fbid=122104382631359005&set=pb.61590770165550.-2207520000&type=3" },
+            { img: "assets/img/stores/nanzi/fb2.jpg", link: "https://www.facebook.com/photo.php?fbid=122105372745359005&set=pb.61590770165550.-2207520000&type=3" },
+            { img: "assets/img/stores/nanzi/fb3.jpg", link: "https://www.facebook.com/photo.php?fbid=122107173309359005&set=pb.61590770165550.-2207520000&type=3" },
+            { img: "assets/img/stores/nanzi/fb4.jpg", link: "https://www.facebook.com/photo.php?fbid=122109090585359005&set=pb.61590770165550.-2207520000&type=3" },
+            { img: "assets/img/stores/nanzi/fb5.jpg", link: "https://www.facebook.com/photo.php?fbid=122111618379359005&set=pb.61590770165550.-2207520000&type=3" },
+            { img: "assets/img/stores/nanzi/fb6.jpg", link: "https://www.facebook.com/photo.php?fbid=122111603655359005&set=pb.61590770165550.-2207520000&type=3" },
+            { img: "assets/img/stores/nanzi/fb7.jpg", link: "https://www.facebook.com/photo.php?fbid=122111481003359005&set=pb.61590770165550.-2207520000&type=3" },
+            { img: "assets/img/stores/nanzi/fb8.jpg", link: "https://www.facebook.com/photo/?fbid=122109775491359005&set=pb.61590770165550.-2207520000" },
+
+        ]
     }
 };
 
 // 定義「檔名」與「資料 ID」的對照表
 const fileMapping = {
     'store-niaosong.html': 'niaosong', // 鳥松店
-    'store-tainan.html':   'anping',   // 安平店 
-    'store-xinxing.html':  'xintian',  // 新興林森店 
-    'store-fuheng.html':   'fuheng',   // 新興復橫店
-    'store-zuoying.html':  'zuoying'   // 左營富國店
+    'store-tainan.html': 'anping',   // 安平店 
+    'store-xinxing.html': 'xintian',  // 新興林森店 
+    'store-fuheng.html': 'fuheng',   // 新興復橫店
+    'store-zuoying.html': 'zuoying',  // 左營富國店
+    'store-nanzi.html': 'nanzi'     // 楠梓新店
 };
 
 // 自動偵測當前 ID
@@ -96,7 +115,7 @@ if (branch) {
     // 更新 IG 帳號文字
     const handleDisplay = document.getElementById('ig-handle-display');
     if (handleDisplay) handleDisplay.textContent = `@${branch.igAccount}`;
-    
+
     // 更新 IG 連結
     const followBtn = document.getElementById('ig-follow-btn');
     if (followBtn) followBtn.href = branch.igUrl;
@@ -106,8 +125,8 @@ if (branch) {
     if (container) {
         let html = '';
         // 檢查是否有照片資料，避免報錯
-        const photos = branch.igPhotos || []; 
-        
+        const photos = branch.igPhotos || [];
+
         photos.forEach(photo => {
             html += `
               <a href="${photo.link}" target="_blank" class="ig-item d-block">

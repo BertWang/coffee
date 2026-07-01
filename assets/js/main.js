@@ -2,8 +2,8 @@
 document.addEventListener("DOMContentLoaded", function () {
   /*** A) 歡迎影片 Modal（保留原邏輯；改為區域防呆，避免阻斷其他功能） ***/
   (function welcomeVideoInit() {
-    const modalEl  = document.getElementById("welcomeVideoModal");
-    const videoEl  = document.getElementById("welcomeVideo");
+    const modalEl = document.getElementById("welcomeVideoModal");
+    const videoEl = document.getElementById("welcomeVideo");
     const soundBtn = document.getElementById("videoSoundToggle");
 
     // 僅在必要元素與 Bootstrap 存在時啟動此模組
@@ -44,7 +44,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // Modal 再次打開時：若影片在暫停，嘗試播放
     modalEl.addEventListener("shown.bs.modal", () => {
       if (videoEl.paused) {
-        videoEl.play().catch(() => {});
+        videoEl.play().catch(() => { });
       }
     });
 
@@ -56,7 +56,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         // 從靜音切到有聲時，盡量確保影片正在播放
         if (!videoEl.muted && videoEl.paused) {
-          videoEl.play().catch(() => {});
+          videoEl.play().catch(() => { });
         }
 
         // 更新按鈕文字與 icon
@@ -77,9 +77,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
   /*** B) 週三優惠：動態文案（非週三顯示倒數；週三高亮 .is-today） ***/
   (function wednesdayPromo() {
-    const headline   = document.querySelector('[data-offer-headline]') || document.querySelector('.promo-section h3');
-    const scopeEl    = document.querySelector('[data-offer-scope]');
-    const promoWrap  = document.querySelector('.promo-section');
+    const headline = document.querySelector('[data-offer-headline]') || document.querySelector('.promo-section h3');
+    const scopeEl = document.querySelector('[data-offer-scope]');
+    const promoWrap = document.querySelector('.promo-section');
     if (!headline) return;
 
     const d = new Date().getDay(); // 0=Sun ... 3=Wed
@@ -98,7 +98,7 @@ document.addEventListener("DOMContentLoaded", function () {
   /*** C) 影像最佳化：為未標註的圖片預設 lazy/async（不覆蓋既有屬性） ***/
   (function lazyImages() {
     document.querySelectorAll('img:not([loading])').forEach(img => {
-      img.loading  = 'lazy';
+      img.loading = 'lazy';
       img.decoding = 'async';
     });
   })();
