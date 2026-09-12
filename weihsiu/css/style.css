@@ -15,7 +15,7 @@
   --navy-blue: #1E427F;
   --cobalt: #285BB0;
   --cobalt-light: #3D73D1;
-  
+
   --gold: #F2C94C;
   --gold-primary: #F2C94C;
   --gold-dark: #D4A72C;
@@ -32,14 +32,14 @@
   --bg-cream: #F8F7F3;
   --bg-soft: #EEF3F8;
   --bg-card: #FFFFFF;
-  
+
   --green-accent: #3E8A4E;
   --green-light: #EBF7EE;
-  
+
   --text-main: #1C232E;
   --text-muted: #535E6D;
   --text-light: #808D9E;
-  
+
   --border-line: #E1E7EE;
   --border-light: rgba(21, 51, 96, 0.08);
 
@@ -70,7 +70,9 @@
 /* ==========================================================================
    2. Reset & Global Styles
    ========================================================================== */
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
@@ -98,7 +100,8 @@ a {
   transition: color var(--transition-fast);
 }
 
-a:focus-visible, button:focus-visible {
+a:focus-visible,
+button:focus-visible {
   outline: 3px solid var(--gold);
   outline-offset: 3px;
   border-radius: var(--radius-xs);
@@ -111,7 +114,12 @@ img {
 }
 
 /* Typography Base & Asian Text Balancing (奈米級斷詞防護) */
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   margin: 0;
   font-weight: 800;
   color: var(--navy-primary);
@@ -121,7 +129,10 @@ h1, h2, h3, h4, h5, h6 {
   overflow-wrap: break-word;
 }
 
-p, .section-desc, .hero-desc, .timeline-card-story {
+p,
+.section-desc,
+.hero-desc,
+.timeline-card-story {
   margin: 0;
   word-break: normal;
   overflow-wrap: break-word;
@@ -270,13 +281,44 @@ p, .section-desc, .hero-desc, .timeline-card-story {
 .station-slogan-highlight {
   font-weight: 800;
   color: #FFFFFF;
-  text-shadow: 0 1px 8px rgba(0,0,0,0.3);
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.3);
 }
 
 .station-tagline-right {
   display: flex;
   align-items: center;
   gap: 8px;
+}
+
+.header-ballot-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 3px 12px;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(242, 201, 76, 0.6);
+  border-radius: var(--radius-pill);
+  font-size: 12px;
+  font-weight: 800;
+  color: #fff;
+  white-space: nowrap;
+  backdrop-filter: blur(6px);
+}
+
+.header-ballot-pill .ballot-dot {
+  width: 7px;
+  height: 7px;
+  background: #27AE60;
+  border-radius: 50%;
+  box-shadow: 0 0 0 2px rgba(39, 174, 96, 0.3);
+}
+
+.header-ballot-pill .ballot-divider {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.header-ballot-pill .ballot-draw-txt {
+  color: var(--gold);
 }
 
 
@@ -573,6 +615,9 @@ p, .section-desc, .hero-desc, .timeline-card-story {
   isolation: isolate;
 }
 
+.hero-mobile-stage {
+  display: none;
+}
 
 .hero-bg-picture {
   position: absolute;
@@ -606,7 +651,7 @@ p, .section-desc, .hero-desc, .timeline-card-story {
       rgba(248, 247, 243, 0.04) 100%);
 }
 
-.hero-section > .container {
+.hero-section>.container {
   position: relative;
   z-index: 2;
   width: 100%;
@@ -1930,6 +1975,7 @@ p, .section-desc, .hero-desc, .timeline-card-story {
 .desktop-only-br {
   display: block;
 }
+
 @media (max-width: 768px) {
   .desktop-only-br {
     display: none;
@@ -2477,9 +2523,20 @@ p, .section-desc, .hero-desc, .timeline-card-story {
 }
 
 @keyframes pulse-line {
-  0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(6, 199, 85, 0.6); }
-  70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(6, 199, 85, 0); }
-  100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(6, 199, 85, 0); }
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(6, 199, 85, 0.6);
+  }
+
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 6px rgba(6, 199, 85, 0);
+  }
+
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(6, 199, 85, 0);
+  }
 }
 
 .line-vip-content {
@@ -2843,9 +2900,11 @@ p, .section-desc, .hero-desc, .timeline-card-story {
   .hero-candidate-name {
     font-size: 56px;
   }
+
   .hero-action-headline {
     font-size: 46px;
   }
+
   .container {
     max-width: 1320px;
   }
@@ -2924,7 +2983,7 @@ p, .section-desc, .hero-desc, .timeline-card-story {
     gap: 40px;
   }
 
-  .footer-grid > div:first-child {
+  .footer-grid>div:first-child {
     grid-column: 1 / -1;
   }
 }
@@ -2993,11 +3052,11 @@ p, .section-desc, .hero-desc, .timeline-card-story {
     inset: 0;
     pointer-events: none;
     background: linear-gradient(180deg,
-      rgba(7, 19, 36, 0.22) 0%,
-      rgba(7, 19, 36, 0) 25%,
-      rgba(248, 247, 243, 0) 65%,
-      rgba(248, 247, 243, 0.65) 90%,
-      var(--bg-cream) 100%);
+        rgba(7, 19, 36, 0.22) 0%,
+        rgba(7, 19, 36, 0) 25%,
+        rgba(248, 247, 243, 0) 65%,
+        rgba(248, 247, 243, 0.65) 90%,
+        var(--bg-cream) 100%);
   }
 
   .hero-mobile-top-pill {
@@ -3036,6 +3095,15 @@ p, .section-desc, .hero-desc, .timeline-card-story {
     color: #ffffff;
     backdrop-filter: blur(10px);
     box-shadow: 0 6px 18px rgba(7, 19, 36, 0.25);
+  }
+
+  .hero-mobile-tag-seal {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    display: block;
+  }
+
   /* Hero Mobile Content Card (行動承諾卡片) */
   .hero-container {
     position: relative;
@@ -3330,7 +3398,10 @@ p, .section-desc, .hero-desc, .timeline-card-story {
   html {
     scroll-behavior: auto;
   }
-  *, *::before, *::after {
+
+  *,
+  *::before,
+  *::after {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
