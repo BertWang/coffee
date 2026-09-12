@@ -977,6 +977,10 @@
     }
 
     @media (max-width: 768px) {
+      .hero-bg-picture img { object-position: center top; }
+      .hero-title { font-size: clamp(50px, 14vw, 68px); }
+      .hero-desc { max-width: 34rem; }
+
       .header-top .nav-links {
         display: none;
       }
@@ -1046,6 +1050,15 @@
         text-align: center;
       }
     }
+  
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
   </style>
 </head>
 
@@ -1073,13 +1086,14 @@
   <main id="top">
     <!-- Hero Section -->
     <section class="hero-section">
-      <picture class="hero-bg-picture">
-        <source media="(max-width: 640px)" type="image/avif" srcset="assets/hero/hero-mobile.avif">
-        <source media="(max-width: 640px)" type="image/webp" srcset="assets/hero/hero-mobile.webp">
-        <source media="(max-width: 980px)" type="image/avif" srcset="assets/hero/hero-tablet.avif">
-        <source media="(max-width: 980px)" type="image/webp" srcset="assets/hero/hero-tablet.webp">
+      <picture>
+        <source media="(max-width: 768px)" type="image/avif" srcset="assets/hero/hero-mobile.avif">
+        <source media="(max-width: 768px)" type="image/webp" srcset="assets/hero/hero-mobile.webp">
+        <source media="(max-width: 1024px)" type="image/avif" srcset="assets/hero/hero-tablet.avif">
+        <source media="(max-width: 1024px)" type="image/webp" srcset="assets/hero/hero-tablet.webp">
         <source type="image/avif" srcset="assets/hero/hero-desktop.avif">
-        <img src="assets/hero/hero-desktop.webp" alt="曾偉修 龍子里的下一步" fetchpriority="high">
+        <source type="image/webp" srcset="assets/hero/hero-desktop.webp">
+        <img src="assets/hero/hero-desktop.jpg" alt="曾偉修 龍子里的下一步" fetchpriority="high" decoding="async">
       </picture>
 
       <div class="container">
@@ -1166,9 +1180,9 @@
         <div class="place-grid">
           <div class="map-container">
             <picture>
-              <source media="(max-width: 640px)" srcset="assets/maps/longzi-precise-mobile.svg">
-              <source media="(max-width: 980px)" srcset="assets/maps/longzi-precise-tablet.svg">
-              <img src="assets/maps/longzi-precise-desktop.svg" alt="龍子里範圍示意圖" loading="lazy">
+              <source media="(max-width: 768px)" srcset="assets/maps/longzi-precise-mobile.svg">
+              <source media="(max-width: 1024px)" srcset="assets/maps/longzi-precise-tablet.svg">
+              <img src="assets/maps/longzi-precise-desktop.svg" alt="龍子里範圍示意圖" loading="lazy" decoding="async">
             </picture>
             <div class="map-caption">※ 網站範圍示意・非地籍／導航用途</div>
           </div>
@@ -1201,45 +1215,65 @@
         <div class="local-photo-grid">
           <div class="local-item">
             <picture>
+              <source media="(max-width: 768px)" type="image/avif" srcset="assets/local/park-mobile.avif">
+              <source media="(max-width: 768px)" type="image/webp" srcset="assets/local/park-mobile.webp">
+              <source media="(max-width: 1024px)" type="image/avif" srcset="assets/local/park-tablet.avif">
+              <source media="(max-width: 1024px)" type="image/webp" srcset="assets/local/park-tablet.webp">
               <source type="image/avif" srcset="assets/local/park-desktop.avif">
               <source type="image/webp" srcset="assets/local/park-desktop.webp">
-              <img src="assets/local/park-desktop.jpg" alt="凹子底森林公園" loading="lazy">
+              <img src="assets/local/park-desktop.jpg" alt="park" loading="lazy" decoding="async">
             </picture>
             <div class="local-overlay">凹子底森林公園</div>
           </div>
 
           <div class="local-item">
             <picture>
+              <source media="(max-width: 768px)" type="image/avif" srcset="assets/local/school-mobile.avif">
+              <source media="(max-width: 768px)" type="image/webp" srcset="assets/local/school-mobile.webp">
+              <source media="(max-width: 1024px)" type="image/avif" srcset="assets/local/school-tablet.avif">
+              <source media="(max-width: 1024px)" type="image/webp" srcset="assets/local/school-tablet.webp">
               <source type="image/avif" srcset="assets/local/school-desktop.avif">
               <source type="image/webp" srcset="assets/local/school-desktop.webp">
-              <img src="assets/local/school-desktop.jpg" alt="龍華國小周邊" loading="lazy">
+              <img src="assets/local/school-desktop.jpg" alt="school" loading="lazy" decoding="async">
             </picture>
             <div class="local-overlay">龍華國小周邊</div>
           </div>
 
           <div class="local-item">
             <picture>
+              <source media="(max-width: 768px)" type="image/avif" srcset="assets/local/transit-mobile.avif">
+              <source media="(max-width: 768px)" type="image/webp" srcset="assets/local/transit-mobile.webp">
+              <source media="(max-width: 1024px)" type="image/avif" srcset="assets/local/transit-tablet.avif">
+              <source media="(max-width: 1024px)" type="image/webp" srcset="assets/local/transit-tablet.webp">
               <source type="image/avif" srcset="assets/local/transit-desktop.avif">
               <source type="image/webp" srcset="assets/local/transit-desktop.webp">
-              <img src="assets/local/transit-desktop.jpg" alt="捷運輕軌生活圈" loading="lazy">
+              <img src="assets/local/transit-desktop.jpg" alt="transit" loading="lazy" decoding="async">
             </picture>
             <div class="local-overlay">捷運輕軌生活圈</div>
           </div>
 
           <div class="local-item">
             <picture>
+              <source media="(max-width: 768px)" type="image/avif" srcset="assets/local/residential-mobile.avif">
+              <source media="(max-width: 768px)" type="image/webp" srcset="assets/local/residential-mobile.webp">
+              <source media="(max-width: 1024px)" type="image/avif" srcset="assets/local/residential-tablet.avif">
+              <source media="(max-width: 1024px)" type="image/webp" srcset="assets/local/residential-tablet.webp">
               <source type="image/avif" srcset="assets/local/residential-desktop.avif">
               <source type="image/webp" srcset="assets/local/residential-desktop.webp">
-              <img src="assets/local/residential-desktop.jpg" alt="社區住宅街廓" loading="lazy">
+              <img src="assets/local/residential-desktop.jpg" alt="residential" loading="lazy" decoding="async">
             </picture>
             <div class="local-overlay">社區住宅街廓</div>
           </div>
 
           <div class="local-item">
             <picture>
+              <source media="(max-width: 768px)" type="image/avif" srcset="assets/local/waterfront-mobile.avif">
+              <source media="(max-width: 768px)" type="image/webp" srcset="assets/local/waterfront-mobile.webp">
+              <source media="(max-width: 1024px)" type="image/avif" srcset="assets/local/waterfront-tablet.avif">
+              <source media="(max-width: 1024px)" type="image/webp" srcset="assets/local/waterfront-tablet.webp">
               <source type="image/avif" srcset="assets/local/waterfront-desktop.avif">
               <source type="image/webp" srcset="assets/local/waterfront-desktop.webp">
-              <img src="assets/local/waterfront-desktop.jpg" alt="愛河之心水岸綠帶" loading="lazy">
+              <img src="assets/local/waterfront-desktop.jpg" alt="waterfront" loading="lazy" decoding="async">
             </picture>
             <div class="local-overlay">愛河之心水岸綠帶</div>
           </div>
@@ -1258,9 +1292,11 @@
           <article class="action-card">
             <div class="action-card-img">
               <picture>
-                <source media="(max-width: 640px)" type="image/webp" srcset="assets/actions/traffic-mobile.webp">
+                <source media="(max-width: 768px)" type="image/avif" srcset="assets/actions/traffic-mobile.avif">
+                <source media="(max-width: 768px)" type="image/webp" srcset="assets/actions/traffic-mobile.webp">
                 <source type="image/avif" srcset="assets/actions/traffic-desktop.avif">
-                <img src="assets/actions/traffic-desktop.webp" alt="交通安心" loading="lazy">
+                <source type="image/webp" srcset="assets/actions/traffic-desktop.webp">
+                <img src="assets/actions/traffic-desktop.jpg" alt="交通安心" loading="lazy" decoding="async">
               </picture>
             </div>
             <div class="action-card-body">
@@ -1273,9 +1309,11 @@
           <article class="action-card">
             <div class="action-card-img">
               <picture>
-                <source media="(max-width: 640px)" type="image/webp" srcset="assets/actions/construction-mobile.webp">
+                <source media="(max-width: 768px)" type="image/avif" srcset="assets/actions/construction-mobile.avif">
+                <source media="(max-width: 768px)" type="image/webp" srcset="assets/actions/construction-mobile.webp">
                 <source type="image/avif" srcset="assets/actions/construction-desktop.avif">
-                <img src="assets/actions/construction-desktop.webp" alt="建設把關" loading="lazy">
+                <source type="image/webp" srcset="assets/actions/construction-desktop.webp">
+                <img src="assets/actions/construction-desktop.jpg" alt="建設把關" loading="lazy" decoding="async">
               </picture>
             </div>
             <div class="action-card-body">
@@ -1288,9 +1326,11 @@
           <article class="action-card">
             <div class="action-card-img">
               <picture>
-                <source media="(max-width: 640px)" type="image/webp" srcset="assets/actions/community-mobile.webp">
+                <source media="(max-width: 768px)" type="image/avif" srcset="assets/actions/community-mobile.avif">
+                <source media="(max-width: 768px)" type="image/webp" srcset="assets/actions/community-mobile.webp">
                 <source type="image/avif" srcset="assets/actions/community-desktop.avif">
-                <img src="assets/actions/community-desktop.webp" alt="大樓共好" loading="lazy">
+                <source type="image/webp" srcset="assets/actions/community-desktop.webp">
+                <img src="assets/actions/community-desktop.jpg" alt="大樓共好" loading="lazy" decoding="async">
               </picture>
             </div>
             <div class="action-card-body">
@@ -1303,9 +1343,11 @@
           <article class="action-card">
             <div class="action-card-img">
               <picture>
-                <source media="(max-width: 640px)" type="image/webp" srcset="assets/actions/transparent-mobile.webp">
+                <source media="(max-width: 768px)" type="image/avif" srcset="assets/actions/transparent-mobile.avif">
+                <source media="(max-width: 768px)" type="image/webp" srcset="assets/actions/transparent-mobile.webp">
                 <source type="image/avif" srcset="assets/actions/transparent-desktop.avif">
-                <img src="assets/actions/transparent-desktop.webp" alt="進度透明" loading="lazy">
+                <source type="image/webp" srcset="assets/actions/transparent-desktop.webp">
+                <img src="assets/actions/transparent-desktop.jpg" alt="進度透明" loading="lazy" decoding="async">
               </picture>
             </div>
             <div class="action-card-body">
@@ -1318,9 +1360,11 @@
           <article class="action-card">
             <div class="action-card-img">
               <picture>
-                <source media="(max-width: 640px)" type="image/webp" srcset="assets/actions/senior-mobile.webp">
+                <source media="(max-width: 768px)" type="image/avif" srcset="assets/actions/senior-mobile.avif">
+                <source media="(max-width: 768px)" type="image/webp" srcset="assets/actions/senior-mobile.webp">
                 <source type="image/avif" srcset="assets/actions/senior-desktop.avif">
-                <img src="assets/actions/senior-desktop.webp" alt="銀髮樂活" loading="lazy">
+                <source type="image/webp" srcset="assets/actions/senior-desktop.webp">
+                <img src="assets/actions/senior-desktop.jpg" alt="銀髮樂活" loading="lazy" decoding="async">
               </picture>
             </div>
             <div class="action-card-body">
@@ -1383,18 +1427,26 @@
           <div class="service-photos">
             <div class="svc-img-card">
               <picture>
-                <source type="image/avif" srcset="assets/service/responsive-edited/before-01-800.avif">
-                <source type="image/webp" srcset="assets/service/responsive-edited/before-01-800.webp">
-                <img src="assets/service/edited/before-01-restored.jpg" alt="道路破損現場紀錄一" loading="lazy">
+                <source type="image/avif"
+                  srcset="assets/service/responsive-edited/before-01-480.avif 480w, assets/service/responsive-edited/before-01-800.avif 800w, assets/service/responsive-edited/before-01-1200.avif 1200w"
+                  sizes="(max-width: 768px) calc(100vw - 40px), (max-width: 1024px) 48vw, 34vw">
+                <source type="image/webp"
+                  srcset="assets/service/responsive-edited/before-01-480.webp 480w, assets/service/responsive-edited/before-01-800.webp 800w, assets/service/responsive-edited/before-01-1200.webp 1200w"
+                  sizes="(max-width: 768px) calc(100vw - 40px), (max-width: 1024px) 48vw, 34vw">
+                <img src="assets/service/edited/before-01-restored.jpg" alt="道路破損現場紀錄01" loading="lazy" decoding="async">
               </picture>
               <div class="svc-img-tag">📷 現場巡視紀錄 01</div>
             </div>
 
             <div class="svc-img-card">
               <picture>
-                <source type="image/avif" srcset="assets/service/responsive-edited/before-02-800.avif">
-                <source type="image/webp" srcset="assets/service/responsive-edited/before-02-800.webp">
-                <img src="assets/service/edited/before-02-restored.jpg" alt="道路破損現場紀錄二" loading="lazy">
+                <source type="image/avif"
+                  srcset="assets/service/responsive-edited/before-02-480.avif 480w, assets/service/responsive-edited/before-02-800.avif 800w, assets/service/responsive-edited/before-02-1200.avif 1200w"
+                  sizes="(max-width: 768px) calc(100vw - 40px), (max-width: 1024px) 48vw, 34vw">
+                <source type="image/webp"
+                  srcset="assets/service/responsive-edited/before-02-480.webp 480w, assets/service/responsive-edited/before-02-800.webp 800w, assets/service/responsive-edited/before-02-1200.webp 1200w"
+                  sizes="(max-width: 768px) calc(100vw - 40px), (max-width: 1024px) 48vw, 34vw">
+                <img src="assets/service/edited/before-02-restored.jpg" alt="道路破損現場紀錄02" loading="lazy" decoding="async">
               </picture>
               <div class="svc-img-tag">📷 現場巡視紀錄 02</div>
             </div>
@@ -1416,9 +1468,9 @@
           <figure class="timeline-card">
             <div class="timeline-img-wrap">
               <picture>
-                <source type="image/avif" srcset="assets/history/responsive-edited/1993-airforce-720.avif">
-                <source type="image/webp" srcset="assets/history/responsive-edited/1993-airforce-720.webp">
-                <img src="assets/history/1993-airforce.jpg" alt="1993 空軍服役時期" loading="lazy">
+                <source type="image/avif" srcset="assets/history/responsive-edited/1993-airforce-420.avif 420w, assets/history/responsive-edited/1993-airforce-720.avif 720w, assets/history/responsive-edited/1993-airforce-960.avif 960w" sizes="(max-width: 768px) calc(100vw - 40px), (max-width: 1024px) 48vw, 24vw">
+                <source type="image/webp" srcset="assets/history/responsive-edited/1993-airforce-420.webp 420w, assets/history/responsive-edited/1993-airforce-720.webp 720w, assets/history/responsive-edited/1993-airforce-960.webp 960w" sizes="(max-width: 768px) calc(100vw - 40px), (max-width: 1024px) 48vw, 24vw">
+                <img src="assets/history/edited/1993-airforce.jpg" alt="1993 空軍服役時期" loading="lazy" decoding="async">
               </picture>
             </div>
             <figcaption class="timeline-caption">1993｜空軍服役時期</figcaption>
@@ -1427,9 +1479,9 @@
           <figure class="timeline-card">
             <div class="timeline-img-wrap">
               <picture>
-                <source type="image/avif" srcset="assets/history/responsive-edited/ajinomoto-720.avif">
-                <source type="image/webp" srcset="assets/history/responsive-edited/ajinomoto-720.webp">
-                <img src="assets/history/ajinomoto.jpg" alt="第一線 冷凍食品業務" loading="lazy">
+                <source type="image/avif" srcset="assets/history/responsive-edited/ajinomoto-420.avif 420w, assets/history/responsive-edited/ajinomoto-720.avif 720w, assets/history/responsive-edited/ajinomoto-1000.avif 1000w" sizes="(max-width: 768px) calc(100vw - 40px), (max-width: 1024px) 48vw, 24vw">
+                <source type="image/webp" srcset="assets/history/responsive-edited/ajinomoto-420.webp 420w, assets/history/responsive-edited/ajinomoto-720.webp 720w, assets/history/responsive-edited/ajinomoto-1000.webp 1000w" sizes="(max-width: 768px) calc(100vw - 40px), (max-width: 1024px) 48vw, 24vw">
+                <img src="assets/history/edited/ajinomoto.jpg" alt="第一線 冷凍食品業務" loading="lazy" decoding="async">
               </picture>
             </div>
             <figcaption class="timeline-caption">第一線｜冷凍食品業務</figcaption>
@@ -1438,9 +1490,9 @@
           <figure class="timeline-card">
             <div class="timeline-img-wrap">
               <picture>
-                <source type="image/avif" srcset="assets/history/responsive-edited/malaysia-card-720.avif">
-                <source type="image/webp" srcset="assets/history/responsive-edited/malaysia-card-720.webp">
-                <img src="assets/history/malaysia-card.jpg" alt="海外 馬來西亞商會紀錄" loading="lazy">
+                <source type="image/avif" srcset="assets/history/responsive-edited/malaysia-card-420.avif 420w, assets/history/responsive-edited/malaysia-card-720.avif 720w, assets/history/responsive-edited/malaysia-card-1000.avif 1000w" sizes="(max-width: 768px) calc(100vw - 40px), (max-width: 1024px) 48vw, 24vw">
+                <source type="image/webp" srcset="assets/history/responsive-edited/malaysia-card-420.webp 420w, assets/history/responsive-edited/malaysia-card-720.webp 720w, assets/history/responsive-edited/malaysia-card-1000.webp 1000w" sizes="(max-width: 768px) calc(100vw - 40px), (max-width: 1024px) 48vw, 24vw">
+                <img src="assets/history/edited/malaysia-card.jpg" alt="海外 馬來西亞商會紀錄" loading="lazy" decoding="async">
               </picture>
             </div>
             <figcaption class="timeline-caption">海外｜馬來西亞商會紀錄</figcaption>
@@ -1449,9 +1501,9 @@
           <figure class="timeline-card">
             <div class="timeline-img-wrap">
               <picture>
-                <source type="image/avif" srcset="assets/history/responsive-edited/baby-hand-720.avif">
-                <source type="image/webp" srcset="assets/history/responsive-edited/baby-hand-720.webp">
-                <img src="assets/history/baby-hand.jpg" alt="家庭 孩子出生／返台轉折" loading="lazy">
+                <source type="image/avif" srcset="assets/history/responsive-edited/baby-hand-420.avif 420w, assets/history/responsive-edited/baby-hand-720.avif 720w, assets/history/responsive-edited/baby-hand-1000.avif 1000w" sizes="(max-width: 768px) calc(100vw - 40px), (max-width: 1024px) 48vw, 24vw">
+                <source type="image/webp" srcset="assets/history/responsive-edited/baby-hand-420.webp 420w, assets/history/responsive-edited/baby-hand-720.webp 720w, assets/history/responsive-edited/baby-hand-1000.webp 1000w" sizes="(max-width: 768px) calc(100vw - 40px), (max-width: 1024px) 48vw, 24vw">
+                <img src="assets/history/edited/baby-hand.jpg" alt="家庭 孩子出生／返台轉折" loading="lazy" decoding="async">
               </picture>
             </div>
             <figcaption class="timeline-caption">家庭｜孩子出生／返台轉折</figcaption>
@@ -1460,9 +1512,9 @@
           <figure class="timeline-card">
             <div class="timeline-img-wrap">
               <picture>
-                <source type="image/avif" srcset="assets/history/responsive-edited/phone-shop-720.avif">
-                <source type="image/webp" srcset="assets/history/responsive-edited/phone-shop-720.webp">
-                <img src="assets/history/phone-shop.jpg" alt="重新開始 通訊行" loading="lazy">
+                <source type="image/avif" srcset="assets/history/responsive-edited/phone-shop-420.avif 420w, assets/history/responsive-edited/phone-shop-720.avif 720w, assets/history/responsive-edited/phone-shop-1000.avif 1000w" sizes="(max-width: 768px) calc(100vw - 40px), (max-width: 1024px) 48vw, 24vw">
+                <source type="image/webp" srcset="assets/history/responsive-edited/phone-shop-420.webp 420w, assets/history/responsive-edited/phone-shop-720.webp 720w, assets/history/responsive-edited/phone-shop-1000.webp 1000w" sizes="(max-width: 768px) calc(100vw - 40px), (max-width: 1024px) 48vw, 24vw">
+                <img src="assets/history/edited/phone-shop.jpg" alt="重新開始 通訊行" loading="lazy" decoding="async">
               </picture>
             </div>
             <figcaption class="timeline-caption">重新開始｜通訊行</figcaption>
@@ -1471,9 +1523,9 @@
           <figure class="timeline-card">
             <div class="timeline-img-wrap">
               <picture>
-                <source type="image/avif" srcset="assets/history/responsive-edited/coffee-720.avif">
-                <source type="image/webp" srcset="assets/history/responsive-edited/coffee-720.webp">
-                <img src="assets/history/coffee.jpg" alt="持續學習 咖啡工作" loading="lazy">
+                <source type="image/avif" srcset="assets/history/responsive-edited/coffee-420.avif 420w, assets/history/responsive-edited/coffee-720.avif 720w, assets/history/responsive-edited/coffee-1000.avif 1000w" sizes="(max-width: 768px) calc(100vw - 40px), (max-width: 1024px) 48vw, 24vw">
+                <source type="image/webp" srcset="assets/history/responsive-edited/coffee-420.webp 420w, assets/history/responsive-edited/coffee-720.webp 720w, assets/history/responsive-edited/coffee-1000.webp 1000w" sizes="(max-width: 768px) calc(100vw - 40px), (max-width: 1024px) 48vw, 24vw">
+                <img src="assets/history/edited/coffee.jpg" alt="持續學習 咖啡工作" loading="lazy" decoding="async">
               </picture>
             </div>
             <figcaption class="timeline-caption">持續學習｜咖啡工作</figcaption>
@@ -1482,9 +1534,9 @@
           <figure class="timeline-card">
             <div class="timeline-img-wrap">
               <picture>
-                <source type="image/avif" srcset="assets/history/responsive-edited/civil-defense-595.avif">
-                <source type="image/webp" srcset="assets/history/responsive-edited/civil-defense-595.webp">
-                <img src="assets/history/civil-defense.jpg" alt="地方服務 民防 CPR" loading="lazy">
+                <source type="image/avif" srcset="assets/history/responsive-edited/civil-defense-420.avif 420w, assets/history/responsive-edited/civil-defense-595.avif 595w" sizes="(max-width: 768px) calc(100vw - 40px), (max-width: 1024px) 48vw, 24vw">
+                <source type="image/webp" srcset="assets/history/responsive-edited/civil-defense-420.webp 420w, assets/history/responsive-edited/civil-defense-595.webp 595w" sizes="(max-width: 768px) calc(100vw - 40px), (max-width: 1024px) 48vw, 24vw">
+                <img src="assets/history/edited/civil-defense.jpg" alt="地方服務 民防 CPR" loading="lazy" decoding="async">
               </picture>
             </div>
             <figcaption class="timeline-caption">地方服務｜民防 CPR</figcaption>
@@ -1493,9 +1545,9 @@
           <figure class="timeline-card">
             <div class="timeline-img-wrap">
               <picture>
-                <source type="image/avif" srcset="assets/history/responsive-edited/graduation-720.avif">
-                <source type="image/webp" srcset="assets/history/responsive-edited/graduation-720.webp">
-                <img src="assets/history/graduation.jpg" alt="再學習 正修畢業" loading="lazy">
+                <source type="image/avif" srcset="assets/history/responsive-edited/graduation-420.avif 420w, assets/history/responsive-edited/graduation-720.avif 720w, assets/history/responsive-edited/graduation-1000.avif 1000w" sizes="(max-width: 768px) calc(100vw - 40px), (max-width: 1024px) 48vw, 24vw">
+                <source type="image/webp" srcset="assets/history/responsive-edited/graduation-420.webp 420w, assets/history/responsive-edited/graduation-720.webp 720w, assets/history/responsive-edited/graduation-1000.webp 1000w" sizes="(max-width: 768px) calc(100vw - 40px), (max-width: 1024px) 48vw, 24vw">
+                <img src="assets/history/edited/graduation.jpg" alt="再學習 正修畢業" loading="lazy" decoding="async">
               </picture>
             </div>
             <figcaption class="timeline-caption">再學習｜正修畢業</figcaption>
