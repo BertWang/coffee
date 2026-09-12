@@ -2922,8 +2922,11 @@ p, .section-desc, .hero-desc, .timeline-card-story {
    ========================================================================== */
 /* Large Desktop (>= 1440px) */
 @media (min-width: 1440px) {
-  .hero-title {
-    font-size: 104px;
+  .hero-candidate-name {
+    font-size: 56px;
+  }
+  .hero-action-headline {
+    font-size: 46px;
   }
   .container {
     max-width: 1320px;
@@ -2933,30 +2936,34 @@ p, .section-desc, .hero-desc, .timeline-card-story {
 /* Laptop & Tablet Landscape (1024px) */
 @media (max-width: 1024px) {
   .hero-section {
-    min-height: clamp(680px, calc(100svh - 74px), 860px);
-    padding: 64px 0;
+    min-height: clamp(620px, calc(100svh - 74px), 800px);
+    padding: 48px 0;
   }
 
   .hero-bg-picture img {
-    object-position: 68% center;
+    object-position: 75% center;
   }
 
   .hero-section::after {
     background:
       linear-gradient(90deg,
         rgba(248, 247, 243, 0.98) 0%,
-        rgba(248, 247, 243, 0.94) 38%,
-        rgba(248, 247, 243, 0.62) 58%,
-        rgba(248, 247, 243, 0.14) 100%);
+        rgba(248, 247, 243, 0.94) 40%,
+        rgba(248, 247, 243, 0.70) 60%,
+        rgba(248, 247, 243, 0.16) 100%);
   }
 
   .hero-content {
-    width: min(560px, 58vw);
-    max-width: 560px;
+    width: min(580px, 60vw);
+    max-width: 580px;
   }
 
-  .hero-title {
-    font-size: clamp(54px, 8vw, 76px);
+  .hero-candidate-name {
+    font-size: clamp(34px, 4vw, 44px);
+  }
+
+  .hero-action-headline {
+    font-size: clamp(28px, 3.4vw, 38px);
   }
 
   .action-cards-grid {
@@ -2964,10 +2971,6 @@ p, .section-desc, .hero-desc, .timeline-card-story {
   }
 
   .why-cards-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .vision-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 
@@ -3185,27 +3188,49 @@ p, .section-desc, .hero-desc, .timeline-card-story {
     font-size: 12px;
   }
 
-  .hero-quote-slogan {
-    font-size: 14px;
-    padding: 8px 12px;
-    width: 100%;
+  .hero-brand-block {
+    margin-bottom: 12px;
   }
 
-  .hero-title {
-    font-size: clamp(36px, 11vw, 50px);
-    line-height: 1.02;
-    margin-bottom: 14px;
+  .hero-name-row {
+    gap: 8px;
+    margin-bottom: 4px;
   }
 
-  .hero-highlight::after {
-    height: 10px;
-    bottom: 0;
+  .hero-candidate-name {
+    font-size: clamp(30px, 8.5vw, 40px);
+    line-height: 1.05;
+  }
+
+  .hero-identity-tag {
+    font-size: 11px;
+    padding: 2px 8px;
+  }
+
+  .hero-action-headline {
+    font-size: clamp(24px, 6.8vw, 32px);
+    line-height: 1.15;
+    white-space: nowrap !important;
+  }
+
+  .headline-gold-focus {
+    padding: 0 3px;
+  }
+
+  .hero-station-slogan {
+    margin-bottom: 12px;
   }
 
   .hero-sub {
-    font-size: clamp(18px, 5.2vw, 22px);
-    margin-bottom: 12px;
+    font-size: clamp(16px, 4.8vw, 20px);
+    margin-bottom: 8px;
     line-height: 1.35;
+  }
+
+  .hero-motto-pill {
+    font-size: 13px;
+    padding: 6px 12px;
+    width: 100%;
   }
 
   .hero-desc {
