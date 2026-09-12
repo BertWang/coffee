@@ -17,6 +17,7 @@
   --cobalt-light: #3D73D1;
   
   --gold: #F2C94C;
+  --gold-primary: #F2C94C;
   --gold-dark: #D4A72C;
   --gold-light: #FFF8E5;
   --gold-glow: rgba(242, 201, 76, 0.4);
@@ -109,16 +110,21 @@ img {
   display: block;
 }
 
-/* Typography Base */
+/* Typography Base & Asian Text Balancing (奈米級斷詞防護) */
 h1, h2, h3, h4, h5, h6 {
   margin: 0;
   font-weight: 800;
   color: var(--navy-primary);
   letter-spacing: -0.025em;
+  text-wrap: balance;
+  word-break: keep-all;
+  overflow-wrap: break-word;
 }
 
-p {
+p, .section-desc, .hero-desc, .timeline-card-story {
   margin: 0;
+  word-break: normal;
+  overflow-wrap: break-word;
 }
 
 /* Container Utility */
@@ -585,15 +591,15 @@ p {
 }
 
 /* ==========================================================================
-   4. Hero Section
+   4. Hero Section (Nanoscale Precision Layout & Breathing Space)
    ========================================================================== */
 .hero-section {
   position: relative;
-  min-height: clamp(680px, calc(100svh - 74px), 920px);
+  min-height: clamp(620px, calc(100svh - 108px), 820px);
   display: flex;
   align-items: center;
   overflow: hidden;
-  padding: clamp(56px, 7vh, 88px) 0;
+  padding: clamp(28px, 4.5vh, 52px) 0 clamp(36px, 5vh, 60px);
   isolation: isolate;
 }
 
@@ -619,7 +625,7 @@ p {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: 72% center;
+  object-position: 80% center;
 }
 
 .hero-section::after {
@@ -631,10 +637,10 @@ p {
   background:
     linear-gradient(90deg,
       rgba(248, 247, 243, 0.98) 0%,
-      rgba(248, 247, 243, 0.94) 30%,
-      rgba(248, 247, 243, 0.72) 48%,
-      rgba(248, 247, 243, 0.26) 68%,
-      rgba(248, 247, 243, 0.06) 100%);
+      rgba(248, 247, 243, 0.94) 36%,
+      rgba(248, 247, 243, 0.76) 52%,
+      rgba(248, 247, 243, 0.22) 70%,
+      rgba(248, 247, 243, 0.04) 100%);
 }
 
 .hero-section > .container {
@@ -644,37 +650,24 @@ p {
 }
 
 .hero-content {
-  width: min(620px, 52vw);
-  max-width: 620px;
+  width: min(640px, 54vw);
+  max-width: 640px;
+  display: flex;
+  flex-direction: column;
 }
 
-.hero-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  padding: 8px 18px;
-  background: rgba(255, 255, 255, 0.94);
-  border: 1px solid var(--border-line);
-  border-radius: var(--radius-pill);
-  font-size: 13px;
-  font-weight: 800;
-  color: var(--navy-primary);
-  box-shadow: var(--shadow-xs);
-  margin-bottom: 22px;
-  backdrop-filter: blur(8px);
-}
-
-/* Enhanced Election Ballot Number Slot (選舉號次專用展台與預留位) */
+/* Enhanced Election Ballot Number Slot (選舉號次專用展台・充足頂部呼吸空間) */
 .hero-ballot-slot {
   display: inline-flex;
   align-items: center;
-  gap: 14px;
-  padding: 8px 18px;
+  align-self: flex-start;
+  gap: 12px;
+  padding: 6px 16px 6px 8px;
   background: rgba(255, 255, 255, 0.96);
-  border: 2px solid var(--gold);
+  border: 1.5px solid var(--gold);
   border-radius: var(--radius-pill);
-  box-shadow: 0 6px 24px rgba(21, 51, 96, 0.12), 0 0 0 1px rgba(242, 201, 76, 0.25);
-  margin-bottom: 20px;
+  box-shadow: 0 4px 16px rgba(21, 51, 96, 0.08), 0 0 0 1px rgba(242, 201, 76, 0.25);
+  margin: 6px 0 16px 0;
   backdrop-filter: blur(12px);
   position: relative;
   transition: all var(--transition-normal);
@@ -682,13 +675,13 @@ p {
 
 .hero-ballot-slot:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 28px rgba(21, 51, 96, 0.18), 0 0 0 2px var(--gold);
+  box-shadow: 0 8px 24px rgba(21, 51, 96, 0.14), 0 0 0 2px var(--gold);
 }
 
 /* Authentic Taiwan Election Voting Stamp Circle (號次圈印) */
 .ballot-circle-box {
-  width: 44px;
-  height: 44px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
   background: linear-gradient(135deg, var(--navy-dark) 0%, var(--navy-primary) 100%);
   border: 2px dashed var(--gold);
@@ -715,7 +708,7 @@ p {
 }
 
 .ballot-circle-num {
-  font-size: 13.5px;
+  font-size: 13px;
   font-weight: 900;
   color: #fff;
   line-height: 1.1;
@@ -725,17 +718,17 @@ p {
 .ballot-slot-info {
   display: flex;
   flex-direction: column;
-  gap: 2px;
+  gap: 1px;
 }
 
 .ballot-slot-status {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 6px;
 }
 
 .ballot-status-tag {
-  font-size: 13.5px;
+  font-size: 13px;
   font-weight: 900;
   color: var(--navy-primary);
   letter-spacing: 0.02em;
@@ -744,44 +737,107 @@ p {
 .ballot-party-tag {
   font-size: 11px;
   font-weight: 800;
-  padding: 1px 8px;
-  background: rgba(30, 66, 127, 0.1);
+  padding: 1px 7px;
+  background: rgba(30, 66, 127, 0.08);
   color: var(--cobalt);
   border-radius: var(--radius-pill);
-  border: 1px solid rgba(30, 66, 127, 0.2);
+  border: 1px solid rgba(30, 66, 127, 0.18);
 }
 
 .ballot-slot-sub {
-  font-size: 12px;
+  font-size: 11.5px;
   font-weight: 700;
   color: var(--gold-dark);
 }
 
-/* Memorable Station Catchphrase in Hero (台標金句專區) */
-.hero-station-slogan {
-  margin-bottom: 22px;
+/* ==========================================================================
+   Dual Brand Hierarchy: Candidate Name × Forward Action (雙核心架構)
+   ========================================================================== */
+.hero-brand-block {
+  margin-bottom: 14px;
 }
 
-.hero-quote-slogan {
+.hero-name-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 4px;
+  flex-wrap: wrap;
+}
+
+.hero-candidate-name {
+  font-size: clamp(38px, 4.2vw, 56px);
+  font-weight: 900;
+  color: var(--navy-primary);
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+}
+
+.hero-identity-tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 12px;
+  background: rgba(21, 51, 96, 0.07);
+  border: 1px solid rgba(21, 51, 96, 0.14);
+  border-radius: var(--radius-pill);
+  color: var(--navy-blue);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+}
+
+.hero-action-headline {
+  font-size: clamp(32px, 3.6vw, 48px);
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+  color: var(--navy-primary);
+  font-weight: 900;
+  margin: 0;
+  white-space: nowrap !important;
+}
+
+.headline-gold-focus {
+  position: relative;
+  display: inline-block;
+  color: var(--navy-primary);
+  background: linear-gradient(180deg, transparent 62%, rgba(242, 201, 76, 0.45) 62%);
+  padding: 0 4px;
+  border-radius: 4px;
+}
+
+/* Memorable Station Catchphrase in Hero (台標金句專區) */
+.hero-station-slogan {
+  margin-bottom: 14px;
+}
+
+.hero-sub {
+  font-size: clamp(18px, 2vw, 22px);
+  font-weight: 800;
+  color: var(--navy-blue);
+  margin-bottom: 8px;
+  line-height: 1.35;
+  letter-spacing: -0.01em;
+}
+
+.hero-motto-pill {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  margin-top: 10px;
-  padding: 10px 16px;
-  background: rgba(255, 255, 255, 0.88);
-  border-left: 4px solid var(--gold);
-  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  padding: 6px 14px;
+  background: rgba(255, 255, 255, 0.84);
+  border-left: 3px solid var(--gold);
+  border-radius: 0 var(--radius-xs) var(--radius-xs) 0;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text-muted);
+  line-height: 1.45;
+  backdrop-filter: blur(6px);
   box-shadow: var(--shadow-xs);
-  font-size: clamp(15px, 1.9vw, 17.5px);
-  font-weight: 800;
-  color: var(--navy-primary);
-  line-height: 1.5;
-  backdrop-filter: blur(8px);
 }
 
 .hero-quote-mark {
   color: var(--gold);
-  font-size: 22px;
+  font-size: 18px;
   font-weight: 900;
   line-height: 0.8;
 }
@@ -794,65 +850,31 @@ p {
   box-shadow: 0 0 0 3px rgba(39, 174, 96, 0.22);
 }
 
-.hero-title {
-  font-size: clamp(52px, 7vw, 104px);
-  line-height: 0.94;
-  letter-spacing: -0.05em;
-  color: var(--navy-primary);
-  font-weight: 900;
-  margin: 0 0 22px;
-}
-
-.hero-highlight {
-  position: relative;
-  display: inline-block;
-  color: var(--navy-primary);
-}
-
-.hero-highlight::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 2px;
-  height: 14px;
-  background: var(--gold);
-  border-radius: var(--radius-pill);
-  z-index: -1;
-  opacity: 0.85;
-}
-
-.hero-sub {
-  font-size: clamp(21px, 2.3vw, 30px);
-  font-weight: 800;
-  color: var(--navy-blue);
-  margin-bottom: 14px;
-  line-height: 1.35;
-}
-
 .hero-desc {
-  font-size: 17px;
+  font-size: 15.5px;
   color: var(--text-muted);
-  margin-bottom: 30px;
-  line-height: 1.8;
+  margin-bottom: 18px;
+  line-height: 1.7;
+  max-width: 580px;
 }
 
+/* Triad Trust Badges (三大承諾膠囊・等寬對稱並列) */
 .hero-highlights-list {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
-  margin-bottom: 34px;
+  gap: 8px;
+  margin-bottom: 22px;
 }
 
 .hero-pill {
   display: inline-flex;
   align-items: center;
-  gap: 7px;
-  padding: 8px 16px;
-  background: rgba(255, 255, 255, 0.88);
+  gap: 6px;
+  padding: 6px 13px;
+  background: rgba(255, 255, 255, 0.92);
   border: 1px solid rgba(21, 51, 96, 0.12);
   border-radius: var(--radius-sm);
-  font-size: 13.5px;
+  font-size: 12.5px;
   font-weight: 700;
   color: var(--navy-primary);
   backdrop-filter: blur(8px);
@@ -860,66 +882,330 @@ p {
 }
 
 .hero-pill svg {
-  width: 15px;
-  height: 15px;
+  width: 14px;
+  height: 14px;
   color: var(--green-accent);
 }
 
 .hero-btns {
   display: flex;
-  gap: 14px;
+  gap: 12px;
   flex-wrap: wrap;
+  align-items: center;
 }
 
 .btn-main {
-  padding: 15px 30px;
-  background: var(--navy-primary);
-  color: #fff;
-  font-size: 15px;
+  padding: 13px 26px;
+  background: linear-gradient(135deg, var(--navy-primary) 0%, var(--navy-blue) 100%);
+  color: #fff !important;
+  font-size: 14.5px;
   font-weight: 800;
   border-radius: var(--radius-pill);
-  box-shadow: 0 8px 24px rgba(21, 51, 96, 0.22);
+  box-shadow: 0 6px 20px rgba(21, 51, 96, 0.22);
   transition: all var(--transition-fast);
   display: inline-flex;
   align-items: center;
   gap: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
 }
 
 .btn-main svg {
-  width: 16px;
-  height: 16px;
+  width: 15px;
+  height: 15px;
   transition: transform var(--transition-fast);
 }
 
 .btn-main:hover {
-  background: var(--cobalt);
-  transform: translateY(-3px);
-  box-shadow: 0 12px 30px rgba(21, 51, 96, 0.32);
+  background: linear-gradient(135deg, var(--cobalt) 0%, var(--cobalt-light) 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 26px rgba(21, 51, 96, 0.3);
 }
 
 .btn-main:hover svg {
-  transform: translateX(4px);
+  transform: translateX(3px);
 }
 
 .btn-secondary {
-  padding: 15px 30px;
+  padding: 13px 24px;
   background: #fff;
   color: var(--navy-primary);
-  font-size: 15px;
+  font-size: 14.5px;
   font-weight: 800;
   border-radius: var(--radius-pill);
-  border: 1px solid var(--border-line);
+  border: 1.5px solid var(--border-line);
   box-shadow: var(--shadow-xs);
   transition: all var(--transition-fast);
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
 }
 
 .btn-secondary:hover {
   background: var(--bg-soft);
-  transform: translateY(-3px);
-  box-shadow: var(--shadow-md);
+  border-color: var(--cobalt);
+  color: var(--cobalt);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-sm);
+}
+
+/* Nav Share Pill Button in Header */
+.nav-share-pill-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 8px 14px;
+  background: rgba(242, 201, 76, 0.18);
+  border: 1px solid rgba(242, 201, 76, 0.5);
+  border-radius: var(--radius-pill);
+  color: var(--navy-dark);
+  font-size: 13px;
+  font-weight: 800;
+  transition: all var(--transition-fast);
+}
+
+.nav-share-pill-btn:hover {
+  background: var(--gold);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(242, 201, 76, 0.35);
+}
+
+/* ==========================================================================
+   Social Share Hub (社群分享中樞・黑金沉浸卡片)
+   ========================================================================== */
+.social-share-section {
+  background: linear-gradient(180deg, #F8F7F3 0%, #EEF3F8 50%, #F8F7F3 100%);
+  padding: clamp(48px, 6vw, 76px) 0;
+  position: relative;
+}
+
+.social-share-card {
+  background: linear-gradient(135deg, #0B1E38 0%, #153360 60%, #0D264A 100%);
+  border: 1.5px solid rgba(242, 201, 76, 0.4);
+  border-radius: var(--radius-lg);
+  padding: clamp(32px, 5vw, 56px) clamp(24px, 4vw, 48px);
+  color: #fff;
+  box-shadow: 0 16px 40px rgba(10, 25, 49, 0.18), inset 0 1px 0 rgba(255, 255, 255, 0.12);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.social-share-card::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(242, 201, 76, 0.08) 0%, transparent 65%);
+  pointer-events: none;
+}
+
+.share-card-header {
+  max-width: 680px;
+  margin: 0 auto 28px;
+  position: relative;
+  z-index: 2;
+}
+
+.share-heart-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 14px;
+  background: rgba(242, 201, 76, 0.18);
+  border: 1px solid rgba(242, 201, 76, 0.5);
+  border-radius: var(--radius-pill);
+  color: var(--gold);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  margin-bottom: 14px;
+}
+
+.share-card-title {
+  font-size: clamp(24px, 3.2vw, 36px);
+  color: #FFFFFF;
+  font-weight: 900;
+  line-height: 1.28;
+  letter-spacing: -0.02em;
+  margin-bottom: 12px;
+  text-wrap: balance;
+}
+
+.share-card-desc {
+  font-size: clamp(14.5px, 1.6vw, 16px);
+  color: #D3E0EE;
+  line-height: 1.75;
+  margin: 0 auto;
+}
+
+.share-card-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-bottom: 24px;
+  position: relative;
+  z-index: 2;
+}
+
+.share-action-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 13px 24px;
+  border-radius: var(--radius-pill);
+  font-size: 14.5px;
+  font-weight: 800;
+  cursor: pointer;
+  border: none;
+  transition: all var(--transition-fast);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+}
+
+.share-action-btn .share-icon {
+  width: 18px;
+  height: 18px;
+}
+
+.share-action-btn.is-line {
+  background: var(--line-green);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.share-action-btn.is-line:hover {
+  background: #05B34C;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(6, 199, 85, 0.4);
+}
+
+.share-action-btn.is-fb {
+  background: #1877F2;
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.share-action-btn.is-fb:hover {
+  background: #1465CC;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(24, 119, 242, 0.4);
+}
+
+.share-action-btn.is-copy {
+  background: rgba(255, 255, 255, 0.94);
+  color: var(--navy-primary);
+  border: 1.5px solid var(--gold);
+}
+
+.share-action-btn.is-copy:hover {
+  background: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(242, 201, 76, 0.35);
+}
+
+.share-action-btn.is-native {
+  background: rgba(242, 201, 76, 0.2);
+  border: 1px solid var(--gold);
+  color: #fff;
+}
+
+.share-action-btn.is-native:hover {
+  background: var(--gold);
+  color: var(--navy-dark);
+  transform: translateY(-2px);
+}
+
+.share-card-quote {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: #B5C9E0;
+  font-weight: 700;
+  background: rgba(0, 0, 0, 0.2);
+  padding: 6px 16px;
+  border-radius: var(--radius-pill);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  position: relative;
+  z-index: 2;
+}
+
+.share-quote-seal {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  line-height: 16px;
+  text-align: center;
+  border: 1px solid #E74C3C;
+  color: #E74C3C;
+  font-size: 10px;
+  font-weight: 900;
+  border-radius: 3px;
+}
+
+/* ==========================================================================
+   Share Feedback Toast Notification
+   ========================================================================== */
+.share-toast {
+  position: fixed;
+  bottom: 28px;
+  left: 50%;
+  transform: translateX(-50%) translateY(40px);
+  z-index: 9999;
+  background: #091931;
+  color: #fff;
+  border: 1.5px solid var(--gold);
+  border-radius: var(--radius-md);
+  padding: 12px 22px;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.35), 0 0 0 1px rgba(242, 201, 76, 0.2);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.32s cubic-bezier(0.16, 1, 0.3, 1);
+  pointer-events: none;
+}
+
+.share-toast.is-visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0);
+}
+
+.share-toast-inner {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.share-toast-icon {
+  width: 28px;
+  height: 28px;
+  background: var(--gold);
+  color: var(--navy-dark);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  font-weight: 900;
+  flex-shrink: 0;
+}
+
+.share-toast-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.share-toast-text strong {
+  font-size: 14px;
+  color: var(--gold);
+  letter-spacing: 0.02em;
+}
+
+.share-toast-text span {
+  font-size: 12px;
+  color: #E2ECF7;
+  opacity: 0.9;
 }
 
 /* ==========================================================================
@@ -1490,116 +1776,6 @@ p {
   height: 24px;
 }
 
-/* ==========================================================================
-   7b. Vision 2035 Section (龍子里 2035 中長期願景)
-   ========================================================================== */
-.vision-section {
-  background: linear-gradient(180deg, #071324 0%, #153360 100%);
-  color: #fff;
-  position: relative;
-  overflow: hidden;
-}
-
-.vision-section::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(circle at 80% 20%, rgba(242, 201, 76, 0.12) 0%, transparent 55%);
-  pointer-events: none;
-}
-
-.vision-section .section-title {
-  color: #ffffff;
-}
-
-.vision-section .section-desc {
-  color: #B5C9DF;
-  max-width: 48rem;
-}
-
-.vision-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 18px;
-  margin-top: 36px;
-}
-
-.vision-card {
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  border-radius: var(--radius-md);
-  padding: 22px 20px;
-  transition: all var(--transition-normal);
-  backdrop-filter: blur(8px);
-}
-
-.vision-card:hover {
-  background: rgba(255, 255, 255, 0.12);
-  border-color: var(--gold);
-  transform: translateY(-4px);
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
-}
-
-.vision-num {
-  font-size: 12px;
-  font-weight: 900;
-  letter-spacing: 0.1em;
-  color: var(--gold);
-  margin-bottom: 8px;
-}
-
-.vision-card h3 {
-  font-size: 17px;
-  font-weight: 800;
-  color: #ffffff;
-  margin: 0 0 8px;
-}
-
-.vision-card p {
-  font-size: 13.5px;
-  line-height: 1.6;
-  color: #B9CCE0;
-  margin: 0;
-}
-
-.vision-whitepaper-card {
-  margin-top: 32px;
-  padding: 24px 30px;
-  background: rgba(242, 201, 76, 0.08);
-  border: 1px solid rgba(242, 201, 76, 0.35);
-  border-radius: var(--radius-md);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 24px;
-}
-
-.vision-whitepaper-text h4 {
-  margin: 0 0 6px;
-  font-size: 18px;
-  color: var(--gold);
-  font-weight: 800;
-}
-
-.vision-whitepaper-text p {
-  margin: 0;
-  font-size: 14px;
-  color: #D3E0EE;
-  line-height: 1.6;
-}
-
-.vision-badge-pill {
-  padding: 8px 18px;
-  background: var(--gold);
-  color: var(--navy-dark);
-  font-weight: 800;
-  font-size: 13.5px;
-  border-radius: var(--radius-pill);
-  flex-shrink: 0;
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-}
 
 /* ==========================================================================
    8. Service Track Record Section
@@ -1813,40 +1989,189 @@ p {
 }
 
 /* ==========================================================================
-   9. Timeline (Life Track) Section - 4 Curated Chapters
+   9. Timeline (Life Track) Section - 4 Curated Chapters & Editorial Polish
    ========================================================================== */
 .timeline-section {
   background: var(--bg-cream);
   position: relative;
 }
 
-/* Preface Intro Quote Box */
-.timeline-preface-box {
-  background: #ffffff;
-  border: 1px solid rgba(21, 51, 96, 0.12);
-  border-left: 5px solid var(--gold-primary);
-  border-radius: var(--radius-md);
-  padding: 24px 28px;
-  margin: 28px 0 44px;
-  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.04);
+/* Controlled Desktop Semantic Break */
+.desktop-only-br {
+  display: block;
+}
+@media (max-width: 768px) {
+  .desktop-only-br {
+    display: none;
+  }
 }
 
-.timeline-preface-quote {
-  font-size: 15.5px;
+/* Timeline Lead Prose */
+.timeline-lead-wrap {
+  max-width: 860px;
+  margin-bottom: 28px;
+}
+
+.timeline-lead-desc {
+  font-size: clamp(15px, 1.8vw, 16.5px);
   line-height: 1.85;
-  color: var(--navy-primary);
-  font-weight: 500;
-  margin: 0 0 12px;
-  font-style: normal;
+  color: #4a5568;
+  margin: 0;
 }
 
-.timeline-preface-author {
-  font-size: 13px;
+.timeline-lead-desc strong {
+  color: var(--navy-primary);
   font-weight: 800;
-  color: var(--gold-dark);
+}
+
+/* Feature Quote Card (Magazine-Grade Editorial Callout) */
+.timeline-quote-feature-card {
+  position: relative;
+  background: linear-gradient(135deg, #ffffff 0%, #f9fbfd 100%);
+  border: 1px solid rgba(21, 51, 96, 0.14);
+  border-left: 6px solid var(--gold-primary);
+  border-radius: var(--radius-lg);
+  padding: clamp(26px, 3.8vw, 36px) clamp(24px, 4.5vw, 44px);
+  margin: 28px 0 52px;
+  box-shadow: 0 10px 28px rgba(21, 51, 96, 0.05), 0 1px 3px rgba(0, 0, 0, 0.02);
+  overflow: hidden;
+}
+
+.quote-watermark {
+  position: absolute;
+  top: -24px;
+  right: 28px;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 150px;
+  line-height: 1;
+  color: rgba(218, 165, 32, 0.09);
+  pointer-events: none;
+  user-select: none;
+  font-weight: 900;
+  z-index: 0;
+}
+
+.quote-dialogue-row {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  margin-bottom: 16px;
+  position: relative;
+  z-index: 1;
+}
+
+.quote-dialogue-badge {
+  flex-shrink: 0;
+  background: rgba(21, 51, 96, 0.08);
+  color: var(--navy-primary);
+  font-size: 11.5px;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  padding: 3px 10px;
+  border-radius: var(--radius-pill);
+}
+
+.quote-dialogue-text {
+  font-size: clamp(17px, 2.2vw, 21px);
+  font-weight: 900;
+  color: var(--navy-primary);
+  letter-spacing: -0.01em;
+  margin: 0;
+}
+
+.quote-body-editorial {
+  position: relative;
+  z-index: 1;
+}
+
+.quote-passage-intro {
+  font-size: 15px;
+  line-height: 1.8;
+  color: #4a5568;
+  margin: 0 0 10px;
+}
+
+.quote-stanza-box {
+  background: rgba(21, 51, 96, 0.035);
+  border-left: 3px solid var(--gold-primary);
+  padding: 14px 18px;
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  margin: 14px 0 18px;
+}
+
+.quote-stanza-text {
+  font-size: clamp(15.5px, 1.8vw, 17px);
+  line-height: 1.78;
+  color: var(--navy-primary);
+  font-weight: 700;
+  margin: 0;
+}
+
+.quote-passage-conclusion {
+  font-size: 15px;
+  line-height: 1.88;
+  color: #4a5568;
+  margin: 0 0 20px;
+}
+
+.quote-punchline-pill {
+  font-weight: 900;
+  color: var(--navy-primary);
+  font-size: 16px;
+  background: linear-gradient(180deg, transparent 62%, rgba(218, 165, 32, 0.35) 62%);
+  padding: 0 3px;
+  display: inline;
+}
+
+.quote-author-footer {
   display: flex;
   align-items: center;
-  gap: 8px;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 14px;
+  padding-top: 18px;
+  border-top: 1px solid rgba(21, 51, 96, 0.09);
+  position: relative;
+  z-index: 1;
+}
+
+.quote-author-identity {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.quote-author-seal {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  box-shadow: 0 2px 6px rgba(184, 134, 11, 0.2);
+  display: block;
+}
+
+.quote-author-name {
+  font-size: 16px;
+  font-weight: 900;
+  color: var(--navy-primary);
+}
+
+.quote-author-title {
+  font-size: 13px;
+  color: var(--gold-dark);
+  font-weight: 800;
+  margin-left: 8px;
+}
+
+.quote-tagline-motto {
+  font-size: 13px;
+  color: var(--text-muted);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+/* Fallback backward compatibility for .timeline-preface-box */
+.timeline-preface-box {
+  display: none;
 }
 
 /* 4 Curated Chapters Container */
@@ -1870,46 +2195,66 @@ p {
 }
 
 .chapter-header {
-  display: flex;
-  align-items: flex-start;
-  gap: 18px;
   margin-bottom: 26px;
   padding-bottom: 20px;
   border-bottom: 1px solid var(--border-line);
 }
 
-.chapter-num-badge {
-  flex-shrink: 0;
-  background: var(--navy-primary);
-  color: var(--gold-primary);
-  font-family: var(--font-display);
-  font-size: 12px;
-  font-weight: 900;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  padding: 6px 14px;
-  border-radius: var(--radius-pill);
-  box-shadow: 0 2px 8px rgba(21, 51, 96, 0.18);
+.chapter-header-text {
+  width: 100%;
 }
 
-.chapter-header-text {
-  flex-grow: 1;
+.chapter-eyebrow {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.chapter-num-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--navy-primary);
+  color: #F2C94C !important;
+  border: 1px solid rgba(242, 201, 76, 0.45);
+  font-family: var(--font-display);
+  font-size: 12.5px;
+  font-weight: 900;
+  line-height: 1.2;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 5px 14px;
+  border-radius: var(--radius-pill);
+  box-shadow: 0 2px 8px rgba(21, 51, 96, 0.2);
+  white-space: nowrap;
+}
+
+.chapter-period-label {
+  font-family: var(--font-display);
+  font-size: 13px;
+  font-weight: 800;
+  color: var(--gold-dark);
+  letter-spacing: 0.06em;
 }
 
 .chapter-title {
-  font-size: 21px;
+  font-size: clamp(21px, 2.6vw, 25px);
   font-weight: 900;
   color: var(--navy-primary);
-  margin: 0 0 6px;
-  letter-spacing: -0.01em;
+  margin: 0 0 8px;
+  letter-spacing: -0.015em;
+  text-wrap: balance;
 }
 
 .chapter-tagline {
-  font-size: 14px;
+  font-size: 15px;
   color: var(--text-muted);
   margin: 0;
   font-weight: 500;
-  line-height: 1.55;
+  line-height: 1.6;
+  text-wrap: pretty;
 }
 
 /* Cards Grid inside Chapter */
