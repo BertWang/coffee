@@ -1100,6 +1100,18 @@ p,
   box-shadow: 0 8px 24px rgba(24, 119, 242, 0.4);
 }
 
+.share-action-btn.is-threads {
+  background: #000000;
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+.share-action-btn.is-threads:hover {
+  background: #1c1c1e;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45);
+}
+
 .share-action-btn.is-copy {
   background: rgba(255, 255, 255, 0.94);
   color: var(--navy-primary);
