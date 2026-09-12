@@ -279,36 +279,6 @@ p, .section-desc, .hero-desc, .timeline-card-story {
   gap: 8px;
 }
 
-.header-ballot-pill {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  padding: 3px 12px;
-  background: rgba(255, 255, 255, 0.12);
-  border: 1px solid rgba(242, 201, 76, 0.6);
-  border-radius: var(--radius-pill);
-  font-size: 12px;
-  font-weight: 800;
-  color: #fff;
-  white-space: nowrap;
-  backdrop-filter: blur(6px);
-}
-
-.header-ballot-pill .ballot-dot {
-  width: 7px;
-  height: 7px;
-  background: #27AE60;
-  border-radius: 50%;
-  box-shadow: 0 0 0 2px rgba(39, 174, 96, 0.3);
-}
-
-.header-ballot-pill .ballot-divider {
-  color: rgba(255, 255, 255, 0.4);
-}
-
-.header-ballot-pill .ballot-draw-txt {
-  color: var(--gold);
-}
 
 /* ==========================================================================
    3. Sticky Top Header Navigation (High-End Frosted Glass & Pill System)
@@ -603,13 +573,6 @@ p, .section-desc, .hero-desc, .timeline-card-story {
   isolation: isolate;
 }
 
-.hero-mobile-stage {
-  display: none;
-}
-
-.hero-badge-desktop {
-  display: inline-flex;
-}
 
 .hero-bg-picture {
   position: absolute;
@@ -1267,39 +1230,6 @@ p, .section-desc, .hero-desc, .timeline-card-story {
   line-height: 1.6;
 }
 
-.experience-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin-top: 28px;
-}
-
-.exp-tag {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 8px 16px;
-  background: var(--bg-cream);
-  border: 1px solid var(--border-line);
-  border-radius: var(--radius-pill);
-  font-size: 13.5px;
-  font-weight: 700;
-  color: var(--navy-primary);
-  transition: all var(--transition-fast);
-}
-
-.exp-tag svg {
-  width: 16px;
-  height: 16px;
-  color: var(--cobalt);
-}
-
-.exp-tag:hover {
-  background: #fff;
-  border-color: var(--cobalt);
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-xs);
-}
 
 /* 5b. Education & Experience Matrix (學歷與經歷簡表) */
 .exp-matrix-section {
@@ -2169,10 +2099,6 @@ p, .section-desc, .hero-desc, .timeline-card-story {
   letter-spacing: 0.02em;
 }
 
-/* Fallback backward compatibility for .timeline-preface-box */
-.timeline-preface-box {
-  display: none;
-}
 
 /* 4 Curated Chapters Container */
 .timeline-chapters {
@@ -2402,8 +2328,7 @@ p, .section-desc, .hero-desc, .timeline-card-story {
   flex-grow: 1;
 }
 
-.timeline-competence-pill,
-.timeline-card-badge {
+.timeline-competence-pill {
   display: inline-flex;
   align-items: center;
   gap: 6px;
@@ -2417,13 +2342,6 @@ p, .section-desc, .hero-desc, .timeline-card-story {
   align-self: flex-start;
 }
 
-/* Backward compatibility */
-.timeline-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 18px;
-  margin-top: 36px;
-}
 
 /* ==========================================================================
    10. Future Callout Banner
@@ -2987,9 +2905,6 @@ p, .section-desc, .hero-desc, .timeline-card-story {
     grid-template-columns: repeat(3, 1fr);
   }
 
-  .timeline-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
 
   .about-grid,
   .place-grid,
@@ -3121,19 +3036,6 @@ p, .section-desc, .hero-desc, .timeline-card-story {
     color: #ffffff;
     backdrop-filter: blur(10px);
     box-shadow: 0 6px 18px rgba(7, 19, 36, 0.25);
-  }
-
-  .hero-mobile-tag-seal {
-    width: 18px;
-    height: 18px;
-    border-radius: 50%;
-    display: block;
-  }
-
-  .hero-badge-desktop {
-    display: none;
-  }
-
   /* Hero Mobile Content Card (行動承諾卡片) */
   .hero-container {
     position: relative;
@@ -3275,23 +3177,15 @@ p, .section-desc, .hero-desc, .timeline-card-story {
 
   .action-cards-grid,
   .local-photo-grid,
-  .timeline-grid,
   .chapter-cards-grid,
   .service-photos,
   .why-cards-grid,
-  .vision-grid,
   .career-grid-list {
     grid-template-columns: 1fr;
   }
 
   .feedback-grid {
     grid-template-columns: 1fr;
-  }
-
-  .vision-whitepaper-card {
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 20px;
   }
 
   .contact-secondary-grid {
@@ -3404,9 +3298,6 @@ p, .section-desc, .hero-desc, .timeline-card-story {
     border-radius: 20px;
   }
 
-  .hero-title {
-    font-size: clamp(34px, 11vw, 44px);
-  }
 
   .hero-sub {
     font-size: 17px;
