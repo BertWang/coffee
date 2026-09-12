@@ -1813,38 +1813,136 @@ p {
 }
 
 /* ==========================================================================
-   9. Timeline (Life Track) Section
+   9. Timeline (Life Track) Section - 4 Curated Chapters
    ========================================================================== */
 .timeline-section {
-  background: var(--bg-card);
+  background: var(--bg-cream);
+  position: relative;
 }
 
-.timeline-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
+/* Preface Intro Quote Box */
+.timeline-preface-box {
+  background: #ffffff;
+  border: 1px solid rgba(21, 51, 96, 0.12);
+  border-left: 5px solid var(--gold-primary);
+  border-radius: var(--radius-md);
+  padding: 24px 28px;
+  margin: 28px 0 44px;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.04);
+}
+
+.timeline-preface-quote {
+  font-size: 15.5px;
+  line-height: 1.85;
+  color: var(--navy-primary);
+  font-weight: 500;
+  margin: 0 0 12px;
+  font-style: normal;
+}
+
+.timeline-preface-author {
+  font-size: 13px;
+  font-weight: 800;
+  color: var(--gold-dark);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* 4 Curated Chapters Container */
+.timeline-chapters {
+  display: flex;
+  flex-direction: column;
+  gap: 42px;
+}
+
+.timeline-chapter {
+  background: #ffffff;
+  border: 1px solid var(--border-line);
+  border-radius: var(--radius-lg);
+  padding: 32px 32px 36px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+  transition: border-color var(--transition-normal);
+}
+
+.timeline-chapter:hover {
+  border-color: rgba(21, 51, 96, 0.28);
+}
+
+.chapter-header {
+  display: flex;
+  align-items: flex-start;
   gap: 18px;
-  margin-top: 36px;
+  margin-bottom: 26px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--border-line);
 }
 
+.chapter-num-badge {
+  flex-shrink: 0;
+  background: var(--navy-primary);
+  color: var(--gold-primary);
+  font-family: var(--font-display);
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 6px 14px;
+  border-radius: var(--radius-pill);
+  box-shadow: 0 2px 8px rgba(21, 51, 96, 0.18);
+}
+
+.chapter-header-text {
+  flex-grow: 1;
+}
+
+.chapter-title {
+  font-size: 21px;
+  font-weight: 900;
+  color: var(--navy-primary);
+  margin: 0 0 6px;
+  letter-spacing: -0.01em;
+}
+
+.chapter-tagline {
+  font-size: 14px;
+  color: var(--text-muted);
+  margin: 0;
+  font-weight: 500;
+  line-height: 1.55;
+}
+
+/* Cards Grid inside Chapter */
+.chapter-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+/* Individual Card */
 .timeline-card {
   margin: 0;
   background: var(--bg-cream);
   border: 1px solid var(--border-line);
   border-radius: var(--radius-md);
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
   transition: all var(--transition-normal);
+  position: relative;
 }
 
 .timeline-card:hover {
-  transform: translateY(-6px);
-  box-shadow: var(--shadow-md);
+  transform: translateY(-5px);
+  box-shadow: 0 12px 28px rgba(21, 51, 96, 0.12);
   border-color: var(--cobalt);
 }
 
 .timeline-img-wrap {
+  position: relative;
   aspect-ratio: 4/5;
   overflow: hidden;
-  background: #edf2f7;
+  background: #111a2e;
 }
 
 .timeline-img-wrap img {
@@ -1852,24 +1950,67 @@ p {
   height: 100%;
   object-fit: cover;
   transition: transform var(--transition-smooth);
+  display: block;
 }
 
 .timeline-card:hover .timeline-img-wrap img {
-  transform: scale(1.05);
+  transform: scale(1.04);
 }
 
-.timeline-caption {
-  padding: 14px 16px;
+/* Era Badge overlaid on photo top-left */
+.timeline-era-badge {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  z-index: 2;
+  background: rgba(17, 26, 46, 0.88);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  color: var(--gold-light);
+  font-family: var(--font-display);
   font-weight: 800;
-  font-size: 14px;
-  color: var(--navy-primary);
-  background: #fff;
-  border-top: 1px solid var(--border-line);
+  font-size: 12.5px;
+  letter-spacing: 0.05em;
+  padding: 4px 12px;
+  border-radius: var(--radius-pill);
+  border: 1px solid rgba(218, 165, 32, 0.4);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
 }
 
+/* Trait overlay on photo bottom-left */
+.timeline-photo-trait {
+  position: absolute;
+  bottom: 14px;
+  left: 14px;
+  z-index: 2;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  color: var(--navy-primary);
+  font-size: 11.5px;
+  font-weight: 800;
+  padding: 4px 12px;
+  border-radius: var(--radius-pill);
+  border: 1px solid rgba(21, 51, 96, 0.15);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.timeline-photo-trait::before {
+  content: "";
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--gold-primary);
+}
+
+/* Card Body */
 .timeline-content-body {
-  padding: 18px 20px 22px;
-  background: #fff;
+  padding: 22px 22px 24px;
+  background: #ffffff;
   display: flex;
   flex-direction: column;
   flex-grow: 1;
@@ -1881,40 +2022,62 @@ p {
   font-weight: 800;
   color: var(--gold-dark);
   letter-spacing: 0.05em;
-  margin-bottom: 6px;
+  margin-bottom: 8px;
   display: inline-flex;
   align-items: center;
   gap: 6px;
 }
 
 .timeline-card-title {
-  font-size: 16.5px;
+  font-size: 17.5px;
   font-weight: 800;
   color: var(--navy-primary);
-  margin: 0 0 8px;
-  line-height: 1.4;
+  margin: 0 0 10px;
+  line-height: 1.42;
+}
+
+/* First Person Quote Callout inside Card */
+.timeline-candidate-quote {
+  background: var(--bg-soft);
+  border-left: 3px solid var(--gold-primary);
+  padding: 10px 14px;
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--navy-primary);
+  font-weight: 600;
+  margin: 0 0 12px;
 }
 
 .timeline-card-story {
-  font-size: 13.5px;
-  line-height: 1.68;
+  font-size: 14px;
+  line-height: 1.72;
   color: var(--text-muted);
-  margin: 0 0 14px;
+  margin: 0 0 16px;
   flex-grow: 1;
 }
 
+.timeline-competence-pill,
 .timeline-card-badge {
   display: inline-flex;
   align-items: center;
   gap: 6px;
   font-size: 12px;
-  font-weight: 700;
+  font-weight: 800;
   color: var(--navy-primary);
-  background: var(--bg-soft);
-  border: 1px solid var(--border-line);
-  padding: 4px 12px;
+  background: rgba(21, 51, 96, 0.05);
+  border: 1px solid rgba(21, 51, 96, 0.12);
+  padding: 5px 14px;
   border-radius: var(--radius-pill);
   align-self: flex-start;
+}
+
+/* Backward compatibility */
+.timeline-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+  margin-top: 36px;
 }
 
 /* ==========================================================================
@@ -2743,6 +2906,7 @@ p {
   .action-cards-grid,
   .local-photo-grid,
   .timeline-grid,
+  .chapter-cards-grid,
   .service-photos,
   .why-cards-grid,
   .vision-grid,
