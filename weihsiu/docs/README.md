@@ -83,3 +83,24 @@
   - **第 48 輪**：都會型里長網站與傳統選舉文宣的 10 項本質差異對照表
   - **第 49 輪**：跨世代溝通策略——如何同時讓年輕育兒爸媽與退休銀髮長者感到安心
   - **第 50 輪**：終極結論——「龍子里的下一步，從每天的生活開始」的整體論述閉環
+
+---
+
+### 模組六：Three.js / WebGL 2.0 / 互動著色器頂尖技術研究（第 01～50 輪）
+- [06-threejs-webgl-interactive-shader-research-50rounds.md](./06-threejs-webgl-interactive-shader-research-50rounds.md)
+  - **第 01～10 輪**：全球頂級 WebGL 視覺網站與創意程式碼（Creative Coding）趨勢解碼（ThreeUI, Awwwards, FWA）
+  - **第 11～20 輪**：GLSL 自訂著色器（Custom ShaderMaterial）、Simplex 噪波與流體物理演算法
+  - **第 21～30 輪**：1,545 顆斐波那契信任粒子星空系統、緩動引力場與光點材質光譜
+  - **第 31～40 輪**：候選人 3D 曜金印章／全像光環建模、PBR 材質與即時光源配置
+  - **第 41～48 輪**：滾動驅動 3D 空間敘事（Scroll LERP Narrative）、Raycaster 游標碰撞與多模態互動
+  - **第 49～50 輪**：行動端 60 FPS 效能預算閘門、DPR 鎖定、分頁休眠感知與優雅降級標準
+
+---
+
+### 模組七：3D 旗艦版（index2.html）技術架構規劃與 AI 接手工程規範（Master Handoff Spec）
+- [07-index2-threejs-3d-architecture-and-ai-handoff-spec.md](./07-index2-threejs-3d-architecture-and-ai-handoff-spec.md)
+  - **核心規範**：雙軌制（Track 1 穩定版 vs Track 2 3D 旗艦版）嚴格隔離與主站保護
+  - **政治紅線**：敬語「您」、2026 年份錨定、嚴禁 2035、Threads 專屬網址校準
+  - **子系統手冊**：流體著色器、1545 粒子星空、3D 曜金印章、相機軌跡 LERP、效能防護
+  - **AI 驗證腳本庫**：Git 零變更檢驗、JS 語法、CSS 大括號平衡、HTML 標籤閉合檢測腳本
+

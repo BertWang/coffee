@@ -428,20 +428,22 @@ GitHub Pages。
 - AVIF／WebP／JPG 多格式素材
 - 地圖素材
 - 社群／UI 素材
+- **【雙軌制確立】**：
+  - 軌道一（`index.html` + `css/style.css`）：線上穩定版全站凍結，零更動防退行。
+  - 軌道二（`index2.html` + `css/style2.css` + `js/three-hero.js`）：Three.js 3D WebGL 視覺旗艦版建立。
+- **【WebGL 50 輪技術智庫與全域技能】**：完成 50 輪 WebGL/着色器調研並註冊 `threejs-webgl-shader-artisan`。
+- **【AI 接手工程規範確立】**：建立 `AI_DEVELOPMENT_PLAN_AND_HANDOFF.md` 與 `docs/07-index2-threejs-3d-architecture-and-ai-handoff-spec.md`。
 
 ### 現在進行中
 
-**V6.1-HD Asset Replacement**
+**Track 2: 3D WebGL 視覺旗艦版（index2.html）**
 
 目標：
+1. 維護 `index.html` 0 diff 凍結狀態。
+2. 針對 `index2.html` 之 3D WebGL 引擎進行細緻度優化（水波 Shader、1545 斐波那契信任粒子、曜金 3D 印章、相機滾動 LERP）。
+3. 確保行動端 RWD 60 FPS 滿幀運行與 `pointer-events: none` 穿透安全。
+4. 依據 `docs/07-index2-threejs-3d-architecture-and-ai-handoff-spec.md` 進行標準化 AI 協作與擴充。
 
-1. 移除照片 Sprite 依賴。
-2. 將頁面切換至 HD 獨立素材。
-3. 使用 `<picture>`／responsive source。
-4. 確認 GitHub Pages 正式站更新。
-5. 清除快取後重新檢查。
-6. 對正式 `/weihsiu/` 進行 Desktop／Tablet／Mobile 第二輪畫面 QC。
-7. 依 QC 形成 V6.1 FINAL。
 
 ---
 
