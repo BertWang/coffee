@@ -1,12 +1,15 @@
 /**
  * TSENG WEI-HSIU 2026｜TRACK 2 THREE.JS & CINEMATIC SCROLL SYSTEM
- * V13.1 Global 90+ Storyboard Alignment Edition (Refined Edition)
+ * V13.2 Universal Runtime Edition (Zero CORS, 100% file:/// and http/https Compatible)
  */
 
-import * as THREE from 'https://cdnjs.cloudflare.com/ajax/libs/three.js/0.180.0/three.module.min.js';
+(() => {
+  'use strict';
 
-// Accessibility check
-const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const THREE = window.THREE;
+
+  // Accessibility check
+  const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
 // DOM Selectors
 const canvas = document.querySelector('#gl');
@@ -761,7 +764,7 @@ function activate(i) {
 // WebGL Renderer Initialization
 // --------------------------------------------------------------------------
 
-if (!reduced && canvas) {
+if (!reduced && canvas && typeof THREE !== 'undefined') {
   try {
     renderer = new THREE.WebGLRenderer({
       canvas,
@@ -773,7 +776,11 @@ if (!reduced && canvas) {
     renderer.setSize(window.innerWidth, window.innerHeight);
     renderer.shadowMap.enabled = true;
     renderer.shadowMap.type = THREE.PCFSoftShadowMap;
-    renderer.outputColorSpace = THREE.SRGBColorSpace;
+    if (THREE.SRGBColorSpace) {
+      renderer.outputColorSpace = THREE.SRGBColorSpace;
+    } else if (THREE.sRGBEncoding) {
+      renderer.outputEncoding = THREE.sRGBEncoding;
+    }
 
     if (gpuState) gpuState.textContent = 'ACTIVE';
 
@@ -813,16 +820,17 @@ if (!reduced && canvas) {
       camera.updateProjectionMatrix();
       renderer.setSize(window.innerWidth, window.innerHeight);
     });
-
-    requestAnimationFrame(tick);
   } catch (e) {
     if (gpuState) gpuState.textContent = 'FALLBACK';
     if (canvas) canvas.style.display = 'none';
     console.warn('[ThreeJS] Renderer fallback:', e);
   }
 } else if (gpuState) {
-  gpuState.textContent = 'REDUCED';
+  gpuState.textContent = reduced ? 'REDUCED' : 'FALLBACK';
 }
+
+// Always kick off main tick loop (for scroll orchestration, storyboard and HUD)
+requestAnimationFrame(tick);
 
 // --------------------------------------------------------------------------
 // Main Render Loop (Tick)
@@ -1130,3 +1138,5 @@ function tick() {
 
   requestAnimationFrame(tick);
 }
+
+})();
