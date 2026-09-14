@@ -728,6 +728,11 @@ function applyState(idx) {
 }
 
 function activate(i) {
+  if (document.body.classList.contains('is-downstream')) {
+    railButtons.forEach(b => b.classList.remove('active'));
+    meterNodes.forEach(node => node.classList.remove('active'));
+    return;
+  }
   if (active === i) return;
   active = i;
 
@@ -845,6 +850,11 @@ function tick() {
       current = i;
     }
   });
+
+  // Downstream Production Sections Discovery
+  const actionsEl = document.querySelector('#actions');
+  const isDownstream = actionsEl && actionsEl.getBoundingClientRect().top < window.innerHeight * 0.70;
+  document.body.classList.toggle('is-downstream', !!isDownstream);
 
   activate(current);
   const p = progress(sections[current]);

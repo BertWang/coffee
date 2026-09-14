@@ -431,6 +431,41 @@ body.motion-active .motion-hint {
 }
 
 /* ==========================================================================
+   Downstream Reading Mode (Film HUD graceful fade out)
+   ========================================================================== */
+
+.chapterrail,
+.meter-container,
+.v13-badge,
+.gpu {
+  transition: opacity 0.35s ease, transform 0.35s cubic-bezier(0.2, 0.75, 0.2, 1);
+}
+
+body.is-downstream .meter-container {
+  opacity: 0 !important;
+  pointer-events: none !important;
+  transform: translateX(-50%) translateY(16px);
+}
+
+body.is-downstream .chapterrail {
+  opacity: 0 !important;
+  pointer-events: none !important;
+  transform: translateY(-50%) translateX(24px);
+}
+
+body.is-downstream .v13-badge {
+  opacity: 0 !important;
+  pointer-events: none !important;
+  transform: translateY(-10px);
+}
+
+body.is-downstream .gpu {
+  opacity: 0 !important;
+  pointer-events: none !important;
+  transform: translateY(-10px);
+}
+
+/* ==========================================================================
    Film Chapters (Scroll-driven Sticky Narrative)
    ========================================================================== */
 
@@ -803,14 +838,14 @@ body.motion-active .motion-hint {
   will-change: transform, opacity, filter, left;
 }
 
-/* Unified Editorial Candidate Card (Right Side, Absolutely No Collision) */
+/* Unified Editorial Candidate Card (Right Side, Clear Gutter from Rail) */
 .candidate-editorial-card {
   position: absolute;
   z-index: 9;
-  right: 7vw;
+  right: max(9.5vw, 135px);
   top: 50%;
   transform: translateY(-50%);
-  width: min(500px, 44vw);
+  width: min(485px, 42vw);
   padding: 38px 42px;
   background: rgba(244, 241, 233, 0.82);
   backdrop-filter: blur(20px);
