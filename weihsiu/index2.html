@@ -31,11 +31,11 @@
   <meta name="geo.position" content="22.6565;120.3015">
   <meta name="ICBM" content="22.6565, 120.3015">
 
-  <!-- Google Fonts -->
+  <!-- Google Fonts: Outfit (English/Accents) + Noto Serif TC (Display) + Noto Sans TC (Body) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&family=Noto+Serif+TC:wght@400;500;600;700&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&family=Noto+Serif+TC:wght@400;500;600;700;900&family=Outfit:wght@500;600;700;800;900&display=swap"
     rel="stylesheet">
 
   <!-- External Stylesheet (Track 2) -->
@@ -149,21 +149,41 @@
     <a href="#life">經歷足跡</a>
     <span class="nav-dot">·</span>
     <a href="#contact">找偉修</a>
+    <span class="nav-dot">·</span>
+    <button class="nav-share-btn" id="btnShareNav" title="分享本頁連結">
+      <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>
+      <span>分享</span>
+    </button>
   </header>
 
   <!-- Quick Chapter Rail -->
   <nav class="chapterrail" aria-label="六幕長卷章節導覽">
-    <button data-jump="0" class="active"><i></i><span>01 · 凹</span></button>
-    <button data-jump="1"><i></i><span>02 · 渡</span></button>
-    <button data-jump="2"><i></i><span>03 · 平安</span></button>
-    <button data-jump="3"><i></i><span>04 · 呼吸</span></button>
-    <button data-jump="4"><i></i><span>05 · 下一步</span></button>
-    <button data-jump="5"><i></i><span>06 · 曾偉修</span></button>
+    <div class="chapterrail-inner">
+      <button data-jump="0" class="active"><i></i><span>01 · 凹</span></button>
+      <button data-jump="1"><i></i><span>02 · 渡</span></button>
+      <button data-jump="2"><i></i><span>03 · 平安</span></button>
+      <button data-jump="3"><i></i><span>04 · 呼吸</span></button>
+      <button data-jump="4"><i></i><span>05 · 下一步</span></button>
+      <button data-jump="5"><i></i><span>06 · 曾偉修</span></button>
+    </div>
   </nav>
 
   <div class="v13-badge">TRACK 2 · 電影長卷版</div>
   <div class="gpu">GPU <b id="gpuState">CHECKING</b></div>
-  <div class="meter"><i id="meter"></i></div>
+  
+  <!-- Meter with Segmented Nodes -->
+  <div class="meter-container">
+    <div class="meter"><i id="meter"></i></div>
+    <div class="meter-nodes">
+      <span class="node active" data-step="0">01 凹</span>
+      <span class="node" data-step="1">02 渡</span>
+      <span class="node" data-step="2">03 平安</span>
+      <span class="node" data-step="3">04 呼吸</span>
+      <span class="node" data-step="4">05 下一步</span>
+      <span class="node" data-step="5">06 曾偉修</span>
+    </div>
+  </div>
+
   <div class="timecode" id="timecode">00:00</div>
   <div class="shotinfo" id="shotinfo">CAMERA LOCK</div>
 
@@ -234,7 +254,7 @@
       </div>
     </section>
 
-    <!-- P05 下一步 -->
+    <!-- P05 下一步 (含 5 大分區互動切換膠囊) -->
     <section class="chapter" data-ch="4" data-dur="22">
       <div class="scene">
         <div class="city-system" id="citySystem" aria-hidden="true">
@@ -248,6 +268,16 @@
           </svg>
         </div>
         <div class="label">05 · 城市變化</div>
+
+        <!-- 5 大分區互動膠囊切換列 -->
+        <div class="city-pill-nav" aria-label="城市系統分區切換">
+          <button class="city-pill active" data-state="0" title="聚焦轉乘節點"><span>轉乘 TRANSIT</span></button>
+          <button class="city-pill" data-state="1" title="聚焦校園通學"><span>通學 SCHOOL</span></button>
+          <button class="city-pill" data-state="2" title="聚焦住宅街廓"><span>住宅 RESIDENTIAL</span></button>
+          <button class="city-pill" data-state="3" title="聚焦公園綠地"><span>公園 PARK</span></button>
+          <button class="city-pill" data-state="4" title="聚焦愛河水岸"><span>水岸 WATERFRONT</span></button>
+        </div>
+
         <div class="copy">
           <div class="kicker">LONGZI / NEXT</div>
           <h2>下一步</h2>
@@ -261,24 +291,42 @@
       </div>
     </section>
 
-    <!-- P06 曾偉修 -->
+    <!-- P06 曾偉修 (重構排版：左人像推焦，右整合式雜誌核心卡) -->
     <section class="chapter short" data-ch="5" data-dur="15">
       <div class="scene ch06">
         <div class="reality-veil" id="realityVeil" aria-hidden="true"></div>
         <div class="label">06 · 參選人</div>
         <img class="person" id="person" src="assets/v3/person-cutout.png" alt="曾偉修 龍子里里長參選人">
-        <div class="copy">
+        
+        <!-- 統一且有呼吸感的參選人雜誌卡（徹底防重疊） -->
+        <div class="candidate-editorial-card" id="candidateCard">
           <div class="kicker">2026 / 龍子里里長參選人</div>
-          <h2>曾偉修</h2>
-          <p>從企業管理、創業、通訊服務，到地方民防與公共事務。再次投入里長選舉，希望把累積的協調能力與工作經驗，放回每天生活的社區。</p>
-        </div>
-        <div class="candidate" id="candidate">
-          用服務的溫度，<br>加做事的效率。<br>
-          <small>無黨籍 · 龍子里的下一步</small>
-        </div>
-        <div class="finalcta" id="finalcta">
-          <a class="primary" href="https://line.me/ti/p/~tseng0220" target="_blank" rel="noopener noreferrer">LINE 找偉修</a>
-          <a class="secondary" href="tel:0981451451">0981-451-451</a>
+          <h2 class="candidate-name">曾偉修</h2>
+          <div class="candidate-motto">
+            「用服務的溫度，加做事的效率。」
+          </div>
+          <p class="candidate-bio">
+            從企業管理、創業、通訊服務，到地方民防與公共事務。再次投入里長選舉，希望把累積的協調能力與工作經驗，放回每天生活的社區。
+          </p>
+          <div class="candidate-tags">
+            <span>無黨籍</span>
+            <span>民防副小隊長</span>
+            <span>通訊產業創業</span>
+            <span>咖啡品牌創辦人</span>
+          </div>
+          <div class="candidate-actions" id="finalcta">
+            <a class="primary" href="https://line.me/ti/p/~tseng0220" target="_blank" rel="noopener noreferrer">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M24 10.3c0-5.1-5.4-9.3-12-9.3S0 5.2 0 10.3c0 4.6 4.1 8.5 9.7 9.1.4.1.9.3 1.1.7.2.5.1 1.2 0 1.7-.1.5-.4 2.1-.5 2.5-.1.8.3 1 .8.7.5-.4 4.5-3.1 6.3-4.4 4.2-.8 6.6-4.5 6.6-8.3z"/></svg>
+              <span>LINE 找偉修</span>
+            </a>
+            <a class="secondary" href="tel:0981451451">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+              <span>0981-451-451</span>
+            </a>
+            <a class="threads-pill" href="https://www.threads.net/@logimaskimo" target="_blank" rel="noopener noreferrer">
+              <span>Threads</span>
+            </a>
+          </div>
         </div>
       </div>
     </section>
@@ -288,7 +336,7 @@
        Downstream Production Sections
        ======================================================================= -->
 
-  <!-- 06 Actions -->
+  <!-- 06 Actions (含方案詳情彈窗觸發) -->
   <section class="production" id="actions" aria-labelledby="actions-title">
     <div class="production-motion-line"><i id="actionMotionLine"></i></div>
     <div class="eyebrow">06 ACTIONS / 六大行動</div>
@@ -296,35 +344,53 @@
     <p class="lead">龍子里正在變得更便利，也更密集。六個方向都從每天會遇到的事情出發：走路、施工、長輩、安全、陳情，以及生活環境。</p>
 
     <div class="actions-grid">
-      <article class="action" data-zone="move">
+      <article class="action" data-zone="move" data-action-idx="0">
         <div class="num">01 · MOVE</div>
         <h3>交通安心・行人有路</h3>
         <p>關注通學、轉乘與路口的人車衝突，持續反映行穿線、照明、號誌與人行動線問題，讓長輩、孩子與日常步行更安心。</p>
+        <div class="action-btn-wrap">
+          <button class="action-detail-btn" data-action-idx="0">具體對策與路口會勘方案 →</button>
+        </div>
       </article>
-      <article class="action" data-zone="build">
+      <article class="action" data-zone="build" data-action-idx="1">
         <div class="num">02 · BUILD</div>
         <h3>大型建設生活品質把關</h3>
         <p>面對大型工程與開發，關注工程車動線、施工噪音、揚塵、停車與周邊住宅安寧，讓建設進場時也顧到生活。</p>
+        <div class="action-btn-wrap">
+          <button class="action-detail-btn" data-action-idx="1">施工監督與通報機制 →</button>
+        </div>
       </article>
-      <article class="action" data-zone="care">
+      <article class="action" data-zone="care" data-action-idx="2">
         <div class="num">03 · CARE</div>
         <h3>銀髮友善與科技樂齡</h3>
         <p>協助長照與社福資源對接，結合通訊產業經驗，規劃智慧手機、AI 日常應用與防詐騙實用宣導。</p>
+        <div class="action-btn-wrap">
+          <button class="action-detail-btn" data-action-idx="2">手機健檢與長照資源對接 →</button>
+        </div>
       </article>
-      <article class="action" data-zone="safe">
+      <article class="action" data-zone="safe" data-action-idx="3">
         <div class="num">04 · SAFE</div>
         <h3>治安守護與民防協防</h3>
         <p>延續地方民防經驗，關注暗巷照明、夜間安全與社區巡守互助，讓晚歸與獨居居民多一層安心。</p>
+        <div class="action-btn-wrap">
+          <button class="action-detail-btn" data-action-idx="3">夜間巡守與死角照明改善 →</button>
+        </div>
       </article>
-      <article class="action" data-zone="connect">
+      <article class="action" data-zone="connect" data-action-idx="4">
         <div class="num">05 · CONNECT</div>
         <h3>里民服務單一窗口</h3>
         <p>陳情有人接、進度有人追、跨單位有人協調。把里民遇到的問題整理清楚，降低來回奔波。</p>
+        <div class="action-btn-wrap">
+          <button class="action-detail-btn" data-action-idx="4">單一窗口運作流程 →</button>
+        </div>
       </article>
-      <article class="action" data-zone="ground">
+      <article class="action" data-zone="ground" data-action-idx="5">
         <div class="num">06 · GROUND</div>
         <h3>生活環境與基礎維護</h3>
         <p>從道路坑洞、排水清淤、環境清潔到公園與公共設施，持續巡查、通報與追蹤，先把基本功做好。</p>
+        <div class="action-btn-wrap">
+          <button class="action-detail-btn" data-action-idx="5">防汛清淤與路面巡查常態 →</button>
+        </div>
       </article>
     </div>
   </section>
@@ -407,6 +473,36 @@
     <span>LONGZI / NEXT · 龍子里的下一步（電影長卷版） · <a href="index.html">返回標準穩定版</a></span>
     <span>用服務的溫度，加做事的效率。</span>
   </footer>
+
+  <!-- =======================================================================
+       Interactive Modals & Floats
+       ======================================================================= -->
+
+  <!-- Action Policy Detail Modal -->
+  <div class="action-modal" id="actionModal" aria-hidden="true">
+    <div class="action-modal-backdrop" id="actionModalBackdrop"></div>
+    <div class="action-modal-panel">
+      <button class="action-modal-close" id="actionModalClose" aria-label="關閉詳情">✕</button>
+      <div class="action-modal-kicker" id="modalKicker">01 · MOVE</div>
+      <h3 class="action-modal-title" id="modalTitle">交通安心・行人有路</h3>
+      <div class="action-modal-divider"></div>
+      <div class="action-modal-body" id="modalBody">
+        <!-- Injected via JavaScript -->
+      </div>
+      <div class="action-modal-footer">
+        <a class="modal-cta-line" href="https://line.me/ti/p/~tseng0220" target="_blank" rel="noopener noreferrer">向偉修反映相關問題（LINE 專線） →</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Floating Back to Top Button -->
+  <button class="back-to-top" id="btnBackToTop" aria-label="返回長卷頂部">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"></polyline></svg>
+    <span>頂部</span>
+  </button>
+
+  <!-- Floating Toast Notification -->
+  <div class="toast" id="toastMessage" role="status" aria-live="polite">已複製龍子里服務網網址</div>
 
   <!-- Modular Three.js Controller -->
   <script type="module" src="js/three-hero.js"></script>

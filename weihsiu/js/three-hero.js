@@ -1,6 +1,6 @@
 /**
  * TSENG WEI-HSIU 2026｜TRACK 2 THREE.JS & CINEMATIC SCROLL SYSTEM
- * V13.1 Global 90+ Storyboard Alignment Edition
+ * V13.1 Global 90+ Storyboard Alignment Edition (Refined Edition)
  */
 
 import * as THREE from 'https://cdnjs.cloudflare.com/ajax/libs/three.js/0.180.0/three.module.min.js';
@@ -19,6 +19,19 @@ const sections = [...document.querySelectorAll('.chapter')];
 const railButtons = [...document.querySelectorAll('.chapterrail button')];
 const actionCards = [...document.querySelectorAll('.action')];
 const actionLine = document.querySelector('#actionMotionLine');
+const meterNodes = [...document.querySelectorAll('.meter-nodes .node')];
+const cityPills = [...document.querySelectorAll('.city-pill')];
+const btnBackToTop = document.querySelector('#btnBackToTop');
+const btnShareNav = document.querySelector('#btnShareNav');
+const toastMessage = document.querySelector('#toastMessage');
+
+// Action Policy Modal Selectors
+const actionModal = document.querySelector('#actionModal');
+const actionModalClose = document.querySelector('#actionModalClose');
+const actionModalBackdrop = document.querySelector('#actionModalBackdrop');
+const modalKicker = document.querySelector('#modalKicker');
+const modalTitle = document.querySelector('#modalTitle');
+const modalBody = document.querySelector('#modalBody');
 
 // Motion & State Management
 const motion = {
@@ -69,38 +82,84 @@ const SHOT = [
 const stateConfig = [
   {
     name: '轉乘 / TRANSIT',
-    desc: '站體、軌道、住宅邊界',
+    desc: '捷運與輕軌站體、通勤動線、住宅街廓邊界',
     bg: '#bgTransit',
     node: [0.3, 0.2, 0.2],
     blocks: [[-5, -2, 1.2, 2.2], [-3.4, -2, 1.1, 3.0], [-1.9, -2.1, 1.0, 3.6], [2.4, -2.2, 1.0, 3.3], [4, -2.3, 1.0, 4.0], [5.2, -2.0, 0.9, 2.7]]
   },
   {
     name: '通學 / SCHOOL',
-    desc: '校園、斑馬線、接送與人行',
+    desc: '龍華國小周邊、斑馬線行穿、接送與行人動線',
     bg: '#bgSchool',
     node: [-1.2, 0.15, 0.4],
     blocks: [[-4.8, -2.2, 1.2, 1.8], [-3.1, -2.4, 1.1, 2.3], [2.7, -2.3, 1.0, 2.6], [4.1, -2.3, 1.0, 3.0], [5.1, -2.1, 0.8, 2.2]]
   },
   {
     name: '住宅 / RESIDENTIAL',
-    desc: '高密住宅、街廓與出入口',
+    desc: '高密社區住宅、街廓門戶與後巷安寧維護',
     bg: '#bgHome',
     node: [0.9, 0.15, -0.2],
     blocks: [[-5, -2.5, 1.1, 3.7], [-3.6, -2.4, 1.1, 4.4], [-2.2, -2.5, 1.0, 3.9], [-0.8, -2.4, 1.0, 4.8], [2.2, -2.4, 1.0, 4.5], [3.7, -2.3, 1.0, 3.8], [5, -2.4, 0.9, 3.2]]
   },
   {
     name: '公園 / PARK',
-    desc: '綠地、步道、周邊住宅界面',
+    desc: '凹子底森林公園、步道綠蔭、長者健行界面',
     bg: '#bgPark',
     node: [1.2, 0.15, 0.3],
     blocks: [[-5, -2.8, 1.0, 2.6], [-3.6, -2.8, 1.0, 3.1], [-2.2, -2.8, 1.0, 3.6], [3.2, -2.8, 1.0, 3.2], [4.6, -2.8, 1.0, 2.8]]
   },
   {
     name: '水岸 / WATERFRONT',
-    desc: '河道、步道、橋與住宅邊界',
+    desc: '愛河之心河道、自行車道、清淤與防汛邊界',
     bg: '#bgWater',
     node: [-0.4, 0.15, -0.1],
     blocks: [[-5, -2.6, 1.0, 2.0], [-3.7, -2.5, 1.0, 2.7], [3.4, -2.6, 1.0, 2.8], [4.8, -2.5, 0.9, 2.3]]
+  }
+];
+
+// Six Actions Rich Civic Data
+const actionDetailsData = [
+  {
+    kicker: "01 · MOVE / 交通安心・行人有路",
+    title: "通學安心步道與路口會勘計畫",
+    problem: "凹子底與愛河周邊車流量大，龍華國小上下學校園周邊家長接送動線、輕軌大順路沿線路口人車轉彎交會，常造成長輩與學童步行壓力。",
+    solution: "1. 爭取龍子里重點學區路口全面設置『行人早開時相』，增加綠斑馬辨識度。<br>2. 盤點通學步道障礙物與路面平整度，定期向工務局與交通局反映辦理現場會勘。<br>3. 針對夜間照明不足路段，協調加裝高亮度節能投光燈，守護步行安全。",
+    contactRole: "市府交通局 · 工務局道路養護工程處 · 鼓山分局"
+  },
+  {
+    kicker: "02 · BUILD / 大型建設生活品質把關",
+    title: "周邊重大工程施工監督機制",
+    problem: "北高雄核心開發案密集，重型工程車進出住宅巷弄、清晨深夜施工噪音、泥沙揚塵與重車壓損路面，嚴重影響社區安寧與起居。",
+    solution: "1. 建立里民施工即時通報專線，嚴格要求營造廠商遵守法定施工時段。<br>2. 監督重型車輛行駛指定聯外幹道，嚴禁違規抄近路穿行狹窄住宅巷道。<br>3. 要求工地落實防塵灑水與出入口清洗，一旦發現路面破損立即要求限期刨除重鋪。",
+    contactRole: "工務局建管處 · 環保局公害稽查科"
+  },
+  {
+    kicker: "03 · CARE / 銀髮友善與科技樂齡",
+    title: "通訊專長結合樂齡防詐與長照對接",
+    problem: "高齡長輩面臨智慧型手機功能繁複、各類通訊與 AI 投資詐騙層出不窮；同時市府長照資源繁多，許多長輩家庭不知從何申請。",
+    solution: "1. 發揮曾偉修十餘年通訊門市與產業專業，每月在里辦公室開辦『手機健檢與防詐日常小教室』。<br>2. 一對一協助長輩排除智慧裝置疑難雜症、設定防詐辨識。<br>3. 整合社會局與長照中心資源，主動協助獨居與需要照護的長輩媒合送餐、居服與喘息服務。",
+    contactRole: "社會局長照中心 · 社區關懷據點"
+  },
+  {
+    kicker: "04 · SAFE / 治安守護與民防協防",
+    title: "暗巷照明補強與社區巡守互助網",
+    problem: "社區部分後巷、防火巷與尚未開闢空地邊緣夜間視線不佳，晚歸上班族與婦女朋友步行產生安全顧慮。",
+    solution: "1. 延續曾偉修長期擔任龍華民防副小隊長之經驗，重組強化夜間義務巡守動線。<br>2. 全面清查龍子里治安盲區，向警政與工務單位爭取加裝高解析監錄系統與感應照明。<br>3. 建立里民 LINE 安全互助聯防群組，遇突發狀況第一時間相互通報並對接派出所快打。",
+    contactRole: "鼓山分局龍華派出所 · 民防義警大隊"
+  },
+  {
+    kicker: "05 · CONNECT / 里民服務單一窗口",
+    title: "陳情專人列管與跨局處協調機制",
+    problem: "里民遇到水溝異味、行道樹遮蔽、違停或鄰損陳情，往往撥打 1999 或在局處間多方轉接，案件進度不透明。",
+    solution: "1. 曾偉修以企業管理與專案協調背景，成立里民服務『單一受理窗口』。<br>2. 每件里民反映事項均給予編號並建檔列管，三日內親自勘查並回報市府立案進度。<br>3. 主動協調跨局處聯合會勘，不讓公務程序互推皮球，把事情追到真正有進展。",
+    contactRole: "里長服務處 · 市府 1999 · 區公所民政課"
+  },
+  {
+    kicker: "06 · GROUND / 生活環境與基礎維護",
+    title: "防汛清淤巡查與道路即時修補",
+    problem: "汛期暴雨易因落葉雜物阻塞側溝排水格柵，形成局部積水；路面偶有坑洞裂損危及機車騎士安全。",
+    solution: "1. 每年雨季與颱風季節來臨前，逐條巡檢全里易積水側溝箱涵，提早通報水利局環保局全面清淤。<br>2. 建立『巡查即拍照、即通報、即補平』之快速反應慣例，如日前美術東五路破損案即刻列管改善。<br>3. 維護凹子底周邊鄰里公園步道平整與夜間照明，守護長者散步日常。",
+    contactRole: "水利局清疏隊 · 道工處 · 環保局清潔隊"
   }
 ];
 
@@ -148,6 +207,11 @@ window.addEventListener('scroll', () => {
   motion.scroll.lastY = window.scrollY;
   motion.scroll.lastT = now;
   motion.scroll.stopAt = now;
+
+  // Floating Back to Top Button visibility
+  if (btnBackToTop) {
+    btnBackToTop.classList.toggle('show', window.scrollY > 800);
+  }
 }, { passive: true });
 
 // Chapter Rail Navigation
@@ -160,8 +224,78 @@ railButtons.forEach(btn => {
   });
 });
 
-// Production Action Cards Interactions
+// Meter Nodes Click Navigation
+meterNodes.forEach(node => {
+  node.addEventListener('click', () => {
+    const step = +node.dataset.step;
+    if (sections[step]) {
+      sections[step].scrollIntoView({ behavior: reduced ? 'auto' : 'smooth' });
+    }
+  });
+});
+
+// P05 City Pills Interactivity
+cityPills.forEach(pill => {
+  pill.addEventListener('click', (e) => {
+    e.stopPropagation();
+    const idx = +pill.dataset.state;
+    applyState(idx);
+    cityPills.forEach((p, pi) => p.classList.toggle('active', pi === idx));
+  });
+});
+
+// Action Policy Modal Controls
+function openActionModal(idx) {
+  const data = actionDetailsData[idx];
+  if (!data || !actionModal) return;
+  if (modalKicker) modalKicker.textContent = data.kicker;
+  if (modalTitle) modalTitle.textContent = data.title;
+  if (modalBody) {
+    modalBody.innerHTML = `
+      <div class="modal-section">
+        <h4>現況觀察與問題痛點</h4>
+        <p>${data.problem}</p>
+      </div>
+      <div class="modal-section">
+        <h4>曾偉修具體執行方案</h4>
+        <p>${data.solution}</p>
+      </div>
+      <div class="modal-section">
+        <h4>主責協調單位</h4>
+        <p>${data.contactRole}</p>
+      </div>
+    `;
+  }
+  actionModal.classList.add('show');
+  actionModal.setAttribute('aria-hidden', 'false');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeActionModal() {
+  if (actionModal) {
+    actionModal.classList.remove('show');
+    actionModal.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+  }
+}
+
+if (actionModalClose) actionModalClose.addEventListener('click', closeActionModal);
+if (actionModalBackdrop) actionModalBackdrop.addEventListener('click', closeActionModal);
+window.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') closeActionModal();
+});
+
+document.querySelectorAll('.action-detail-btn').forEach(btn => {
+  btn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    openActionModal(+btn.dataset.actionIdx);
+  });
+});
+
 actionCards.forEach((card, i) => {
+  card.addEventListener('click', () => {
+    openActionModal(i);
+  });
   card.addEventListener('pointerenter', () => {
     actionCards.forEach(c => c.classList.remove('is-active'));
     card.classList.add('is-active');
@@ -173,6 +307,39 @@ actionCards.forEach((card, i) => {
     card.classList.remove('is-active');
   });
 });
+
+// Floating Back to Top Click
+if (btnBackToTop) {
+  btnBackToTop.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: reduced ? 'auto' : 'smooth' });
+  });
+}
+
+// Nav Share Link & Toast
+let toastTimer = null;
+function showToast(msg) {
+  if (!toastMessage) return;
+  toastMessage.textContent = msg;
+  toastMessage.classList.add('show');
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => {
+    toastMessage.classList.remove('show');
+  }, 2400);
+}
+
+if (btnShareNav) {
+  btnShareNav.addEventListener('click', async () => {
+    const shareUrl = window.location.href;
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      try {
+        await navigator.clipboard.writeText(shareUrl);
+        showToast('已複製網址！歡迎分享支持曾偉修');
+        return;
+      } catch (e) {}
+    }
+    showToast('請複製網址轉發：' + shareUrl);
+  });
+}
 
 // Storyboard Backplate Lock Cross-fading (F01–F16)
 function updateStoryboardLayer(sceneIndex, p) {
@@ -565,6 +732,8 @@ function activate(i) {
   active = i;
 
   railButtons.forEach((b, bi) => b.classList.toggle('active', bi === i));
+  meterNodes.forEach((node, ni) => node.classList.toggle('active', ni === i));
+
   groups.forEach((g, gi) => {
     if (g) g.visible = gi === i;
   });
@@ -700,9 +869,6 @@ function tick() {
   const filmTime = START[current] + p * DUR[current];
   if (timecode) timecode.textContent = fmt(filmTime);
 
-  const finalcta = document.querySelector('#finalcta');
-  if (current !== 5 && finalcta) finalcta.classList.remove('show');
-
   if (shotinfo) {
     shotinfo.textContent = `${shot.name} · H ${lerp(shot.y0, shot.y1, q).toFixed(1)}m · FOV ${lerp(shot.f0, shot.f1, q).toFixed(1)}°`;
   }
@@ -835,6 +1001,7 @@ function tick() {
       const lq = cine(local);
 
       applyState(idx);
+      cityPills.forEach((pill, pi) => pill.classList.toggle('active', pi === idx));
 
       const citySystem = document.querySelector('#citySystem');
       if (citySystem) citySystem.style.opacity = lerp(0.18, 0.52, clamp((p - 0.08) / 0.35));
@@ -907,17 +1074,16 @@ function tick() {
   if (current === 5) {
     const base = document.querySelector('#bgWater');
     const person = document.querySelector('#person');
-    const candidate = document.querySelector('#candidate');
-    const copy = document.querySelector('.ch06 .copy');
+    const candidateCard = document.querySelector('#candidateCard');
     const veil = document.querySelector('#realityVeil');
 
     const reality = clamp(q / 0.24);
     const enter = clamp((q - 0.23) / 0.25);
     const focus = clamp((q - 0.56) / 0.31);
-    const copyIn = clamp((q - 0.76) / 0.14);
+    const cardIn = clamp((q - 0.52) / 0.32);
 
-    const scale = lerp(0.34, 0.98, focus);
-    const personLeft = lerp(16, 38, focus);
+    const scale = lerp(0.38, 0.98, focus);
+    const personLeft = lerp(12, 14, focus);
 
     if (veil) {
       veil.style.opacity = lerp(0.82, 0, reality);
@@ -927,21 +1093,13 @@ function tick() {
     if (person) {
       person.style.opacity = enter;
       person.style.left = `${personLeft}vw`;
-      person.style.transform = `translateY(${lerp(14, 0, enter)}px) scale(${scale})`;
-      person.style.filter = `drop-shadow(0 18px 34px rgba(23,35,43,.12)) blur(${lerp(0.8, 0, focus).toFixed(2)}px)`;
+      person.style.transform = `translateY(${lerp(18, 0, enter)}px) scale(${scale})`;
+      person.style.filter = `drop-shadow(0 20px 40px rgba(23,35,43,.14)) blur(${lerp(1.2, 0, focus).toFixed(2)}px)`;
     }
 
-    if (copy) {
-      copy.style.opacity = copyIn;
-      copy.style.transform = `translateY(${lerp(10, 0, copyIn)}px)`;
-    }
-
-    if (candidate) {
-      candidate.style.opacity = clamp((q - 0.78) / 0.14);
-    }
-
-    if (finalcta) {
-      finalcta.classList.toggle('show', q > 0.90);
+    if (candidateCard) {
+      candidateCard.style.opacity = cardIn;
+      candidateCard.style.transform = `translateY(${lerp(-45, -50, cardIn)}%)`;
     }
 
     if (base) {
