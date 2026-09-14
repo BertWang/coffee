@@ -18,6 +18,13 @@
   --hairline: rgba(23, 35, 43, 0.14);
   --glass: rgba(244, 241, 233, 0.78);
 
+  /* Cinematic Color Grading Palette */
+  --film-black: #080D12;
+  --film-black-trans: rgba(8, 13, 18, 0.78);
+  --film-gold: #D2A45D;
+  --film-gold-glow: rgba(210, 164, 93, 0.45);
+  --film-slate: #131D24;
+
   /* Typography Families */
   --display: "Noto Serif TC", ui-serif, "Songti TC", "PMingLiU", serif;
   --sans: "Noto Sans TC", ui-sans-serif, -apple-system, BlinkMacSystemFont, "PingFang TC", "Microsoft JhengHei", sans-serif;
@@ -164,6 +171,139 @@ body {
   background: rgba(210, 164, 93, 0);
   mix-blend-mode: soft-light;
   transition: opacity 0.18s linear;
+}
+
+/* 35mm Procedural Film Grain Overlay */
+.film-grain-svg {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 25;
+  opacity: 0.046;
+  mix-blend-mode: overlay;
+}
+
+/* Cinematic Optical Vignette (Depth & Focus) */
+.film-vignette {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 26;
+  background: radial-gradient(circle at 50% 50%, transparent 58%, rgba(8, 13, 18, 0.36) 100%);
+  transition: opacity 0.4s ease;
+}
+
+/* Widescreen Anamorphic Letterbox Bars */
+.cinema-letterbox {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 38;
+}
+
+.letterbox-bar {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 24px;
+  background: var(--film-black);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 28px;
+  transition: transform 0.45s cubic-bezier(0.2, 0.8, 0.2, 1), opacity 0.35s ease;
+}
+
+.letterbox-bar.top {
+  top: 0;
+  border-bottom: 1px solid rgba(210, 164, 93, 0.18);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.35);
+}
+
+.letterbox-bar.bottom {
+  bottom: 0;
+  border-top: 1px solid rgba(210, 164, 93, 0.18);
+  box-shadow: 0 -4px 16px rgba(0, 0, 0, 0.35);
+}
+
+.letterbox-content {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font: 600 8px/1 var(--mono);
+  letter-spacing: 0.20em;
+  color: rgba(244, 241, 233, 0.42);
+  text-transform: uppercase;
+}
+
+.letterbox-meta {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.film-lens-dot {
+  display: inline-block;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--amber);
+  box-shadow: 0 0 6px var(--amber);
+}
+
+.letterbox-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: rgba(244, 241, 233, 0.65);
+}
+
+/* Director's Viewfinder Reticles (IMAX / Anamorphic Framing) */
+.viewfinder-reticles {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 28;
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.reticle {
+  position: absolute;
+  width: 22px;
+  height: 22px;
+  border: 1.5px solid rgba(210, 164, 93, 0.35);
+}
+
+.reticle.corner-tl { top: 36px; left: 28px; border-right: none; border-bottom: none; }
+.reticle.corner-tr { top: 36px; right: 28px; border-left: none; border-bottom: none; }
+.reticle.corner-bl { bottom: 36px; left: 28px; border-right: none; border-top: none; }
+.reticle.corner-br { bottom: 36px; right: 28px; border-left: none; border-top: none; }
+
+.viewfinder-center-cross {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 16px;
+  height: 16px;
+  opacity: 0.18;
+}
+
+.viewfinder-center-cross::before, .viewfinder-center-cross::after {
+  content: "";
+  position: absolute;
+  background: var(--amber);
+}
+
+.viewfinder-center-cross::before {
+  top: 7.5px; left: 0; width: 16px; height: 1px;
+}
+
+.viewfinder-center-cross::after {
+  top: 0; left: 7.5px; width: 1px; height: 16px;
 }
 
 /* Dynamic Cinematic Motion Frame */
@@ -412,46 +552,53 @@ body.motion-active .motion-hint {
 }
 
 .chapterrail button.active i {
-  background: var(--ink);
+  background: var(--amber);
   transform: scale(1.6);
-  box-shadow: 0 0 8px rgba(23, 35, 43, 0.25);
+  box-shadow: 0 0 10px rgba(210, 164, 93, 0.7);
 }
 
-/* Meter with Segmented Step Indicators */
+/* Meter with Segmented Step Indicators (35mm Film Strip Scrubber) */
 .meter-container {
   position: fixed;
   left: 50%;
-  bottom: 18px;
+  bottom: 22px;
   transform: translateX(-50%);
   z-index: 40;
-  width: min(560px, 66vw);
+  width: min(580px, 64vw);
+  background: rgba(8, 13, 18, 0.75);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  border-radius: 12px;
+  padding: 8px 14px 7px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.32);
 }
 
 .meter {
   height: 3px;
-  background: rgba(23, 35, 43, 0.12);
+  background: rgba(255, 255, 255, 0.12);
   border-radius: 3px;
   overflow: hidden;
+  position: relative;
 }
 
 .meter i {
   display: block;
   height: 100%;
   width: 0;
-  background: linear-gradient(90deg, #D2A45D 0%, var(--ink) 100%);
-  box-shadow: 0 0 8px rgba(210, 164, 93, 0.4);
+  background: linear-gradient(90deg, #D2A45D 0%, #F5C678 50%, #FFF 100%);
+  box-shadow: 0 0 10px rgba(210, 164, 93, 0.75);
 }
 
 .meter-nodes {
   display: flex;
   justify-content: space-between;
-  margin-top: 7px;
+  margin-top: 6px;
 }
 
 .meter-nodes .node {
   font: 700 9px/1 var(--outfit);
   letter-spacing: 0.08em;
-  color: rgba(23, 35, 43, 0.45);
+  color: rgba(244, 241, 233, 0.50);
   cursor: pointer;
   transition: all 0.22s ease;
   padding: 3px 5px;
@@ -459,38 +606,79 @@ body.motion-active .motion-hint {
 }
 
 .meter-nodes .node:hover {
-  color: var(--ink);
+  color: #FFF;
   transform: translateY(-1px);
 }
 
 .meter-nodes .node.active {
-  color: var(--ink);
+  color: var(--amber);
   font-weight: 900;
   opacity: 1;
+  text-shadow: 0 0 8px rgba(210, 164, 93, 0.5);
 }
 
 .timecode {
-  display: none;
+  display: flex;
+  align-items: center;
+  gap: 7px;
   position: fixed;
-  z-index: 40;
-  right: 20px;
-  bottom: 16px;
-  font: 500 10px/1 var(--mono);
-  letter-spacing: 0.14em;
-  color: rgba(23, 35, 43, 0.72);
+  z-index: 42;
+  right: 28px;
+  bottom: 34px;
+  padding: 6px 14px;
+  border-radius: 999px;
+  background: rgba(8, 13, 18, 0.76);
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(210, 164, 93, 0.22);
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.32);
+  font: 700 10.5px/1 var(--mono);
+  letter-spacing: 0.16em;
+  color: var(--amber);
+  transition: opacity 0.35s ease, transform 0.35s ease;
+}
+
+.timecode .tc-label {
+  font-size: 8px;
+  color: rgba(244, 241, 233, 0.52);
+  letter-spacing: 0.22em;
+  font-weight: 800;
 }
 
 .shotinfo {
-  display: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
   position: fixed;
-  z-index: 40;
-  left: 20px;
-  bottom: 14px;
+  z-index: 42;
+  left: 28px;
+  bottom: 34px;
   max-width: 48vw;
-  font: 500 9px/1.5 var(--mono);
-  letter-spacing: 0.10em;
-  color: rgba(23, 35, 43, 0.65);
+  padding: 6px 14px;
+  border-radius: 999px;
+  background: rgba(8, 13, 18, 0.76);
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.32);
+  font: 600 9px/1 var(--mono);
+  letter-spacing: 0.14em;
+  color: rgba(244, 241, 233, 0.88);
   text-transform: uppercase;
+  transition: opacity 0.35s ease, transform 0.35s ease;
+}
+
+.rec-dot {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #E53935;
+  box-shadow: 0 0 8px #E53935;
+  animation: recBlink 1.4s infinite ease-in-out;
+}
+
+@keyframes recBlink {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.25; transform: scale(0.8); }
 }
 
 /* ==========================================================================
@@ -500,7 +688,11 @@ body.motion-active .motion-hint {
 .chapterrail,
 .meter-container,
 .v13-badge,
-.gpu {
+.gpu,
+.timecode,
+.shotinfo,
+.viewfinder-reticles,
+.film-vignette {
   transition: opacity 0.35s ease, transform 0.35s cubic-bezier(0.2, 0.75, 0.2, 1);
 }
 
@@ -526,6 +718,26 @@ body.is-downstream .gpu {
   opacity: 0 !important;
   pointer-events: none !important;
   transform: translateY(-10px);
+}
+
+body.is-downstream .timecode,
+body.is-downstream .shotinfo {
+  opacity: 0 !important;
+  pointer-events: none !important;
+  transform: translateY(14px);
+}
+
+body.is-downstream .viewfinder-reticles,
+body.is-downstream .film-vignette {
+  opacity: 0 !important;
+}
+
+body.is-downstream .cinema-letterbox .letterbox-bar.top {
+  transform: translateY(-100%);
+}
+
+body.is-downstream .cinema-letterbox .letterbox-bar.bottom {
+  transform: translateY(100%);
 }
 
 /* ==========================================================================
@@ -601,7 +813,21 @@ body.is-downstream .gpu {
   letter-spacing: -0.03em;
   font-feature-settings: "palt" 1;
   text-wrap: balance;
-  text-shadow: 0 2px 24px rgba(242, 239, 231, 0.90), 0 1px 4px rgba(242, 239, 231, 0.80);
+  color: var(--ink);
+  text-shadow: 0 2px 28px rgba(242, 239, 231, 0.95), 0 1px 4px rgba(242, 239, 231, 0.90);
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.chapter .copy h2 .h2-en {
+  font: 700 clamp(13px, 1.2vw, 17px)/1 var(--outfit);
+  letter-spacing: 0.28em;
+  color: var(--amber-dark);
+  text-transform: uppercase;
+  font-feature-settings: "palt" 0;
+  opacity: 0.85;
 }
 
 .chapter .copy p {
@@ -617,33 +843,70 @@ body.is-downstream .gpu {
   position: absolute;
   z-index: 9;
   right: 3.5vw;
-  bottom: 5vh;
-  max-width: 360px;
+  bottom: 5.5vh;
+  max-width: 380px;
   font-family: var(--display);
-  font-size: clamp(14.5px, 1.35vw, 18px);
-  line-height: 1.7;
-  text-align: right;
+  font-size: clamp(14px, 1.3vw, 17.5px);
+  line-height: 1.75;
+  text-align: left;
   font-weight: 600;
   letter-spacing: 0.04em;
-  color: rgba(23, 35, 43, 0.85);
-  text-shadow: 0 1px 14px rgba(242, 239, 231, 0.90);
-  border-right: 2.5px solid var(--amber);
-  padding-right: 14px;
+  color: #F4F1E9;
+  background: rgba(8, 13, 18, 0.75);
+  backdrop-filter: blur(20px);
+  padding: 16px 22px 16px 20px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  border-left: 3.5px solid var(--amber);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.30), inset 0 1px 0 rgba(255, 255, 255, 0.12);
+  transition: all 0.3s ease;
+}
+
+.chapter .note::before {
+  content: "VOICEOVER // 土地自白";
+  display: block;
+  font: 800 8.5px/1 var(--outfit);
+  letter-spacing: 0.22em;
+  color: var(--amber);
+  margin-bottom: 8px;
+  text-transform: uppercase;
 }
 
 .label {
-  display: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
   position: absolute;
-  right: 20px;
+  right: 32px;
   top: 72px;
-  font-size: 10px;
-  letter-spacing: 0.14em;
-  padding: 7px 11px;
+  z-index: 22;
+  font: 700 9.5px/1 var(--outfit);
+  letter-spacing: 0.18em;
+  padding: 8px 14px;
   border-radius: 999px;
-  background: rgba(23, 35, 43, 0.65);
-  backdrop-filter: blur(10px);
-  color: #fff;
-  font-family: var(--outfit);
+  background: rgba(8, 13, 18, 0.72);
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.20);
+  color: rgba(244, 241, 233, 0.90);
+  text-transform: uppercase;
+  transition: opacity 0.35s ease, transform 0.35s ease;
+}
+
+.label::before {
+  content: "";
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--amber);
+  box-shadow: 0 0 6px var(--amber);
+}
+
+body.is-downstream .label {
+  opacity: 0 !important;
+  pointer-events: none !important;
+  transform: translateY(-8px);
 }
 
 /* ==========================================================================
@@ -706,8 +969,19 @@ body.is-downstream .gpu {
   font-weight: 700;
   letter-spacing: 0.16em;
   font-feature-settings: "palt" 1;
-  color: rgba(23, 35, 43, 0.68);
-  text-shadow: 0 1px 16px rgba(242, 239, 231, 0.88);
+  color: rgba(23, 35, 43, 0.78);
+  text-shadow: 0 1px 20px rgba(242, 239, 231, 0.95);
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+}
+
+.peace .peace-en {
+  font: 700 clamp(12px, 1.1vw, 15px)/1 var(--outfit);
+  letter-spacing: 0.26em;
+  color: var(--amber-dark);
+  text-transform: uppercase;
+  opacity: 0.85;
 }
 
 .smoke {
@@ -967,6 +1241,19 @@ body.is-downstream .gpu {
   letter-spacing: -0.025em;
   font-feature-settings: "palt" 1;
   color: var(--ink);
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.candidate-name .candidate-en {
+  font: 700 clamp(12px, 1.1vw, 15px)/1 var(--outfit);
+  letter-spacing: 0.24em;
+  color: var(--amber-dark);
+  text-transform: uppercase;
+  font-feature-settings: "palt" 0;
+  opacity: 0.85;
 }
 
 .candidate-motto {
@@ -1738,7 +2025,14 @@ body.is-downstream .gpu {
     font-size: clamp(40px, 13vw, 64px);
     letter-spacing: -0.02em;
   }
-  .chapter .note, .refbox, .shotinfo, .timecode, .v13-badge {
+  .chapter .note, .refbox, .shotinfo, .timecode, .v13-badge, .viewfinder-reticles, .label {
+    display: none;
+  }
+  .cinema-letterbox .letterbox-bar {
+    height: 16px;
+    padding: 0 14px;
+  }
+  .cinema-letterbox .letterbox-center {
     display: none;
   }
   .person {
@@ -1839,7 +2133,7 @@ body.is-downstream .gpu {
    ========================================================================== */
 
 @media (prefers-reduced-motion: reduce) {
-  #gl, #grade, .motion-frame, .motion-hint {
+  #gl, #grade, .motion-frame, .motion-hint, .film-grain-svg, .viewfinder-reticles, .cinema-letterbox {
     display: none !important;
   }
   .chapter {

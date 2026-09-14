@@ -378,13 +378,39 @@ function updateStoryboardLayer(sceneIndex, p) {
       canvas.style.opacity = [0.16, 0.10, 0, 0.10, 0.12][sceneIndex];
     }
   } else {
-    // Scene 5: Reality Transition (F16 -> Real Waterfront + Cutout)
+    // Scene 5: Reality Transition (F16 -> F17 -> F18 -> Real Waterfront + Cutout)
     const f16 = sbImgs[15];
-    const fade = 1 - clamp((p - 0.06) / 0.26);
-    if (f16) {
-      f16.style.opacity = fade * 0.94;
-      f16.style.transform = `scale(${lerp(1.018, 1.035, 1 - fade)})`;
+    const f17 = sbImgs[16];
+    const f18 = sbImgs[17];
+    
+    if (p <= 0.18) {
+      const t = clamp(p / 0.18);
+      if (f16) {
+        f16.style.opacity = (1 - t) * 0.94;
+        f16.style.transform = `scale(${1.018 + t * 0.008}) translate(${pointerX * -0.18}%, ${pointerY * -0.09}%)`;
+      }
+      if (f17) {
+        f17.style.opacity = t * 0.94;
+        f17.style.transform = `scale(${1.026 - t * 0.004}) translate(${pointerX * -0.18}%, ${pointerY * -0.09}%)`;
+      }
+    } else if (p <= 0.38) {
+      const t = clamp((p - 0.18) / 0.20);
+      if (f17) {
+        f17.style.opacity = (1 - t) * 0.94;
+        f17.style.transform = `scale(${1.022 + t * 0.006}) translate(${pointerX * -0.18}%, ${pointerY * -0.09}%)`;
+      }
+      if (f18) {
+        f18.style.opacity = t * 0.94;
+        f18.style.transform = `scale(${1.028 - t * 0.004}) translate(${pointerX * -0.18}%, ${pointerY * -0.09}%)`;
+      }
+    } else {
+      const fade = 1 - clamp((p - 0.38) / 0.22);
+      if (f18) {
+        f18.style.opacity = fade * 0.94;
+        f18.style.transform = `scale(${lerp(1.024, 1.038, 1 - fade)})`;
+      }
     }
+
     if (canvas) {
       canvas.style.opacity = 0;
     }
@@ -885,10 +911,20 @@ function tick() {
 
   // Diagnostics & HUD Updates
   const filmTime = START[current] + p * DUR[current];
-  if (timecode) timecode.textContent = fmt(filmTime);
+  const tcVal = document.querySelector('#timecodeVal');
+  if (tcVal) {
+    const frames = String(Math.floor((filmTime % 1) * 24)).padStart(2, '0');
+    tcVal.textContent = fmt(filmTime) + ':' + frames;
+  } else if (timecode) {
+    timecode.textContent = fmt(filmTime);
+  }
 
-  if (shotinfo) {
-    shotinfo.textContent = `${shot.name} · H ${lerp(shot.y0, shot.y1, q).toFixed(1)}m · FOV ${lerp(shot.f0, shot.f1, q).toFixed(1)}°`;
+  const siText = document.querySelector('#shotinfoText');
+  const shotStr = `REC · 24FPS · 35mm · FOV ${lerp(shot.f0, shot.f1, q).toFixed(1)}° · ${shot.name}`;
+  if (siText) {
+    siText.textContent = shotStr;
+  } else if (shotinfo) {
+    shotinfo.textContent = shotStr;
   }
 
   const meter = document.querySelector('#meter');
