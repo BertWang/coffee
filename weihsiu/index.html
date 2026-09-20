@@ -1,1981 +1,717 @@
 <!doctype html>
-<html lang="zh-Hant-TW">
-
+<html lang="zh-Hant">
 <head>
-  <!-- Google Tag Manager -->
-  <script>(function (w, d, s, l, i) {
-      w[l] = w[l] || []; w[l].push({
-        'gtm.start':
-          new Date().getTime(), event: 'gtm.js'
-      }); var f = d.getElementsByTagName(s)[0],
-        j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
-          'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
-    })(window, document, 'script', 'dataLayer', 'GTM-KLX5Z6DS');</script>
-  <!-- End Google Tag Manager -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#f6f1e7" />
+  <meta name="description" content="龍子里的下一步：從每天的生活出發，看見公共資訊、通學安全、長輩數位、交通、建設與里務服務。" />
+  <title>龍子里的下一步｜曾偉修｜高雄市鼓山區龍子里</title>
+  <link rel="icon" href="assets/ui/favicon-32.png" sizes="32x32" type="image/png" />
+  <link rel="icon" href="assets/ui/favicon-64.png" sizes="64x64" type="image/png" />
+  <link rel="apple-touch-icon" href="assets/ui/apple-touch-icon.png" sizes="180x180" />
+  <link rel="canonical" href="https://suoyicoffee.com/weihsiu/" />
+  <meta property="og:url" content="https://suoyicoffee.com/weihsiu/" />
+  <meta property="og:site_name" content="龍子里的下一步" />
+  <style>
+    :root{
+      --paper:#f6f1e7;
+      --paper-2:#ede3d3;
+      --ink:#1f2628;
+      --ink-soft:#625b51;
+      --green:#1f2f34;
+      --green-2:#9b7930;
+      --lime:#e9ddc4;
+      --sun:#caa04a;
+      --line:rgba(31,38,40,.12);
+      --white:#fffdfa;
+      --shadow:0 18px 60px rgba(31,38,40,.08);
+      --radius:26px;
+      --content:min(1180px, calc(100vw - 40px));
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth;background:var(--paper)}
+    body{margin:0;color:var(--ink);background:var(--paper);font-family:"Noto Sans TC","PingFang TC","Microsoft JhengHei",system-ui,sans-serif;line-height:1.75;letter-spacing:.01em}
+    a{color:inherit;text-decoration:none}
+    button{font:inherit}
+    img{display:block;max-width:100%}
+    .skip{position:fixed;left:12px;top:-60px;z-index:9999;background:#fff;padding:10px 14px;border-radius:10px;box-shadow:var(--shadow)}
+    .skip:focus{top:12px}
+    .progress{position:fixed;inset:0 auto auto 0;height:3px;width:0;background:var(--sun);z-index:1000}
+    .site-header{position:fixed;z-index:900;top:14px;left:50%;transform:translateX(-50%);width:min(1180px,calc(100vw - 28px));display:flex;align-items:center;justify-content:space-between;padding:10px 12px 10px 18px;background:rgba(243,239,229,.78);backdrop-filter:blur(18px);border:1px solid rgba(16,43,42,.1);border-radius:999px;transition:.25s ease}
+    .site-header.scrolled{box-shadow:0 12px 32px rgba(16,43,42,.08);background:rgba(243,239,229,.94)}
+    .brand{font-size:14px;font-weight:900;letter-spacing:.08em;white-space:nowrap;display:flex;align-items:center;gap:10px}.brand img{width:26px;height:26px;object-fit:contain;border-radius:50%;box-shadow:0 6px 18px rgba(0,0,0,.14)}
+    .nav{display:flex;gap:6px;align-items:center}
+    .nav a{font-size:13px;padding:8px 11px;border-radius:999px;color:var(--ink-soft)}
+    .nav a:hover,.nav a:focus-visible{background:rgba(22,75,69,.08);color:var(--ink)}
+    .nav .cta{background:var(--green);color:#fff}
+    .menu-btn{display:none;border:0;background:transparent;padding:8px 10px;border-radius:999px;color:var(--ink)}
+    main{overflow:hidden}
+    .wrap{width:var(--content);margin:0 auto}
+    .eyebrow{display:inline-flex;gap:8px;align-items:center;font-size:12px;font-weight:900;letter-spacing:.16em;text-transform:uppercase;color:var(--green-2)}
+    .eyebrow::before{content:"";width:26px;height:1px;background:currentColor}
+    .section{padding:108px 0;border-top:1px solid var(--line)}
+    .section-head{display:grid;grid-template-columns:.7fr 1.3fr;gap:48px;align-items:start;margin-bottom:50px}
+    .section-head h2{font-size:clamp(36px,5vw,76px);line-height:1.05;margin:12px 0 0;letter-spacing:-.05em}
+    .section-head p{margin:0;font-size:clamp(17px,2vw,23px);color:var(--ink-soft);max-width:720px}
+    .hero{min-height:100svh;display:flex;align-items:flex-end;padding:160px 0 44px;position:relative}
+    .hero::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 78% 18%,rgba(232,184,90,.24),transparent 28%),radial-gradient(circle at 12% 80%,rgba(219,230,184,.7),transparent 26%);pointer-events:none}
+    .hero-grid{display:grid;grid-template-columns:.82fr 1.18fr;gap:38px;align-items:end;position:relative}
+    .hero-copy{padding-bottom:38px}
+    .hero h1{font-size:clamp(66px,10vw,142px);line-height:.88;letter-spacing:-.075em;margin:16px 0 34px;max-width:820px}
+    .hero-lead{font-size:clamp(22px,3vw,36px);line-height:1.45;max-width:640px;margin:0;color:var(--ink-soft);font-weight:600}
+    .hero-lead strong{color:var(--ink);font-weight:900}
+    .hero-photo{min-height:0;aspect-ratio:16/10;border-radius:36px;overflow:hidden;position:relative;background:linear-gradient(145deg,#c9d6b0,#d9c9ab 55%,#b4c8c3);box-shadow:var(--shadow)}
+    .hero-photo img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0}
+    .hero-photo::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(8,28,27,.48),transparent 45%)}
+    .photo-label{position:absolute;left:22px;right:22px;bottom:20px;z-index:2;color:#fff;font-size:12px;letter-spacing:.08em;display:flex;justify-content:space-between;gap:18px;align-items:flex-end}
+    .photo-label b{font-size:16px;letter-spacing:.02em}
+    .photo-fallback{position:absolute;inset:0;display:grid;place-items:center;padding:36px;text-align:center;color:rgba(16,43,42,.56);font-weight:800}
+    .hero-themes{grid-column:1/-1;display:grid;grid-template-columns:repeat(5,1fr);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+    .hero-themes span{padding:20px 14px;text-align:center;font-weight:800;font-size:14px;border-right:1px solid var(--line)}
+    .hero-themes span:last-child{border-right:0}
+    .reveal{padding:92px 0 118px;text-align:center}
+    .reveal p{font-size:clamp(22px,3vw,40px);line-height:1.45;max-width:930px;margin:0 auto;color:var(--ink-soft)}
+    .reveal strong{color:var(--ink);font-weight:900}
+    .seven{background:var(--green);color:var(--white)}
+    .seven .eyebrow,.seven .section-head p{color:#d5e4db}
+    .seven .section-head{margin-bottom:34px}
+    .direction-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+    .direction{min-height:235px;border:1px solid rgba(255,255,255,.15);border-radius:24px;padding:24px;display:flex;flex-direction:column;justify-content:space-between;background:rgba(255,255,255,.04);transition:.25s ease}
+    .direction:hover{transform:translateY(-4px);background:rgba(255,255,255,.075)}
+    .direction .num{font-size:12px;letter-spacing:.14em;color:#c6d8d2}
+    .direction h3{font-size:24px;line-height:1.25;margin:18px 0 10px}
+    .direction p{margin:0;color:#d8e3df;font-size:14px;line-height:1.7}
+    .direction:last-child{grid-column:span 2;background:var(--lime);color:var(--ink);border-color:transparent}
+    .direction:last-child p,.direction:last-child .num{color:var(--ink-soft)}
+    .story-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:stretch}
+    .visual{min-height:590px;border-radius:var(--radius);overflow:hidden;background:#d8deca;position:relative;border:1px solid var(--line)}
+    .visual img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+    .visual .fallback{position:absolute;inset:0;display:grid;place-items:center;text-align:center;padding:50px;font-weight:900;color:rgba(16,43,42,.45)}
+    .story{border-radius:var(--radius);padding:clamp(28px,5vw,64px);background:var(--white);border:1px solid var(--line);display:flex;flex-direction:column;justify-content:center}
+    .story h3{font-size:clamp(30px,4vw,54px);line-height:1.12;letter-spacing:-.04em;margin:12px 0 22px}
+    .story p{font-size:17px;color:var(--ink-soft);margin:0 0 18px}
+    .chips{display:flex;flex-wrap:wrap;gap:8px;margin:16px 0 22px}
+    .chip{border:1px solid var(--line);border-radius:999px;padding:8px 12px;font-size:13px;font-weight:800;background:#fff}
+    .quote{font-size:clamp(23px,3vw,34px)!important;color:var(--ink)!important;line-height:1.45!important;font-weight:900;margin-top:18px!important}
+    .landmarks{background:var(--paper-2)}
+    .landmark-layout{display:grid;grid-template-columns:.8fr 1.2fr;gap:28px}
+    .map-card{min-height:650px;border-radius:32px;background:var(--green);position:relative;overflow:hidden;color:#fff;border:1px solid rgba(255,255,255,.08)}
+    .map-card::before,.map-card::after{content:"";position:absolute;border-radius:50%;border:1px solid rgba(255,255,255,.16)}
+    .map-card::before{width:520px;height:520px;right:-210px;top:-180px}
+    .map-card::after{width:360px;height:360px;left:-160px;bottom:-120px}
+    .road{position:absolute;height:2px;background:rgba(255,255,255,.22);transform-origin:left center}
+    .road.r1{width:120%;left:8%;top:26%;transform:rotate(18deg)}
+    .road.r2{width:100%;left:-10%;top:58%;transform:rotate(-12deg)}
+    .road.r3{width:84%;left:22%;top:78%;transform:rotate(8deg)}
+    .pin{position:absolute;display:flex;align-items:center;gap:8px;font-size:12px;font-weight:900;letter-spacing:.04em}
+    .pin::before{content:"";width:12px;height:12px;background:var(--sun);border:4px solid rgba(255,255,255,.9);border-radius:50%;box-shadow:0 0 0 5px rgba(232,184,90,.18)}
+    .p1{left:12%;top:18%}.p2{left:46%;top:30%}.p3{left:24%;top:48%}.p4{left:60%;top:58%}.p5{left:38%;top:73%}.p6{left:67%;top:82%}
+    .map-note{position:absolute;left:28px;bottom:24px;right:28px;color:#ccdad6;font-size:12px;line-height:1.6;z-index:2}
+    .landmark-copy{padding:18px 0 18px 14px}
+    .landmark-copy h3{font-size:clamp(38px,5vw,66px);line-height:1.05;margin:10px 0 22px;letter-spacing:-.05em}
+    .landmark-list{display:grid;gap:10px;margin:28px 0}
+    .landmark-list div{display:flex;justify-content:space-between;gap:18px;border-bottom:1px solid var(--line);padding:10px 0;font-weight:800}
+    .landmark-list small{color:var(--ink-soft);font-weight:600;text-align:right}
+    .source-links{margin-top:24px;padding-top:18px;border-top:1px solid var(--line);font-size:12px;color:var(--ink-soft)}
+    .source-links a{text-decoration:underline;text-underline-offset:3px}
+    .workflow{background:var(--white)}
+    .flow{display:grid;grid-template-columns:repeat(5,1fr);gap:0;align-items:stretch;margin:52px 0 24px}
+    .flow-step{position:relative;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:28px 18px;min-height:170px}
+    .flow-step + .flow-step{border-left:1px solid var(--line)}
+    .flow-step b{font-size:13px;color:var(--green-2);letter-spacing:.1em}
+    .flow-step strong{display:block;font-size:28px;margin-top:12px}
+    .flow-step p{font-size:13px;color:var(--ink-soft);margin:9px 0 0}
+    .split-stack{display:grid;gap:24px}
+    .resource-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:28px}
+    .resource{background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:20px;min-height:160px}
+    .resource b{display:block;font-size:18px;margin-bottom:8px}
+    .resource p{font-size:13px;color:var(--ink-soft);margin:0}
+    .mobility{background:var(--green);color:#fff}
+    .mobility .section-head p,.mobility .eyebrow{color:#d4e1de}
+    .route{position:relative;display:grid;grid-template-columns:repeat(5,1fr);gap:24px;margin-top:64px}
+    .route::before{content:"";position:absolute;left:8%;right:8%;top:28px;height:2px;background:rgba(255,255,255,.24)}
+    .route-node{position:relative;z-index:2;text-align:center}
+    .route-node i{display:grid;place-items:center;width:58px;height:58px;border-radius:50%;margin:0 auto 18px;background:var(--lime);color:var(--ink);font-style:normal;font-weight:900;border:8px solid var(--green)}
+    .route-node b{display:block;font-size:18px}
+    .route-node span{display:block;font-size:13px;color:#ccdad6;margin-top:5px}
+    .mini-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:34px}
+    .mini-card{border:1px solid var(--line);border-radius:22px;padding:26px;background:var(--white)}
+    .mini-card h3{margin:0 0 12px;font-size:24px}
+    .mini-card p{margin:0;color:var(--ink-soft)}
+    .services{background:var(--paper-2)}
+    .service-channels{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:42px 0 18px}
+    .channel{background:var(--white);border:1px solid var(--line);border-radius:22px;padding:30px 22px;text-align:center}
+    .channel strong{font-size:22px;display:block;margin-top:8px}
+    .neighborhood{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:34px}
+    .neighborhood article{border-radius:28px;padding:38px;background:var(--white);border:1px solid var(--line)}
+    .neighborhood article:last-child{background:var(--green);color:#fff}
+    .neighborhood article:last-child p{color:#d9e4e1}
+    .neighborhood h3{font-size:32px;margin:0 0 12px}
+    .neighborhood p{color:var(--ink-soft);margin:0}
+    .candidate{background:#0f2726;color:#fff}
+    .candidate-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:38px;align-items:stretch}
+    .candidate-photo{min-height:690px;position:relative;border-radius:34px;overflow:hidden;background:linear-gradient(145deg,#536f6c,#172f2d)}
+    .candidate-photo img{width:100%;height:100%;object-fit:cover;object-position:68% center;position:absolute;inset:0}
+    .candidate-photo .fallback{position:absolute;inset:0;display:grid;place-items:center;text-align:center;padding:60px;color:rgba(255,255,255,.45);font-weight:800}
+    .candidate-copy{padding:28px 0;display:flex;flex-direction:column;justify-content:center}
+    .candidate-copy .eyebrow{color:#bdd0cb}
+    .candidate-copy h2{font-size:clamp(44px,6vw,82px);line-height:1.02;margin:14px 0 24px;letter-spacing:-.055em}
+    .candidate-copy p{font-size:17px;color:#d0ddda;margin:0 0 18px}
+    .candidate-copy blockquote{margin:24px 0 0;padding:24px 0;border-top:1px solid rgba(255,255,255,.14);border-bottom:1px solid rgba(255,255,255,.14);font-size:clamp(24px,3vw,38px);line-height:1.45;font-weight:900}
+    .candidate-meta{display:flex;gap:10px;flex-wrap:wrap;margin-top:20px}
+    .candidate-meta span{font-size:12px;border:1px solid rgba(255,255,255,.18);padding:7px 10px;border-radius:999px;color:#c9d9d5}
+    .candidate-profile{grid-column:1/-1;margin-top:24px;padding-top:38px;border-top:1px solid rgba(255,255,255,.14)}
+    .candidate-profile-head{display:grid;grid-template-columns:.72fr 1.28fr;gap:36px;align-items:start;margin-bottom:26px}
+    .candidate-profile-head h3{font-size:clamp(30px,4vw,52px);line-height:1.08;letter-spacing:-.04em;margin:10px 0 0}
+    .candidate-profile-head p{margin:0;color:#d0ddda;font-size:16px}
+    .candidate-facts{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:28px}
+    .candidate-fact{padding:20px;border:1px solid rgba(255,255,255,.13);border-radius:20px;background:rgba(255,255,255,.035)}
+    .candidate-fact small{display:block;color:#9fb5b0;font-size:11px;letter-spacing:.12em;margin-bottom:7px}
+    .candidate-fact strong{display:block;color:#fff;font-size:16px;line-height:1.5}
+    .candidate-history{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+    .history-item{display:grid;grid-template-columns:88px 1fr;gap:14px;padding:17px 18px;border-radius:18px;background:rgba(255,255,255,.035);border:1px solid rgba(255,255,255,.1)}
+    .history-item b{color:#d9bd78;font-size:12px;letter-spacing:.08em}
+    .history-item p{margin:0;color:#d2ddda;font-size:14px;line-height:1.7}
+    .history-gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:22px}
+    .history-photo{margin:0;border:1px solid rgba(255,255,255,.11);border-radius:20px;overflow:hidden;background:rgba(255,255,255,.035)}
+    .history-photo-media{aspect-ratio:4/5;overflow:hidden;background:#263638}
+    .history-photo img{width:100%;height:100%;object-fit:cover;display:block}
+    .history-photo figcaption{padding:14px 14px 16px}
+    .history-photo small{display:block;color:#d9bd78;font-size:10px;letter-spacing:.1em;margin-bottom:5px}
+    .history-photo strong{display:block;color:#fff;font-size:14px;line-height:1.5}
+    .history-photo p{margin:5px 0 0;color:#aebfbb;font-size:12px;line-height:1.55}
+    .candidate-source{margin-top:18px;font-size:11px;line-height:1.7;color:#9fb0ac}
+    .candidate-source a{color:#e0c887;text-decoration:underline;text-underline-offset:3px}
+    .contact-actions{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:20px}
+    .contact-action{display:flex;align-items:center;justify-content:center;min-height:44px;padding:10px 12px;border-radius:999px;background:var(--green);color:#fff;font-weight:800;font-size:13px}
+    .contact-action.secondary{background:#fff;color:var(--ink);border:1px solid var(--line)}
+    .contact-socials{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+    .contact-socials a{font-size:12px;font-weight:800;padding:7px 10px;border-radius:999px;border:1px solid var(--line);background:rgba(255,255,255,.45)}
+    .closing{padding:128px 0 90px;background:var(--lime)}
+    .closing-inner{display:grid;grid-template-columns:1.35fr .65fr;gap:48px;align-items:end}
+    .closing h2{font-size:clamp(54px,8vw,116px);line-height:.94;letter-spacing:-.065em;margin:12px 0 34px}
+    .closing-copy{font-size:clamp(18px,2.2vw,27px);max-width:800px}
+    .closing-copy p{margin:0 0 16px}
+    .closing-aside{background:rgba(255,255,255,.56);border:1px solid rgba(16,43,42,.1);border-radius:26px;padding:30px}
+    .contact-title{font-weight:900;font-size:22px;margin-bottom:8px}
+    .contact-line{font-size:13px;color:var(--ink-soft)}
+    .contact-head{display:flex;align-items:center;gap:14px;margin-bottom:18px}
+    .contact-head img{width:72px;height:72px;border-radius:20px;object-fit:cover;border:1px solid var(--line)}
+    .contact-mark{display:flex;align-items:center;gap:10px;margin-top:16px;padding-top:16px;border-top:1px solid var(--line);font-size:12px;color:var(--ink-soft)}
+    .contact-mark img{width:32px;height:32px;border-radius:50%;object-fit:contain}
+    footer{background:#182427;color:#d6d4cc;padding:34px 0 42px;font-size:12px}
+    .footer-grid{display:grid;grid-template-columns:1.15fr .95fr;gap:24px;align-items:start}
+    .footer-brand{display:flex;gap:18px;align-items:flex-start;padding:8px 0}
+    .footer-brand img{width:56px;height:56px;border-radius:50%;object-fit:contain;box-shadow:0 8px 24px rgba(0,0,0,.24)}
+    .footer-brand b{display:block;color:#fff;font-size:18px;margin-bottom:6px}
+    .footer-brand p{margin:0;color:#d0cec5;line-height:1.8}
+    .footer-card{display:flex;gap:14px;padding:18px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:22px}
+    .footer-card img{width:84px;height:108px;object-fit:cover;border-radius:18px;flex:none}
+    .footer-card strong{display:block;color:#fff;font-size:18px;margin-bottom:6px}
+    .footer-card p{margin:0;color:#d3d3cb;line-height:1.75}
+    .footer-sources{grid-column:1/-1;padding-top:8px;border-top:1px solid rgba(255,255,255,.08);color:#bdbdb6;line-height:1.75}
+    .footer-sources a{text-decoration:underline;text-underline-offset:3px;color:#e2d0a1}
 
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <meta name="theme-color" content="#153360">
-  <meta name="robots" content="index, follow">
+    .reference-badge{position:absolute;z-index:4;left:16px;top:16px;padding:7px 10px;border-radius:999px;background:rgba(31,47,52,.88);color:#fff;font-size:10px;font-weight:900;letter-spacing:.12em;backdrop-filter:blur(8px)}
+    .reference-note{position:absolute;z-index:4;left:16px;right:16px;bottom:16px;padding:10px 12px;border-radius:14px;background:rgba(255,253,250,.88);color:var(--ink-soft);font-size:11px;line-height:1.5;backdrop-filter:blur(8px);border:1px solid rgba(31,38,40,.08)}
+    .scene-badge{position:absolute;z-index:4;left:16px;top:16px;padding:7px 10px;border-radius:999px;background:rgba(31,47,52,.76);color:#fff;font-size:10px;font-weight:900;letter-spacing:.12em;backdrop-filter:blur(8px)}
+    .visual.final-visual{min-height:0;aspect-ratio:16/10;align-self:center;background:#d7d3ca}
+    .community-visual{margin:0 0 24px}
+    .channel-link{display:block;transition:.22s ease}
+    .channel-link:hover,.channel-link:focus-visible{transform:translateY(-3px);box-shadow:var(--shadow);outline:none}
+    .footer-card a{color:#e4cf98;text-decoration:underline;text-underline-offset:3px}
 
-  <title>曾偉修｜龍子里的下一步｜2026 高雄市鼓山區龍子里</title>
-  <meta name="description" content="曾偉修｜2026 高雄市鼓山區龍子里里長參選服務網。從地方生活出發，關心交通安心、建設品質、社區安全、清淤防汛與長輩樂活。用服務的溫度，加做事的效率。">
-  <meta name="keywords"
-    content="曾偉修, 龍子里, 龍子里里長, 高雄市鼓山區龍子里, 2026里長選舉, 龍子里里長候選人, 龍子里的下一步, 無黨籍里長, 凹子底, 愛河之心, 龍華國小, 龍華民防, 正修企管">
-  <meta name="author" content="曾偉修 2026 高雄市鼓山區龍子里里長參選服務處">
-  <link rel="canonical" href="https://suoyicoffee.com/weihsiu/">
+    .google-map-wrap{margin-top:26px;display:grid;grid-template-columns:1.1fr .9fr;gap:24px;align-items:stretch}
+    .google-map-card{background:var(--white);border:1px solid var(--line);border-radius:28px;overflow:hidden;box-shadow:var(--shadow);min-height:420px}
+    .google-map-card iframe{display:block;width:100%;height:100%;min-height:420px;border:0}
+    .google-map-meta{background:linear-gradient(180deg, rgba(255,255,255,.92), rgba(246,241,231,.94));border:1px solid var(--line);border-radius:28px;padding:28px 26px;display:flex;flex-direction:column;justify-content:space-between;gap:18px}
+    .google-map-meta h4{margin:0;font-size:30px;line-height:1.12;letter-spacing:-.04em}
+    .google-map-meta p{margin:0;color:var(--ink-soft)}
+    .google-map-actions{display:flex;flex-wrap:wrap;gap:12px}
+    .map-action{display:inline-flex;align-items:center;justify-content:center;padding:12px 16px;border-radius:999px;border:1px solid var(--line);background:var(--white);font-size:13px;font-weight:800;letter-spacing:.02em;text-decoration:none;color:var(--green)}
+    .map-action.primary{background:var(--green);color:#fff;border-color:var(--green)}
+    .map-disclaimer{font-size:12px;line-height:1.7;color:var(--ink-soft)}
 
-  <!-- GEO Meta Tags (Hyper-Local Civic SEO) -->
-  <meta name="geo.region" content="TW-KHH">
-  <meta name="geo.placename" content="高雄市鼓山區龍子里">
-  <meta name="geo.position" content="22.6565;120.3015">
-  <meta name="ICBM" content="22.6565, 120.3015">
-
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;800;900&family=Outfit:wght@600;700;800;900&family=Plus+Jakarta+Sans:wght@700;800&display=swap"
-    rel="stylesheet">
-
-  <!-- External Stylesheet -->
-  <link rel="stylesheet" href="css/style.css">
-
-  <!-- Icons & Manifest -->
-  <link rel="icon" href="assets/ui/favicon-32.png" sizes="32x32" type="image/png">
-  <link rel="icon" href="assets/ui/favicon-64.png" sizes="64x64" type="image/png">
-  <link rel="apple-touch-icon" href="assets/ui/apple-touch-icon.png">
-
-  <!-- OG Meta (Social Sharing Precision) -->
-  <meta property="og:type" content="website">
-  <meta property="og:locale" content="zh_TW">
-  <meta property="og:site_name" content="曾偉修｜龍子里的下一步">
-  <meta property="og:title" content="曾偉修｜龍子里的下一步｜2026 高雄市鼓山區龍子里">
-  <meta property="og:description" content="用服務的溫度，加做事的效率。看得到的問題，盡力去做；收到的聲音，認真了解。攜手守護龍子里每天生活。">
-  <meta property="og:image" content="https://suoyicoffee.com/weihsiu/assets/social/og-1200x630.jpg?v=20260912v2">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
-  <meta property="og:image:type" content="image/jpeg">
-  <meta property="og:image:alt" content="曾偉修 龍子里的下一步 2026 高雄市鼓山區龍子里里長參選官方網站">
-  <meta property="og:url" content="https://suoyicoffee.com/weihsiu/">
-
-  <!-- Twitter Meta -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="曾偉修｜龍子里的下一步｜2026 高雄市鼓山區龍子里">
-  <meta name="twitter:description" content="用服務的溫度，加做事的效率。看得到的問題，盡力去做；收到的聲音，認真了解。">
-  <meta name="twitter:image" content="https://suoyicoffee.com/weihsiu/assets/social/og-1200x630.jpg?v=20260912v2">
-  <meta name="twitter:image:alt" content="曾偉修 龍子里的下一步">
-
-  <!-- Schema.org JSON-LD (Hyper-Local Knowledge Graph) -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "Person",
-        "@id": "https://suoyicoffee.com/weihsiu/#candidate",
-        "name": "曾偉修",
-        "givenName": "偉修",
-        "familyName": "曾",
-        "jobTitle": "2026 高雄市鼓山區龍子里里長候選人",
-        "description": "曾偉修，2026年高雄市鼓山區龍子里里長候選人（無黨籍）。以服務的溫度，加做事的效率，關心學童安全、長者樂齡、大樓協調、防汛清淤與生活品質。",
-        "url": "https://suoyicoffee.com/weihsiu/",
-        "image": "https://suoyicoffee.com/weihsiu/assets/social/og-1200x630.jpg?v=20260912v2",
-        "telephone": "+886-981-451-451",
-        "alumniOf": [
-          {
-            "@type": "EducationalOrganization",
-            "name": "正修科技大學企業管理系"
-          },
-          {
-            "@type": "EducationalOrganization",
-            "name": "大榮高工電子科"
-          }
-        ],
-        "address": {
-          "@type": "PostalAddress",
-          "addressLocality": "高雄市",
-          "addressRegion": "鼓山區",
-          "streetAddress": "龍子里",
-          "addressCountry": "TW"
-        },
-        "sameAs": [
-          "https://www.facebook.com/weihsiut",
-          "https://www.threads.net/@logimaskimo",
-          "https://line.me/ti/p/~tseng0220"
-        ]
-      },
-      {
-        "@type": "AdministrativeArea",
-        "@id": "https://suoyicoffee.com/weihsiu/#district",
-        "name": "高雄市鼓山區龍子里",
-        "containedInPlace": {
-          "@type": "City",
-          "name": "高雄市"
-        },
-        "geo": {
-          "@type": "GeoCoordinates",
-          "latitude": 22.6565,
-          "longitude": 120.3015
-        }
-      },
-      {
-        "@type": "CivicStructure",
-        "@id": "https://suoyicoffee.com/weihsiu/#office",
-        "name": "曾偉修里民服務處",
-        "telephone": "+886-981-451-451",
-        "url": "https://suoyicoffee.com/weihsiu/",
-        "address": {
-          "@type": "PostalAddress",
-          "addressLocality": "高雄市",
-          "addressRegion": "鼓山區",
-          "streetAddress": "龍子里",
-          "addressCountry": "TW"
-        }
-      },
-      {
-        "@type": "WebSite",
-        "@id": "https://suoyicoffee.com/weihsiu/#website",
-        "url": "https://suoyicoffee.com/weihsiu/",
-        "name": "曾偉修｜龍子里的下一步",
-        "description": "2026 高雄市鼓山區龍子里里長參選官方服務網。用服務的溫度，加做事的效率。",
-        "inLanguage": "zh-Hant-TW"
-      }
-    ]
-  }
-  </script>
+    .reveal-on-scroll{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
+    .reveal-on-scroll.in{opacity:1;transform:none}
+    @media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}.reveal-on-scroll{opacity:1;transform:none;transition:none}}
+    @media (max-width:980px){
+      :root{--content:min(100% - 28px,760px)}
+      .nav{display:none;position:absolute;right:0;top:56px;background:var(--paper);border:1px solid var(--line);border-radius:20px;padding:8px;width:220px;box-shadow:var(--shadow);flex-direction:column;align-items:stretch}
+      .nav.open{display:flex}.menu-btn{display:block}
+      .hero{padding-top:130px}.hero-grid,.candidate-grid,.closing-inner,.landmark-layout{grid-template-columns:1fr}.hero-copy{padding-bottom:0}.hero-photo{min-height:0}.hero-themes{grid-template-columns:1fr 1fr}.hero-themes span{border-bottom:1px solid var(--line)}.hero-themes span:nth-child(even){border-right:0}.hero-themes span:last-child{grid-column:1/-1}
+      .section-head{grid-template-columns:1fr;gap:20px}.direction-grid{grid-template-columns:1fr 1fr}.direction:last-child{grid-column:span 2}.story-grid{grid-template-columns:1fr}.visual{min-height:500px}.landmark-copy{padding-left:0}.google-map-wrap{grid-template-columns:1fr}.flow{grid-template-columns:1fr 1fr}.flow-step + .flow-step{border-left:0}.flow-step:nth-child(even){border-left:1px solid var(--line)}.flow-step:last-child{grid-column:1/-1}.resource-grid{grid-template-columns:1fr 1fr}.route{grid-template-columns:1fr}.route::before{left:28px;right:auto;top:7%;bottom:7%;width:2px;height:auto}.route-node{text-align:left;padding-left:86px;min-height:72px}.route-node i{position:absolute;left:0;top:0}.service-channels{grid-template-columns:1fr 1fr}.candidate-photo{min-height:620px}.candidate-profile-head{grid-template-columns:1fr}.candidate-facts{grid-template-columns:1fr 1fr}.history-gallery{grid-template-columns:1fr 1fr}.footer-grid{grid-template-columns:1fr}
+    }
+    @media (max-width:620px){
+      :root{--content:calc(100% - 24px);--radius:22px}
+      .site-header{top:8px;width:calc(100vw - 16px)}.brand{font-size:12px}.section{padding:82px 0}.hero{padding:112px 0 24px}.hero h1{font-size:clamp(62px,23vw,92px)}.hero-lead{font-size:20px}.hero-photo{min-height:0;border-radius:26px}.hero-themes{grid-template-columns:1fr}.hero-themes span{border-right:0}.hero-themes span:last-child{grid-column:auto}.reveal{padding:70px 0 88px}.direction-grid,.resource-grid,.service-channels,.mini-grid,.neighborhood{grid-template-columns:1fr}.direction:last-child{grid-column:auto}.visual{min-height:380px}.story{padding:28px 22px}.map-card{min-height:520px}.google-map-meta h4{font-size:24px}.google-map-card iframe{min-height:360px}.flow{grid-template-columns:1fr}.flow-step:nth-child(even){border-left:0}.flow-step:last-child{grid-column:auto}.candidate-photo{min-height:500px}.candidate-facts,.candidate-history{grid-template-columns:1fr}.history-item{grid-template-columns:72px 1fr}.history-gallery{grid-template-columns:1fr}.contact-actions{grid-template-columns:1fr}.closing{padding:90px 0 68px}.closing h2{font-size:60px}.footer-grid{gap:16px}.footer-card{flex-direction:column}.footer-card img{width:100%;height:240px}
+    }
+  </style>
 </head>
-
 <body>
-  <!-- Top Station Tagline & Ballot Status Bar (競選核心台標・口號標語與號次抽籤預留) -->
-  <aside class="station-tagline-bar" aria-label="競選核心台標與號次狀態">
-    <div class="container station-tagline-inner">
-      <div class="station-tagline-left">
-        <span class="station-badge">2026 龍子里的下一步</span>
-        <span class="station-slogan-main">用服務的溫度，加做事的效率</span>
-      </div>
-      <div class="station-tagline-center">
-        <span class="station-quote-mark">“</span>
-        <strong class="station-slogan-highlight">看得到的問題，盡力去做；收到的聲音，認真了解。</strong>
-        <span class="station-quote-mark">”</span>
-      </div>
-      <div class="station-tagline-right">
-        <div class="header-ballot-pill" title="候選人號次抽籤後即時公告更新">
-          <span class="ballot-dot"></span>
-          <span class="ballot-draw-txt">號次抽籤待定</span>
-        </div>
-      </div>
-    </div>
-  </aside>
+  <a class="skip" href="#main">跳到主要內容</a>
+  <div class="progress" id="progress" aria-hidden="true"></div>
 
-  <!-- Header Top Nav -->
-  <header class="header-top">
-    <div class="container">
-      <div class="header-inner">
-        <!-- Brand Logo -->
-        <a class="brand-logo" href="#top" aria-label="回到首頁">
-          <div class="brand-seal-wrapper">
-            <img src="assets/ui/logo-seal-512.png" alt="曾偉修印章識別" class="brand-seal-img" width="42" height="42">
-          </div>
-          <div class="brand-meta">
-            <span class="brand-meta-name">曾偉修</span>
-            <span class="brand-meta-sub">2026 龍子里的下一步</span>
-          </div>
-        </a>
-
-        <!-- Desktop Navigation Bar (純淨六大核心章節・零高空口號) -->
-        <nav class="nav-pills-bar" aria-label="全站章節導覽">
-          <a href="#about" class="nav-link-pill">認識偉修</a>
-          <a href="#why" class="nav-link-pill">為什麼參選</a>
-          <a href="#place" class="nav-link-pill">地方生活圈</a>
-          <a href="#actions" class="nav-link-pill">六大行動</a>
-          <a href="#service" class="nav-link-pill">服務紀錄</a>
-          <a href="#feedback" class="nav-link-pill">里民反映</a>
-          <a href="#timeline" class="nav-link-pill">走過的路</a>
-        </nav>
-
-        <!-- Desktop CTA & Share -->
-        <div class="header-cta-wrapper">
-          <a href="#share" class="nav-share-pill-btn" aria-label="前往社群分享專區" title="分享給鄰里好友">
-            <svg class="ui-icon" width="14" height="14" viewBox="0 0 24 24">
-              <circle cx="18" cy="5" r="3" />
-              <circle cx="6" cy="12" r="3" />
-              <circle cx="18" cy="19" r="3" />
-              <line x1="8.59" y1="13.51" x2="15.42" y2="17.49" />
-              <line x1="15.41" y1="6.51" x2="8.59" y2="10.49" />
-            </svg>
-            <span>分享</span>
-          </a>
-          <a href="#contact" class="nav-cta-btn">
-            <span>聯絡偉修</span>
-            <svg class="ui-icon" width="14" height="14" viewBox="0 0 24 24">
-              <path d="M5 12h14M12 5l7 7-7 7" />
-            </svg>
-          </a>
-        </div>
-
-        <!-- Mobile Hamburger Button -->
-        <button class="mobile-menu-toggle" id="menuToggle" aria-label="開啟選單" aria-expanded="false"
-          aria-controls="mobileDrawer">
-          <div class="hamburger-lines">
-            <span></span>
-            <span></span>
-            <span></span>
-          </div>
-        </button>
-      </div>
-    </div>
+  <header class="site-header" id="header">
+    <a class="brand" href="#top"><img src="assets/ui/logo-seal-512.png" alt="品牌識別標誌" onerror="this.hidden=true" />龍子里的下一步</a>
+    <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="nav">選單</button>
+    <nav class="nav" id="nav" aria-label="主要導覽">
+      <a href="#directions">七大方向</a>
+      <a href="#public">公共資訊</a>
+      <a href="#daily">生活議題</a>
+      <a href="#candidate">服務理念</a>
+      <a class="cta" href="#contact">意見反映</a>
+    </nav>
   </header>
 
-  <!-- Mobile Menu Drawer (Overlay) -->
-  <div class="mobile-drawer" id="mobileDrawer" role="dialog" aria-modal="true" aria-label="手機導覽選單">
-    <div class="mobile-drawer-inner">
-      <div class="mobile-drawer-header">
-        <img src="assets/ui/logo-seal-512.png" alt="曾偉修" class="brand-seal-img" width="38" height="38">
-        <div>
-          <div style="font-weight: 900; font-size: 18px; color: var(--navy-primary);">曾偉修</div>
-          <div style="font-size: 12px; color: var(--gold-dark); font-weight: 800;">2026 龍子里里長候選人（無黨籍）</div>
-          <div style="font-size: 11px; color: var(--navy-blue); margin-top: 2px; font-weight: 700;">用服務的溫度，加做事的效率</div>
+  <main id="main">
+    <section class="hero" id="top" data-scene="hero-next-step">
+      <div class="wrap hero-grid">
+        <div class="hero-copy reveal-on-scroll">
+          <span class="eyebrow">Longzi · Next Step</span>
+          <h1>龍子里的<br>下一步</h1>
+          <p class="hero-lead">我們今天做的選擇，<br><strong>決定十年後生活的樣子。</strong></p>
+        </div>
+        <figure class="hero-photo reveal-on-scroll" aria-label="龍子里生活情境重繪">
+          <span class="scene-badge">情境重繪</span>
+          <img src="assets/scenes/01-hero-longzi.webp" alt="以龍子里大順一路、輕軌與住宅街廓為參考重構的生活情境" fetchpriority="high" decoding="async" />
+          <figcaption class="photo-label"><b>從每天的生活開始</b><span>依龍子里周邊實景特徵重構</span></figcaption>
+        </figure>
+        <div class="hero-themes reveal-on-scroll" aria-label="首頁五項生活議題">
+          <span>孩子安心上學</span><span>長輩跟上科技</span><span>交通更安全</span><span>建設有人把關</span><span>小事有人處理</span>
         </div>
       </div>
+    </section>
 
-      <nav class="mobile-drawer-nav">
-        <a href="#about" class="mobile-drawer-link">
-          <span>認識偉修</span>
-          <span class="mobile-drawer-num">01</span>
-        </a>
-        <a href="#why" class="mobile-drawer-link">
-          <span>為什麼再次參選</span>
-          <span class="mobile-drawer-num">02</span>
-        </a>
-        <a href="#place" class="mobile-drawer-link">
-          <span>龍子里地方生活圈</span>
-          <span class="mobile-drawer-num">03</span>
-        </a>
-        <a href="#actions" class="mobile-drawer-link">
-          <span>六大里政行動</span>
-          <span class="mobile-drawer-num">04</span>
-        </a>
-        <a href="#service" class="mobile-drawer-link">
-          <span>務實服務紀錄</span>
-          <span class="mobile-drawer-num">05</span>
-        </a>
-        <a href="#feedback" class="mobile-drawer-link">
-          <span>里民生活反映窗口</span>
-          <span class="mobile-drawer-num">06</span>
-        </a>
-        <a href="#timeline" class="mobile-drawer-link">
-          <span>走過的路，都算數</span>
-          <span class="mobile-drawer-num">07</span>
-        </a>
-        <a href="#share" class="mobile-drawer-link"
-          style="border-color: rgba(242, 201, 76, 0.4); background: var(--gold-light);">
-          <span style="color: var(--navy-dark); font-weight: 800;">💖 分享給鄰里好朋友</span>
-          <span class="mobile-drawer-num" style="color: var(--gold-dark);">08</span>
-        </a>
-        <a href="#contact" class="mobile-drawer-link">
-          <span>聯絡曾偉修</span>
-          <span class="mobile-drawer-num">09</span>
-        </a>
-      </nav>
-
-      <!-- Drawer Quick Actions -->
-      <div class="mobile-drawer-actions">
-        <a href="tel:0981451451" class="mobile-drawer-btn" style="background: var(--navy-primary); color: #fff;">
-          <svg class="ui-icon" width="16" height="16" viewBox="0 0 24 24">
-            <path
-              d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
-          </svg>
-          <span>撥打電話</span>
-        </a>
-        <a href="https://line.me/ti/p/~tseng0220" target="_blank" rel="noopener" class="mobile-drawer-btn"
-          style="background: var(--line-green); color: #fff;">
-          <svg class="ui-icon" width="16" height="16" viewBox="0 0 24 24" style="fill: currentColor; stroke: none;">
-            <path
-              d="M12 2C6.48 2 2 5.92 2 10.76c0 3.29 2.06 6.18 5.16 7.64-.23.77-.82 2.78-.94 3.2-.15.53.19.52.4.38.17-.11 2.37-1.61 3.32-2.26.68.1 1.38.15 2.06.15 5.52 0 10-3.92 10-8.76S17.52 2 12 2z" />
-          </svg>
-          <span>加入 LINE</span>
-        </a>
+    <section class="reveal" aria-label="候選人後置揭示">
+      <div class="wrap reveal-on-scroll">
+        <p><strong>曾偉修</strong>，邀請你一起想想<br>龍子里的下一步。</p>
       </div>
-    </div>
-  </div>
+    </section>
 
-  <main id="top">
-    <!-- Hero Section -->
-    <section class="hero-section" aria-label="首頁主視覺">
-      <!-- Desktop & Tablet Background Picture (>768px) -->
-      <picture class="hero-bg-picture">
-        <source media="(min-width: 1025px)" type="image/avif" srcset="assets/hero/hero-desktop.avif">
-        <source media="(min-width: 1025px)" type="image/webp" srcset="assets/hero/hero-desktop.webp">
-        <source media="(min-width: 769px)" type="image/avif" srcset="assets/hero/hero-tablet.avif">
-        <source media="(min-width: 769px)" type="image/webp" srcset="assets/hero/hero-tablet.webp">
-        <img src="assets/hero/hero-desktop.jpg" alt="曾偉修 龍子里的下一步 2026 高雄市鼓山區龍子里" fetchpriority="high">
-      </picture>
-
-      <!-- Mobile Dedicated Visual Stage (<=768px: 拆圖解耦專用人物視覺展台) -->
-      <div class="hero-mobile-stage" aria-hidden="true">
-        <div class="hero-mobile-stage-inner">
-          <picture>
-            <source type="image/avif" srcset="assets/hero/hero-mobile.avif">
-            <source type="image/webp" srcset="assets/hero/hero-mobile.webp">
-            <img src="assets/hero/hero-mobile.jpg" alt="曾偉修 龍子里里長候選人" class="hero-mobile-img" loading="eager"
-              fetchpriority="high">
-          </picture>
-          <!-- Top floating district pill -->
-          <div class="hero-mobile-top-pill">
-            <span class="hero-badge-dot"></span>
-            <span>2026｜高雄市鼓山區龍子里</span>
-          </div>
-          <!-- Bottom floating candidate seal tag -->
-          <div class="hero-mobile-person-tag">
-            <img src="assets/ui/logo-seal-512.png" alt="" class="hero-mobile-tag-seal" width="20" height="20">
-            <span>曾偉修｜里長候選人（無黨籍）</span>
-          </div>
+    <section class="section seven" id="directions" data-scene="seven-directions">
+      <div class="wrap">
+        <div class="section-head reveal-on-scroll">
+          <div><span class="eyebrow">01 · 一分鐘看懂</span><h2>七個方向，<br>從小事開始。</h2></div>
+          <p>龍子里需要的，不一定都是大建設。很多改變，就從每天遇得到的小事情開始。</p>
+        </div>
+        <div class="direction-grid">
+          <article class="direction reveal-on-scroll"><span class="num">01</span><div><h3>公共資訊更透明</h3><p>活動、補助、回饋及公共資源，依法可以公開的，讓居民更容易知道。</p></div></article>
+          <article class="direction reveal-on-scroll"><span class="num">02</span><div><h3>反映事情有後續</h3><p>收到、確認、通報、追蹤、回覆，讓居民知道事情進到哪裡。</p></div></article>
+          <article class="direction reveal-on-scroll"><span class="num">03</span><div><h3>孩子上下學更安心</h3><p>關心通學路線、危險路口與接送動線。</p></div></article>
+          <article class="direction reveal-on-scroll"><span class="num">04</span><div><h3>長輩跟得上數位生活</h3><p>手機、LINE、定位、AI與防詐，從生活需要開始。</p></div></article>
+          <article class="direction reveal-on-scroll"><span class="num">05</span><div><h3>出門方便，平安到家</h3><p>關心 YouBike、捷運、輕軌與社區間的移動路線。</p></div></article>
+          <article class="direction reveal-on-scroll"><span class="num">06</span><div><h3>建設進步，生活品質也要顧</h3><p>關心施工、車流、停車、人行與周邊環境。</p></div></article>
+          <article class="direction reveal-on-scroll"><span class="num">07</span><div><h3>里務服務更方便</h3><p>電話、LINE、網路、現場，都能找到服務管道。</p></div></article>
         </div>
       </div>
+    </section>
 
-      <!-- Hero Content Card (Desktop Left / Mobile Elevated Sheet) -->
-      <div class="container hero-container">
-        <div class="hero-content">
-          <!-- Top Slot: Official Ballot Pill (號次抽籤金印展台) -->
-          <div class="hero-ballot-slot" title="候選人號次抽籤後即刻公告更新">
-            <div class="ballot-circle-box">
-              <span class="ballot-circle-label">號次</span>
-              <span class="ballot-circle-num">待定</span>
-            </div>
-            <div class="ballot-slot-info">
-              <div class="ballot-slot-status">
-                <span class="ballot-status-tag">候選人號次</span>
-                <span class="ballot-party-tag">無黨籍</span>
-              </div>
-              <div class="ballot-slot-sub">抽籤後即刻公佈更新</div>
-            </div>
+    <section class="section" id="public" data-scene="public-information">
+      <div class="wrap story-grid">
+        <figure class="visual final-visual reveal-on-scroll" aria-label="公共資訊生活情境重繪">
+          <span class="scene-badge">情境重繪</span>
+          <img src="assets/scenes/02-public-info.webp" alt="住宅社區入口中，住戶查看手機資訊，另一位居民閱讀實體公告欄" loading="lazy" decoding="async" />
+        </figure>
+        <article class="story reveal-on-scroll">
+          <span class="eyebrow">02 · 公共資訊</span>
+          <h3>不應該只有<br>知道的人才知道。</h3>
+          <p>有人白天上班、晚上回家；有人不參加固定活動，也沒有加入特定群組。如果資訊只有少數傳遞方式，就容易有人知道、有人不知道。</p>
+          <div class="chips"><span class="chip">活動</span><span class="chip">補助</span><span class="chip">公共資源</span><span class="chip">申請資訊</span></div>
+          <p>依法可以公開的，就讓居民更容易：<strong>看得到、找得到、用得到。</strong></p>
+          <p class="quote">資訊公開，更重要的是讓居民真正收到。</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section landmarks" data-scene="longzi-landmarks">
+      <div class="wrap landmark-layout">
+        <div class="map-card reveal-on-scroll" aria-label="龍子里生活圈重大地標示意">
+          <div class="road r1"></div><div class="road r2"></div><div class="road r3"></div>
+          <span class="pin p1">好市多大順店</span><span class="pin p2">義享天地</span><span class="pin p3">高雄萬豪酒店</span><span class="pin p4">林皇宮</span><span class="pin p5">富邦凹子底開發案</span><span class="pin p6">停35</span>
+          <p class="map-note">生活圈概念示意，不作精確里界或導航使用。正式上線可替換為 GIS／Three.js 地標視覺。</p>
+        </div>
+        <article class="landmark-copy reveal-on-scroll">
+          <span class="eyebrow">03 · 生活圈</span>
+          <h3>原來，這些都在龍子里生活圈。</h3>
+          <p>每天經過大順一路、博愛二路、神農路、龍德新路，可能很少有人特別去注意周邊大型商業設施與開發。</p>
+          <div class="landmark-list">
+            <div>好市多大順店 <small>大順一路周邊</small></div>
+            <div>義享天地 A館、B館 <small>大型複合開發</small></div>
+            <div>高雄萬豪酒店 <small>義享天地 A館</small></div>
+            <div>林皇宮 <small>博愛二路</small></div>
+            <div>富邦凹子底大型開發案 <small>2026 年已舉行上樑典禮</small></div>
+            <div>停35公共設施用地 <small>神農路 × 南屏路</small></div>
+          </div>
+          <p>除了「有什麼新的建設」，居民也可以更清楚知道：有哪些公共資源、活動、補助或福利？誰可以參加？要去哪裡知道？</p>
+          <p>不同建設、不同資源都有不同規定，不能混在一起，也不能因為有大型商場，就認定一定有地方回饋。</p>
+          <p class="quote">公共的事情，本來就值得說清楚。</p>
+          <div class="source-links">現況資料核對：<a href="https://www.costco.com.tw/storefinder" target="_blank" rel="noopener">Costco 官方賣場資訊</a> · <a href="https://www.eskyland.com.tw/about" target="_blank" rel="noopener">義享天地官方</a> · <a href="https://linpalace.com.tw/hot-news/" target="_blank" rel="noopener">高雄林皇宮官方</a> · <a href="https://www.fubon.com/life/about-us/announcement/news/fu-bang-ren-shou-gao-xiong-ao-zi-de-kai-fa-an-shang-liang-dian-li--gong-si-xie-li-gong-chuang-cheng-shi-xin-rong-jing" target="_blank" rel="noopener">富邦人壽 2026/01/19</a> · 高雄市都市計畫公開資料（停35）。</div>
+        </article>
+      </div>
+      <div class="wrap google-map-wrap reveal-on-scroll" aria-label="Google Maps 龍子里區域參考">
+        <div class="google-map-card">
+          <iframe
+            title="Google Maps 龍子里區域參考"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            src="https://www.google.com/maps?q=%E9%AB%98%E9%9B%84%E5%B8%82%E9%BC%93%E5%B1%B1%E5%8D%80%E9%BE%8D%E5%AD%90%E9%87%8C&z=15&output=embed">
+          </iframe>
+        </div>
+        <aside class="google-map-meta">
+          <div>
+            <span class="eyebrow">Google Maps 參考</span>
+            <h4>把龍子里的生活圈，直接放進地圖裡看。</h4>
+            <p>這個地圖區塊提供網站使用者快速理解龍子里所在位置與周邊生活圈。可搭配上方的地標示意一起閱讀：上方偏向生活圈整理，這裡則提供實際地圖參考。</p>
+          </div>
+          <div class="google-map-actions">
+            <a class="map-action primary" href="https://www.google.com/maps/search/?api=1&query=%E9%AB%98%E9%9B%84%E5%B8%82%E9%BC%93%E5%B1%B1%E5%8D%80%E9%BE%8D%E5%AD%90%E9%87%8C" target="_blank" rel="noopener">在 Google Maps 開啟</a>
+            <a class="map-action" href="#contact">回到聯絡方式</a>
+          </div>
+          <p class="map-disclaimer">說明：此區塊為 Google Maps 的區域參考，用來幫助理解龍子里的位置與周邊環境；實際里界、路線與行政資訊仍以正式公開資料為準。</p>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section workflow" data-scene="case-workflow">
+      <div class="wrap">
+        <div class="section-head reveal-on-scroll">
+          <div><span class="eyebrow">04 · 案件追蹤</span><h2>事情反映了，<br>後續呢？</h2></div>
+          <p>居民反映事情後，最在意的往往不只是一句「收到」，而是後續結果是什麼。</p>
+        </div>
+        <div class="flow reveal-on-scroll" aria-label="案件處理五步驟">
+          <div class="flow-step"><b>STEP 01</b><strong>收到</strong><p>先建立案件，不讓問題消失在訊息裡。</p></div>
+          <div class="flow-step"><b>STEP 02</b><strong>確認</strong><p>釐清位置、情況與可協助範圍。</p></div>
+          <div class="flow-step"><b>STEP 03</b><strong>通報</strong><p>需要權責單位處理的，協助轉達。</p></div>
+          <div class="flow-step"><b>STEP 04</b><strong>追蹤</strong><p>不是送出就結束，持續確認進度。</p></div>
+          <div class="flow-step"><b>STEP 05</b><strong>回覆</strong><p>把能做、不能做、目前進度說清楚。</p></div>
+        </div>
+        <p class="quote reveal-on-scroll">不只說「已經反映」，也讓居民知道「結果是什麼」。</p>
+      </div>
+    </section>
+
+    <section class="section" id="daily" data-scene="school-safety">
+      <div class="wrap story-grid">
+        <article class="story reveal-on-scroll">
+          <span class="eyebrow">05 · 通學安全</span>
+          <h3>孩子上下學，<br>不只看校門口。</h3>
+          <p>真正需要關心的，是孩子從家裡到學校，再平安回家的整段路。</p>
+          <div class="chips"><span class="chip">通學路線</span><span class="chip">危險路口</span><span class="chip">違停與視線死角</span><span class="chip">斑馬線與號誌</span><span class="chip">接送臨停秩序</span></div>
+          <p>需要改善的地方，現場了解問題，向權責單位反映並持續追蹤。</p>
+          <p class="quote">每天上下學走的路，值得多用一點心。</p>
+        </article>
+        <figure class="visual final-visual reveal-on-scroll" aria-label="通學安全生活情境重繪">
+          <span class="scene-badge">情境重繪</span>
+          <img src="assets/scenes/03-school-safety.webp" alt="家長陪同學童沿人行空間與斑馬線走向龍華國小方向的通學情境" loading="lazy" decoding="async" />
+        </figure>
+      </div>
+    </section>
+
+    <section class="section" data-scene="senior-digital">
+      <div class="wrap split-stack">
+        <div class="story-grid">
+          <figure class="visual final-visual reveal-on-scroll" aria-label="長輩數位生活情境重繪">
+            <span class="scene-badge">情境重繪</span>
+            <img src="assets/scenes/04-senior-digital.webp" alt="社區空間中長輩操作手機，由協助者在旁引導的生活學習情境" loading="lazy" decoding="async" />
+          </figure>
+          <article class="story reveal-on-scroll">
+            <span class="eyebrow">06 · 長輩數位</span>
+            <h3>科技越進步，<br>更需要有人陪著學。</h3>
+            <p>掛號、叫車、LINE、地圖、行動支付，甚至現在的 AI，都慢慢進入日常生活。</p>
+            <div class="chips"><span class="chip">手機與 LINE</span><span class="chip">定位、地圖與叫車</span><span class="chip">數位金融安全</span><span class="chip">簡易 AI 應用</span><span class="chip">防詐辨識</span></div>
+            <p>不必一次學會所有功能。從生活真正需要的開始，一步一步來。</p>
+            <p class="quote">科技應該帶來方便，不該成為生活的門檻。</p>
+          </article>
+        </div>
+        <article class="story reveal-on-scroll">
+          <span class="eyebrow">07 · 資源窗口</span>
+          <h3>長輩需要幫忙時，知道可以找誰。</h3>
+          <p>里辦公處不能取代醫療，也不能取代專業社福。但可以協助居民了解資源，找到正確的政府、醫療或社福窗口。</p>
+          <div class="resource-grid">
+            <div class="resource"><b>長照申請</b><p>先確認需求，再協助找到正確申請與諮詢窗口。</p></div>
+            <div class="resource"><b>社福資源</b><p>釐清資格與承辦單位，減少重複詢問與奔波。</p></div>
+            <div class="resource"><b>就醫協助</b><p>需要醫療專業時，引導到適合的醫療或官方資訊。</p></div>
+            <div class="resource"><b>關懷資源</b><p>獨居或需要關懷者，協助連結可使用的服務。</p></div>
+          </div>
+          <p class="quote">幫忙把人，找到對的窗口。</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section mobility" data-scene="mobility-route">
+      <div class="wrap">
+        <div class="section-head reveal-on-scroll">
+          <div><span class="eyebrow">08 · 日常移動</span><h2>出門方便，<br>平安到家。</h2></div>
+          <p>交通方便，不只是車站離家近。社區、YouBike、捷運、輕軌與最後一段回家的路，都在同一條生活動線裡。</p>
+        </div>
+        <div class="route reveal-on-scroll" aria-label="社區到大眾運輸的交通動線">
+          <div class="route-node"><i>家</i><b>社區</b><span>從家門口出發</span></div>
+          <div class="route-node"><i>騎</i><b>YouBike</b><span>借還需求與安全</span></div>
+          <div class="route-node"><i>轉</i><b>捷運</b><span>轉乘與步行動線</span></div>
+          <div class="route-node"><i>行</i><b>輕軌</b><span>站點周邊移動</span></div>
+          <div class="route-node"><i>安</i><b>回家</b><span>照明、路口、視線</span></div>
+        </div>
+        <p class="quote reveal-on-scroll" style="color:#fff!important">從家門口出發，再平平安安回到家。</p>
+      </div>
+    </section>
+
+    <section class="section" data-scene="development-life">
+      <div class="wrap story-grid">
+        <article class="story reveal-on-scroll">
+          <span class="eyebrow">09 · 建設與生活</span>
+          <h3>歡迎建設，<br>也要顧好生活品質。</h3>
+          <p>新的商場、住宅、辦公與公共建設，帶來生活機能，也可能改變原本的環境。</p>
+          <div class="chips"><span class="chip">施工交通</span><span class="chip">噪音與揚塵</span><span class="chip">營運車流</span><span class="chip">停車</span><span class="chip">行人動線</span></div>
+          <p>大型開發不是里長可以決定要不要蓋。但居民受到的影響，可以整理、反映，也可以持續關心後續。</p>
+          <p class="quote">歡迎建設，也要顧好生活品質。</p>
+        </article>
+        <figure class="visual final-visual reveal-on-scroll" aria-label="建設與生活情境重繪">
+          <span class="scene-badge">情境重繪</span>
+          <img src="assets/scenes/05-development-life.webp" alt="大型建設、道路車流、既有住宅與行人生活並存的都市發展情境" loading="lazy" decoding="async" />
+        </figure>
+      </div>
+    </section>
+
+    <section class="section" data-scene="daily-small-things">
+      <div class="wrap">
+        <div class="section-head reveal-on-scroll">
+          <div><span class="eyebrow">10 · 日常維護</span><h2>小事情，<br>也是每天的生活。</h2></div>
+          <p>一個坑洞、一盞不亮的路燈、一段堵塞的水溝，看起來都是小事，卻是居民每天真正會遇到的問題。</p>
+        </div>
+        <div class="mini-grid reveal-on-scroll">
+          <article class="mini-card"><h3>道路與排水</h3><p>道路坑洞、水溝清淤、積水環境、道路標線與行車視線。</p></article>
+          <article class="mini-card"><h3>照明與環境</h3><p>路燈故障、雜草整理、路樹修剪與需要維護的公共空間。</p></article>
+          <article class="mini-card"><h3>先到現場了解</h3><p>發現問題，不只轉傳訊息；先釐清位置、情況與影響。</p></article>
+          <article class="mini-card"><h3>需要權責單位就追蹤</h3><p>能協助處理的就協助；需要其他單位處理的，就反映並追蹤。</p></article>
+        </div>
+        <p class="quote reveal-on-scroll">小事情有人在意，生活就多一點安心。</p>
+      </div>
+    </section>
+
+    <section class="section" data-scene="community-safety">
+      <div class="wrap story-grid">
+        <article class="story reveal-on-scroll">
+          <span class="eyebrow">11 · 社區安全</span>
+          <h3>安全，不是事情發生以後才開始。</h3>
+          <p><strong>候選人自述：</strong>多年參與地方民防工作，讓他更重視第一線的預防、通報與聯繫。</p>
+          <div class="chips"><span class="chip">夜間照明</span><span class="chip">治安死角</span><span class="chip">易肇事路口</span><span class="chip">防詐資訊</span><span class="chip">通學安全</span><span class="chip">警政聯繫</span></div>
+          <p>遇到問題時，除了即時通報，也重視居民、社區與警政之間的聯繫。</p>
+          <p class="quote">社區一起留意，生活就多一分安心。</p>
+        </article>
+        <article class="story reveal-on-scroll" style="background:var(--green);color:#fff">
+          <span class="eyebrow" style="color:#c7d8d3">重要資訊</span>
+          <h3>讓居民更快知道，<br>也更快找到正確窗口。</h3>
+          <p style="color:#d5e2de">道路施工、停水停電、交通異動、活動及重要公告，可透過不同管道提供資訊。</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section services" data-scene="service-channels">
+      <div class="wrap">
+        <div class="section-head reveal-on-scroll">
+          <div><span class="eyebrow">12 · 里務服務</span><h2>不一定要跑一趟辦公室。</h2></div>
+          <p>有人習慣打電話，有人習慣 LINE；年輕人可能比較習慣網路，也有長輩喜歡面對面把事情說清楚。</p>
+        </div>
+        <div class="service-channels reveal-on-scroll">
+          <a class="channel channel-link" href="tel:0981451451"><span>01</span><strong>電話</strong><small>0981-451-451</small></a>
+          <a class="channel channel-link" href="https://line.me/ti/p/~tseng0220" target="_blank" rel="noopener"><span>02</span><strong>LINE</strong><small>tseng0220</small></a>
+          <a class="channel channel-link" href="https://www.facebook.com/weihsiut" target="_blank" rel="noopener"><span>03</span><strong>Facebook</strong><small>曾偉修粉專</small></a>
+          <a class="channel channel-link" href="https://www.threads.net/@logimaskimo" target="_blank" rel="noopener"><span>04</span><strong>Threads</strong><small>@logimaskimo</small></a>
+        </div>
+        <p class="quote reveal-on-scroll">不是要求居民適應里辦公處，而是讓服務跟得上居民。</p>
+      </div>
+    </section>
+
+    <section class="section" data-scene="new-old-community">
+      <div class="wrap">
+        <div class="section-head reveal-on-scroll">
+          <div><span class="eyebrow">13 · 社區連結</span><h2>新大樓、老社區，<br>都是龍子里。</h2></div>
+          <p>住的地方不同，生活中遇到的問題也不完全一樣。不同的生活需要，都值得被看見。</p>
+        </div>
+        <figure class="visual final-visual community-visual reveal-on-scroll" aria-label="新大樓與老社區共存情境重繪">
+          <span class="scene-badge">情境重繪</span>
+          <img src="assets/scenes/06-new-old-community.webp" alt="低樓老社區街巷沿同一生活空間延伸至後方現代住宅高樓的共存情境" loading="lazy" decoding="async" />
+        </figure>
+        <div class="neighborhood reveal-on-scroll">
+          <article><h3>新大樓社區</h3><p>交通、停車、施工影響、公共建設、社區協調，以及與管委會之間的資訊聯繫。</p></article>
+          <article><h3>傳統社區</h3><p>道路、水溝、環境整理、長者生活、巷弄安全，以及日常生活問題的快速反映。</p></article>
+        </div>
+        <p class="quote reveal-on-scroll">不管住在新大樓，還是老社區，遇到問題時，都能有地方反映。</p>
+      </div>
+    </section>
+
+    <section class="section candidate" id="candidate" data-scene="candidate-philosophy">
+      <div class="wrap candidate-grid">
+        <figure class="candidate-photo reveal-on-scroll" aria-label="曾偉修照片">
+          <div class="fallback">候選人照片版位<br>assets/candidate-community.png</div>
+          <img src="assets/candidate-community.png" alt="曾偉修於龍子里生活圈場景中的照片" onerror="this.hidden=true" />
+        </figure>
+        <article class="candidate-copy reveal-on-scroll">
+          <span class="eyebrow">14 · 認識曾偉修</span>
+          <h2>把每天的事情做好。</h2>
+          <p>曾偉修的人生經歷橫跨軍旅、第一線業務、海外產業管理、創業、地方公共事務與社區服務。過去的工作背景不只是一份履歷，更重要的是如何把累積的協調、管理與第一線服務經驗，帶回每天生活的地方。</p>
+          <p>2022 年曾參選高雄市鼓山區龍子里里長，獲得 1,545 票。這段參選經驗，也成為後續持續投入地方公共事務的一部分。2022 年的得票數可由中央選舉委員會選舉結果資料核對。</p>
+          <blockquote>「很多事情不一定能一步到位，但有人願意接、願意追、願意把事情處理到有結果，就會不一樣。」</blockquote>
+          <p style="margin-top:22px">對地方服務而言，真正重要的是居民需要時找不找得到人、問題有沒有被接住、反映之後有沒有後續。</p>
+          <div class="candidate-meta"><span>曾偉修</span><span>龍子里里長候選人</span><span>地方服務 × 協調 × 第一線經驗</span></div>
+        </article>
+
+        <div class="candidate-profile reveal-on-scroll">
+          <div class="candidate-profile-head">
+            <div><span class="eyebrow" style="color:#bdd0cb">PERSONAL PROFILE</span><h3>走過的路，整理成能看懂的經歷。</h3></div>
+            <p>這裡只保留曾偉修本人的學歷、工作、公共服務與參選經歷，不把舊版網站的政策、地方介紹或其他設計內容搬進來。</p>
           </div>
 
-          <!-- Dual Identity & Slogan Architecture (人名與口號雙核心黃金架構) -->
-          <div class="hero-brand-block">
-            <div class="hero-name-row">
-              <span class="hero-candidate-name">曾偉修</span>
-              <span class="hero-identity-tag">2026 鼓山區龍子里里長候選人（無黨籍）</span>
-            </div>
-            <h1 class="hero-action-headline">
-              龍子里的<span class="headline-gold-focus">下一步</span>
-            </h1>
+          <div class="candidate-facts">
+            <div class="candidate-fact"><small>學歷</small><strong>正修科技大學<br>企業管理系</strong></div>
+            <div class="candidate-fact"><small>技職背景</small><strong>大榮高工<br>電子科</strong></div>
+            <div class="candidate-fact"><small>2022 參選紀錄</small><strong>龍子里里長<br>1,545 票</strong></div>
+            <div class="candidate-fact"><small>地方服務</small><strong>民防協勤<br>地方陳情協調</strong></div>
           </div>
 
-          <!-- Official Station Catchphrase (台標金句專區・溫暖承諾副標與名言短句) -->
-          <div class="hero-station-slogan">
-            <div class="hero-sub">用服務的溫度，加做事的效率。</div>
-            <div class="hero-motto-pill">
-              <span class="hero-quote-mark">“</span>
-              <span>看得到的問題盡力去做，收到的聲音認真了解</span>
-              <span class="hero-quote-mark">”</span>
-            </div>
+          <div class="candidate-history" aria-label="曾偉修經歷摘要">
+            <div class="history-item"><b>軍旅</b><p>曾服空軍義務役；既有資料記載退伍時獲頒空軍總司令獎狀。</p></div>
+            <div class="history-item"><b>業務</b><p>退伍後曾有味之素第一線業務工作經驗，累積市場與客戶溝通經驗。</p></div>
+            <div class="history-item"><b>海外</b><p>曾任馬來西亞電子產業管理職，並參與馬來西亞台灣商會及當地學校相關公共事務。</p></div>
+            <div class="history-item"><b>管理</b><p>曾赴中國舟山從事冷凍水產產業管理工作；2022 年選舉公報亦列有相關公司副總經理經歷。</p></div>
+            <div class="history-item"><b>創業</b><p>返台後投入通訊產業創業與門市經營；既有資料記載 2021 年創立精品咖啡品牌。</p></div>
+            <div class="history-item"><b>公共事務</b><p>曾任立法委員服務處助理，接觸地方陳情與政府部門協調；並長期參與龍華派出所民防工作。</p></div>
+            <div class="history-item"><b>學習</b><p>既有資料記載，50 歲後完成正修科技大學企業管理系學業。</p></div>
+            <div class="history-item"><b>2022</b><p>首次參選龍子里里長。中央選舉委員會公布結果顯示，曾偉修獲得 1,545 票。</p></div>
           </div>
 
-          <p class="hero-desc">聽見里民的聲音，陪著解決問題。從每天的生活出發，攜手打造更安心、舒適、美好的龍子里。</p>
-
-          <!-- Triad Trust Badges (三大承諾膠囊・等寬對稱並列) -->
-          <div class="hero-highlights-list">
-            <div class="hero-pill">
-              <svg class="ui-icon" viewBox="0 0 24 24">
-                <polyline points="20 6 9 17 4 12"></polyline>
-              </svg>
-              <span>四年前 1,545 份信任</span>
-            </div>
-            <div class="hero-pill">
-              <svg class="ui-icon" viewBox="0 0 24 24">
-                <polyline points="20 6 9 17 4 12"></polyline>
-              </svg>
-              <span>六大里政務實行動</span>
-            </div>
-            <div class="hero-pill">
-              <svg class="ui-icon" viewBox="0 0 24 24">
-                <polyline points="20 6 9 17 4 12"></polyline>
-              </svg>
-              <span>零看板・潔淨街景</span>
-            </div>
+          <div class="history-gallery" aria-label="曾偉修人生經歷照片">
+            <figure class="history-photo">
+              <div class="history-photo-media"><img src="assets/candidate-history/1993-airforce.jpg" alt="曾偉修軍旅時期照片" loading="lazy"></div>
+              <figcaption><small>軍旅時期</small><strong>空軍服役</strong><p>早期軍旅生活照片。</p></figcaption>
+            </figure>
+            <figure class="history-photo">
+              <div class="history-photo-media"><img src="assets/candidate-history/ajinomoto.jpg" alt="曾偉修從事第一線業務時期照片" loading="lazy"></div>
+              <figcaption><small>第一線工作</small><strong>味之素業務</strong><p>在賣場與市場端累積第一線工作經驗。</p></figcaption>
+            </figure>
+            <figure class="history-photo">
+              <div class="history-photo-media"><img src="assets/candidate-history/malaysia-card.jpg" alt="曾偉修馬來西亞台商公共事務相關紀錄" loading="lazy"></div>
+              <figcaption><small>海外階段</small><strong>馬來西亞工作與公共事務</strong><p>海外工作期間的台商組織相關紀錄。</p></figcaption>
+            </figure>
+            <figure class="history-photo">
+              <div class="history-photo-media"><img src="assets/candidate-history/baby-hand.jpg" alt="曾偉修家庭重要人生階段照片" loading="lazy"></div>
+              <figcaption><small>家庭階段</small><strong>人生的重要轉折</strong><p>家庭因素促成返台與後續生活方向調整。</p></figcaption>
+            </figure>
+            <figure class="history-photo">
+              <div class="history-photo-media"><img src="assets/candidate-history/phone-shop.jpg" alt="曾偉修通訊門市經營相關照片" loading="lazy"></div>
+              <figcaption><small>返台創業</small><strong>通訊產業與門市經營</strong><p>返台後投入通訊產業與門市服務。</p></figcaption>
+            </figure>
+            <figure class="history-photo">
+              <div class="history-photo-media"><img src="assets/candidate-history/civil-defense.jpg" alt="曾偉修參與民防工作照片" loading="lazy"></div>
+              <figcaption><small>地方公共服務</small><strong>民防協勤</strong><p>長期參與地方民防相關工作。</p></figcaption>
+            </figure>
+            <figure class="history-photo">
+              <div class="history-photo-media"><img src="assets/candidate-history/coffee.jpg" alt="曾偉修精品咖啡品牌工作照片" loading="lazy"></div>
+              <figcaption><small>創業經歷</small><strong>精品咖啡</strong><p>2021 年後投入精品咖啡品牌經營。</p></figcaption>
+            </figure>
+            <figure class="history-photo">
+              <div class="history-photo-media"><img src="assets/candidate-history/graduation.jpg" alt="曾偉修正修科技大學畢業照片" loading="lazy"></div>
+              <figcaption><small>持續進修</small><strong>正修科技大學企業管理系</strong><p>完成企業管理系學業的畢業紀錄。</p></figcaption>
+            </figure>
           </div>
-
-          <!-- CTA Buttons (第一屏清晰立現) -->
-          <div class="hero-btns">
-            <a class="btn-main" href="#actions">
-              <span>了解六大行動</span>
-              <svg class="ui-icon" viewBox="0 0 24 24">
-                <path d="M5 12h14M12 5l7 7-7 7" />
-              </svg>
-            </a>
-            <a class="btn-secondary" href="#contact">
-              <span>聯絡曾偉修</span>
-            </a>
+<div class="candidate-source">
+            人物經歷主要整理自既有曾偉修網站資料；2022 年選舉公報可核對大榮高工電子科、馬來西亞松永電子業務經理、馬來西亞台灣商會理事、吉隆坡中華台北學校董事、萬昌冷凍水產副總經理、龍華民防及所以咖啡等經歷；2022 年得票結果以中央選舉委員會資料為準。
+            <a href="https://eebulletin.cec.gov.tw/111/07%E9%AB%98%E9%9B%84%E5%B8%82/05%E6%9D%91%E9%87%8C%E9%95%B7/02%E9%BC%93%E5%B1%B1%E5%8D%80/%E9%BC%93%E5%B1%B1%E5%8D%80%E9%BE%8D%E5%AD%90%E9%87%8C%E9%87%8C%E9%95%B7.pdf" target="_blank" rel="noopener">2022 龍子里里長選舉公報</a>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- About Section (認識曾偉修) -->
-    <section class="page-section about-section" id="about" aria-label="認識曾偉修">
-      <div class="container">
-        <div class="section-k">
-          <svg class="ui-icon" viewBox="0 0 24 24">
-            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-            <circle cx="12" cy="7" r="4"></circle>
-          </svg>
-          <span>ABOUT WEIHSIU / 認識偉修</span>
-        </div>
-        <div class="about-grid">
-          <div class="about-img-frame">
-            <picture>
-              <source type="image/avif" srcset="assets/people/person-about.avif">
-              <source type="image/webp" srcset="assets/people/person-about.webp">
-              <img src="assets/people/person-about.jpg" alt="曾偉修人物照" loading="lazy" decoding="async" class="about-img">
-            </picture>
-          </div>
-          <div>
-            <h2 class="section-title">四年前 1,545 份交付的信任，<br>一直放在心裡。</h2>
-            <p class="section-desc" style="margin-bottom: 18px;">
-              曾偉修不是第一次投入龍子里的公共事務。四年前第一次參選龍子里里長，獲得 <strong>1,545 位鄉親</strong> 的溫暖支持。這四年來，偉修沒有把那 1,545
-              票只當成一個選舉數字，而是一直深刻記得，那代表著 <strong>1,545 份曾經交付的信任</strong>。
-            </p>
-
-            <p class="section-desc" style="margin-bottom: 18px;">
-              人生走過軍旅、第一線業務、海外工作、企業管理、創業、公共事務與社區服務，也曾經歷過人生不同階段的高低起伏。
-              18 歲入伍服役，退伍時獲頒<strong>空軍總司令獎狀</strong>；退伍後進入職場，曾任<strong>味之素營業工作</strong>，也曾長期派駐<strong>馬來西亞電子產業擔任管理職約 15
-                年</strong>，期間積極參與當地台商公共事務；之後前往<strong>中國舟山從事冷凍水產產業管理工作</strong>。
-            </p>
-
-            <p class="section-desc" style="margin-bottom: 18px;">
-              後來因孩子早產，人生的重心重新回到台灣，也開啟了另一段創業人生。返台後投入通訊產業，曾經營多家通訊門市；2021
-              年再創立自己的精品咖啡品牌。工作之餘，長期參與地方民防與公共事務，曾擔任<strong>立法委員服務處助理</strong>，親身接觸地方陳情、政府部門協調與公共議題爭取。
-            </p>
-
-            <div class="about-quote-box">
-              <p>「很多事情不一定能一步到位，但有人願意接、願意追、願意把事情處理到有結果，就會不一樣。」</p>
-            </div>
-
-            <p class="section-desc" style="font-size: 16px; color: var(--navy-primary); font-weight: 700;">
-              2026 年，再次投入龍子里里長選舉。這一次選擇回到最單純的地方服務，希望把過去累積的工作經驗、協調能力與人生歷練，毫無保留用在自己每天生活的社區。
-            </p>
+    <section class="closing" id="contact" data-scene="closing-next-step">
+      <div class="wrap closing-inner">
+        <div class="reveal-on-scroll">
+          <span class="eyebrow">15 · 回到生活</span>
+          <h2>龍子里的<br>下一步</h2>
+          <div class="closing-copy">
+            <p>可能是一個孩子每天經過的路口，一支長輩不會操作的手機，一段每天從社區走向捷運、輕軌，或騎 YouBike 的路。</p>
+            <p>也可能是一個下雨後出現的坑洞、一盞沒有亮的路燈、一段需要清理的水溝，或是一項與居民有關的活動與公共資源。</p>
+            <p><strong>把問題看見。把事情說清楚。把可以做的，一件一件做好。</strong></p>
+            <p>如果你也關心龍子里的生活議題，歡迎透過下方入口進一步了解，或留下想反映的事情。</p>
           </div>
         </div>
-
-        <!-- Experience Matrix (學歷與經歷簡表) -->
-        <div class="exp-matrix-section" aria-label="經歷與學歷簡表">
-          <div class="exp-matrix-grid">
-            <!-- Education -->
+        <aside class="closing-aside reveal-on-scroll">
+          <div class="contact-head">
+            <img src="assets/candidate-portrait-01.jpg" alt="曾偉修個人照片" onerror="this.hidden=true" />
             <div>
-              <div class="exp-matrix-col-title">
-                <svg class="ui-icon" width="18" height="18" viewBox="0 0 24 24">
-                  <path d="M22 10v6M2 10l10-5 10 5-10 5z" />
-                  <path d="M6 12v5c3 3 9 3 12 0v-5" />
-                </svg>
-                <span>學歷背景</span>
-              </div>
-              <div class="edu-card-list">
-                <div class="edu-item">
-                  <div class="edu-school">正修科技大學</div>
-                  <div class="edu-dept">企業管理系</div>
-                </div>
-                <div class="edu-item">
-                  <div class="edu-school">大榮高工</div>
-                  <div class="edu-dept">電子科</div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Career & Society -->
-            <div>
-              <div class="exp-matrix-col-title">
-                <svg class="ui-icon" width="18" height="18" viewBox="0 0 24 24">
-                  <rect x="2" y="7" width="20" height="14" rx="2" ry="2" />
-                  <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" />
-                </svg>
-                <span>工作與社會經歷簡表</span>
-              </div>
-              <div class="career-grid-list">
-                <div class="career-item">
-                  <span class="career-item-dot"></span>
-                  <span>空軍義務役，退伍獲頒空軍總司令獎狀</span>
-                </div>
-                <div class="career-item">
-                  <span class="career-item-dot"></span>
-                  <span>味之素業務工作經驗</span>
-                </div>
-                <div class="career-item">
-                  <span class="career-item-dot"></span>
-                  <span>馬來西亞電子產業管理職約 15 年</span>
-                </div>
-                <div class="career-item">
-                  <span class="career-item-dot"></span>
-                  <span>曾參與馬來西亞台商協會公共事務</span>
-                </div>
-                <div class="career-item">
-                  <span class="career-item-dot"></span>
-                  <span>曾參與台北學校相關公共服務</span>
-                </div>
-                <div class="career-item">
-                  <span class="career-item-dot"></span>
-                  <span>中國舟山冷凍水產產業管理職</span>
-                </div>
-                <div class="career-item">
-                  <span class="career-item-dot"></span>
-                  <span>通訊產業創業及多家門市經營</span>
-                </div>
-                <div class="career-item">
-                  <span class="career-item-dot"></span>
-                  <span>2021 年創立精品咖啡品牌</span>
-                </div>
-                <div class="career-item">
-                  <span class="career-item-dot"></span>
-                  <span>立法委員服務處助理（地方陳情協調）</span>
-                </div>
-                <div class="career-item">
-                  <span class="career-item-dot"></span>
-                  <span>長期參與龍華派出所民防工作</span>
-                </div>
-                <div class="career-item">
-                  <span class="career-item-dot"></span>
-                  <span>2022 年龍子里里長候選人（獲 1,545 票）</span>
-                </div>
-                <div class="career-item" style="background: var(--gold-light); border-color: var(--gold);">
-                  <span class="career-item-dot" style="background: var(--navy-primary);"></span>
-                  <span style="color: var(--navy-dark); font-weight: 800;">2026 年再次投入龍子里里長選舉（無黨籍）</span>
-                </div>
-              </div>
+              <div class="contact-title">曾偉修</div>
+              <div class="contact-line">龍子里里長候選人</div>
             </div>
           </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Why Section (為什麼再次參選？) -->
-    <section class="page-section why-section" id="why" aria-label="為什麼再次參選">
-      <div class="container">
-        <div class="why-trust-banner">
-          <div class="why-trust-top">
-            <span class="why-trust-badge">
-              <svg class="ui-icon" width="14" height="14" viewBox="0 0 24 24">
-                <polygon
-                  points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
-              </svg>
-              <span>初心與承諾</span>
-            </span>
+          <div class="contact-line" style="font-size:15px;line-height:1.9">有生活問題、地方建議或想進一步了解內容，可直接使用網站內的聯絡方式。</div>
+          <div class="contact-actions">
+            <a class="contact-action" href="tel:0981451451">電話 0981-451-451</a>
+            <a class="contact-action secondary" href="https://line.me/ti/p/~tseng0220" target="_blank" rel="noopener">LINE｜tseng0220</a>
           </div>
-          <h2 class="why-trust-title">「已經選過一次了，為什麼還要再來？」</h2>
-          <p class="why-trust-desc">
-            四年前參選之後，很多長輩與朋友這樣問過偉修。<br>
-            其實答案沒有那麼複雜。<strong>因為這裡就是我們每天生活的地方。</strong>
-          </p>
-        </div>
-
-        <div class="why-cards-grid">
-          <article class="why-card">
-            <div class="why-card-icon">
-              <svg class="ui-icon" viewBox="0 0 24 24">
-                <rect x="3" y="3" width="18" height="18" rx="2" />
-                <path d="M3 9h18M9 21V9" />
-              </svg>
-            </div>
-            <h3>城市發展要繼續，生活品質也要顧</h3>
-            <p>
-              龍子里這幾年一直在改變。新的大樓、新的住戶、大型商場開發陸續進來；捷運與輕軌帶來便利，也帶來新的車流、施工衝擊與停車問題。大步發展的同時，居民的生活品質必須有人為大家守護。
-            </p>
-          </article>
-
-          <article class="why-card">
-            <div class="why-card-icon">
-              <svg class="ui-icon" viewBox="0 0 24 24">
-                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-              </svg>
-            </div>
-            <h3>小事情有人管，生活就會不一樣</h3>
-            <p>
-              老社區的長輩關懷、學童通學安全、道路坑洞修補、路燈照明、排水防汛與噪音治安。里長做的事情往往不轟轟烈烈，可能只是一盞燈、一個坑洞，<strong>但對當事的里民來說，那就是最重要的事情。</strong>
-            </p>
-          </article>
-
-          <article class="why-card">
-            <div class="why-card-icon">
-              <svg class="ui-icon" viewBox="0 0 24 24">
-                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
-                <circle cx="9" cy="7" r="4" />
-                <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
-                <path d="M16 3.13a4 4 0 0 1 0 7.75" />
-              </svg>
-            </div>
-            <h3>龍子里值得另一種服務方式</h3>
-            <p>
-              這一次再給自己一次機會，不是為了證明四年前的選擇，而是希望讓大家看見：龍子里除了現在的樣子，也可以有更有效率、更有溫度、更透明專業的里政服務。
-            </p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- Place Section -->
-    <section class="page-section place-section" id="place" aria-label="龍子里地方故事與生活圈">
-      <div class="container">
-        <div class="section-k">
-          <svg class="ui-icon" viewBox="0 0 24 24">
-            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
-            <circle cx="12" cy="10" r="3" />
-          </svg>
-          <span>LONGZI / PLACE STORY</span>
-        </div>
-        <h2 class="section-title">一個正在快速改變的龍子里。</h2>
-        <p class="section-desc" style="margin-bottom: 32px;">
-          公園、學校、捷運、輕軌、商業生活圈、水岸與住宅在這裡交會。城市越來越便利，也讓交通、人行、停車、開發與生活品質，成為居民每天真正會遇到的地方議題。
-        </p>
-
-        <div class="place-grid">
-          <div class="map-container">
-            <picture>
-              <source media="(max-width: 640px)" srcset="assets/maps/longzi-precise-mobile.svg">
-              <source media="(max-width: 980px)" srcset="assets/maps/longzi-precise-tablet.svg">
-              <img src="assets/maps/longzi-precise-desktop.svg" alt="龍子里範圍示意圖" loading="lazy" decoding="async">
-            </picture>
-
+          <div class="contact-socials">
+            <a href="https://www.facebook.com/weihsiut" target="_blank" rel="noopener">Facebook</a>
+            <a href="https://www.threads.net/@logimaskimo" target="_blank" rel="noopener">Threads @logimaskimo</a>
           </div>
-
-          <div class="place-points">
-            <div class="place-point-card">
-              <div class="place-icon-box">
-                <svg class="ui-icon" viewBox="0 0 24 24">
-                  <path d="M12 22v-9" />
-                  <path d="M8 13c0-3.5 1.5-5 4-8 2.5 3 4 4.5 4 8a4 4 0 0 1-8 0z" />
-                  <path d="M5 18c0-2.5 1-3.5 3-5.5" />
-                  <path d="M19 18c0-2.5-1-3.5-3-5.5" />
-                </svg>
-              </div>
-              <div class="place-point-text">
-                <h4>公園與綠地</h4>
-                <p>凹子底森林公園優質生活圈</p>
-              </div>
-            </div>
-
-            <div class="place-point-card">
-              <div class="place-icon-box">
-                <svg class="ui-icon" viewBox="0 0 24 24">
-                  <path d="M22 10v6M2 10l10-5 10 5-10 5z" />
-                  <path d="M6 12v5c3 3 9 3 12 0v-5" />
-                </svg>
-              </div>
-              <div class="place-point-text">
-                <h4>通學與日常</h4>
-                <p>龍華國小周邊安全通學動線</p>
-              </div>
-            </div>
-
-            <div class="place-point-card">
-              <div class="place-icon-box">
-                <svg class="ui-icon" viewBox="0 0 24 24">
-                  <rect x="3" y="3" width="18" height="15" rx="3" />
-                  <path d="M3 11h18M8 15h.01M16 15h.01M6 21l2-3M18 21l-2-3" />
-                </svg>
-              </div>
-              <div class="place-point-text">
-                <h4>交通與移動</h4>
-                <p>捷運、輕軌與大順一路重要交通樞紐</p>
-              </div>
-            </div>
-
-            <div class="place-point-card">
-              <div class="place-icon-box">
-                <svg class="ui-icon" viewBox="0 0 24 24">
-                  <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z" />
-                  <line x1="3" y1="6" x2="21" y2="6" />
-                  <path d="M16 10a4 4 0 0 1-8 0" />
-                </svg>
-              </div>
-              <div class="place-point-text">
-                <h4>商業與休閒</h4>
-                <p>富民、明誠周邊熱絡商圈與生活機能</p>
-              </div>
-            </div>
-
-            <div class="place-point-card">
-              <div class="place-icon-box">
-                <svg class="ui-icon" viewBox="0 0 24 24">
-                  <path d="M2 12c3-3 6-3 9 0 3 3 6 3 9 0 3-3 6-3 9 0M2 18c3-3 6-3 9 0 3 3 6 3 9 0 3-3 6-3 9 0" />
-                </svg>
-              </div>
-              <div class="place-point-text">
-                <h4>水岸與社區</h4>
-                <p>愛河之心水岸綠帶與靜謐大樓街廓</p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Local 5 Environments Grid -->
-        <div class="local-photo-grid" aria-label="龍子里生活環境情境素材">
-          <div class="local-item">
-            <picture>
-              <source media="(max-width: 640px)" type="image/avif" srcset="assets/local/park-mobile.avif">
-              <source media="(max-width: 640px)" type="image/webp" srcset="assets/local/park-mobile.webp">
-              <source media="(max-width: 980px)" type="image/avif" srcset="assets/local/park-tablet.avif">
-              <source media="(max-width: 980px)" type="image/webp" srcset="assets/local/park-tablet.webp">
-              <source type="image/avif" srcset="assets/local/park-desktop.avif">
-              <source type="image/webp" srcset="assets/local/park-desktop.webp">
-              <img src="assets/local/park-desktop.jpg" alt="凹子底森林公園" loading="lazy" decoding="async">
-            </picture>
-            <div class="local-overlay">凹子底森林公園</div>
-          </div>
-
-          <div class="local-item">
-            <picture>
-              <source media="(max-width: 640px)" type="image/avif" srcset="assets/local/school-mobile.avif">
-              <source media="(max-width: 640px)" type="image/webp" srcset="assets/local/school-mobile.webp">
-              <source media="(max-width: 980px)" type="image/avif" srcset="assets/local/school-tablet.avif">
-              <source media="(max-width: 980px)" type="image/webp" srcset="assets/local/school-tablet.webp">
-              <source type="image/avif" srcset="assets/local/school-desktop.avif">
-              <source type="image/webp" srcset="assets/local/school-desktop.webp">
-              <img src="assets/local/school-desktop.jpg" alt="龍華國小周邊" loading="lazy" decoding="async">
-            </picture>
-            <div class="local-overlay">龍華國小周邊</div>
-          </div>
-
-          <div class="local-item">
-            <picture>
-              <source media="(max-width: 640px)" type="image/avif" srcset="assets/local/transit-mobile.avif">
-              <source media="(max-width: 640px)" type="image/webp" srcset="assets/local/transit-mobile.webp">
-              <source media="(max-width: 980px)" type="image/avif" srcset="assets/local/transit-tablet.avif">
-              <source media="(max-width: 980px)" type="image/webp" srcset="assets/local/transit-tablet.webp">
-              <source type="image/avif" srcset="assets/local/transit-desktop.avif">
-              <source type="image/webp" srcset="assets/local/transit-desktop.webp">
-              <img src="assets/local/transit-desktop.jpg" alt="捷運輕軌生活圈" loading="lazy" decoding="async">
-            </picture>
-            <div class="local-overlay">捷運輕軌生活圈</div>
-          </div>
-
-          <div class="local-item">
-            <picture>
-              <source media="(max-width: 640px)" type="image/avif" srcset="assets/local/residential-mobile.avif">
-              <source media="(max-width: 640px)" type="image/webp" srcset="assets/local/residential-mobile.webp">
-              <source media="(max-width: 980px)" type="image/avif" srcset="assets/local/residential-tablet.avif">
-              <source media="(max-width: 980px)" type="image/webp" srcset="assets/local/residential-tablet.webp">
-              <source type="image/avif" srcset="assets/local/residential-desktop.avif">
-              <source type="image/webp" srcset="assets/local/residential-desktop.webp">
-              <img src="assets/local/residential-desktop.jpg" alt="社區住宅街廓" loading="lazy" decoding="async">
-            </picture>
-            <div class="local-overlay">社區住宅街廓</div>
-          </div>
-
-          <div class="local-item">
-            <picture>
-              <source media="(max-width: 640px)" type="image/avif" srcset="assets/local/waterfront-mobile.avif">
-              <source media="(max-width: 640px)" type="image/webp" srcset="assets/local/waterfront-mobile.webp">
-              <source media="(max-width: 980px)" type="image/avif" srcset="assets/local/waterfront-tablet.avif">
-              <source media="(max-width: 980px)" type="image/webp" srcset="assets/local/waterfront-tablet.webp">
-              <source type="image/avif" srcset="assets/local/waterfront-desktop.avif">
-              <source type="image/webp" srcset="assets/local/waterfront-desktop.webp">
-              <img src="assets/local/waterfront-desktop.jpg" alt="愛河之心水岸綠帶" loading="lazy" decoding="async">
-            </picture>
-            <div class="local-overlay">愛河之心水岸綠帶</div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Actions Section (六大行動重點) -->
-    <section class="page-section actions-section" id="actions" aria-label="六大行動重點">
-      <div class="container">
-        <div class="section-k">
-          <svg class="ui-icon" viewBox="0 0 24 24">
-            <circle cx="12" cy="12" r="10" />
-            <polyline points="12 6 12 12 16 14" />
-          </svg>
-          <span>ACTION PRIORITIES / 六大行動重點</span>
-        </div>
-        <h2 class="section-title">以務實行動為核心，守護居民日常生活的點滴與權益。</h2>
-        <p class="section-desc">不喊口號、不開空頭支票，從每天出門遇到的第一步開始，實踐看得見、感受得到的改變。</p>
-
-        <div class="action-cards-grid">
-          <!-- Action 01: Traffic -->
-          <article class="action-card">
-            <div class="action-card-img">
-              <picture>
-                <source media="(max-width: 768px)" type="image/avif" srcset="assets/actions/traffic-mobile.avif">
-                <source media="(max-width: 768px)" type="image/webp" srcset="assets/actions/traffic-mobile.webp">
-                <source type="image/avif" srcset="assets/actions/traffic-desktop.avif">
-                <source type="image/webp" srcset="assets/actions/traffic-desktop.webp">
-                <img src="assets/actions/traffic-desktop.jpg" alt="交通安心 情境示意" loading="lazy" decoding="async">
-              </picture>
-            </div>
-            <div class="action-card-body">
-              <div class="action-num-badge">01 ・ 交通安心</div>
-              <h3>交通安心・行人有路</h3>
-              <p>守護學童通學動線與行人通行安全，改善各路口視線死角與標線退縮，完善捷運、輕軌站點周邊步行與轉乘環境。</p>
-            </div>
-          </article>
-
-          <!-- Action 02: Construction Quality -->
-          <article class="action-card">
-            <div class="action-card-img">
-              <picture>
-                <source media="(max-width: 768px)" type="image/avif" srcset="assets/actions/construction-mobile.avif">
-                <source media="(max-width: 768px)" type="image/webp" srcset="assets/actions/construction-mobile.webp">
-                <source type="image/avif" srcset="assets/actions/construction-desktop.avif">
-                <source type="image/webp" srcset="assets/actions/construction-desktop.webp">
-                <img src="assets/actions/construction-desktop.jpg" alt="大型建設與生活品質把關 情境示意" loading="lazy"
-                  decoding="async">
-              </picture>
-            </div>
-            <div class="action-card-body">
-              <div class="action-num-badge">02 ・ 生活把關</div>
-              <h3>大型建設生活品質把關</h3>
-              <p>緊盯富邦漢神商場等大型工程開發案，督促工程車進出動線、降低施工噪音與揚塵，主動為周邊大樓爭取居住安寧與停車配套。</p>
-            </div>
-          </article>
-
-          <!-- Action 03: Senior & AI Tech -->
-          <article class="action-card">
-            <div class="action-card-img">
-              <picture>
-                <source media="(max-width: 768px)" type="image/avif" srcset="assets/actions/senior-mobile.avif">
-                <source media="(max-width: 768px)" type="image/webp" srcset="assets/actions/senior-mobile.webp">
-                <source type="image/avif" srcset="assets/actions/senior-desktop.avif">
-                <source type="image/webp" srcset="assets/actions/senior-desktop.webp">
-                <img src="assets/actions/senior-desktop.jpg" alt="銀髮友善與樂活生活 情境示意" loading="lazy" decoding="async">
-              </picture>
-            </div>
-            <div class="action-card-body">
-              <div class="action-num-badge">03 ・ 銀髮樂活</div>
-              <h3>銀髮友善與科技樂齡</h3>
-              <p>全力協助長照與社福資源對接；發揮通訊產業背景，定期開辦長輩智慧型手機教學、AI 日常應用與防詐騙實用宣導課程。</p>
-            </div>
-          </article>
-
-          <!-- Action 04: Community Defense & Safety -->
-          <article class="action-card">
-            <div class="action-card-img">
-              <picture>
-                <source media="(max-width: 768px)" type="image/avif" srcset="assets/actions/community-mobile.avif">
-                <source media="(max-width: 768px)" type="image/webp" srcset="assets/actions/community-mobile.webp">
-                <source type="image/avif" srcset="assets/actions/community-desktop.avif">
-                <source type="image/webp" srcset="assets/actions/community-desktop.webp">
-                <img src="assets/actions/community-desktop.jpg" alt="治安與社區安全 情境示意" loading="lazy" decoding="async">
-              </picture>
-            </div>
-            <div class="action-card-body">
-              <div class="action-num-badge">04 ・ 社區安全</div>
-              <h3>治安守護與民防協防</h3>
-              <p>運用十餘年龍華派出所民防隊實務經驗，巡查並爭取改善暗巷夜間照明，加強社區大樓巡守互助網絡，讓夜歸里民更放心。</p>
-            </div>
-          </article>
-
-          <!-- Action 05: Single Service Window -->
-          <article class="action-card">
-            <div class="action-card-img">
-              <picture>
-                <source media="(max-width: 768px)" type="image/avif" srcset="assets/actions/transparent-mobile.avif">
-                <source media="(max-width: 768px)" type="image/webp" srcset="assets/actions/transparent-mobile.webp">
-                <source type="image/avif" srcset="assets/actions/transparent-desktop.avif">
-                <source type="image/webp" srcset="assets/actions/transparent-desktop.webp">
-                <img src="assets/actions/transparent-desktop.jpg" alt="里民服務單一窗口 情境示意" loading="lazy" decoding="async">
-              </picture>
-            </div>
-            <div class="action-card-body">
-              <div class="action-num-badge">05 ・ 單一窗口</div>
-              <h3>里民服務單一窗口</h3>
-              <p>建立反映事項專人受理、進度追蹤與透明回覆機制；主動走訪社區管委會，針對大樓共同課題攜手向市府單位協調解決。</p>
-            </div>
-          </article>
-
-          <!-- Action 06: Environment & Public Works -->
-          <article class="action-card">
-            <div class="action-card-img">
-              <picture>
-                <source media="(max-width: 768px)" type="image/avif" srcset="assets/actions/environment-mobile.avif">
-                <source media="(max-width: 768px)" type="image/webp" srcset="assets/actions/environment-mobile.webp">
-                <source type="image/avif" srcset="assets/actions/environment-desktop.avif">
-                <source type="image/webp" srcset="assets/actions/environment-desktop.webp">
-                <img src="assets/actions/environment-desktop.jpg" alt="生活環境與基礎維護 情境示意" loading="lazy" decoding="async">
-              </picture>
-            </div>
-            <div class="action-card-body">
-              <div class="action-num-badge">06 ・ 環境維護</div>
-              <h3>生活環境與基礎維護</h3>
-              <p>落實鄰里道路坑洞巡查即通報、雨季前側溝深度清淤防汛、行道樹定期巡檢修剪，為龍子里全體居民維持整潔健康的公共環境。</p>
-            </div>
-          </article>
-        </div>
-
-        <!-- Environmental Campaign Notice (潔淨選風・轉場橋樑) -->
-        <div class="campaign-notice">
-          <div class="notice-icon-box">
-            <svg class="ui-icon" viewBox="0 0 24 24">
-              <path d="M11 20A7 7 0 0 1 4 13a8.9 8.9 0 0 1 8.2-8.9 1 1 0 0 1 1.1 1.1C13 8.3 11 11.5 7 13" />
-              <path d="M13 14c3-3 6-3 9 0" />
-              <path d="M20 4v5h-5" />
-            </svg>
-          </div>
-          <div>
-            <strong>環保潔淨參選承諾：</strong>
-            本次參選堅持「零大型競選看板、零旗幟、零宣傳布條」，減少一次性浪費，把乾淨、舒適、安全的街景留給全體居民！
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Service Section (務實服務紀錄：承諾不是口號，而是現在就已經在做的事) -->
-    <section class="page-section service-section" id="service" aria-label="務實服務紀錄">
-      <div class="container">
-        <div class="section-k">
-          <svg class="ui-icon" viewBox="0 0 24 24">
-            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
-            <polyline points="14 2 14 8 20 8" />
-            <line x1="16" y1="13" x2="8" y2="13" />
-            <line x1="16" y1="17" x2="8" y2="17" />
-            <polyline points="10 9 9 9 8 9" />
-          </svg>
-          <span>SERVICE TRACK RECORD / 務實服務紀錄</span>
-        </div>
-        <h2 class="section-title">務實服務紀錄 001</h2>
-
-        <div class="service-grid">
-          <div>
-            <h3 style="font-size: 26px; color: var(--navy-primary); margin: 0 0 16px;">美術東五路道路裂損／坑洞現場處理</h3>
-            <p class="section-desc" style="font-size: 16px; margin-bottom: 20px;">
-              接獲里民反映美術東五路部分路面有裂損、凹陷坑洞，影響行車與機車騎乘安全。偉修親自到場巡視勘查，並第一時間向高雄市政府 1999 通報立案，後續持續列管追蹤修復情形。
-            </p>
-
-            <div class="service-stepper">
-              <div class="step-item">
-                <span class="step-num">1</span>
-                <span>里民反映</span>
-              </div>
-              <div class="step-item">
-                <span class="step-num">2</span>
-                <span>現場了解</span>
-              </div>
-              <div class="step-item">
-                <span class="step-num">3</span>
-                <span>通報局處</span>
-              </div>
-              <div class="step-item">
-                <span class="step-num">4</span>
-                <span>持續追蹤</span>
-              </div>
-            </div>
-
-            <div class="about-quote-box" style="margin-top: 24px;">
-              <p>「看得到的問題，就盡力去做；<br>收到的聲音，就認真去了解。」</p>
-            </div>
-
-            <small style="color: var(--text-muted); font-size: 13px;">※ 本專區僅展示真實案件現場勘查紀錄照片。</small>
-          </div>
-
-          <div class="service-photos">
-            <div class="svc-img-card">
-              <picture>
-                <source type="image/avif"
-                  srcset="assets/service/responsive-edited/before-01-480.avif 480w, assets/service/responsive-edited/before-01-800.avif 800w, assets/service/responsive-edited/before-01-1200.avif 1200w"
-                  sizes="(max-width: 768px) calc(100vw - 40px), (max-width: 1024px) 48vw, 34vw">
-                <source type="image/webp"
-                  srcset="assets/service/responsive-edited/before-01-480.webp 480w, assets/service/responsive-edited/before-01-800.webp 800w, assets/service/responsive-edited/before-01-1200.webp 1200w"
-                  sizes="(max-width: 768px) calc(100vw - 40px), (max-width: 1024px) 48vw, 34vw">
-                <img src="assets/service/edited/before-01-restored.jpg" alt="道路破損現場紀錄01" loading="lazy"
-                  decoding="async">
-              </picture>
-              <div class="svc-img-tag">
-                <svg class="ui-icon" viewBox="0 0 24 24">
-                  <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z" />
-                  <circle cx="12" cy="13" r="4" />
-                </svg>
-                <span>現場巡視紀錄 01</span>
-              </div>
-            </div>
-
-            <div class="svc-img-card">
-              <picture>
-                <source type="image/avif"
-                  srcset="assets/service/responsive-edited/before-02-480.avif 480w, assets/service/responsive-edited/before-02-800.avif 800w, assets/service/responsive-edited/before-02-1200.avif 1200w"
-                  sizes="(max-width: 768px) calc(100vw - 40px), (max-width: 1024px) 48vw, 34vw">
-                <source type="image/webp"
-                  srcset="assets/service/responsive-edited/before-02-480.webp 480w, assets/service/responsive-edited/before-02-800.webp 800w, assets/service/responsive-edited/before-02-1200.webp 1200w"
-                  sizes="(max-width: 768px) calc(100vw - 40px), (max-width: 1024px) 48vw, 34vw">
-                <img src="assets/service/edited/before-02-restored.jpg" alt="道路破損現場紀錄02" loading="lazy"
-                  decoding="async">
-              </picture>
-              <div class="svc-img-tag">
-                <svg class="ui-icon" viewBox="0 0 24 24">
-                  <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z" />
-                  <circle cx="12" cy="13" r="4" />
-                </svg>
-                <span>現場巡視紀錄 02</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Resident Feedback Section (里民生活反映單一窗口) -->
-    <section class="page-section feedback-section" id="feedback" aria-label="里民生活反映單一窗口">
-      <div class="container">
-        <div class="section-k">
-          <svg class="ui-icon" viewBox="0 0 24 24">
-            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
-          </svg>
-          <span>RESIDENT FEEDBACK / 里民反映單一窗口</span>
-        </div>
-        <h2 class="section-title">里民生活大小事，單一窗口快速反映</h2>
-        <p class="section-desc">
-          點選您關心的問題類別，直接開啟 LINE 一對一私訊偉修，由偉修親自接案、現場了解、持續追蹤。
-        </p>
-
-        <div class="feedback-grid">
-          <a href="https://line.me/ti/p/~tseng0220" target="_blank" rel="noopener" class="feedback-card-btn"
-            aria-label="反映道路破損">
-            <div class="feedback-icon-box">
-              <svg class="ui-icon" viewBox="0 0 24 24">
-                <path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z" />
-                <line x1="4" y1="22" x2="4" y2="15" />
-              </svg>
-            </div>
-            <div class="feedback-info">
-              <h4>道路破損・坑洞修補</h4>
-              <p>路面凹陷、坑洞破損即報即查</p>
-            </div>
-          </a>
-
-          <a href="https://line.me/ti/p/~tseng0220" target="_blank" rel="noopener" class="feedback-card-btn"
-            aria-label="反映交通號誌死角">
-            <div class="feedback-icon-box">
-              <svg class="ui-icon" viewBox="0 0 24 24">
-                <circle cx="12" cy="12" r="10" />
-                <line x1="12" y1="8" x2="12" y2="12" />
-                <line x1="12" y1="16" x2="12.01" y2="16" />
-              </svg>
-            </div>
-            <div class="feedback-info">
-              <h4>交通號誌・路口死角</h4>
-              <p>視線死角改善、紅綠燈時相建議</p>
-            </div>
-          </a>
-
-          <a href="https://line.me/ti/p/~tseng0220" target="_blank" rel="noopener" class="feedback-card-btn"
-            aria-label="反映環境衛生與清淤">
-            <div class="feedback-icon-box">
-              <svg class="ui-icon" viewBox="0 0 24 24">
-                <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
-              </svg>
-            </div>
-            <div class="feedback-info">
-              <h4>環境衛生・側溝清淤</h4>
-              <p>水溝異味淤積、汛期排水通暢</p>
-            </div>
-          </a>
-
-          <a href="https://line.me/ti/p/~tseng0220" target="_blank" rel="noopener" class="feedback-card-btn"
-            aria-label="反映夜間治安照明">
-            <div class="feedback-icon-box">
-              <svg class="ui-icon" viewBox="0 0 24 24">
-                <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
-              </svg>
-            </div>
-            <div class="feedback-info">
-              <h4>夜間照明・路燈報修</h4>
-              <p>暗巷加亮、路燈故障失修通報</p>
-            </div>
-          </a>
-
-          <a href="https://line.me/ti/p/~tseng0220" target="_blank" rel="noopener" class="feedback-card-btn"
-            aria-label="長照敬老福利諮詢">
-            <div class="feedback-icon-box">
-              <svg class="ui-icon" viewBox="0 0 24 24">
-                <path
-                  d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
-              </svg>
-            </div>
-            <div class="feedback-info">
-              <h4>長者樂齡・長照諮詢</h4>
-              <p>社福敬老津貼、長照資源對接</p>
-            </div>
-          </a>
-
-          <a href="https://line.me/ti/p/~tseng0220" target="_blank" rel="noopener" class="feedback-card-btn"
-            aria-label="反映學童通學動線">
-            <div class="feedback-icon-box">
-              <svg class="ui-icon" viewBox="0 0 24 24">
-                <path d="M22 10v6M2 10l10-5 10 5-10 5z" />
-                <path d="M6 12v5c3 3 9 3 12 0v-5" />
-              </svg>
-            </div>
-            <div class="feedback-info">
-              <h4>學童通學・人行步道</h4>
-              <p>龍華國小通學動線與人行道維護</p>
-            </div>
-          </a>
-
-          <a href="https://line.me/ti/p/~tseng0220" target="_blank" rel="noopener" class="feedback-card-btn"
-            aria-label="大樓管委會協調與其他建議">
-            <div class="feedback-icon-box">
-              <svg class="ui-icon" viewBox="0 0 24 24">
-                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
-                <circle cx="9" cy="7" r="4" />
-                <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
-                <path d="M16 3.13a4 4 0 0 1 0 7.75" />
-              </svg>
-            </div>
-            <div class="feedback-info">
-              <h4>大樓協調・其他建議</h4>
-              <p>社區管委會公共議題、里政建言</p>
-            </div>
-          </a>
-
-          <a href="tel:0981451451" class="feedback-card-btn" aria-label="撥打服務電話">
-            <div class="feedback-icon-box" style="background: var(--navy-primary); color: #fff;">
-              <svg class="ui-icon" viewBox="0 0 24 24">
-                <path
-                  d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
-              </svg>
-            </div>
-            <div class="feedback-info">
-              <h4>電話直通服務專線</h4>
-              <p>0981-451-451 偉修親自接聽</p>
-            </div>
-          </a>
-        </div>
-
-        <div class="feedback-callout">
-          <div class="feedback-callout-text">
-            <strong>「小事情有人管，生活就會不一樣。」</strong><br>
-            您在龍子里生活遇到的任何困難與疑問，請隨時向偉修反映，我們一起面對處理。
-          </div>
-          <a href="https://line.me/ti/p/~tseng0220" target="_blank" rel="noopener" class="feedback-callout-btn">
-            <svg viewBox="0 0 24 24" width="16" height="16" style="fill: currentColor;">
-              <path
-                d="M12 2C6.48 2 2 5.92 2 10.76c0 3.29 2.06 6.18 5.16 7.64-.23.77-.82 2.78-.94 3.2-.15.53.19.52.4.38.17-.11 2.37-1.61 3.32-2.26.68.1 1.38.15 2.06.15 5.52 0 10-3.92 10-8.76S17.52 2 12 2z" />
-            </svg>
-            <span>加 LINE 立即反映</span>
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <!-- Timeline Section (走過的路，都算數。) -->
-    <section class="page-section timeline-section" id="timeline" aria-label="人生足跡">
-      <div class="container">
-        <div class="section-k">
-          <svg class="ui-icon" viewBox="0 0 24 24">
-            <circle cx="12" cy="12" r="10" />
-            <polyline points="12 6 12 12 14 14" />
-          </svg>
-          <span>LIFE TRACK / 走過的路，都算數</span>
-        </div>
-        <h2 class="section-title">走過的路，都算數。</h2>
-        <div class="timeline-lead-wrap">
-          <p class="timeline-lead-desc">
-            這不是一份生硬的選舉簡歷，而是一位生活在您身邊 53 年的鄰居，真實走過的人生足跡。<br class="desktop-only-br">
-            從<strong>軍旅紀律</strong>、<strong>第一線業務</strong>、<strong>跨國管理</strong>，到<strong>返台陪伴家人創業</strong>、<strong>十年民防協勤</strong>與<strong>50歲重返校園</strong>；<br
-              class="desktop-only-br">
-            每一步踏實走過的腳印，都是今天以成熟、耐煩與穩定的力量，全力守護龍子里的底氣。
-          </p>
-        </div>
-
-        <!-- Feature Quote Card (Magazine-Grade Editorial Callout) -->
-        <div class="timeline-quote-feature-card">
-          <div class="quote-watermark" aria-hidden="true">“</div>
-
-          <div class="quote-dialogue-row">
-            <span class="quote-dialogue-badge">鄰里常問</span>
-            <p class="quote-dialogue-text">「偉修，您以前到底是做什麼的？」</p>
-          </div>
-
-          <div class="quote-body-editorial">
-            <p class="quote-passage-intro">
-              整理這些老照片時才發現，原來自己已經走了這麼遠。53 歲以前走過的路：
-            </p>
-            <div class="quote-stanza-box">
-              <p class="quote-stanza-text">
-                「有些路走得順，有些路跌跌撞撞；有些是自己選的，有些則是人生突然替我轉了方向。」
-              </p>
-            </div>
-            <p class="quote-passage-conclusion">
-              以前總覺得，這是一段又一段不同的人生；到今天回頭看才明白：<br class="desktop-only-br">
-              <span class="quote-punchline-pill">走過的路，都算數。</span>
-              每一步真實踩過的腳印，都是今天能以成熟、穩重與耐煩的心，全心為龍子里服務的底氣。
-            </p>
-          </div>
-
-          <div class="quote-author-footer">
-            <div class="quote-author-identity">
-              <img src="assets/ui/logo-seal-512.png" alt="曾偉修印" class="quote-author-seal" width="34" height="34">
-              <span class="quote-author-name">曾偉修</span>
-              <span class="quote-author-title">龍子里里長候選人</span>
-            </div>
-            <div class="quote-tagline-motto">
-              <span>53 歲的人生歷練・為龍子里的下一步打拚</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- 4 Curated Chapters -->
-        <div class="timeline-chapters">
-          <!-- CHAPTER 01: 嚴謹紀律・基層磨礪 -->
-          <section class="timeline-chapter" aria-label="篇章一：嚴謹紀律與基層磨礪">
-            <div class="chapter-header">
-              <div class="chapter-header-text">
-                <div class="chapter-eyebrow">
-                  <span class="chapter-num-badge">篇章 01</span>
-                  <span class="chapter-period-label">1993 ~ 2000s・青年起步</span>
-                </div>
-                <h3 class="chapter-title">嚴謹紀律與基層磨礪</h3>
-                <p class="chapter-tagline">事情交到手上，就徹底做好；身居要職，更懂一碗肉燥飯的謙卑接地氣。</p>
-              </div>
-            </div>
-            <div class="chapter-cards-grid">
-              <!-- Story 01: 1993 Air Force -->
-              <article class="timeline-card">
-                <div class="timeline-img-wrap">
-                  <span class="timeline-era-badge">1993</span>
-                  <span class="timeline-photo-trait">嚴格紀律</span>
-                  <picture>
-                    <source type="image/avif"
-                      srcset="assets/history/responsive-edited/1993-airforce-420.avif 420w, assets/history/responsive-edited/1993-airforce-720.avif 720w, assets/history/responsive-edited/1993-airforce-960.avif 960w"
-                      sizes="(max-width: 768px) calc(100vw - 40px), (max-width: 1024px) 48vw, 24vw">
-                    <source type="image/webp"
-                      srcset="assets/history/responsive-edited/1993-airforce-420.webp 420w, assets/history/responsive-edited/1993-airforce-720.webp 720w, assets/history/responsive-edited/1993-airforce-960.webp 960w"
-                      sizes="(max-width: 768px) calc(100vw - 40px), (max-width: 1024px) 48vw, 24vw">
-                    <img src="assets/history/edited/1993-airforce.jpg" alt="1993 空軍服役時期" loading="lazy"
-                      decoding="async">
-                  </picture>
-                </div>
-                <div class="timeline-content-body">
-                  <span class="timeline-tag">1993｜軍旅鍛鍊</span>
-                  <h4 class="timeline-card-title">18歲入伍磨練紀律，獲頒空軍總司令獎狀</h4>
-                  <div class="timeline-candidate-quote">
-                    「在部隊裡學會對每項任務負責到底，這份榮譽是一輩子做事的最高標準。」
-                  </div>
-                  <p class="timeline-card-story">
-                    18歲那年穿上空軍制服，擔任通信電子技術工作。在部隊嚴格磨練出嚴謹的紀律與對任務負責到底的性格，退伍時獲頒「空軍總司令獎狀」。既然事情交到手上，就徹底做好，這是偉修一輩子做事的最高標準。
-                  </p>
-                  <div class="timeline-competence-pill">紀律負責・使命必達</div>
-                </div>
-              </article>
-
-              <!-- Story 02: Ajinomoto -->
-              <article class="timeline-card">
-                <div class="timeline-img-wrap">
-                  <span class="timeline-era-badge">2000s</span>
-                  <span class="timeline-photo-trait">基層接地氣</span>
-                  <picture>
-                    <source type="image/avif"
-                      srcset="assets/history/responsive-edited/ajinomoto-420.avif 420w, assets/history/responsive-edited/ajinomoto-720.avif 720w, assets/history/responsive-edited/ajinomoto-1000.avif 1000w"
-                      sizes="(max-width: 768px) calc(100vw - 40px), (max-width: 1024px) 48vw, 24vw">
-                    <source type="image/webp"
-                      srcset="assets/history/responsive-edited/ajinomoto-420.webp 420w, assets/history/responsive-edited/ajinomoto-720.webp 720w, assets/history/responsive-edited/ajinomoto-1000.webp 1000w"
-                      sizes="(max-width: 768px) calc(100vw - 40px), (max-width: 1024px) 48vw, 24vw">
-                    <img src="assets/history/edited/ajinomoto.jpg" alt="第一線 冷凍食品業務" loading="lazy" decoding="async">
-                  </picture>
-                </div>
-                <div class="timeline-content-body">
-                  <span class="timeline-tag">第一線｜冷凍食品業務</span>
-                  <h4 class="timeline-card-title">天未亮跑遍市場，一碗肉燥飯的謙卑教誨</h4>
-                  <div class="timeline-candidate-quote">
-                    「越是身居要職，越要懂得接地氣與謙卑傾聽，把眼前的每件小事踏實做好。」
-                  </div>
-                  <p class="timeline-card-story">
-                    退伍後投入味之素營業部，天未亮就騎著車跑遍超市與傳統市場巡視陳列。最難忘日籍董事長來台視察時毫無架子，帶著團隊在路邊攤吃肉燥飯。那一刻深刻明白：做大事要從最基層的謙卑開始，深入現場才能看清問題。
-                  </p>
-                  <div class="timeline-competence-pill">基層接地氣・肯吃苦耐勞</div>
-                </div>
-              </article>
-            </div>
-          </section>
-
-          <!-- CHAPTER 02: 海外視野・深情抉擇 -->
-          <section class="timeline-chapter" aria-label="篇章二：海外視野與深情抉擇">
-            <div class="chapter-header">
-              <div class="chapter-header-text">
-                <div class="chapter-eyebrow">
-                  <span class="chapter-num-badge">篇章 02</span>
-                  <span class="chapter-period-label">2000s ~ 2012・重大抉擇</span>
-                </div>
-                <h3 class="chapter-title">海外視野・深情抉擇與責任擔當</h3>
-                <p class="chapter-tagline">見過跨國企業的大格局，但家人的生命與承諾永遠第一。懂得取捨，才是真正的擔當。</p>
-              </div>
-            </div>
-            <div class="chapter-cards-grid">
-              <!-- Story 03: Malaysia 15 years -->
-              <article class="timeline-card">
-                <div class="timeline-img-wrap">
-                  <span class="timeline-era-badge">2000s~2009</span>
-                  <span class="timeline-photo-trait">國際管理力</span>
-                  <picture>
-                    <source type="image/avif"
-                      srcset="assets/history/responsive-edited/malaysia-card-420.avif 420w, assets/history/responsive-edited/malaysia-card-720.avif 720w, assets/history/responsive-edited/malaysia-card-1000.avif 1000w"
-                      sizes="(max-width: 768px) calc(100vw - 40px), (max-width: 1024px) 48vw, 24vw">
-                    <source type="image/webp"
-                      srcset="assets/history/responsive-edited/malaysia-card-420.webp 420w, assets/history/responsive-edited/malaysia-card-720.webp 720w, assets/history/responsive-edited/malaysia-card-1000.webp 1000w"
-                      sizes="(max-width: 768px) calc(100vw - 40px), (max-width: 1024px) 48vw, 24vw">
-                    <img src="assets/history/edited/malaysia-card.jpg" alt="海外 馬來西亞商會紀錄" loading="lazy"
-                      decoding="async">
-                  </picture>
-                </div>
-                <div class="timeline-content-body">
-                  <span class="timeline-tag">海外歷練｜15年管理職</span>
-                  <h4 class="timeline-card-title">電子產業跨國管理，積極投入台商公共服務</h4>
-                  <div class="timeline-candidate-quote">
-                    「帶領跨文化團隊讓我建立起條理清晰的協調力，公共組織經驗更是寶貴資產。」
-                  </div>
-                  <p class="timeline-card-story">
-                    派駐馬來西亞電子產業約15年，從基層管理到帶領跨國團隊，建立起宏觀組織視野與跨部門溝通協調力；並積極參與吉隆坡台商協會公共事務與台北學校校務協調，累積了厚實的公共組織運作經驗。
-                  </p>
-                  <div class="timeline-competence-pill">國際宏觀視野・溝通協調力</div>
-                </div>
-              </article>
-
-              <!-- Story 04: Premature Baby & Midnight Call -->
-              <article class="timeline-card">
-                <div class="timeline-img-wrap">
-                  <span class="timeline-era-badge">2012</span>
-                  <span class="timeline-photo-trait">守護承諾</span>
-                  <picture>
-                    <source type="image/avif"
-                      srcset="assets/history/responsive-edited/baby-hand-420.avif 420w, assets/history/responsive-edited/baby-hand-720.avif 720w, assets/history/responsive-edited/baby-hand-1000.avif 1000w"
-                      sizes="(max-width: 768px) calc(100vw - 40px), (max-width: 1024px) 48vw, 24vw">
-                    <source type="image/webp"
-                      srcset="assets/history/responsive-edited/baby-hand-420.webp 420w, assets/history/responsive-edited/baby-hand-720.webp 720w, assets/history/responsive-edited/baby-hand-1000.webp 1000w"
-                      sizes="(max-width: 768px) calc(100vw - 40px), (max-width: 1024px) 48vw, 24vw">
-                    <img src="assets/history/edited/baby-hand.jpg" alt="家庭 孩子出生／返台轉折" loading="lazy" decoding="async">
-                  </picture>
-                </div>
-                <div class="timeline-content-body">
-                  <span class="timeline-tag">人生轉折｜半夜的電話</span>
-                  <h4 class="timeline-card-title">放下海外一切趕回高雄，牽著800克早產孩子的手</h4>
-                  <div class="timeline-candidate-quote">
-                    「工作沒有了可以重新開始，但陪伴孩子的黃金時間錯過了就永遠不會再回來。」
-                  </div>
-                  <p class="timeline-card-story">
-                    事業高峰時半夜接到電話：「孩子早產了，只有800克，情況危急。」偉修毫不猶豫放下海外高薪職位，搭第一班飛機趕回高雄。握著加護病房裡孩子小小的手，深刻明白：家人與責任永遠第一。懂得取捨、把承諾扛在肩上，才是真擔當。
-                  </p>
-                  <div class="timeline-competence-pill">有責任有擔當・以家為重</div>
-                </div>
-              </article>
-            </div>
-          </section>
-
-          <!-- CHAPTER 03: 在地扎根・生活溫度 -->
-          <section class="timeline-chapter" aria-label="篇章三：在地扎根與生活溫度">
-            <div class="chapter-header">
-              <div class="chapter-header-text">
-                <div class="chapter-eyebrow">
-                  <span class="chapter-num-badge">篇章 03</span>
-                  <span class="chapter-period-label">2015 ~ 2021・生活溫度</span>
-                </div>
-                <h3 class="chapter-title">在地扎根・傾聽共感與生活溫度</h3>
-                <p class="chapter-tagline">從手機門市到精品咖啡，每天第一線面對鄰里，最懂基層長輩疑難，用咖啡的溫度交流心聲。</p>
-              </div>
-            </div>
-            <div class="chapter-cards-grid">
-              <!-- Story 05: Phone Shop -->
-              <article class="timeline-card">
-                <div class="timeline-img-wrap">
-                  <span class="timeline-era-badge">2015</span>
-                  <span class="timeline-photo-trait">耐心同理</span>
-                  <picture>
-                    <source type="image/avif"
-                      srcset="assets/history/responsive-edited/phone-shop-420.avif 420w, assets/history/responsive-edited/phone-shop-720.avif 720w, assets/history/responsive-edited/phone-shop-1000.avif 1000w"
-                      sizes="(max-width: 768px) calc(100vw - 40px), (max-width: 1024px) 48vw, 24vw">
-                    <source type="image/webp"
-                      srcset="assets/history/responsive-edited/phone-shop-420.webp 420w, assets/history/responsive-edited/phone-shop-720.webp 720w, assets/history/responsive-edited/phone-shop-1000.webp 1000w"
-                      sizes="(max-width: 768px) calc(100vw - 40px), (max-width: 1024px) 48vw, 24vw">
-                    <img src="assets/history/edited/phone-shop.jpg" alt="重新開始 通訊行" loading="lazy" decoding="async">
-                  </picture>
-                </div>
-                <div class="timeline-content-body">
-                  <span class="timeline-tag">重新出發｜通訊門市創業</span>
-                  <h4 class="timeline-card-title">創立通訊門市，第一線面對長輩疑難與防詐宣導</h4>
-                  <div class="timeline-candidate-quote">
-                    「很多事情不是等什麼都會了才開始，而是開始以後讓自己耐心地慢慢學會。」
-                  </div>
-                  <p class="timeline-card-story">
-                    為了專心陪伴孩子復健與成長，在高雄創立通訊門市。每天在店裡協助社區長輩設定手機、排除疑難雜症、主動向鄰里宣導防範電信詐騙與資費陷阱。第一線面對居民日常，磨練出無比的耐心與細心。
-                  </p>
-                  <div class="timeline-competence-pill">耐心傾聽・第一線解決問題</div>
-                </div>
-              </article>
-
-              <!-- Story 06: Coffee Founder -->
-              <article class="timeline-card">
-                <div class="timeline-img-wrap">
-                  <span class="timeline-era-badge">2021</span>
-                  <span class="timeline-photo-trait">服務溫度</span>
-                  <picture>
-                    <source type="image/avif"
-                      srcset="assets/history/responsive-edited/coffee-420.avif 420w, assets/history/responsive-edited/coffee-720.avif 720w, assets/history/responsive-edited/coffee-1000.avif 1000w"
-                      sizes="(max-width: 768px) calc(100vw - 40px), (max-width: 1024px) 48vw, 24vw">
-                    <source type="image/webp"
-                      srcset="assets/history/responsive-edited/coffee-420.webp 420w, assets/history/responsive-edited/coffee-720.webp 720w, assets/history/responsive-edited/coffee-1000.webp 1000w"
-                      sizes="(max-width: 768px) calc(100vw - 40px), (max-width: 1024px) 48vw, 24vw">
-                    <img src="assets/history/edited/coffee.jpg" alt="創立精品咖啡 所以咖啡" loading="lazy" decoding="async">
-                  </picture>
-                </div>
-                <div class="timeline-content-body">
-                  <span class="timeline-tag">職人溫度｜創立精品咖啡</span>
-                  <h4 class="timeline-card-title">創立「所以咖啡」，用一杯手沖咖啡的溫度交流心聲</h4>
-                  <div class="timeline-candidate-quote">
-                    「咖啡不只是一杯飲品，更是讓鄰里鄉親隨時能坐下聊心事的溫暖心靈客廳。」
-                  </div>
-                  <p class="timeline-card-story">
-                    2021年在高雄創立精品咖啡品牌「所以咖啡」。透過每一杯現沖咖啡的香氣與溫度，傾聽來到店裡的每一位鄰里居民生活中的喜怒哀樂。咖啡館成為社區裡最有溫度、最放鬆的心情交流站，把服務的溫度落實在生活日常。
-                  </p>
-                  <div class="timeline-competence-pill">服務溫度・真誠傾聽共感</div>
-                </div>
-              </article>
-            </div>
-          </section>
-
-          <!-- CHAPTER 04: 地方守護・終身好學 -->
-          <section class="timeline-chapter" aria-label="篇章四：地方守護與終身好學">
-            <div class="chapter-header">
-              <div class="chapter-header-text">
-                <div class="chapter-eyebrow">
-                  <span class="chapter-num-badge">篇章 04</span>
-                  <span class="chapter-period-label">2012 ~ 至今・地方實踐</span>
-                </div>
-                <h3 class="chapter-title">地方守護・市政實戰與終身好學</h3>
-                <p class="chapter-tagline">十餘年民防協勤守護治安，立委助理歷練熟稔市政陳情協調；50歲完成企管學位，以飽滿歷練全力為龍子里打拚。</p>
-              </div>
-            </div>
-            <div class="chapter-cards-grid">
-              <!-- Story 07: Civil Defense & Legislative Assistant -->
-              <article class="timeline-card">
-                <div class="timeline-img-wrap">
-                  <span class="timeline-era-badge">2012~至今</span>
-                  <span class="timeline-photo-trait">十年守護</span>
-                  <picture>
-                    <source type="image/avif"
-                      srcset="assets/history/responsive-edited/civil-defense-420.avif 420w, assets/history/responsive-edited/civil-defense-595.avif 595w, assets/history/responsive-edited/civil-defense-720.avif 720w"
-                      sizes="(max-width: 768px) calc(100vw - 40px), (max-width: 1024px) 48vw, 24vw">
-                    <source type="image/webp"
-                      srcset="assets/history/responsive-edited/civil-defense-420.webp 420w, assets/history/responsive-edited/civil-defense-595.webp 595w, assets/history/responsive-edited/civil-defense-720.webp 720w"
-                      sizes="(max-width: 768px) calc(100vw - 40px), (max-width: 1024px) 48vw, 24vw">
-                    <img src="assets/history/edited/civil-defense.jpg" alt="龍華民防協勤與公共服務" loading="lazy"
-                      decoding="async">
-                  </picture>
-                </div>
-                <div class="timeline-content-body">
-                  <span class="timeline-tag">地方守護｜民防協勤與立委助理</span>
-                  <h4 class="timeline-card-title">傳承母親志工精神，十年民防協勤與市政陳情協調</h4>
-                  <div class="timeline-candidate-quote">
-                    「看到母親一生樂在志工奉獻，我也希望用自己的雙手，默默守護這座社區。」
-                  </div>
-                  <p class="timeline-card-story">
-                    十餘年來持續投入龍華派出所民防協勤，穿著制服巡守鄰里巷弄、熟稔急救維護社區治安；並曾擔任立法委員服務處助理，親赴基層協調市民陳情、對接市政府各局處公文。對地方治安巡守與市府行政溝通流程具備深厚實務經驗。
-                  </p>
-                  <div class="timeline-competence-pill">熟稔市政協調・地方長年奉獻</div>
-                </div>
-              </article>
-
-              <!-- Story 08: University at 50 -->
-              <article class="timeline-card">
-                <div class="timeline-img-wrap">
-                  <span class="timeline-era-badge">2024</span>
-                  <span class="timeline-photo-trait">終身學習</span>
-                  <picture>
-                    <source type="image/avif"
-                      srcset="assets/history/responsive-edited/graduation-420.avif 420w, assets/history/responsive-edited/graduation-720.avif 720w, assets/history/responsive-edited/graduation-1000.avif 1000w"
-                      sizes="(max-width: 768px) calc(100vw - 40px), (max-width: 1024px) 48vw, 24vw">
-                    <source type="image/webp"
-                      srcset="assets/history/responsive-edited/graduation-420.webp 420w, assets/history/responsive-edited/graduation-720.webp 720w, assets/history/responsive-edited/graduation-1000.webp 1000w"
-                      sizes="(max-width: 768px) calc(100vw - 40px), (max-width: 1024px) 48vw, 24vw">
-                    <img src="assets/history/edited/graduation.jpg" alt="50歲正修企管系畢業" loading="lazy" decoding="async">
-                  </picture>
-                </div>
-                <div class="timeline-content-body">
-                  <span class="timeline-tag">終身好學｜正修企管學位</span>
-                  <h4 class="timeline-card-title">50歲重返校園完成企管學位，不斷充實自我</h4>
-                  <div class="timeline-candidate-quote">
-                    「20歲不懂我去學，50歲不懂我也去學。走到這個年紀，我依然想做那個把眼前事情認真做好的人。」
-                  </div>
-                  <p class="timeline-card-story">
-                    50歲重新回到校園，把年輕時因工作未完成的大學學業念完，順利取得正修科技大學企業管理系學士學位。不畏年齡限制、永遠保持謙卑好學的心。53歲正是人生歷練最飽滿、體力與心智最成熟的黃金年華，準備好用一生的經歷全力為龍子里打拚。
-                  </p>
-                  <div class="timeline-competence-pill">謙卑好學・成熟有幹勁</div>
-                </div>
-              </article>
-            </div>
-          </section>
-        </div>
-      </div>
-    </section>
-
-    <!-- Future Banner Section (攜手同行) -->
-    <section class="future-banner" aria-label="攜手同行">
-      <div class="container">
-        <div class="section-k"
-          style="background: rgba(242, 201, 76, 0.18); color: #F2C94C; border-color: rgba(242, 201, 76, 0.3);">
-          <svg class="ui-icon" viewBox="0 0 24 24">
-            <polygon
-              points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
-          </svg>
-          <span>LONGZI / NEXT</span>
-        </div>
-        <h2>龍子里的下一步，<br>從每天的生活開始。</h2>
-        <p>
-          「看得到的問題，盡力去做；收到的聲音，認真了解。」<br>
-          交通安心、建設把關、銀髮樂活、社區治安、單一窗口與環境維護，不是抽象口號，而是龍子里每天面對的生活課題。
-        </p>
-        <p class="future-lead">用服務的溫度，加做事的效率。我們一起走！</p>
-      </div>
-    </section>
-
-    <!-- Social Share Section (社群分享中樞：把好的改變分享給鄰里好友) -->
-    <section class="page-section social-share-section" id="share" aria-label="社群分享中樞">
-      <div class="container">
-        <div class="social-share-card">
-          <div class="share-card-header">
-            <div class="share-heart-badge">
-              <span>💖</span>
-              <span>凝聚鄰里・攜手共好</span>
-            </div>
-            <h3 class="share-card-title">覺得龍子里值得更好？<br class="mobile-only-br">把改變的聲音分享給鄰里好友！</h3>
-            <p class="share-card-desc">
-              好的改變，需要大家一起參與。點選下方按鈕，直接將曾偉修官方網站轉發至大樓住戶群組、LINE 好友或社群平台，讓更多聲音被聽見。
-            </p>
-          </div>
-
-          <div class="share-card-actions">
-            <!-- LINE Share Button -->
-            <button class="share-action-btn is-line" id="btnShareLine" aria-label="一鍵轉傳至 LINE">
-              <svg viewBox="0 0 24 24" class="share-icon" style="fill: currentColor; stroke: none;">
-                <path
-                  d="M12 2C6.48 2 2 5.92 2 10.76c0 3.29 2.06 6.18 5.16 7.64-.23.77-.82 2.78-.94 3.2-.15.53.19.52.4.38.17-.11 2.37-1.61 3.32-2.26.68.1 1.38.15 2.06.15 5.52 0 10-3.92 10-8.76S17.52 2 12 2z" />
-              </svg>
-              <span>LINE 一鍵轉傳</span>
-            </button>
-
-            <!-- Facebook Share Button -->
-            <button class="share-action-btn is-fb" id="btnShareFb" aria-label="分享至 Facebook">
-              <svg viewBox="0 0 24 24" class="share-icon" style="fill: currentColor; stroke: none;">
-                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
-              </svg>
-              <span>Facebook 分享</span>
-            </button>
-
-            <!-- Threads Share Button -->
-            <button class="share-action-btn is-threads" id="btnShareThreads" aria-label="分享至 Threads">
-              <svg viewBox="0 0 24 24" class="share-icon" fill="currentColor">
-                <circle cx="12" cy="12" r="4" />
-                <path d="M16 8v5a3 3 0 0 0 6 0v-1a10 10 0 1 0-4 8" />
-              </svg>
-              <span>Threads 串文分享</span>
-            </button>
-
-            <!-- Copy Link Button (with Toast) -->
-            <button class="share-action-btn is-copy" id="btnShareCopy" aria-label="複製網站網址連結">
-              <svg viewBox="0 0 24 24" class="share-icon" fill="none" stroke="currentColor" stroke-width="2">
-                <rect x="9" y="9" width="13" height="13" rx="2" ry="2" />
-                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" />
-              </svg>
-              <span>複製網站網址</span>
-            </button>
-
-            <!-- Native Web Share Button -->
-            <button class="share-action-btn is-native" id="btnShareNative" aria-label="開啟手機系統分享" style="display: none;">
-              <svg viewBox="0 0 24 24" class="share-icon" fill="none" stroke="currentColor" stroke-width="2">
-                <circle cx="18" cy="5" r="3" />
-                <circle cx="6" cy="12" r="3" />
-                <circle cx="18" cy="19" r="3" />
-                <line x1="8.59" y1="13.51" x2="15.42" y2="17.49" />
-                <line x1="15.41" y1="6.51" x2="8.59" y2="10.49" />
-              </svg>
-              <span>手機原生分享</span>
-            </button>
-          </div>
-
-          <div class="share-card-quote">
-            <span class="share-quote-seal">修</span>
-            <span>「看得到的問題，盡力去做；收到的聲音，認真了解。」—— 曾偉修</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Contact Section (Flagship Luxury LINE & Contact Hub) -->
-    <section class="page-section contact-section" id="contact" aria-label="聯絡與反映問題">
-      <div class="container">
-        <div class="contact-grid">
-          <div>
-            <div class="section-k">
-              <svg class="ui-icon" viewBox="0 0 24 24">
-                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
-                <polyline points="22,6 12,13 2,6" />
-              </svg>
-              <span>GET IN TOUCH</span>
-            </div>
-            <h2 class="section-title">有事情，直接找偉修。</h2>
-            <p class="section-desc">
-              地方上的大小事、生活問題反映，或是您對龍子里未來的寶貴想法，都非常歡迎直接與偉修聯繫。
-            </p>
-
-            <div class="contact-hub-wrapper">
-              <!-- Flagship LINE VIP Card -->
-              <div class="contact-line-vip-card">
-                <div class="line-vip-top">
-                  <div class="line-vip-badge">
-                    <svg class="ui-icon" width="13" height="13" viewBox="0 0 24 24">
-                      <polygon
-                        points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
-                    </svg>
-                    <span>里民即時服務・推薦首選</span>
-                  </div>
-                  <div class="line-vip-status">
-                    <span class="line-status-dot"></span>
-                    <span>偉修在線・一對一直接對話</span>
-                  </div>
-                </div>
-
-                <div class="line-vip-content">
-                  <div class="line-vip-icon-box">
-                    <svg viewBox="0 0 24 24">
-                      <path
-                        d="M12 2C6.48 2 2 5.92 2 10.76c0 3.29 2.06 6.18 5.16 7.64-.23.77-.82 2.78-.94 3.2-.15.53.19.52.4.38.17-.11 2.37-1.61 3.32-2.26.68.1 1.38.15 2.06.15 5.52 0 10-3.92 10-8.76S17.52 2 12 2z" />
-                    </svg>
-                  </div>
-                  <div class="line-vip-info">
-                    <div class="line-vip-title">LINE 官方個人好友</div>
-                    <div class="line-vip-id">LINE ID：tseng0220</div>
-                  </div>
-                </div>
-
-                <a href="https://line.me/ti/p/~tseng0220" target="_blank" rel="noopener" class="line-vip-cta-btn"
-                  aria-label="開啟 LINE 加好友">
-                  <span>立即開啟 LINE 加入好友</span>
-                  <svg class="ui-icon" width="16" height="16" viewBox="0 0 24 24">
-                    <path d="M5 12h14M12 5l7 7-7 7" />
-                  </svg>
-                </a>
-              </div>
-
-              <!-- Secondary Channels: Phone, Facebook, Threads -->
-              <div class="contact-secondary-grid">
-                <!-- Phone -->
-                <a href="tel:0981451451" class="contact-sub-card" aria-label="撥打電話 0981-451-451">
-                  <div class="contact-sub-icon">
-                    <svg class="ui-icon" viewBox="0 0 24 24">
-                      <path
-                        d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
-                    </svg>
-                  </div>
-                  <div>
-                    <div class="contact-sub-label">服務專線</div>
-                    <div class="contact-sub-val">0981-451-451</div>
-                  </div>
-                </a>
-
-                <!-- Facebook -->
-                <a href="https://www.facebook.com/weihsiut" target="_blank" rel="noopener" class="contact-sub-card"
-                  aria-label="前往 Facebook 粉絲專頁">
-                  <div class="contact-sub-icon" style="color: #1877F2;">
-                    <svg class="ui-icon" viewBox="0 0 24 24">
-                      <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
-                    </svg>
-                  </div>
-                  <div>
-                    <div class="contact-sub-label">Facebook</div>
-                    <div class="contact-sub-val">曾偉修粉專</div>
-                  </div>
-                </a>
-
-                <!-- Threads -->
-                <a href="https://www.threads.net/@logimaskimo" target="_blank" rel="noopener" class="contact-sub-card"
-                  aria-label="前往 Threads 追蹤">
-                  <div class="contact-sub-icon">
-                    <svg class="ui-icon" viewBox="0 0 24 24">
-                      <circle cx="12" cy="12" r="4" />
-                      <path d="M16 8v5a3 3 0 0 0 6 0v-1a10 10 0 1 0-4 8" />
-                    </svg>
-                  </div>
-                  <div>
-                    <div class="contact-sub-label">Threads</div>
-                    <div class="contact-sub-val">@logimaskimo</div>
-                  </div>
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <div>
-            <div class="about-img-frame">
-              <picture>
-                <source type="image/avif" srcset="assets/people/person-contact.avif">
-                <source type="image/webp" srcset="assets/people/person-contact.webp">
-                <img src="assets/people/person-contact.jpg" alt="曾偉修聯絡區人物照" loading="lazy" decoding="async"
-                  class="about-img">
-              </picture>
-            </div>
-          </div>
-        </div>
+          <div class="contact-mark"><img src="assets/ui/logo-seal-512.png" alt="品牌識別標誌" onerror="this.hidden=true" />網站直接提供電話、LINE 與社群聯絡入口。</div>
+        </aside>
       </div>
     </section>
   </main>
 
-  <!-- Mobile Fixed Bottom Navigation Bar -->
-  <aside class="mobile-bottom-bar" aria-label="行動快捷通訊列">
-    <a href="tel:0981451451" class="mobile-bar-btn" aria-label="撥打電話">
-      <svg class="ui-icon" viewBox="0 0 24 24">
-        <path
-          d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
-      </svg>
-      <span>電話</span>
-    </a>
-    <a href="https://line.me/ti/p/~tseng0220" target="_blank" rel="noopener" class="mobile-bar-btn is-line-hero"
-      aria-label="開啟 LINE 對話">
-      <svg viewBox="0 0 24 24">
-        <path
-          d="M12 2C6.48 2 2 5.92 2 10.76c0 3.29 2.06 6.18 5.16 7.64-.23.77-.82 2.78-.94 3.2-.15.53.19.52.4.38.17-.11 2.37-1.61 3.32-2.26.68.1 1.38.15 2.06.15 5.52 0 10-3.92 10-8.76S17.52 2 12 2z" />
-      </svg>
-      <span>加 LINE</span>
-    </a>
-    <a href="https://www.facebook.com/weihsiut" target="_blank" rel="noopener" class="mobile-bar-btn"
-      aria-label="前往 Facebook">
-      <svg class="ui-icon" viewBox="0 0 24 24" style="color: #1877F2;">
-        <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
-      </svg>
-      <span>FB</span>
-    </a>
-    <a href="https://www.threads.net/@logimaskimo" target="_blank" rel="noopener" class="mobile-bar-btn"
-      aria-label="前往 Threads">
-      <svg class="ui-icon" viewBox="0 0 24 24">
-        <circle cx="12" cy="12" r="4" />
-        <path d="M16 8v5a3 3 0 0 0 6 0v-1a10 10 0 1 0-4 8" />
-      </svg>
-      <span>Threads</span>
-    </a>
-  </aside>
-
-  <!-- Premier Civic Brand Footer -->
-  <footer class="site-footer">
-    <div class="footer-top-glow"></div>
-    <div class="container footer-main-content">
-      <div class="footer-grid">
-        <!-- Column 1: Brand & Philosophy -->
+  <footer>
+    <div class="wrap footer-grid">
+      <div class="footer-brand">
+        <img src="assets/ui/logo-seal-512.png" alt="品牌識別標誌" onerror="this.hidden=true" />
         <div>
-          <div class="footer-brand-header">
-            <img src="assets/ui/logo-seal-512.png" alt="曾偉修印章" class="footer-seal-img" width="48" height="48">
-            <div>
-              <div class="footer-brand-title">曾偉修｜龍子里的下一步</div>
-              <div class="footer-brand-sub">2026 高雄市鼓山區龍子里 里長參選服務網</div>
-            </div>
-          </div>
-          <p class="footer-slogan">
-            「看得到的問題，就盡力去做；收到的聲音，就認真去了解。」<br>
-            以服務的溫度，加做事的效率，與您一起守護龍子里每天的生活。
-          </p>
-          <div class="footer-clean-tag">
-            <svg class="ui-icon" viewBox="0 0 24 24">
-              <path d="M11 20A7 7 0 0 1 4 13a8.9 8.9 0 0 1 8.2-8.9 1 1 0 0 1 1.1 1.1C13 8.3 11 11.5 7 13" />
-              <path d="M13 14c3-3 6-3 9 0" />
-              <path d="M20 4v5h-5" />
-            </svg>
-            <span>零大型看板旗幟・潔淨街景承諾</span>
-          </div>
-        </div>
-
-        <!-- Column 2: Navigation Directory -->
-        <div>
-          <div class="footer-col-title">網站快速導覽</div>
-          <ul class="footer-nav-list">
-            <li><a href="#about">認識曾偉修</a></li>
-            <li><a href="#why">為什麼再次參選</a></li>
-            <li><a href="#place">龍子里生活圈</a></li>
-            <li><a href="#actions">六大行動重點</a></li>
-            <li><a href="#service">務實服務紀錄</a></li>
-            <li><a href="#feedback">里民反映窗口</a></li>
-            <li><a href="#timeline">走過的路，都算數</a></li>
-            <li><a href="#share">分享給鄰里好友</a></li>
-            <li><a href="#contact">聯絡曾偉修</a></li>
-          </ul>
-        </div>
-
-        <!-- Column 3: Contact Channels Hub -->
-        <div>
-          <div class="footer-col-title">直接聯繫與社群</div>
-          <div class="footer-contact-items">
-            <!-- LINE -->
-            <a href="https://line.me/ti/p/~tseng0220" target="_blank" rel="noopener"
-              class="footer-contact-link is-line">
-              <svg viewBox="0 0 24 24" style="fill: currentColor;">
-                <path
-                  d="M12 2C6.48 2 2 5.92 2 10.76c0 3.29 2.06 6.18 5.16 7.64-.23.77-.82 2.78-.94 3.2-.15.53.19.52.4.38.17-.11 2.37-1.61 3.32-2.26.68.1 1.38.15 2.06.15 5.52 0 10-3.92 10-8.76S17.52 2 12 2z" />
-              </svg>
-              <span>LINE 官方好友：tseng0220</span>
-            </a>
-
-            <!-- Phone -->
-            <a href="tel:0981451451" class="footer-contact-link">
-              <svg class="ui-icon" viewBox="0 0 24 24">
-                <path
-                  d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
-              </svg>
-              <span>服務專線：0981-451-451</span>
-            </a>
-
-            <!-- Facebook -->
-            <a href="https://www.facebook.com/weihsiut" target="_blank" rel="noopener" class="footer-contact-link">
-              <svg class="ui-icon" viewBox="0 0 24 24">
-                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
-              </svg>
-              <span>Facebook 曾偉修粉絲專頁</span>
-            </a>
-
-            <!-- Threads -->
-            <a href="https://www.threads.net/@logimaskimo" target="_blank" rel="noopener" class="footer-contact-link">
-              <svg class="ui-icon" viewBox="0 0 24 24">
-                <circle cx="12" cy="12" r="4" />
-                <path d="M16 8v5a3 3 0 0 0 6 0v-1a10 10 0 1 0-4 8" />
-              </svg>
-              <span>Threads：@logimaskimo</span>
-            </a>
-          </div>
+          <b>龍子里的下一步</b>
+          <p>這個網站不是從口號出發，而是從居民每天會遇到的事情出發：公共資訊、通學安全、長輩數位、交通動線、建設影響與日常服務。</p>
         </div>
       </div>
-    </div>
-
-    <!-- Bottom Copyright Strip -->
-    <div class="footer-bottom-bar">
-      <div class="container footer-bottom-inner">
+      <div class="footer-card">
+        <img src="assets/candidate-portrait-02.jpg" alt="曾偉修照片" onerror="this.hidden=true" />
         <div>
-          © 2026 曾偉修服務處 版權所有｜網站範圍示意・非地籍用途
+          <strong>曾偉修</strong>
+          <p>龍子里里長候選人。<br><a href="tel:0981451451">電話 0981-451-451</a>｜<a href="https://line.me/ti/p/~tseng0220" target="_blank" rel="noopener">LINE：tseng0220</a><br><a href="https://www.facebook.com/weihsiut" target="_blank" rel="noopener">Facebook：曾偉修粉專</a>｜<a href="https://www.threads.net/@logimaskimo" target="_blank" rel="noopener">Threads：@logimaskimo</a></p>
         </div>
-        <button class="back-to-top-btn" id="backToTop" aria-label="回到頁面頂端">
-          <span>回到頂端</span>
-          <svg class="ui-icon" width="13" height="13" viewBox="0 0 24 24">
-            <path d="M18 15l-6-6-6 6" />
-          </svg>
-        </button>
+      </div>
+      <div class="footer-sources">
+        人物經歷部分以候選人既有網站資料與可取得的官方選舉資料交叉整理；生活圈相關資料仍以官方公開資訊為基礎。現有核對來源包含 <a href="https://www.costco.com.tw/storefinder" target="_blank" rel="noopener">Costco 官方賣場資訊</a>、<a href="https://www.eskyland.com.tw/about" target="_blank" rel="noopener">義享天地官方</a>、<a href="https://linpalace.com.tw/hot-news/" target="_blank" rel="noopener">高雄林皇宮官方</a>、<a href="https://www.fubon.com/life/about-us/announcement/news/fu-bang-ren-shou-gao-xiong-ao-zi-de-kai-fa-an-shang-liang-dian-li--gong-si-xie-li-gong-chuang-cheng-shi-xin-rong-jing" target="_blank" rel="noopener">富邦人壽官方資料</a>與高雄市都市計畫公開資料。
       </div>
     </div>
   </footer>
 
-  <!-- Social Share Feedback Toast Notification (黑金典雅提示) -->
-  <div class="share-toast" id="shareToast" role="alert" aria-live="polite">
-    <div class="share-toast-inner">
-      <div class="share-toast-icon">✓</div>
-      <div class="share-toast-text">
-        <strong>已成功複製網站網址！</strong>
-        <span>感謝您向鄰里鄉親推薦曾偉修！</span>
-      </div>
-    </div>
-  </div>
-
-  <!-- Light Vanilla JS for Drawer & Smooth Interaction -->
   <script>
-    (function () {
-      const toggle = document.getElementById('menuToggle');
-      const drawer = document.getElementById('mobileDrawer');
-      const backToTop = document.getElementById('backToTop');
+    const header = document.getElementById('header');
+    const progress = document.getElementById('progress');
+    const menuBtn = document.getElementById('menuBtn');
+    const nav = document.getElementById('nav');
 
-      if (toggle && drawer) {
-        toggle.addEventListener('click', function () {
-          const isOpen = drawer.classList.toggle('is-open');
-          toggle.classList.toggle('is-active', isOpen);
-          toggle.setAttribute('aria-expanded', isOpen);
-          document.body.style.overflow = isOpen ? 'hidden' : '';
-        });
+    function onScroll(){
+      const y = window.scrollY;
+      header.classList.toggle('scrolled', y > 16);
+      const max = document.documentElement.scrollHeight - window.innerHeight;
+      progress.style.width = (max > 0 ? Math.min(100, y / max * 100) : 0) + '%';
+    }
+    onScroll();
+    addEventListener('scroll', onScroll, {passive:true});
 
-        drawer.querySelectorAll('a').forEach(link => {
-          link.addEventListener('click', function () {
-            drawer.classList.remove('is-open');
-            toggle.classList.remove('is-active');
-            toggle.setAttribute('aria-expanded', 'false');
-            document.body.style.overflow = '';
-          });
-        });
-      }
+    menuBtn.addEventListener('click', () => {
+      const open = nav.classList.toggle('open');
+      menuBtn.setAttribute('aria-expanded', String(open));
+    });
+    nav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+      nav.classList.remove('open');
+      menuBtn.setAttribute('aria-expanded', 'false');
+    }));
 
-      if (backToTop) {
-        backToTop.addEventListener('click', function () {
-          window.scrollTo({ top: 0, behavior: 'smooth' });
-        });
-      }
-
-      // Social Share Logic (LINE, FB, Clipboard Copy & Native Share)
-      const shareUrl = "https://suoyicoffee.com/weihsiu/";
-      const shareTitle = "曾偉修｜龍子里的下一步｜2026 高雄市鼓山區龍子里";
-      const shareText = "曾偉修｜龍子里的下一步｜2026 高雄市鼓山區龍子里里長參選官方服務網。用服務的溫度，加做事的效率。看得到的問題，盡力去做；收到的聲音，認真了解。攜手守護龍子里每天的生活：";
-
-      const btnLine = document.getElementById('btnShareLine');
-      const btnFb = document.getElementById('btnShareFb');
-      const btnThreads = document.getElementById('btnShareThreads');
-      const btnCopy = document.getElementById('btnShareCopy');
-      const btnNative = document.getElementById('btnShareNative');
-      const toast = document.getElementById('shareToast');
-
-      function showToast() {
-        if (!toast) return;
-        toast.classList.add('is-visible');
-        setTimeout(() => {
-          toast.classList.remove('is-visible');
-        }, 2800);
-      }
-
-      if (btnLine) {
-        btnLine.addEventListener('click', function () {
-          const target = `https://social-plugins.line.me/lineit/share?url=${encodeURIComponent(shareUrl)}&text=${encodeURIComponent(shareText)}`;
-          window.open(target, '_blank', 'noopener,noreferrer');
-        });
-      }
-
-      if (btnFb) {
-        btnFb.addEventListener('click', function () {
-          const target = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(shareUrl)}`;
-          window.open(target, '_blank', 'noopener,noreferrer,width=600,height=500');
-        });
-      }
-
-      if (btnThreads) {
-        btnThreads.addEventListener('click', function () {
-          const target = `https://www.threads.net/intent/post?text=${encodeURIComponent(shareText + ' ' + shareUrl)}`;
-          window.open(target, '_blank', 'noopener,noreferrer,width=600,height=600');
-        });
-      }
-
-      if (btnCopy) {
-        btnCopy.addEventListener('click', function () {
-          if (navigator.clipboard && window.isSecureContext) {
-            navigator.clipboard.writeText(shareUrl).then(() => {
-              showToast();
-            }).catch(() => {
-              fallbackCopy();
-            });
-          } else {
-            fallbackCopy();
-          }
-        });
-      }
-
-      function fallbackCopy() {
-        const tempInput = document.createElement('input');
-        tempInput.value = shareUrl;
-        document.body.appendChild(tempInput);
-        tempInput.select();
-        try {
-          document.execCommand('copy');
-          showToast();
-        } catch (err) {
-          alert('網站網址：' + shareUrl);
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting){
+          entry.target.classList.add('in');
+          observer.unobserve(entry.target);
         }
-        document.body.removeChild(tempInput);
-      }
-
-      if (btnNative && navigator.share) {
-        btnNative.style.display = 'inline-flex';
-        btnNative.addEventListener('click', function () {
-          navigator.share({
-            title: shareTitle,
-            text: shareText,
-            url: shareUrl
-          }).catch(() => { });
-        });
-      }
-    })();
+      });
+    }, {threshold:.12});
+    document.querySelectorAll('.reveal-on-scroll').forEach(el => observer.observe(el));
   </script>
 </body>
-
 </html>
