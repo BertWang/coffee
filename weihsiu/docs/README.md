@@ -104,3 +104,13 @@
   - **子系統手冊**：流體著色器、1545 粒子星空、3D 曜金印章、相機軌跡 LERP、效能防護
   - **AI 驗證腳本庫**：Git 零變更檢驗、JS 語法、CSS 大括號平衡、HTML 標籤閉合檢測腳本
 
+---
+
+### 模組八：《龍子里的下一步》16 頁 A5 競選小冊與品牌網頁架構規範（Brand & Print-to-Web Spec）
+- [08-16-page-brochure-and-brand-architecture.md](./08-16-page-brochure-and-brand-architecture.md)
+  - **心理進場動線**：首頁第一眼不放候選人姓名，先看「龍子里的下一步」與生活金句；曾偉修之後置揭示。
+  - **手冊轉網頁核心原則（零 QR Code 原則）**：實體手冊印 QR Code，但網頁端嚴格不產生 QR Code，全數轉換為電話撥號（tel:）、LINE 一鍵加好友（line.me）與原生按鈕。
+  - **16 頁小冊全文與視覺類型分配**：5 情境插畫、5 資訊圖表、1 地標示意、2 真實照片、3 留白紀錄。
+  - **字型與排版工程規範**：Google Fonts Noto Sans TC 引入、tabular-nums 等寬數字排印與 text-wrap 平衡換行。
+
+

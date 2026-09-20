@@ -12,6 +12,9 @@
   <link rel="canonical" href="https://suoyicoffee.com/weihsiu/" />
   <meta property="og:url" content="https://suoyicoffee.com/weihsiu/" />
   <meta property="og:site_name" content="龍子里的下一步" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
   <style>
     :root{
       --paper:#f6f1e7;
@@ -30,7 +33,9 @@
     }
     *{box-sizing:border-box}
     html{scroll-behavior:smooth;background:var(--paper)}
-    body{margin:0;color:var(--ink);background:var(--paper);font-family:"Noto Sans TC","PingFang TC","Microsoft JhengHei",system-ui,sans-serif;line-height:1.75;letter-spacing:.01em}
+    body{margin:0;color:var(--ink);background:var(--paper);font-family:"Noto Sans TC",-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang TC","Microsoft JhengHei",system-ui,sans-serif;line-height:1.75;letter-spacing:.01em;font-variant-numeric:tabular-nums}
+    h1,h2,h3,h4,.hero-lead,.quote{text-wrap:balance;word-break:keep-all;overflow-wrap:break-word}
+    p{text-wrap:pretty}
     a{color:inherit;text-decoration:none}
     button{font:inherit}
     img{display:block;max-width:100%}
@@ -113,7 +118,7 @@
     .landmark-list div{display:flex;justify-content:space-between;gap:18px;border-bottom:1px solid var(--line);padding:10px 0;font-weight:800}
     .landmark-list small{color:var(--ink-soft);font-weight:600;text-align:right}
     .source-links{margin-top:24px;padding-top:18px;border-top:1px solid var(--line);font-size:12px;color:var(--ink-soft)}
-    .source-links a{text-decoration:underline;text-underline-offset:3px}
+    .source-links a{text-decoration:underline;text-underline-offset:3px;word-break:break-all}
     .workflow{background:var(--white)}
     .flow{display:grid;grid-template-columns:repeat(5,1fr);gap:0;align-items:stretch;margin:52px 0 24px}
     .flow-step{position:relative;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:28px 18px;min-height:170px}
@@ -166,7 +171,7 @@
     .candidate-profile-head p{margin:0;color:#d0ddda;font-size:16px}
     .candidate-facts{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:28px}
     .candidate-fact{padding:20px;border:1px solid rgba(255,255,255,.13);border-radius:20px;background:rgba(255,255,255,.035)}
-    .candidate-fact small{display:block;color:#9fb5b0;font-size:11px;letter-spacing:.12em;margin-bottom:7px}
+    .candidate-fact small{display:block;color:#b8cdc8;font-size:11px;letter-spacing:.12em;margin-bottom:7px}
     .candidate-fact strong{display:block;color:#fff;font-size:16px;line-height:1.5}
     .candidate-history{display:grid;grid-template-columns:1fr 1fr;gap:10px}
     .history-item{display:grid;grid-template-columns:88px 1fr;gap:14px;padding:17px 18px;border-radius:18px;background:rgba(255,255,255,.035);border:1px solid rgba(255,255,255,.1)}
@@ -179,9 +184,9 @@
     .history-photo figcaption{padding:14px 14px 16px}
     .history-photo small{display:block;color:#d9bd78;font-size:10px;letter-spacing:.1em;margin-bottom:5px}
     .history-photo strong{display:block;color:#fff;font-size:14px;line-height:1.5}
-    .history-photo p{margin:5px 0 0;color:#aebfbb;font-size:12px;line-height:1.55}
-    .candidate-source{margin-top:18px;font-size:11px;line-height:1.7;color:#9fb0ac}
-    .candidate-source a{color:#e0c887;text-decoration:underline;text-underline-offset:3px}
+    .history-photo p{margin:5px 0 0;color:#b8cdc8;font-size:12px;line-height:1.55}
+    .candidate-source{margin-top:18px;font-size:11px;line-height:1.7;color:#b8cdc8}
+    .candidate-source a{color:#e0c887;text-decoration:underline;text-underline-offset:3px;word-break:break-all}
     .contact-actions{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:20px}
     .contact-action{display:flex;align-items:center;justify-content:center;min-height:44px;padding:10px 12px;border-radius:999px;background:var(--green);color:#fff;font-weight:800;font-size:13px}
     .contact-action.secondary{background:#fff;color:var(--ink);border:1px solid var(--line)}
@@ -244,7 +249,7 @@
     }
     @media (max-width:620px){
       :root{--content:calc(100% - 24px);--radius:22px}
-      .site-header{top:8px;width:calc(100vw - 16px)}.brand{font-size:12px}.section{padding:82px 0}.hero{padding:112px 0 24px}.hero h1{font-size:clamp(62px,23vw,92px)}.hero-lead{font-size:20px}.hero-photo{min-height:0;border-radius:26px}.hero-themes{grid-template-columns:1fr}.hero-themes span{border-right:0}.hero-themes span:last-child{grid-column:auto}.reveal{padding:70px 0 88px}.direction-grid,.resource-grid,.service-channels,.mini-grid,.neighborhood{grid-template-columns:1fr}.direction:last-child{grid-column:auto}.visual{min-height:380px}.story{padding:28px 22px}.map-card{min-height:520px}.google-map-meta h4{font-size:24px}.google-map-card iframe{min-height:360px}.flow{grid-template-columns:1fr}.flow-step:nth-child(even){border-left:0}.flow-step:last-child{grid-column:auto}.candidate-photo{min-height:500px}.candidate-facts,.candidate-history{grid-template-columns:1fr}.history-item{grid-template-columns:72px 1fr}.history-gallery{grid-template-columns:1fr}.contact-actions{grid-template-columns:1fr}.closing{padding:90px 0 68px}.closing h2{font-size:60px}.footer-grid{gap:16px}.footer-card{flex-direction:column}.footer-card img{width:100%;height:240px}
+      .site-header{top:8px;width:calc(100vw - 16px)}.brand{font-size:12px}.section{padding:82px 0}.hero{padding:112px 0 24px}.hero h1{font-size:clamp(62px,23vw,92px)}.hero-lead{font-size:20px}.hero-photo{min-height:0;border-radius:26px}.hero-themes{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;padding:16px 0;border-left:0;border-right:0}.hero-themes span{padding:9px 15px;border:1px solid var(--line);border-radius:999px;background:rgba(255,255,255,.55);font-size:13px;border-right:1px solid var(--line)}.reveal{padding:70px 0 88px}.direction-grid,.resource-grid,.service-channels,.mini-grid,.neighborhood{grid-template-columns:1fr}.direction:last-child{grid-column:auto}.visual{min-height:380px}.story{padding:28px 22px}.map-card{min-height:520px}.google-map-meta h4{font-size:24px}.google-map-card iframe{min-height:360px}.flow{grid-template-columns:1fr}.flow-step:nth-child(even){border-left:0}.flow-step:last-child{grid-column:auto}.candidate-photo{min-height:500px}.candidate-facts,.candidate-history{grid-template-columns:1fr}.history-item{grid-template-columns:72px 1fr}.history-gallery{grid-template-columns:1fr}.contact-actions{grid-template-columns:1fr}.closing{padding:90px 0 68px}.closing h2{font-size:60px}.footer-grid{gap:16px}.footer-card{flex-direction:column}.footer-card img{width:100%;height:240px}
     }
   </style>
 </head>
@@ -285,7 +290,7 @@
 
     <section class="reveal" aria-label="候選人後置揭示">
       <div class="wrap reveal-on-scroll">
-        <p><strong>曾偉修</strong>，邀請你一起想想<br>龍子里的下一步。</p>
+        <p><strong>曾偉修</strong>，邀請您一起想想<br>龍子里的下一步。</p>
       </div>
     </section>
 
@@ -631,7 +636,7 @@
             <p>可能是一個孩子每天經過的路口，一支長輩不會操作的手機，一段每天從社區走向捷運、輕軌，或騎 YouBike 的路。</p>
             <p>也可能是一個下雨後出現的坑洞、一盞沒有亮的路燈、一段需要清理的水溝，或是一項與居民有關的活動與公共資源。</p>
             <p><strong>把問題看見。把事情說清楚。把可以做的，一件一件做好。</strong></p>
-            <p>如果你也關心龍子里的生活議題，歡迎透過下方入口進一步了解，或留下想反映的事情。</p>
+            <p>如果您也關心龍子里的生活議題，歡迎透過下方入口進一步了解，或留下想反映的事情。</p>
           </div>
         </div>
         <aside class="closing-aside reveal-on-scroll">
