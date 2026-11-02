@@ -14,6 +14,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- Description 優化：包含觀光與在地生活圈關鍵字 -->
   <meta name="description" content="台南安平區咖啡首選！所以咖啡台南康平店，近安平老街與台南市政府。提供現萃拿鐵、美式咖啡外帶外送。每週三第二杯半價，在地人推薦的平價奢華咖啡。">
+  <meta name="keywords" content="台南安平咖啡推薦, 安平老街外帶咖啡, 台南市政府咖啡外送, 台南市議會下午茶, 安平運河平價拿鐵, 永華路咖啡外送, 桂花拿鐵, 週三第二杯半價">
   <link rel="canonical" href="https://suoyicoffee.com/store-tainan.html">
 
   <!-- Open Graph -->
@@ -235,93 +236,92 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   </style>
   <!-- 結構化資料（JSON-LD） -->
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "CafeOrCoffeeShop",
-        "@id": "https://suoyicoffee.com/store-tainan.html#store",
-        "name": "所以咖啡 台南康平店",
-        "image": "https://suoyicoffee.com/assets/img/stores/store-tainan.jpg",
-        "url": "https://suoyicoffee.com/store-tainan.html",
-        "telephone": "+886-972-015-126",
-        "servesCuisine": "Coffee, Dessert, Tea",
-        "priceRange": "$",
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "台南市安平區健康三街25號",
-          "addressLocality": "安平區",
-          "addressRegion": "臺南市",
-          "postalCode": "708",
-          "addressCountry": "TW"
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "CafeOrCoffeeShop",
+      "@id": "https://suoyicoffee.com/store-tainan.html#store",
+      "name": "所以咖啡 台南康平店",
+      "image": "https://suoyicoffee.com/assets/img/stores/store-tainan.jpg",
+      "url": "https://suoyicoffee.com/store-tainan.html",
+      "telephone": "+886-972-015-126",
+      "servesCuisine": "Coffee, Dessert, Tea",
+      "priceRange": "$",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "台南市安平區健康三街25號",
+        "addressLocality": "安平區",
+        "addressRegion": "臺南市",
+        "postalCode": "708",
+        "addressCountry": "TW"
+      },
+      "areaServed": [
+        "安平區",
+        "安平老街",
+        "台南市政府",
+        "台南市議會",
+        "安平五期重劃區",
+        "台南運河"
+      ],
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 22.9875,
+        "longitude": 120.1792
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday"
+          ],
+          "opens": "07:00",
+          "closes": "17:00"
         },
-        "areaServed": [
-          {
-            "@type": "GeoCircle",
-            "geoMidpoint": {
-              "@type": "GeoCoordinates",
-              "latitude": 22.9875,
-              "longitude": 120.1792
-            },
-            "geoRadius": "3000" 
-          },
-          {
-            "@type": "Place",
-            "name": "安平區"
-          },
-          {
-            "@type": "Place",
-            "name": "台南市政府周邊"
-          }
-        ],
-        "geo": {
-          "@type": "GeoCoordinates",
-          "latitude": 22.9875,
-          "longitude": 120.1792
-        },
-        "openingHoursSpecification": [
-          {
-            "@type": "OpeningHoursSpecification",
-            "dayOfWeek": ["Tuesday", "Wednesday", "Thursday", "Friday"],
-            "opens": "07:00",
-            "closes": "17:00"
-          },
-          {
-            "@type": "OpeningHoursSpecification",
-            "dayOfWeek": ["Saturday", "PublicHolidays"],
-            "opens": "09:00",
-            "closes": "17:00"
-          }
-        ],
-        "makesOffer": {
-          "@type": "Offer",
-          "name": "週三品牌日：飲品第二杯半價",
-          "description": "每週三 07:00–17:00，外帶同品項飲品享第二杯半價優惠。",
-          "priceCurrency": "TWD",
-          "availability": "https://schema.org/InStock",
-          "availabilityStarts": "07:00",
-          "availabilityEnds": "17:00",
-          "dayOfWeek": ["Wednesday"]
-        },
-        "sameAs": [
-          "https://www.instagram.com/suoyi_coffee/"
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "Saturday",
+            "PublicHolidays"
+          ],
+          "opens": "09:00",
+          "closes": "17:00"
+        }
+      ],
+      "makesOffer": {
+        "@type": "Offer",
+        "name": "週三品牌日：飲品第二杯半價",
+        "description": "每週三 07:00–17:00，外帶同品項飲品享第二杯半價優惠。",
+        "priceCurrency": "TWD",
+        "availability": "https://schema.org/InStock",
+        "availabilityStarts": "07:00",
+        "availabilityEnds": "17:00",
+        "dayOfWeek": [
+          "Wednesday"
         ]
       },
-      {
-        "@type": "FAQPage",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "請問台南店有外送服務嗎？",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "有的！所以咖啡台南康平店提供 UberEats 與 Foodpanda 外送平台服務。安平區與台南市政府周邊企業如有大量訂購需求，歡迎致電 0972-015-126 洽詢。"
-            }
+      "sameAs": [
+        "https://www.instagram.com/suoyi_coffee/"
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "請問台南店有外送服務嗎？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "有的！所以咖啡台南康平店提供 UberEats 與 Foodpanda 外送平台服務。安平區與台南市政府周邊企業如有大量訂購需求，歡迎致電 0972-015-126 洽詢。"
           }
-        ]
-      }
-    ]
-  }
+        }
+      ]
+    }
+  ]
+}
   </script>
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-JRXEVGSEFY"></script>
@@ -369,7 +369,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <span id="store-status-badge" class="badge bg-secondary text-white mb-2">
             <i class="bi bi-hourglass-split"></i> 載入資訊中...
           </span>
-          <h1 class="display-4 fw-bold mb-3">台南康平店</h1>
+          <h1 class="display-4 fw-bold mb-3">台南康平店 <span class="fs-5 d-block text-white-50 fw-normal mt-2">安平老街・台南市政府周邊平價現萃外帶外送咖啡</span></h1>
           <p class="lead mb-4 opacity-90">
             安平億載金城旁的咖啡香。<br>
             鄰近台南市政府，在地人與遊客的休憩首選。
@@ -387,7 +387,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
   </section>
 
-  <!-- 2. 店長推薦 · 本店熱銷 Top 3 -->
+  <!-- 2. 店長推薦 · 本店熱銷 Top 4 -->
   <section class="py-5">
     <div class="container">
       <div class="text-center mb-4">
@@ -445,6 +445,23 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             </div>
           </div>
         </div>
+
+          <!-- Item 4: 桂花拿鐵 (秋季新品) -->
+          <div class="col-6 col-md-4 col-lg-3">
+            <div class="menu-highlight-card bg-white h-100">
+              <div class="menu-img-wrapper position-relative">
+                <img src="assets/img/products/Osmanthus_Latte.jpg" alt="桂花拿鐵 Osmanthus Latte" class="img-fluid w-100 h-100 object-fit-cover">
+                <span class="position-absolute top-0 end-0 badge bg-danger m-2">秋季新品</span>
+              </div>
+              <div class="p-3 text-center">
+                <h3 class="h6 fw-bold text-brown mb-1">桂花拿鐵</h3>
+                <div class="text-warning fw-bold small mb-2">$85</div>
+                <p class="small text-muted mb-0 text-truncate-2">
+                  天然桂花花蜜遇上香濃拿鐵，清新花香在舌尖緩緩綻放。
+                </p>
+              </div>
+            </div>
+          </div>
 
       </div>
       
