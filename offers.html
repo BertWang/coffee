@@ -48,20 +48,19 @@
   <!-- JSON-LD：Offer（提供 @id，供門市 JSON-LD 參照） -->
   <script type="application/ld+json">
     {
-    "@context": "https://schema.org",
-    "@type": "Offer",
-    "@id": "https://suoyicoffee.com/offers.html#wednesday-offer",
-    "name": "每週三外帶咖啡第二杯半價",
-    "category": "Weekly Deal",
-    "priceCurrency": "TWD",
-    "availability": "https://schema.org/InStoreOnly",
-    "eligibleRegion": ["臺南市","高雄市"],
-    "url": "https://suoyicoffee.com/offers.html",
-    "description": "每週三外帶限定；第二杯同品項或價低者半價；不可併用其他優惠；適用高雄／台南門市。"
-    "eligibleRegion": ["TW-KHH","TW-TNN"],
-    "eligibleDayOfWeek": "Wednesday"
+      "@context": "https://schema.org",
+      "@type": "Offer",
+      "@id": "https://suoyicoffee.com/offers.html#wednesday-offer",
+      "name": "每週三外帶咖啡第二杯半價",
+      "category": "Weekly Deal",
+      "priceCurrency": "TWD",
+      "availability": "https://schema.org/InStoreOnly",
+      "eligibleRegion": ["TW-KHH", "TW-TNN"],
+      "eligibleDayOfWeek": "https://schema.org/Wednesday",
+      "url": "https://suoyicoffee.com/offers.html",
+      "description": "每週三外帶限定；第二杯同品項或價低者半價；不可併用其他優惠；適用高雄／台南門市。"
     }
-    </script>
+  </script>
   <style>
     .franchise-cta {
       background: linear-gradient(120deg, #5C4033, #8D6E5A);

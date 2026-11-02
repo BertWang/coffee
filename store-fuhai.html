@@ -1,0 +1,792 @@
+<!doctype html>
+<html lang="zh-Hant-TW">
+<head>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-KLX5Z6DS');</script>
+<!-- End Google Tag Manager -->
+  <meta charset="utf-8">
+  <title>苓雅咖啡外送與外帶推薦｜所以咖啡苓雅福海店｜五塊厝與三多商圈下午茶首選</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="高雄苓雅咖啡推薦！所以咖啡福海店位於高雄市苓雅區福海街38號（近捷運五塊厝站、技擊館站與三多商圈）。現場買5送1、寄杯買10送2、週三第二杯半價。訂購專線：0916-919-008，支援 Uber Eats、Foodpanda 及 LINE 點餐自取。">
+  <link rel="canonical" href="https://suoyicoffee.com/store-fuhai.html">
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://suoyicoffee.com/store-fuhai.html">
+  <meta property="og:description" content="高雄苓雅咖啡推薦！所以咖啡福海店位於高雄市苓雅區福海街38號。現場買5送1、寄杯買10送2、週三第二杯半價。訂購專線：0916-919-008，支援外送與LINE點餐。">
+  <meta property="og:title" content="苓雅咖啡外送與外帶推薦｜所以咖啡苓雅福海店">
+  <meta property="og:image" content="https://suoyicoffee.com/assets/img/stores/fuhai/banner.jpg">
+  <link rel="icon" href="assets/img/logo/logo-brown-on-white.png" sizes="32x32" type="image/png">
+  <link rel="icon" href="assets/img/logo/logo-brown-on-white.png" sizes="192x192" type="image/png">
+  <link rel="apple-touch-icon" href="assets/img/logo/logo-brown-on-white.png">
+  <!-- CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="assets/css/custom.css">
+
+  <style>
+    /* 1. 沉浸式 Hero */
+    .store-hero-v2 {
+      position: relative;
+      background: url('assets/img/stores/fuhai/banner.jpg') no-repeat center center/cover;
+      padding: 130px 0 90px;
+      color: white;
+    }
+    .store-hero-overlay {
+      position: absolute;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: linear-gradient(to right, rgba(61,43,31,0.95) 0%, rgba(92,64,51,0.85) 50%, rgba(61,43,31,0.55) 100%);
+      z-index: 1;
+    }
+    .store-hero-content {
+      position: relative;
+      z-index: 2;
+    }
+
+    /* 2. 熱銷商品卡片 */
+    .menu-highlight-card {
+      border: none;
+      border-radius: 16px;
+      overflow: hidden;
+      transition: transform 0.3s;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    }
+    .menu-highlight-card:hover {
+      transform: translateY(-5px);
+    }
+    .menu-img-wrapper {
+      position: relative;
+      width: 100%;
+      padding-top: 100%;
+      overflow: hidden;
+    }
+    .menu-img-wrapper img {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      object-fit: cover;
+    }
+
+    .letter-spacing-2 { letter-spacing: 2px; }
+
+    /* 2.5 關於分店 (SEO 重點區) */
+    .about-store-text {
+      line-height: 1.9;
+      color: #555;
+      font-size: 0.98rem;
+    }
+    .about-store-highlight {
+      color: #5C4033;
+      font-weight: 600;
+      background: #F2E5D7;
+      padding: 0 4px;
+      border-radius: 4px;
+    }
+
+    /* 3. 優惠卡片 */
+    .promo-card {
+      background: #fff;
+      border-radius: 16px;
+      padding: 24px;
+      border: 1px solid #f0e6dd;
+      box-shadow: 0 4px 12px rgba(92,64,51,0.06);
+      transition: all 0.3s ease;
+      height: 100%;
+    }
+    .promo-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 20px rgba(92,64,51,0.12);
+      border-color: #d4a373;
+    }
+    .promo-icon-badge {
+      width: 50px;
+      height: 50px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      margin-bottom: 16px;
+    }
+
+    /* 4. 外送/外帶按鈕微交互 */
+    .delivery-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      transition: all 0.2s;
+    }
+    .delivery-ue { background: #E8F5E9; color: #06C167; border: 1px solid #C8E6C9; }
+    .delivery-ue:hover { background: #06C167; color: white; }
+    .delivery-fp { background: #FCE4EC; color: #D70F64; border: 1px solid #F8BBD0; }
+    .delivery-fp:hover { background: #D70F64; color: white; }
+    .delivery-line { background: #E8F5E9; color: #00B900; border: 1px solid #C8E6C9; }
+    .delivery-line:hover { background: #00B900; color: white; }
+
+    /* 5. 手機版底部黏著選單 */
+    .mobile-sticky-bar {
+      position: fixed;
+      bottom: 0; left: 0; width: 100%;
+      background: #fff;
+      box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+      z-index: 1050;
+      padding: 10px 15px;
+      display: none;
+    }
+    @media (max-width: 768px) {
+      .mobile-sticky-bar { display: flex; gap: 8px; }
+      .store-hero-v2 { padding: 100px 0 60px; }
+    }
+
+    /* FAQ Accordion */
+    .accordion-button:not(.collapsed) {
+      background-color: #F2E5D7;
+      color: #5C4033;
+    }
+    .accordion-button:focus {
+      box-shadow: none;
+      border-color: #D4A373;
+    }
+  </style>
+
+  <!-- JSON-LD: 複合式結構資料 -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "CafeOrCoffeeShop",
+        "name": "所以咖啡 苓雅福海店",
+        "image": "https://suoyicoffee.com/assets/img/stores/fuhai/storefront.jpg",
+        "telephone": "+886-916-919-008",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "福海街 38 號",
+          "addressLocality": "苓雅區",
+          "addressRegion": "高雄市",
+          "postalCode": "802",
+          "addressCountry": "TW"
+        },
+        "priceRange": "$",
+        "openingHoursSpecification": [
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
+            "opens": "07:00",
+            "closes": "16:00"
+          }
+        ],
+        "makesOffer": {
+            "@type": "Offer",
+            "name": "週三品牌日：外帶咖啡第二杯半價",
+            "description": "每週三外帶全品項皆可搭配，以低價者享第二杯半價優惠。",
+            "priceCurrency": "TWD",
+            "availability": "https://schema.org/InStock",
+            "dayOfWeek": ["Wednesday"]
+        }
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "請問所以咖啡福海店有提供哪些外送與線上點餐管道？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "福海店支援 Uber Eats、Foodpanda 平台外送，亦可加入 LINE 官方帳號（https://lin.ee/PafbChl）線上點餐自取，或直接致電 0916-919-008 預訂團體外送。"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "福海店有哪些優惠活動？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "福海店常態提供三大優惠：1. 現場買 5 送 1（全品項皆可搭配，以低價者贈送）；2. 寄杯買 10 送 2（限自飲、可寄杯）；3. 每週三第二杯半價（全品項可搭配，低價者半價）。"
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-JRXEVGSEFY"></script>
+  <script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-JRXEVGSEFY');
+  </script>
+</head>
+<body class="bg-light d-flex flex-column min-vh-100">
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KLX5Z6DS"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<!-- 導覽列 -->
+<nav class="navbar navbar-expand-md bg-white shadow-sm fixed-top">
+  <div class="container">
+    <a class="navbar-brand fw-bold text-brown" href="index.html">所以咖啡 SUOYI COFFEE</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMain">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navMain">
+      <ul class="navbar-nav ms-auto small">
+        <li class="nav-item"><a class="nav-link" href="stores.html">回門市總覽</a></li>
+        <li class="nav-item"><a class="nav-link" href="menu.html">嚴選菜單</a></li>
+        <li class="nav-item"><a class="nav-link" href="offers.html">優惠活動</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<main class="flex-grow-1" style="padding-top: 60px;">
+  <!-- 1. Hero Section -->
+  <section class="store-hero-v2">
+    <div class="store-hero-overlay"></div>
+    <div class="container store-hero-content">
+      <div class="row">
+        <div class="col-lg-8">
+          <nav aria-label="breadcrumb">
+            <ol class="breadcrumb text-white-50 small">
+              <li class="breadcrumb-item"><a href="index.html" class="text-white-50 text-decoration-none">首頁</a></li>
+              <li class="breadcrumb-item"><a href="stores.html" class="text-white-50 text-decoration-none">門市據點</a></li>
+              <li class="breadcrumb-item active text-white" aria-current="page">苓雅福海店</li>
+            </ol>
+          </nav>
+          <span class="badge bg-danger text-white mb-2 px-3 py-2 rounded-pill">
+            <i class="bi bi-stars"></i> 2026 年 10 月 10 日全新開幕
+          </span>
+          <h1 class="display-4 fw-bold mb-3">苓雅福海店</h1>
+          <p class="lead mb-4 opacity-90">
+            一杯好咖啡，讓生活更美好 ♡<br>
+            鄰近捷運五塊厝站與三多商圈，現磨現萃、嚴選萬丹鮮乳，為您的日常注入滿滿咖啡元氣！
+          </p>
+          <div class="d-flex flex-wrap gap-2 d-none d-md-flex">
+            <a href="tel:0916919008" class="btn btn-light text-brown fw-bold rounded-pill px-4">
+              <i class="bi bi-telephone-fill me-1"></i> 0916-919-008
+            </a>
+            <a href="https://lin.ee/PafbChl" target="_blank" rel="noopener noreferrer" 
+               class="btn btn-success fw-bold rounded-pill px-4" style="background-color: #06C755; border-color: #06C755;">
+              <i class="bi bi-line me-1"></i> LINE 點餐
+            </a>
+            <a href="https://www.ubereats.com/tw/store/%E6%89%80%E4%BB%A5%E5%92%96%E5%95%A1-%E7%A6%8F%E6%B5%B7%E5%BA%97/2Hm9qcUeVQ2g0HA8Ug_F4g" 
+               target="_blank" rel="noopener noreferrer" class="btn btn-outline-light fw-bold rounded-pill px-3">
+              <i class="bi bi-bag-check me-1"></i> Uber Eats
+            </a>
+            <a href="https://www.foodpanda.com.tw/restaurant/abkt/suo-yi-ka-pei-ling-ya-fu-hai-dian" 
+               target="_blank" rel="noopener noreferrer" class="btn btn-outline-light fw-bold rounded-pill px-3">
+              <i class="bi bi-bicycle me-1"></i> Foodpanda
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. 店家特色小 Bar -->
+  <section class="py-3 bg-white border-bottom shadow-sm">
+    <div class="container">
+      <div class="row text-center g-3 text-muted small">
+        <div class="col-6 col-md-3">
+          <i class="bi bi-clock-history text-brown fs-5 d-block mb-1"></i>
+          <span class="text-dark fw-bold">週一至週六營業</span><br>07:00 ~ 16:00 (週日店休)
+        </div>
+        <div class="col-6 col-md-3">
+          <i class="bi bi-cup-hot text-brown fs-5 d-block mb-1"></i>
+          <span class="text-dark fw-bold">黃金濃縮現萃</span><br>多道研磨、醇厚回甘
+        </div>
+        <div class="col-6 col-md-3">
+          <i class="bi bi-droplet-half text-brown fs-5 d-block mb-1"></i>
+          <span class="text-dark fw-bold">在地萬丹鮮乳</span><br>純濃香甜、滑順可口
+        </div>
+        <div class="col-6 col-md-3">
+          <i class="bi bi-gift-fill text-brown fs-5 d-block mb-1"></i>
+          <span class="text-dark fw-bold">門市常態好康</span><br>買5送1 · 寄杯買10送2
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. 福海店專屬優惠活動專區 -->
+  <section class="py-5 bg-light">
+    <div class="container">
+      <div class="text-center mb-5">
+        <span class="text-brown fw-bold small letter-spacing-2">SPECIAL OFFERS</span>
+        <h2 class="h3 fw-bold text-brown">福海店專屬優惠活動</h2>
+        <p class="text-muted small">精打細算喝好咖啡，多重優惠天天回饋！</p>
+      </div>
+
+      <div class="row g-4">
+        <!-- 優惠 1: 現場買 5 送 1 -->
+        <div class="col-12 col-md-4">
+          <div class="promo-card text-center">
+            <div class="promo-icon-badge bg-warning text-dark mx-auto">
+              <i class="bi bi-cup-straw"></i>
+            </div>
+            <h3 class="h5 fw-bold text-brown mb-2">現場買 5 送 1</h3>
+            <span class="badge bg-danger text-white mb-3">常態優惠</span>
+            <p class="text-muted small mb-0">
+              來店現場購買飲品享<b>買五送一</b>！全品項皆可隨心搭配，以低價者為贈送品項，辦公室下午茶首選！
+            </p>
+          </div>
+        </div>
+
+        <!-- 優惠 2: 寄杯買 10 送 2 -->
+        <div class="col-12 col-md-4">
+          <div class="promo-card text-center border-warning">
+            <div class="promo-icon-badge bg-brown text-white mx-auto">
+              <i class="bi bi-gift-fill"></i>
+            </div>
+            <h3 class="h5 fw-bold text-brown mb-2">寄杯買 10 送 2</h3>
+            <span class="badge bg-warning text-dark mb-3">超值回饋</span>
+            <p class="text-muted small mb-0">
+              常客必備寄杯方案！一次購買 10 杯即加贈 2 杯（限自飲、可寄杯、本人使用），划算又便利！
+            </p>
+          </div>
+        </div>
+
+        <!-- 優惠 3: 每週三第二杯半價 -->
+        <div class="col-12 col-md-4">
+          <div class="promo-card text-center">
+            <div class="promo-icon-badge bg-danger text-white mx-auto">
+              <i class="bi bi-tag-fill"></i>
+            </div>
+            <h3 class="h5 fw-bold text-brown mb-2">每週三第二杯半價</h3>
+            <span class="badge bg-secondary text-white mb-3">週三限定</span>
+            <p class="text-muted small mb-0">
+              每週三品牌限定日！來店外帶享有第二杯半價，全品項皆可搭配，以低價者為半價折扣。
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 活動規則提醒與說明 -->
+      <div class="mt-4 p-3 bg-white rounded-3 border border-warning-subtle small text-muted">
+        <div class="d-flex align-items-start gap-2">
+          <i class="bi bi-info-circle-fill text-warning fs-5 flex-shrink-0 mt-1"></i>
+          <div>
+            <strong class="text-brown">福海店活動規範與溫馨提醒：</strong>
+            <ul class="mb-0 ps-3 mt-1">
+              <li><b>現場專屬優惠</b>：「買5送1」、「寄杯買10送2」與「每週三第二杯半價」皆為<b>門市現場來店外帶自取限定</b>，外送平台（Uber Eats、Foodpanda）價格與活動依平台獨立規範。</li>
+              <li><b>寄杯使用規範</b>：「寄杯買10送2」限本人登記自飲、可跨日分次領取，恕不得轉讓他人或兌換現金。</li>
+              <li><b>開幕活動致謝</b>：10/7~10/9 試賣第二杯半價與 10/10 開幕買一送一活動已圓滿落幕，感謝廣大在地鄉親支持！目前常態回饋即為上方三大優惠。</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. 門市實景介紹 -->
+  <section class="py-5 bg-white">
+    <div class="container">
+      <div class="row align-items-center g-5">
+        <div class="col-lg-6">
+          <div class="position-relative rounded-4 overflow-hidden shadow-lg border">
+            <img src="assets/img/stores/fuhai/storefront.jpg" alt="所以咖啡 苓雅福海店 門市實景" class="img-fluid w-100">
+            <div class="position-absolute bottom-0 start-0 w-100 p-3 bg-dark bg-opacity-75 text-white">
+              <p class="small mb-0"><i class="bi bi-geo-alt-fill text-warning me-1"></i> 高雄市苓雅區福海街38號 實體門市</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <span class="text-brown fw-bold small letter-spacing-2">STOREFRONT & ATMOSPHERE</span>
+          <h2 class="h3 fw-bold text-brown mb-3">木質溫潤吧檯 · 街角飄香的精品咖啡站</h2>
+          <p class="text-muted">
+            <b>所以咖啡（苓雅福海店）</b>傳承品牌發跡的餐車職人精神，以溫暖典雅的白色與木質吧檯進駐苓雅區福海街。
+          </p>
+          <p class="text-muted">
+            高質感的發光豆型 Logo、專業的雙孔義式咖啡機與嚴選五道式 RO 純水系統，堅持每一杯咖啡皆現磨現萃。不管是匆忙通勤的早晨，或是悠閒放鬆的午後，我們都為您遞上一杯平價卻絕不妥協的精品好咖啡。
+          </p>
+          <div class="d-flex flex-wrap gap-2 mt-4">
+            <a href="https://lin.ee/PafbChl" target="_blank" rel="noopener noreferrer" 
+               class="btn btn-success fw-bold rounded-pill px-4" style="background-color: #06C755; border-color: #06C755;">
+              <i class="bi bi-line me-1"></i> 加 LINE 點餐
+            </a>
+            <a href="tel:0916919008" class="btn btn-brown fw-bold rounded-pill px-4">
+              <i class="bi bi-telephone-fill me-1"></i> 致電預約
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4.5 關於分店 ABOUT STORE (在地化 SEO 重點區) -->
+  <section class="py-5 bg-light border-top border-bottom">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-10">
+          <div class="text-center mb-4">
+            <span class="text-brown fw-bold small letter-spacing-2">ABOUT STORE</span>
+            <h2 class="h3 fw-bold text-brown">三信家商旁・五塊厝與三多商圈的平價外帶精品咖啡</h2>
+          </div>
+          <div class="about-store-text">
+            <p>
+              <strong>所以咖啡（Suoyi Coffee）苓雅福海店</strong> 於 2026 年 10 月正式進駐高雄市苓雅區福海街，座落於文教氣息濃厚且生活機能成熟的 <span class="about-store-highlight">福康社區</span>。門市緊鄰 <span class="about-store-highlight">三信家商</span>（步行僅 3 分鐘），並位處 <span class="about-store-highlight">三多一路</span> 與 <span class="about-store-highlight">武慶三路、福德三路</span> 交通要道交界，是周邊教職員、通勤上班族與在地居民早晨醒腦與午後放鬆的能量補給站。
+            </p>
+            <p>
+              交通位置四通八達，距離 <span class="about-store-highlight">高雄捷運橘線五塊厝站（O8）</span> 步行約 8 分鐘、車程 2 分鐘直達 <span class="about-store-highlight">技擊館站（O9 / 苓雅運動園區）</span>，沿三多路更可便捷銜接 <span class="about-store-highlight">高雄輕軌五權國小站（C34）</span>。門市斜對面即為在地著名的綠意休憩景點 <span class="about-store-highlight">武漢兒童遊戲場（台積電公園）</span>，福海街街廓寬敞整潔，不管是機車快速外帶或開車臨停取餐都極為便利。
+            </p>
+            <p>
+              我們秉持「熱愛咖啡，所以相遇」的初衷，店內設備全面比照總店規格，配備專業雙孔義式咖啡機與五道式 RO 純水系統，嚴選極品咖啡豆與屏東萬丹酪農限定鮮乳。除了經典的<strong>香醇拿鐵</strong>與<strong>美式咖啡</strong>，更推出飄散淡雅花香的人氣新品<strong>桂花拿鐵</strong>。門市常態提供「<strong>現場買5送1</strong>」、「<strong>寄杯買10送2</strong>」與「<strong>每週三第二杯半價</strong>」超值回饋，顧客亦可透過專屬 <span class="about-store-highlight">LINE 線上點餐（@PafbChl）</span> 享受到店即取的便利服務。
+            </p>
+            <p class="mb-0">
+              福海店亦為周邊學校、補習班、醫院診所及公司行號提供<strong>會議咖啡外送與下午茶團體訂購服務</strong>，支援 Uber Eats、Foodpanda 平台配送或致電專線專人送達，讓您在辦公室或校園隨時品味一杯平價卻不妥協的現萃精品咖啡。
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 學校機關・企業會議外送 CTA Bar -->
+  <section class="py-4 border-bottom" style="background: #F2E5D7;">
+    <div class="container text-center">
+      <h3 class="h5 fw-bold text-brown mb-2"><i class="bi bi-truck me-1"></i> 高雄苓雅・三多商圈・文教學區企業團體外送專線</h3>
+      <p class="small text-muted mb-3">三信家商、福康國小、福東國小、捷運五塊厝商圈周邊公司學校，會議咖啡與下午茶滿額專人外送。</p>
+      <a href="tel:0916919008" class="btn btn-brown rounded-pill px-4 fw-bold me-2">
+        <i class="bi bi-telephone-fill me-1"></i> 0916-919-008
+      </a>
+      <a href="https://lin.ee/PafbChl" target="_blank" rel="noopener noreferrer"
+        class="btn btn-outline-brown rounded-pill px-4 fw-bold">
+        <i class="bi bi-line me-1"></i> LINE 預約外送
+      </a>
+    </div>
+  </section>
+
+  <!-- 5. 熱銷推薦商品 -->
+  <section class="py-5 bg-light">
+    <div class="container">
+      <div class="d-flex justify-content-between align-items-end mb-4">
+        <div>
+          <h2 class="h3 fw-bold text-brown mb-1">福海店人氣推薦</h2>
+          <p class="text-muted small mb-0">上班通勤提神、午後放鬆下午茶的常客首選</p>
+        </div>
+        <a href="menu.html" class="btn btn-outline-brown btn-sm rounded-pill">查看完整菜單 →</a>
+      </div>
+
+      <div class="row g-4">
+        <!-- 桂花拿鐵 -->
+        <div class="col-6 col-md-3">
+          <div class="menu-highlight-card bg-white h-100">
+            <div class="menu-img-wrapper">
+              <img src="assets/img/products/Osmanthus_Latte.jpg" alt="桂花拿鐵" class="img-fluid">
+              <span class="position-absolute top-0 end-0 badge bg-danger text-white m-2">新品推薦</span>
+            </div>
+            <div class="p-3 text-center">
+              <h3 class="h6 fw-bold text-brown mb-1">桂花拿鐵</h3>
+              <div class="text-warning fw-bold small mb-2">$85</div>
+              <p class="small text-muted mb-0">特調桂花釀融合現萃濃縮與鮮乳，入口散發迷人清甜花香。</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 香醇拿鐵 -->
+        <div class="col-6 col-md-3">
+          <div class="menu-highlight-card bg-white h-100">
+            <div class="menu-img-wrapper">
+              <img src="assets/img/products/Latte_1.jpg" alt="香醇拿鐵" class="img-fluid">
+              <span class="position-absolute top-0 end-0 badge bg-warning text-dark m-2">經典招牌</span>
+            </div>
+            <div class="p-3 text-center">
+              <h3 class="h6 fw-bold text-brown mb-1">香醇拿鐵</h3>
+              <div class="text-warning fw-bold small mb-2">$75</div>
+              <p class="small text-muted mb-0">咖啡與鮮奶黃金比例，口感絲滑柔順，每日上班必備。</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 海鹽焦糖拿鐵 -->
+        <div class="col-6 col-md-3">
+          <div class="menu-highlight-card bg-white h-100">
+            <div class="menu-img-wrapper">
+              <img src="assets/img/products/Salted_Caramel_Latte.jpg" alt="海鹽焦糖拿鐵" class="img-fluid">
+              <span class="position-absolute top-0 end-0 badge bg-warning text-dark m-2">人氣熱銷</span>
+            </div>
+            <div class="p-3 text-center">
+              <h3 class="h6 fw-bold text-brown mb-1">海鹽焦糖拿鐵</h3>
+              <div class="text-warning fw-bold small mb-2">$85</div>
+              <p class="small text-muted mb-0">焦糖甜香與海鹽微鹹交織，層次豐富不膩口。</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 美式咖啡 -->
+        <div class="col-6 col-md-3">
+          <div class="menu-highlight-card bg-white h-100">
+            <div class="menu-img-wrapper">
+              <img src="assets/img/products/Americano.jpg" alt="美式咖啡" class="img-fluid">
+              <span class="position-absolute top-0 end-0 badge bg-secondary text-white m-2">輕盈日常</span>
+            </div>
+            <div class="p-3 text-center">
+              <h3 class="h6 fw-bold text-brown mb-1">美式咖啡</h3>
+              <div class="text-warning fw-bold small mb-2">$65</div>
+              <p class="small text-muted mb-0">清爽回甘、果香與堅果調性均衡，提神純粹好滋味。</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. 門市資訊與地圖 -->
+  <section class="py-5 bg-white border-top">
+    <div class="container">
+      <div class="row g-5">
+        <div class="col-lg-5">
+          <h2 class="h4 fw-bold text-brown mb-4">門市詳細資訊</h2>
+          <ul class="list-unstyled">
+            <li class="mb-3">
+              <strong class="d-block text-dark">
+                <i class="bi bi-geo-alt-fill text-brown me-2"></i>門市地址
+              </strong>
+              <span class="text-muted ms-4">高雄市苓雅區福海街 38 號</span>
+              <div class="ms-4 mt-2 small text-muted bg-light border p-3 rounded">
+                <i class="bi bi-pin-map-fill text-brown"></i> <strong>交通指引與地標：</strong><br>
+                座落於 <span class="text-dark fw-bold">福康生活圈</span>，鄰近三多二路、武廟商圈與衛武營運動園區。<br>
+                近 <span class="text-dark fw-bold">捷運橘線五塊厝站（O8）</span> 與 <span class="text-dark fw-bold">技擊館站（O9）</span><br>
+                近 <span class="text-dark fw-bold">輕軌五權國小站（C34）</span><br>
+                鄰近 <span class="text-dark fw-bold">福康國小、三信家商、福東國小</span><br>
+                門前臨停方便，歡迎預約自取。
+              </div>
+            </li>
+            <li class="mb-3">
+              <strong class="d-block text-dark"><i class="bi bi-clock-fill text-brown me-2"></i>營業時間</strong>
+              <span class="text-muted ms-4">週一至週六 07:00 – 16:00（星期日固定店休）</span>
+            </li>
+            <li class="mb-3">
+              <strong class="d-block text-dark"><i class="bi bi-telephone-fill text-brown me-2"></i>訂購專線</strong>
+              <a href="tel:0916919008" class="text-brown fw-bold ms-4 text-decoration-none">0916-919-008</a>
+            </li>
+          </ul>
+
+          <h3 class="h6 fw-bold text-brown mt-4 mb-3">線上點餐與外送管道</h3>
+          <div class="d-flex flex-wrap gap-2">
+            <a href="https://lin.ee/PafbChl" target="_blank" rel="noopener noreferrer" 
+               class="delivery-chip delivery-line text-decoration-none">
+              <i class="bi bi-line"></i> LINE 訂購取餐
+            </a>
+            <a href="https://www.ubereats.com/tw/store/%E6%89%80%E4%BB%A5%E5%92%96%E5%95%A1-%E7%A6%8F%E6%B5%B7%E5%BA%97/2Hm9qcUeVQ2g0HA8Ug_F4g"
+               target="_blank" rel="noopener noreferrer" class="delivery-chip delivery-ue text-decoration-none">
+              <i class="bi bi-bag-check"></i> Uber Eats 外送
+            </a>
+            <a href="https://www.foodpanda.com.tw/restaurant/abkt/suo-yi-ka-pei-ling-ya-fu-hai-dian"
+               target="_blank" rel="noopener noreferrer" class="delivery-chip delivery-fp text-decoration-none">
+              <i class="bi bi-bicycle"></i> Foodpanda 外送
+            </a>
+            <a href="https://www.google.com/maps?q=高雄市苓雅區福海街38號 所以咖啡" target="_blank" rel="noopener noreferrer"
+               class="btn btn-sm btn-outline-brown rounded-pill">
+              <i class="bi bi-map me-1"></i> Google 地圖導航
+            </a>
+          </div>
+        </div>
+
+        <div class="col-lg-7">
+          <div class="ratio ratio-16x9 rounded-4 overflow-hidden shadow-sm border">
+            <iframe src="https://maps.google.com/maps?q=高雄市苓雅區福海街38號&t=&z=16&ie=UTF8&iwloc=&output=embed" allowfullscreen="" loading="lazy"></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6.5 社群專區：LINE、IG、FB -->
+  <section class="py-5 bg-white border-top">
+    <div class="container text-center">
+      <span class="text-brown fw-bold small letter-spacing-2">HEADQUARTERS COMMUNITY</span>
+      <h2 class="h3 fw-bold text-brown mb-2">追蹤所以咖啡總店官方社群</h2>
+      <p class="text-muted small mb-4">福海店目前暫無獨立專屬社群，最新門市公告、品牌日優惠與豆單資訊統一由<b>總店官方社群</b>發布！</p>
+
+      <div class="row g-3 justify-content-center">
+        <!-- LINE 官方點餐 -->
+        <div class="col-12 col-md-4">
+          <div class="p-4 rounded-4 border bg-light h-100 text-center">
+            <i class="bi bi-line text-success fs-1 mb-2 d-block"></i>
+            <h3 class="h5 fw-bold text-brown mb-1">福海店官方 LINE</h3>
+            <p class="small text-muted mb-3">線上點餐免排隊、常客集點與外送諮詢</p>
+            <a href="https://lin.ee/PafbChl" target="_blank" rel="noopener noreferrer" 
+               class="btn btn-success fw-bold rounded-pill px-4" style="background-color: #06C755; border-color: #06C755;">
+              加入 LINE 好友
+            </a>
+          </div>
+        </div>
+
+        <!-- Instagram 官方帳號 -->
+        <div class="col-12 col-md-4">
+          <div class="p-4 rounded-4 border bg-light h-100 text-center">
+            <i class="bi bi-instagram text-danger fs-1 mb-2 d-block"></i>
+            <h3 class="h5 fw-bold text-brown mb-1">總店 Instagram (@suoyicoffee)</h3>
+            <p class="small text-muted mb-3">總店官方 IG，掌握品牌精選特調、產地生豆與短影音</p>
+            <a href="https://www.instagram.com/suoyicoffee/" target="_blank" rel="noopener noreferrer" 
+               class="btn btn-outline-danger fw-bold rounded-pill px-4">
+              追蹤總店官方 IG
+            </a>
+          </div>
+        </div>
+
+        <!-- Facebook 官方粉絲頁 -->
+        <div class="col-12 col-md-4">
+          <div class="p-4 rounded-4 border bg-light h-100 text-center">
+            <i class="bi bi-facebook text-primary fs-1 mb-2 d-block"></i>
+            <h3 class="h5 fw-bold text-brown mb-1">總店 Facebook 官方粉專</h3>
+            <p class="small text-muted mb-3">官方第一手展店情報、公休與每週三第二杯半價活動</p>
+            <a href="https://www.facebook.com/profile.php?id=100076341999740" target="_blank" rel="noopener noreferrer" 
+               class="btn btn-outline-primary fw-bold rounded-pill px-4">
+              前往總店官方 FB
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. 常見問題 FAQ -->
+  <section class="py-5 bg-light border-top">
+    <div class="container">
+      <div class="text-center mb-5">
+        <h2 class="h3 fw-bold text-brown">常見問題 FAQ</h2>
+        <p class="text-muted">為您解答點餐、優惠與外送相關疑問</p>
+      </div>
+
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <div class="accordion" id="faqAccordion">
+            <div class="accordion-item border-0 mb-3 shadow-sm rounded overflow-hidden">
+              <h2 class="accordion-header">
+                <button class="accordion-button fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                  請問福海店有哪些外送與快速點餐管道？
+                </button>
+              </h2>
+              <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                <div class="accordion-body text-muted">
+                  我們支援 <b>Uber Eats</b> 與 <b>Foodpanda</b> 雙平台外送。若想免排隊現場自取，非常推薦加入 <a href="https://lin.ee/PafbChl" target="_blank" class="text-success fw-bold">LINE 官方帳號</a> 進行線上預先點餐！鄰近公司行號、學校活動或大型會議外送亦可直接撥打訂購電話 <a href="tel:0916919008" class="text-brown fw-bold">0916-919-008</a>。
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item border-0 mb-3 shadow-sm rounded overflow-hidden">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                  福海店的「買5送1」和「寄杯買10送2」如何計算？
+                </button>
+              </h2>
+              <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                <div class="accordion-body text-muted">
+                  <b>現場買 5 送 1</b>：全品項飲品皆可自由混搭，贈送品項以價格較低者為準。<br>
+                  <b>寄杯買 10 送 2</b>：一次購買 10 杯即享 2 杯贈送，限本人自飲並可寄杯於店內，讓您每天上班輕鬆提神！
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item border-0 mb-3 shadow-sm rounded overflow-hidden">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                  每週三第二杯半價優惠，外送平台適用嗎？
+                </button>
+              </h2>
+              <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                <div class="accordion-body text-muted">
+                  「每週三第二杯半價」為<b>現場來店外帶</b>的品牌限定優惠。第三方外送平台（如 Uber Eats、Foodpanda）價格與活動請依平台當前標示為準。
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item border-0 mb-3 shadow-sm rounded overflow-hidden">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">
+                  福海店有社群網站可以追蹤最新公告嗎？
+                </button>
+              </h2>
+              <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                <div class="accordion-body text-muted">
+                  有的！福海店目前暫未設立單店獨立社群，所有門市最新營運狀況、全台優惠與公休公告，皆統一由<b>所以咖啡總店官方社群</b>發布，歡迎追蹤 <a href="https://www.instagram.com/suoyicoffee/" target="_blank" class="text-danger fw-bold">總店 Instagram（@suoyicoffee）</a> 與 <a href="https://www.facebook.com/profile.php?id=100076341999740" target="_blank" class="text-primary fw-bold">總店 Facebook 粉絲專頁</a>；如需福海店現場點餐自取或大量外送預約，則可直接加入 <a href="https://lin.ee/PafbChl" target="_blank" class="text-success fw-bold">福海店專屬 LINE 點餐帳號</a>。
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- 8. 底部 CTA：查看其他門市 -->
+  <section class="py-5 bg-brown text-white text-center">
+    <div class="container">
+      <h2 class="h4 fw-bold mb-3">不在苓雅區嗎？</h2>
+      <p class="opacity-75 mb-4">我們在高雄鳥松、新興、左營、楠梓以及台南安平皆有外帶與外送服務據點。</p>
+      <a href="stores.html" class="btn btn-light text-brown rounded-pill px-4 fw-bold">
+        查看所有門市據點
+      </a>
+    </div>
+  </section>
+
+  <!-- 9. 吉祥物引導區塊 -->
+  <section class="py-5 bg-brown text-white position-relative overflow-hidden border-top border-white-10">
+    <!-- 背景紋理 -->
+    <div class="position-absolute top-0 start-0 w-100 h-100"
+      style="opacity: 0.05; background-image: radial-gradient(#D4A373 1px, transparent 1px); background-size: 20px 20px;">
+    </div>
+
+    <div class="container position-relative z-1">
+      <div class="row align-items-center justify-content-center">
+        <div class="col-lg-2 col-md-3 text-center mb-4 mb-md-0">
+          <!-- 所咪頭像 -->
+          <div
+            class="mascot-avatar-float rounded-circle border border-3 border-warning overflow-hidden mx-auto shadow"
+            style="width: 140px; height: 140px; background: #fff;">
+            <img src="assets/img/about/suomi.jpg" alt="所咪" class="w-100 h-100 object-fit-cover">
+          </div>
+        </div>
+        <div class="col-lg-6 col-md-6 text-center text-md-start mb-4 mb-md-0">
+          <span class="badge bg-warning text-brown mb-2 rounded-pill">Meet Suomi</span>
+          <h3 class="h4 fw-bold mb-2">嗨！我是所咪</h3>
+          <p class="mb-0 text-white-50" style="font-size: 0.95rem; line-height: 1.6;">
+            我手上拿的不是魔法棒，是攪拌棒。<br>
+            因為生活不需要奇蹟，只需要被好好攪拌過的溫度。
+          </p>
+        </div>
+        <div class="col-lg-3 col-md-3 text-center text-md-end">
+          <a href="about.html#suomi" class="btn btn-outline-light rounded-pill px-4 py-2 fw-bold hover-scale">
+            聽聽我的故事 <i class="bi bi-arrow-right-short"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- 手機版底部浮動操作列 -->
+<div class="mobile-sticky-bar">
+  <a href="tel:0916919008" class="btn btn-brown flex-grow-1 fw-bold rounded-pill">
+    <i class="bi bi-telephone-fill me-1"></i> 電話
+  </a>
+  <a href="https://lin.ee/PafbChl" target="_blank" rel="noopener noreferrer" 
+     class="btn btn-success flex-grow-1 fw-bold rounded-pill" style="background-color: #06C755; border-color: #06C755;">
+    <i class="bi bi-line me-1"></i> LINE 點餐
+  </a>
+  <a href="https://www.ubereats.com/tw/store/%E6%89%80%E4%BB%A5%E5%92%96%E5%95%A1-%E7%A6%8F%E6%B5%B7%E5%BA%97/2Hm9qcUeVQ2g0HA8Ug_F4g" 
+     target="_blank" rel="noopener noreferrer" class="btn btn-outline-success flex-grow-1 fw-bold rounded-pill">
+    <i class="bi bi-bag-check me-1"></i> Uber Eats
+  </a>
+</div>
+
+<!-- 頁尾 -->
+<footer class="bg-brown text-white py-4 mt-auto">
+  <div class="container text-center small">
+    <p class="mb-2">熱愛咖啡，所以相遇 ☕</p>
+    <p class="opacity-75 mb-0">© 2026 所以咖啡 SUOYI COFFEE. All rights reserved.</p>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
